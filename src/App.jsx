@@ -19,9 +19,16 @@ const CHAT_WIDGET = {
   resourcesUrl: "https://widgets.leadconnectorhq.com/chat-widget/loader.js",
 };
 
+const BOOKING_WIDGET = {
+  iframeSrc: "https://api.leadconnectorhq.com/widget/booking/U8dcaomRA4oKx7KP7z2Q",
+  iframeId: "U8dcaomRA4oKx7KP7z2Q_1774568093366",
+  scriptSrc: "https://link.msgsndr.com/js/form_embed.js",
+};
+
 const navLinks = [
   { label: "Services", href: "#services" },
   { label: "FAQ", href: "#faq" },
+  { label: "Book", href: "#booking" },
   { label: "Quote", href: "#quote" },
 ];
 
@@ -137,6 +144,17 @@ function App() {
     document.body.appendChild(script);
   }, []);
 
+  useEffect(() => {
+    const existingScript = document.querySelector(`script[src="${BOOKING_WIDGET.scriptSrc}"]`);
+    if (existingScript) return undefined;
+
+    const script = document.createElement("script");
+    script.src = BOOKING_WIDGET.scriptSrc;
+    script.type = "text/javascript";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm((current) => ({ ...current, [name]: value }));
@@ -164,8 +182,8 @@ function App() {
       <a className="button buttonGhost" href={COMPANY.phoneHref} onClick={closeMobileMenu}>
         Call
       </a>
-      <a className="button buttonPrimary" href="#quote" onClick={closeMobileMenu}>
-        Quote
+      <a className="button buttonPrimary" href="#booking" onClick={closeMobileMenu}>
+        Book
       </a>
     </div>
   );
@@ -222,8 +240,8 @@ function App() {
               </p>
 
               <div className="heroActions">
-                <a className="button buttonPrimary" href="#quote">
-                  Free estimate
+                <a className="button buttonPrimary" href="#booking">
+                  Book a visit
                 </a>
                 <a className="button buttonGhost" href={COMPANY.phoneHref}>
                   {COMPANY.phoneDisplay}
@@ -343,6 +361,45 @@ function App() {
                     <p>{item.answer}</p>
                   </details>
                 ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section bookingSection" id="booking">
+          <div className="container bookingLayout">
+            <div className="sectionIntro bookingIntro">
+              <p className="eyebrow">Book a time</p>
+              <h2>Pick a slot that works.</h2>
+              <p>Use the live calendar if you want a faster estimate or a quick project conversation.</p>
+
+              <div className="bookingHighlights" aria-label="Booking highlights">
+                <article className="bookingPoint">
+                  <span>Fast estimate</span>
+                  <p>Pick a time without waiting for a callback.</p>
+                </article>
+                <article className="bookingPoint">
+                  <span>Project review</span>
+                  <p>Fence, gate, repair, or full exterior scope.</p>
+                </article>
+                <article className="bookingPoint">
+                  <span>Still prefer a call?</span>
+                  <p>
+                    <a href={COMPANY.phoneHref}>{COMPANY.phoneDisplay}</a>
+                  </p>
+                </article>
+              </div>
+            </div>
+
+            <div className="bookingCard">
+              <div className="bookingFrameShell">
+                <iframe
+                  src={BOOKING_WIDGET.iframeSrc}
+                  style={{ width: "100%", border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  id={BOOKING_WIDGET.iframeId}
+                  title="Empire Fence booking calendar"
+                />
               </div>
             </div>
           </div>
