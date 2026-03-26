@@ -1,4 +1,4 @@
-﻿import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 const COMPANY = {
   name: "Empire Fence Inc",
@@ -9,7 +9,14 @@ const COMPANY = {
   location: "Jurupa Valley, CA",
   mapHref: "https://maps.app.goo.gl/4amXspRgyV3gUAib8",
   yelp: "https://www.yelp.com/biz/empire-fence-jurupa-valley-2?osq=Empirefence&override_cta=Get+a+quote",
-  hours: "Mon-Sat - 7 AM-7 PM",
+  hours: "Mon-Sat · 7 AM-7 PM",
+};
+
+const CHAT_WIDGET = {
+  widgetId: "69c01d67633c74d10c369675",
+  locationId: "VUXXwCAxSkjuGBKAjon6",
+  loaderSrc: "https://widgets.leadconnectorhq.com/loader.js",
+  resourcesUrl: "https://widgets.leadconnectorhq.com/chat-widget/loader.js",
 };
 
 const navLinks = [
@@ -21,42 +28,49 @@ const navLinks = [
 const stats = [
   { value: "40+", label: "Years" },
   { value: "Free", label: "Estimates" },
-  { value: "3.9 star", label: "Yelp" },
+  { value: "3.9★", label: "Yelp" },
 ];
 
 const services = [
   {
+    kicker: "Privacy",
     title: "Vinyl fence",
     body: "Privacy, clean lines, low maintenance.",
+    note: "Fast curb-appeal upgrade",
   },
   {
+    kicker: "Repair",
     title: "Wood fence",
     body: "Backyard rebuilds and repairs.",
+    note: "Classic look, refreshed cleanly",
   },
   {
+    kicker: "Security",
     title: "Chain link",
     body: "Perimeter and security coverage.",
+    note: "Simple, durable site control",
   },
   {
+    kicker: "Frontage",
     title: "Wrought iron",
     body: "Decorative frontage and strength.",
+    note: "Stronger first impression",
   },
   {
+    kicker: "Access",
     title: "Gate work",
     body: "Manual, automatic, repair, alignment.",
+    note: "Entry points that work right",
   },
   {
+    kicker: "Upgrade",
     title: "Outdoor add-ons",
     body: "Walls, patios, driveways, turf.",
+    note: "Extra exterior work when needed",
   },
 ];
 
-const trustItems = [
-  "Family-owned",
-  "Spanish support",
-  "Free estimates",
-  "Repairs and installs",
-];
+const trustItems = ["Family-owned", "Spanish support", "Free estimates", "Repairs and installs"];
 
 const areas = ["Jurupa Valley", "Riverside", "Ontario", "Chino", "Rancho Cucamonga", "Fontana", "San Bernardino"];
 
@@ -80,6 +94,7 @@ const faqs = [
 ];
 
 function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -103,6 +118,25 @@ function App() {
     return `mailto:${COMPANY.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }, [form]);
 
+  useEffect(() => {
+    const existingHost = document.querySelector(`[data-chat-widget][data-widget-id="${CHAT_WIDGET.widgetId}"]`);
+    const existingScript = document.querySelector(`script[data-widget-id="${CHAT_WIDGET.widgetId}"]`);
+    if (existingHost || existingScript) return undefined;
+
+    const widgetHost = document.createElement("div");
+    widgetHost.setAttribute("data-chat-widget", "");
+    widgetHost.setAttribute("data-widget-id", CHAT_WIDGET.widgetId);
+    widgetHost.setAttribute("data-location-id", CHAT_WIDGET.locationId);
+    document.body.appendChild(widgetHost);
+
+    const script = document.createElement("script");
+    script.src = CHAT_WIDGET.loaderSrc;
+    script.dataset.resourcesUrl = CHAT_WIDGET.resourcesUrl;
+    script.dataset.widgetId = CHAT_WIDGET.widgetId;
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm((current) => ({ ...current, [name]: value }));
@@ -112,6 +146,29 @@ function App() {
     event.preventDefault();
     window.location.href = mailtoHref;
   };
+
+  const closeMobileMenu = () => setMobileMenuOpen(false);
+
+  const renderNavLinks = (className) => (
+    <nav className={className} aria-label="Main navigation">
+      {navLinks.map((item) => (
+        <a key={item.href} href={item.href} onClick={closeMobileMenu}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+  );
+
+  const renderHeaderActions = (className) => (
+    <div className={className}>
+      <a className="button buttonGhost" href={COMPANY.phoneHref} onClick={closeMobileMenu}>
+        Call
+      </a>
+      <a className="button buttonPrimary" href="#quote" onClick={closeMobileMenu}>
+        Quote
+      </a>
+    </div>
+  );
 
   return (
     <div className="siteShell">
@@ -125,22 +182,31 @@ function App() {
             </div>
           </a>
 
-          <nav className="navLinks" aria-label="Main navigation">
-            {navLinks.map((item) => (
-              <a key={item.href} href={item.href}>
-                {item.label}
-              </a>
-            ))}
-          </nav>
-
-          <div className="navActions">
-            <a className="button buttonGhost" href={COMPANY.phoneHref}>
-              Call
-            </a>
-            <a className="button buttonPrimary" href="#quote">
-              Quote
-            </a>
+          <div className="headerDesktop">
+            {renderNavLinks("navLinks")}
+            {renderHeaderActions("navActions")}
           </div>
+
+          <button
+            type="button"
+            className={`menuToggle ${mobileMenuOpen ? "isOpen" : ""}`}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+            onClick={() => setMobileMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          {mobileMenuOpen ? (
+            <div className="headerMobilePanel">
+              <div className="headerMobileInner">
+                {renderNavLinks("navLinksMobile")}
+                {renderHeaderActions("headerActionsMobile")}
+              </div>
+            </div>
+          ) : null}
         </div>
       </header>
 
@@ -200,18 +266,35 @@ function App() {
         </section>
 
         <section className="section" id="services">
-          <div className="container sectionGrid">
-            <div className="sectionIntro">
-              <p className="eyebrow">Services</p>
-              <h2>Clear scope. Clean finish.</h2>
-              <p>Built around the fence and gate work people ask for first.</p>
+          <div className="container servicesSection">
+            <div className="servicesTopRow">
+              <div className="sectionIntro servicesIntro">
+                <p className="eyebrow">Services</p>
+                <h2>Clear scope. Clean finish.</h2>
+                <p>Fence, gate, and exterior work laid out clearly on every device.</p>
+              </div>
+
+              <article className="servicesFeatureCard">
+                <div className="servicesFeatureImage">
+                  <img src="/images/detail-fence.jpg" alt="Empire Fence workmanship detail" />
+                </div>
+                <div className="servicesFeatureBody">
+                  <span className="serviceKicker">Install · Repair · Upgrade</span>
+                  <h3>Residential fence work without the clutter.</h3>
+                  <p>Six core service lines. Direct quotes. No bloated menu.</p>
+                </div>
+              </article>
             </div>
 
             <div className="serviceGrid">
-              {services.map((service) => (
+              {services.map((service, index) => (
                 <article key={service.title} className="serviceCard">
+                  <span className="serviceKicker">
+                    {String(index + 1).padStart(2, "0")} · {service.kicker}
+                  </span>
                   <h3>{service.title}</h3>
                   <p>{service.body}</p>
+                  <span className="serviceNote">{service.note}</span>
                 </article>
               ))}
             </div>
@@ -347,18 +430,8 @@ function App() {
           </div>
         </div>
       </footer>
-
-      <div className="mobileBar">
-        <a className="button buttonGhost" href={COMPANY.phoneHref}>
-          Call
-        </a>
-        <a className="button buttonPrimary" href="#quote">
-          Quote
-        </a>
-      </div>
     </div>
   );
 }
 
 export default App;
-
