@@ -689,6 +689,10 @@ h3 {
   align-items: start;
 }
 
+.quoteGrid {
+  grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1fr);
+}
+
 .bookingIntro {
   display: grid;
   gap: 0;
@@ -751,17 +755,26 @@ h3 {
   border-radius: 20px;
   border: 1px solid rgba(17, 19, 24, 0.08);
   background: rgba(255, 255, 255, 0.88);
+  height: 600px;
 }
 
 .bookingFrameShell iframe {
   display: block;
   width: 100%;
-  min-height: 760px;
+  height: 100% !important;
+  min-height: 100% !important;
   background: #fff;
 }
 
 .quoteSection {
   padding-bottom: 112px;
+}
+
+.quoteCopy {
+  display: grid;
+  align-content: start;
+  gap: 0;
+  padding-top: 16px;
 }
 
 .quoteCopy p {
@@ -785,6 +798,8 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
   padding: 28px;
+  min-height: 600px;
+  align-content: start;
 }
 
 .quoteForm label {
@@ -893,12 +908,16 @@ h3 {
     padding-top: 0;
   }
 
+  .quoteCopy {
+    padding-top: 0;
+  }
+
   .bookingHighlights {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .bookingFrameShell iframe {
-    min-height: 720px;
+  .bookingFrameShell {
+    height: 600px;
   }
 
   .servicesSection {
@@ -971,8 +990,12 @@ h3 {
     border-radius: 18px;
   }
 
-  .bookingFrameShell iframe {
-    min-height: 680px;
+  .bookingFrameShell {
+    height: 620px;
+  }
+
+  .quoteForm {
+    min-height: auto;
   }
 }
 
@@ -995,7 +1018,7 @@ h3 {
     font-size: 12px;
   }
 
-  .bookingFrameShell iframe {
-    min-height: 640px;
+  .bookingFrameShell {
+    height: 600px;
   }
 }

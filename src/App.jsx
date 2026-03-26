@@ -394,9 +394,10 @@ function App() {
             <div className="bookingCard">
               <div className="bookingFrameShell">
                 <iframe
+                  className="bookingFrame"
                   src={BOOKING_WIDGET.iframeSrc}
-                  style={{ width: "100%", border: "none", overflow: "hidden" }}
-                  scrolling="no"
+                  style={{ width: "100%", border: "none" }}
+                  scrolling="yes"
                   id={BOOKING_WIDGET.iframeId}
                   title="Empire Fence booking calendar"
                 />
