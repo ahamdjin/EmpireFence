@@ -9,12 +9,12 @@ const COMPANY = {
   location: "Jurupa Valley, CA",
   mapHref: "https://maps.app.goo.gl/4amXspRgyV3gUAib8",
   yelp: "https://www.yelp.com/biz/empire-fence-jurupa-valley-2?osq=Empirefence&override_cta=Get+a+quote",
-  hours: "Mon–Sat · 7 AM–7 PM",
+  hours: "Mon-Sat · 7 AM-7 PM",
 };
 
 const navLinks = [
   { label: "Services", href: "#services" },
-  { label: "Why us", href: "#why" },
+  { label: "Work", href: "#work" },
   { label: "Quote", href: "#quote" },
 ];
 
@@ -24,30 +24,26 @@ const stats = [
   { value: "3.9★", label: "Yelp" },
 ];
 
-const services = [
+const serviceCards = [
   {
-    title: "Vinyl",
+    title: "Vinyl fence",
     body: "Privacy, clean lines, low maintenance.",
   },
   {
-    title: "Wood",
-    body: "Classic backyard fencing and rebuilds.",
+    title: "Wood fence",
+    body: "Rebuilds, backyard coverage, repairs.",
   },
   {
     title: "Chain link",
-    body: "Simple security and perimeter coverage.",
+    body: "Simple perimeter and security work.",
   },
   {
     title: "Gates",
-    body: "Manual, automatic, repair, alignment.",
+    body: "Manual, automatic, alignment, repair.",
   },
 ];
 
-const reasons = [
-  "Family-owned",
-  "Spanish support",
-  "Repairs + installs",
-];
+const trustItems = ["Family-owned", "Spanish support", "Repairs and installs"];
 
 const areas = ["Jurupa Valley", "Riverside", "Ontario", "Chino", "Rancho Cucamonga", "Fontana", "San Bernardino"];
 
@@ -93,7 +89,7 @@ function App() {
             <img src="/images/logo.png" alt="Empire Fence logo" />
             <div>
               <strong>{COMPANY.name}</strong>
-              <span>Jurupa Valley</span>
+              <span>{COMPANY.location}</span>
             </div>
           </a>
 
@@ -121,7 +117,7 @@ function App() {
           <div className="container heroGrid">
             <div className="heroCopy">
               <p className="eyebrow">Fence and gate contractor</p>
-              <h1>Built for privacy, security, and a cleaner frontage.</h1>
+              <h1>Built for privacy, security, and a cleaner property line.</h1>
               <p className="heroBody">
                 Vinyl, wood, chain link, wrought iron, gates, and outdoor upgrades across Jurupa Valley and nearby
                 Inland Empire cities.
@@ -146,18 +142,15 @@ function App() {
               </div>
             </div>
 
-            <aside className="heroPanel">
-              <span className="panelLabel">What matters</span>
-              <ul className="reasonList">
-                {reasons.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+            <aside className="heroVisualCard">
+              <div className="heroImageWrap">
+                <img src="/images/hero-fence.jpg" alt="Fence installation example" />
+              </div>
 
-              <div className="contactMini">
+              <div className="heroMeta">
                 <div>
-                  <span>Phone</span>
-                  <a href={COMPANY.phoneHref}>{COMPANY.phoneDisplay}</a>
+                  <span>Service</span>
+                  <p>Fence installs and gate work</p>
                 </div>
                 <div>
                   <span>Hours</span>
@@ -175,14 +168,14 @@ function App() {
         </section>
 
         <section className="section" id="services">
-          <div className="container">
+          <div className="container sectionGrid">
             <div className="sectionIntro">
               <p className="eyebrow">Services</p>
-              <h2>Simple scope. Clean install.</h2>
+              <h2>Clear scope. Clean finish.</h2>
             </div>
 
             <div className="serviceGrid">
-              {services.map((service) => (
+              {serviceCards.map((service) => (
                 <article key={service.title} className="serviceCard">
                   <h3>{service.title}</h3>
                   <p>{service.body}</p>
@@ -192,26 +185,37 @@ function App() {
           </div>
         </section>
 
-        <section className="section sectionSoft" id="why">
-          <div className="container whyGrid">
-            <div className="whyCopy">
+        <section className="section sectionSoft" id="work">
+          <div className="container workGrid">
+            <div className="workCopy">
               <p className="eyebrow">Why Empire Fence</p>
-              <h2>Less friction. Better finish.</h2>
+              <h2>Enough detail. No clutter.</h2>
               <p>
-                Free estimates, local service, and one contractor for fence work, gates, repairs, and selected outdoor
+                Free estimates, local service, and one contractor for fences, gates, repairs, and selected outdoor
                 add-ons.
               </p>
+
+              <ul className="trustList">
+                {trustItems.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </div>
 
-            <div className="areaPanel">
-              <span className="panelLabel">Service area</span>
-              <div className="areaWrap" aria-label="Service areas">
-                {areas.map((area) => (
-                  <span key={area} className="areaChip">
-                    {area}
-                  </span>
-                ))}
-              </div>
+            <div className="workPanels">
+              <article className="imagePanel">
+                <img src="/images/detail-fence.jpg" alt="Fence detail example" />
+              </article>
+              <article className="areaPanel">
+                <span className="panelLabel">Service area</span>
+                <div className="areaWrap" aria-label="Service areas">
+                  {areas.map((area) => (
+                    <span key={area} className="areaChip">
+                      {area}
+                    </span>
+                  ))}
+                </div>
+              </article>
             </div>
           </div>
         </section>
