@@ -396,8 +396,8 @@ function App() {
                 <iframe
                   className="bookingFrame"
                   src={BOOKING_WIDGET.iframeSrc}
-                  style={{ width: "100%", border: "none" }}
-                  scrolling="yes"
+                  style={{ width: "100%", border: "none", overflow: "hidden" }}
+                  scrolling="no"
                   id={BOOKING_WIDGET.iframeId}
                   title="Empire Fence booking calendar"
                 />
