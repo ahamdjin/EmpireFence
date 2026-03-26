@@ -2,14 +2,16 @@
 
 :root {
   color-scheme: light;
-  --bg: #f3f4f7;
-  --panel: rgba(255, 255, 255, 0.8);
-  --panel-strong: rgba(255, 255, 255, 0.92);
-  --text: #101114;
-  --muted: rgba(16, 17, 20, 0.64);
-  --line: rgba(16, 17, 20, 0.08);
-  --accent: #17181d;
-  --shadow: 0 22px 70px rgba(16, 17, 20, 0.08);
+  --bg: #f2f5f8;
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-strong: rgba(255, 255, 255, 0.94);
+  --text: #111318;
+  --muted: rgba(17, 19, 24, 0.64);
+  --line: rgba(17, 19, 24, 0.08);
+  --accent: #1ea7f0;
+  --accent-dark: #162430;
+  --accent-soft: rgba(30, 167, 240, 0.1);
+  --shadow: 0 22px 70px rgba(17, 19, 24, 0.08);
   --radius-xl: 32px;
   --radius-lg: 24px;
   --radius-md: 18px;
@@ -22,6 +24,7 @@
     sans-serif;
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.96), transparent 26%),
+    radial-gradient(circle at top right, rgba(30, 167, 240, 0.12), transparent 24%),
     linear-gradient(180deg, #fcfcfd 0%, var(--bg) 100%);
   color: var(--text);
 }
@@ -115,7 +118,7 @@ summary:focus-visible {
 .siteFooter strong {
   display: block;
   font-size: 14px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
 }
 
@@ -142,14 +145,14 @@ summary:focus-visible {
 .navLinks a,
 .siteFooter a {
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--muted);
   transition: color 180ms ease;
 }
 
 .navLinks a:hover,
 .siteFooter a:hover {
-  color: var(--text);
+  color: var(--accent-dark);
 }
 
 .button {
@@ -163,7 +166,7 @@ summary:focus-visible {
   border-radius: 999px;
   border: 1px solid transparent;
   font-size: 13px;
-  font-weight: 800;
+  font-weight: 700;
   cursor: pointer;
   transition: transform 160ms ease, border-color 160ms ease, background 160ms ease, color 160ms ease;
 }
@@ -173,15 +176,15 @@ summary:focus-visible {
 }
 
 .buttonPrimary {
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--accent-dark), #24465a);
   color: #fff;
-  box-shadow: 0 14px 32px rgba(16, 17, 20, 0.16);
+  box-shadow: 0 14px 32px rgba(30, 167, 240, 0.18);
 }
 
 .buttonGhost {
   background: rgba(255, 255, 255, 0.72);
   color: var(--text);
-  border-color: var(--line);
+  border-color: rgba(30, 167, 240, 0.18);
 }
 
 .hero,
@@ -206,34 +209,34 @@ summary:focus-visible {
 .panelLabel {
   margin: 0 0 14px;
   font-size: 12px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
 }
 
 h1,
 h2,
 h3 {
   margin: 0;
-  letter-spacing: -0.05em;
-  line-height: 0.95;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
 }
 
 h1 {
   max-width: 760px;
   font-size: clamp(52px, 7.8vw, 90px);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 h2 {
   font-size: clamp(34px, 4.5vw, 52px);
-  font-weight: 800;
+  font-weight: 700;
 }
 
 h3 {
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .heroBody,
@@ -285,8 +288,9 @@ h3 {
   display: block;
   margin-bottom: 8px;
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.04em;
+  color: var(--accent-dark);
 }
 
 .statCard span {
@@ -336,17 +340,17 @@ h3 {
   display: block;
   margin-bottom: 6px;
   font-size: 11px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--accent);
 }
 
 .heroMeta a,
 .heroMeta p {
   margin: 0;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .sectionGrid {
@@ -445,10 +449,10 @@ h3 {
 .areaChip {
   padding: 10px 14px;
   border-radius: 999px;
-  border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(30, 167, 240, 0.16);
+  background: rgba(30, 167, 240, 0.06);
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .quoteSection {
@@ -471,7 +475,7 @@ h3 {
   display: grid;
   gap: 8px;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .quoteForm input,
