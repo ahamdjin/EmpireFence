@@ -523,6 +523,7 @@ h3 {
 
 .serviceGrid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .serviceCard {
@@ -534,6 +535,7 @@ h3 {
   gap: 10px;
   position: relative;
   overflow: hidden;
+  transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
 }
 
 .serviceCard::before {
@@ -568,6 +570,12 @@ h3 {
 
 .serviceNote {
   color: var(--muted);
+}
+
+.serviceCard:hover {
+  transform: translateY(-2px);
+  border-color: rgba(30, 167, 240, 0.18);
+  box-shadow: 0 20px 60px rgba(17, 19, 24, 0.1);
 }
 
 .sectionSoft {
@@ -796,18 +804,46 @@ h3 {
     grid-template-columns: 1fr;
   }
 
-  .servicesFeatureCard,
+  .servicesSection {
+    gap: 18px;
+  }
+
+  .servicesTopRow {
+    gap: 16px;
+  }
+
+  .servicesFeatureCard {
+    display: none;
+  }
+
   .serviceGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
   }
 
   .serviceCard {
-    min-height: auto;
-    padding: 20px;
+    min-height: 134px;
+    padding: 16px 14px;
+    gap: 8px;
   }
 
-  .servicesFeatureImage {
-    min-height: 220px;
+  .serviceCard h3 {
+    font-size: 16px;
+    line-height: 1.08;
+  }
+
+  .serviceCard p {
+    font-size: 12.5px;
+    line-height: 1.45;
+  }
+
+  .serviceKicker {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .serviceNote {
+    display: none;
   }
 
   .heroCopy {
@@ -820,5 +856,25 @@ h3 {
 
   .faqIntro h3 {
     font-size: 24px;
+  }
+}
+
+@media (max-width: 420px) {
+  .serviceGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+  }
+
+  .serviceCard {
+    min-height: 128px;
+    padding: 14px 12px;
+  }
+
+  .serviceCard h3 {
+    font-size: 15px;
+  }
+
+  .serviceCard p {
+    font-size: 12px;
   }
 }
