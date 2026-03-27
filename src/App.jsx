@@ -255,6 +255,26 @@ function App() {
     return undefined;
   }, []);
 
+  useEffect(() => {
+    const nodes = Array.from(document.querySelectorAll(".reveal"));
+    if (!nodes.length) return undefined;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.18, rootMargin: "0px 0px -8% 0px" },
+    );
+
+    nodes.forEach((node) => observer.observe(node));
+    return () => observer.disconnect();
+  }, []);
+
   const handleQuickChange = ({ target: { name, value } }) => {
     setQuickForm((current) => ({ ...current, [name]: value }));
   };
@@ -335,7 +355,7 @@ function App() {
       <main>
         <section className="heroStudio" id="home">
           <div className="wrap heroStudio__grid">
-            <div className="heroStudio__copy">
+            <div className="heroStudio__copy reveal">
               <p className="eyebrow">Jurupa Valley fence contractor</p>
               <h1>Fence and gate work with a cleaner finish.</h1>
               <p>
@@ -359,26 +379,30 @@ function App() {
               </div>
             </div>
 
-            <div className="heroStudio__visual">
+            <div className="heroStudio__visual reveal">
+              <div className="heroStudio__note">
+                <strong>Free estimates</strong>
+                <span>Fast follow-up from the team</span>
+              </div>
               <img src="/images/hero-fence.jpg" alt="Empire Fence wrought iron installation" />
               <div className="heroStudio__card">
-                <span>Available</span>
-                <strong>{BUSINESS.hours}</strong>
-                <p>Fence installs, gate work, driveways, patios, turf, and block walls.</p>
+                <span>{BUSINESS.hours}</span>
+                <strong>Fence, gate, patio, turf, and block work.</strong>
+                <p>Residential and commercial jobs across Jurupa Valley and nearby Inland Empire cities.</p>
               </div>
             </div>
           </div>
         </section>
         <section className="storyBand" id="about">
           <div className="wrap storyBand__grid">
-            <div className="storyBand__copy">
+            <div className="storyBand__copy reveal">
               <SectionLead eyebrow="About Empire Fence" title="Built for properties that need cleaner lines, stronger coverage, and less back-and-forth." />
               {introParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
 
-            <form className="quotePanel quotePanel--light" onSubmit={submitQuick}>
+            <form className="quotePanel quotePanel--light reveal" onSubmit={submitQuick}>
               <SectionLead eyebrow="Quick estimate" title="Get pricing started." copy="A few project basics are enough for the team to review the scope and follow up." />
               <div className="fieldMatrix">
                 <label><span>First name</span><input name="firstName" value={quickForm.firstName} onChange={handleQuickChange} required /></label>
@@ -401,7 +425,7 @@ function App() {
             <SectionLead eyebrow="Customer reviews" title="The kind of feedback that makes the next call easier." centered />
             <div className="proofStudio__grid">
               {proofCards.map((item) => (
-                <article key={item.title} className="proofTile">
+                <article key={item.title} className="proofTile reveal">
                   <img src={item.image} alt={item.title} />
                   <div className="proofTile__overlay">
                     <h3>{item.title}</h3>
@@ -417,7 +441,7 @@ function App() {
             </div>
             <div className="testimonialRail">
               {testimonials.map((item) => (
-                <article key={item.quote} className="testimonialCard">
+                <article key={item.quote} className="testimonialCard reveal">
                   <p>{item.quote}</p>
                   <span>{item.source}</span>
                 </article>
@@ -433,7 +457,10 @@ function App() {
             </div>
             <div className="serviceStudio__cards">
               {services.map((service, index) => (
-                <article key={service.title} className="serviceTile">
+                <article
+                  key={service.title}
+                  className={`serviceTile reveal ${index === 0 ? "serviceTile--featured" : ""} ${index === 4 || index === 7 ? "serviceTile--wide" : ""}`}
+                >
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <h3>{service.title}</h3>
                   <p>{service.description}</p>
@@ -448,7 +475,7 @@ function App() {
             <SectionLead eyebrow="Why choose Empire Fence Inc." title="What clients are really buying is less friction." />
             <div className="reasonStudio__stack">
               {reasons.map((item, index) => (
-                <article key={item.title} className="reasonTile">
+                <article key={item.title} className="reasonTile reveal">
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   <div>
                     <h3>{item.title}</h3>
@@ -465,7 +492,7 @@ function App() {
             <SectionLead eyebrow="Project types" title="Work that fits residential, commercial, education, and industrial sites." centered />
             <div className="industryStudio__grid">
               {industries.map((item) => (
-                <article key={item.title} className="industryTile">
+                <article key={item.title} className="industryTile reveal">
                   <h3>{item.title}</h3>
                   <p>{item.body}</p>
                 </article>
@@ -475,7 +502,7 @@ function App() {
         </section>
 
         <section className="statementStudio">
-          <div className="wrap statementStudio__panel">
+          <div className="wrap statementStudio__panel reveal">
             <div>
               <p className="eyebrow">Premier provider</p>
               <h2>Built to make the property feel more complete, more secure, and easier to manage.</h2>
@@ -488,7 +515,7 @@ function App() {
         <section className="statStudio">
           <div className="wrap statStudio__grid">
             {stats.map((item) => (
-              <article key={item.label} className="statTile">
+              <article key={item.label} className="statTile reveal">
                 <strong>{item.value}</strong>
                 <span>{item.label}</span>
               </article>
@@ -497,7 +524,7 @@ function App() {
         </section>
 
         <section className="ctaStudio">
-          <div className="wrap ctaStudio__panel">
+          <div className="wrap ctaStudio__panel reveal">
             <div>
               <p className="eyebrow">Trusted fencing solutions</p>
               <h2>Need a cleaner estimate, stronger curb appeal, or better perimeter security?</h2>
@@ -510,7 +537,7 @@ function App() {
             <SectionLead eyebrow="Gallery" title="Selected project work from the field." centered />
             <div className="galleryStudio__grid">
               {galleryImages.map((image, index) => (
-                <figure key={`${image.alt}-${index}`} className={`galleryTile ${image.frame}`}>
+                <figure key={`${image.alt}-${index}`} className={`galleryTile reveal ${image.frame}`}>
                   <img src={image.src} alt={image.alt} />
                 </figure>
               ))}
@@ -521,7 +548,7 @@ function App() {
         <section className="faqStudio" id="faq">
           <div className="wrap faqStudio__grid">
             <SectionLead eyebrow="FAQ" title="Clear answers before the project moves forward." />
-            <div className="faqStudio__list">
+            <div className="faqStudio__list reveal">
               {faqs.map((item) => (
                 <details key={item.question} className="faqCard">
                   <summary>{item.question}</summary>
@@ -534,7 +561,7 @@ function App() {
 
         <section className="areaStudio" id="areas">
           <div className="wrap areaStudio__grid">
-            <div className="areaStudio__copy">
+            <div className="areaStudio__copy reveal">
               <SectionLead eyebrow="Areas we serve" title="Coverage across the Inland Empire." />
               <div className="areaStudio__chips">
                 {areas.map((area) => (
@@ -544,7 +571,7 @@ function App() {
                 ))}
               </div>
             </div>
-            <div className="areaStudio__mapStack">
+            <div className="areaStudio__mapStack reveal">
               <div className="mapPanel">
                 <iframe
                   src={BUSINESS.mapEmbedSrc}
@@ -569,7 +596,7 @@ function App() {
 
         <section className="closingStudio" id="estimate">
           <div className="wrap closingStudio__grid">
-            <div className="closingStudio__quote">
+            <div className="closingStudio__quote reveal">
               <SectionLead eyebrow="Free estimate" title="Send the scope." copy="Share the basics and the team can review the job, answer questions, and map out the next step." />
               <form className="quotePanel quotePanel--dark" onSubmit={submitEstimate}>
                 <div className="fieldMatrix fieldMatrix--compact">
@@ -591,7 +618,7 @@ function App() {
               </form>
             </div>
 
-            <div className="closingStudio__booking" id="book">
+            <div className="closingStudio__booking reveal" id="book">
               <SectionLead eyebrow="Book a visit" title="Use the live calendar." copy="If you already know you want a walkthrough, hold a time and let the team confirm the visit details from there." />
               <div className="bookingStudio">
                 <iframe

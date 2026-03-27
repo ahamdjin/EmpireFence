@@ -96,6 +96,20 @@ main section[id] {
   padding-bottom: 3rem;
 }
 
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .wrap {
   width: min(var(--container), calc(100% - 48px));
   margin: 0 auto;
@@ -376,7 +390,21 @@ p {
 }
 
 .heroStudio {
-  padding-top: clamp(3rem, 7vw, 5rem);
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: calc(100svh - 24px);
+  padding-top: clamp(2rem, 5vw, 3.6rem);
+}
+
+.heroStudio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 460px at 12% 18%, rgba(26, 136, 211, 0.08), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.32) 0%, transparent 35%);
+  pointer-events: none;
 }
 
 .heroStudio__grid,
@@ -398,6 +426,7 @@ p {
 .heroStudio__copy {
   display: grid;
   gap: 1.4rem;
+  align-content: center;
   padding-right: clamp(0rem, 2vw, 1.25rem);
 }
 
@@ -422,7 +451,7 @@ p {
 .metricRow {
   flex-wrap: wrap;
   gap: 1rem;
-  padding-top: 0.75rem;
+  padding-top: 1rem;
 }
 
 .metricPill,
@@ -437,10 +466,11 @@ p {
 
 .metricPill {
   min-width: 160px;
-  padding: 1.2rem 1.3rem;
+  padding: 1rem 1.1rem;
   border-radius: var(--radius-md);
   display: grid;
   gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .metricPill strong {
@@ -457,12 +487,13 @@ p {
 
 .heroStudio__visual {
   position: relative;
-  min-height: 620px;
+  min-height: min(78svh, 720px);
   padding: 1.25rem;
   border-radius: var(--radius-xl);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(238, 229, 218, 0.9));
   border: 1px solid rgba(19, 39, 59, 0.08);
   box-shadow: var(--shadow-lg);
+  overflow: hidden;
 }
 
 .heroStudio__visual::before {
@@ -479,9 +510,34 @@ p {
 .heroStudio__visual img {
   width: 100%;
   height: 100%;
-  min-height: 592px;
+  min-height: min(74svh, 680px);
   border-radius: calc(var(--radius-xl) - 6px);
   object-fit: cover;
+}
+
+.heroStudio__note {
+  position: absolute;
+  top: 1.45rem;
+  right: 1.45rem;
+  z-index: 2;
+  display: grid;
+  gap: 0.25rem;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 253, 248, 0.92);
+  border: 1px solid rgba(19, 39, 59, 0.08);
+  box-shadow: 0 16px 28px rgba(19, 39, 59, 0.12);
+}
+
+.heroStudio__note strong {
+  font-size: 1rem;
+  color: var(--navy);
+}
+
+.heroStudio__note span {
+  color: var(--muted-soft);
+  font-size: 0.84rem;
+  font-weight: 600;
 }
 
 .heroStudio__card {
@@ -500,7 +556,7 @@ p {
 .heroStudio__card span {
   display: inline-flex;
   margin-bottom: 0.65rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.72);
   font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.2em;
@@ -744,6 +800,30 @@ p {
   border: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(248, 242, 233, 0.98));
   box-shadow: var(--shadow-sm);
+}
+
+.serviceTile--featured,
+.serviceTile--wide {
+  grid-column: span 2;
+}
+
+.serviceTile--featured {
+  background: linear-gradient(135deg, rgba(19, 39, 59, 0.97) 0%, rgba(13, 28, 42, 0.97) 100%);
+  border-color: rgba(19, 39, 59, 0.04);
+  box-shadow: var(--shadow-md);
+}
+
+.serviceTile--featured::before {
+  border-top-color: rgba(26, 136, 211, 0.96);
+}
+
+.serviceTile--featured span,
+.serviceTile--featured h3 {
+  color: #fff;
+}
+
+.serviceTile--featured p {
+  color: rgba(255, 255, 255, 0.72);
 }
 
 .serviceTile::before {
@@ -1154,6 +1234,11 @@ p {
   .reasonStudio__stack {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .serviceTile--featured,
+  .serviceTile--wide {
+    grid-column: auto;
+  }
 }
 
 @media (max-width: 960px) {
@@ -1217,6 +1302,11 @@ p {
 
   .heroStudio__visual img {
     min-height: 460px;
+  }
+
+  .heroStudio__note {
+    top: 1rem;
+    right: 1rem;
   }
 
   .heroStudio__card {
@@ -1300,6 +1390,11 @@ p {
 
   .heroStudio__visual img {
     min-height: 360px;
+  }
+
+  .heroStudio__note {
+    position: static;
+    margin-bottom: 0.9rem;
   }
 
   .metricPill,
