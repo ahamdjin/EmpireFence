@@ -16,7 +16,7 @@ export function HeroSection({ hero, heroOffset }) {
         <div className="heroSection__content" data-reveal>
           <p className="eyebrow eyebrow--light">{hero.eyebrow}</p>
           <div className="heroSection__headline">
-            <p className="heroSection__kicker">Premium installation for homes, frontage, and gates</p>
+            <p className="heroSection__kicker">Premium fence and gate installation</p>
             <h1>
               {hero.title.map((line) => (
                 <span key={line}>{line}</span>

@@ -9,8 +9,7 @@ export function StorySection({ business, hero, story }) {
 
         <div className="storySection__summary" data-reveal>
           <p>
-            The right perimeter upgrade should sharpen the frontage, improve privacy, and make gate access feel smoother
-            from the first walkthrough to the finished install.
+            The right perimeter upgrade should sharpen the frontage, improve privacy, and make gate access feel smoother.
           </p>
           <ButtonLink href={business.phoneHref} variant="text">
             Call {business.phoneDisplay}
@@ -25,7 +24,7 @@ export function StorySection({ business, hero, story }) {
             <StarIcon />
             <div>
               <span>Local service, premium feel</span>
-              <strong>Built for homeowners who want the property to feel finished from the street.</strong>
+              <strong>Built for homes that need to look finished from the street.</strong>
             </div>
           </div>
         </div>

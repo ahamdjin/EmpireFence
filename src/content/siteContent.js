@@ -40,18 +40,18 @@ export const hero = {
   eyebrow: "Fence and gate contractor / Inland Empire",
   title: ["Perimeter work", "that feels", "resolved."],
   lede:
-    "Empire Fence installs wrought iron, vinyl, wood, chain link, and gate systems with a cleaner project rhythm, stronger frontage, and less hassle once the work starts.",
+    "Empire Fence installs wrought iron, vinyl, wood, chain link, and gate systems with cleaner lines, stronger frontage, and less project drag.",
   primaryCta: { label: "Start the estimate", href: "#estimate" },
   secondaryCta: { label: "View selected work", href: "#gallery" },
   facts: [
     { value: "40+", label: "years in the field" },
     { value: "Free", label: "estimates" },
-    { value: "Inland Empire", label: "service reach" },
+    { value: "Inland Empire", label: "service area" },
   ],
   highlights: [
     "Wrought iron, vinyl, wood, chain link, and gates",
-    "Residential, commercial, education, and industrial scope",
-    "Exterior upgrades when the perimeter needs one coordinated plan",
+    "Residential and commercial installs",
+    "Exterior upgrades when the perimeter needs one plan",
   ],
   visualNotes: [
     { label: "Open hours", value: business.hours },
@@ -69,20 +69,19 @@ export const hero = {
 
 export const story = {
   eyebrow: "Why Empire Fence",
-  title:
-    "Built for properties that need line work, gate swing, and finish detail to feel considered from the street.",
+  title: "Built for stronger lines, smoother gate function, and a cleaner street view.",
   intro:
-    "Empire Fence handles fence installs, gates, and related exterior scope with the goal of making the finished perimeter feel coherent instead of pieced together.",
+    "Empire Fence handles fence installs, gates, and related exterior scope so the finished perimeter feels clean instead of pieced together.",
   points: [
     {
       title: "Fence first. Exterior scope if needed.",
       body:
-        "Vinyl, wood, chain link, wrought iron, gates, and the supporting exterior upgrades that keep the final perimeter result coherent.",
+        "Vinyl, wood, chain link, wrought iron, gates, and the exterior upgrades that keep the final perimeter result coherent.",
     },
     {
       title: "Cleaner line work and less project drag.",
       body:
-        "The value is not just material. It is straighter runs, stronger gate alignment, quicker answers, and a finish that still reads clean later.",
+        "Straighter runs, stronger gate alignment, quicker answers, and a finish that still reads clean later.",
     },
   ],
 };
@@ -94,8 +93,7 @@ export const services = [
     title: "Wrought iron fencing",
     copy:
       "Decorative frontage, stronger security presence, and gate pairings that make the property read more intentional from the street.",
-    detail:
-      "Best for curb appeal, visible perimeter work, and entry sequences that need to feel finished.",
+    detail: "Best for curb appeal and visible perimeter work.",
     image: "/images/hero-fence.jpg",
     chips: ["Frontage", "Decorative security", "Custom gates"],
     tone: "dark",
@@ -105,9 +103,8 @@ export const services = [
     number: "02",
     title: "Vinyl and wood fencing",
     copy:
-      "Residential privacy installs built around clean lines, durable material choices, and a calmer finished look in the yard or side run.",
-    detail:
-      "The right fit when enclosure, maintenance, and the overall appearance matter equally.",
+      "Residential privacy installs built around clean lines, durable material choices, and a calmer finished look.",
+    detail: "A good fit when enclosure, maintenance, and appearance all matter.",
     image: "/images/detail-fence.jpg",
     chips: ["Privacy", "Residential", "Low maintenance"],
     tone: "light",
@@ -117,9 +114,8 @@ export const services = [
     number: "03",
     title: "Chain link and perimeter control",
     copy:
-      "Practical lot coverage, side-yard runs, utility edges, and commercial boundary work where function and access matter first.",
-    detail:
-      "Built for cleaner coverage, faster installation, and straightforward perimeter control.",
+      "Practical lot coverage, utility edges, and commercial boundary work where function and access matter first.",
+    detail: "Built for faster installation and straightforward perimeter control.",
     image: "/images/hero-fence.jpg",
     chips: ["Commercial", "Utility zones", "Fast coverage"],
     tone: "light",
@@ -129,9 +125,8 @@ export const services = [
     number: "04",
     title: "Gates and exterior scope",
     copy:
-      "Manual and automatic gates, repair and alignment work, plus turf, walls, patios, and related exterior upgrades when the fence is only part of the project.",
-    detail:
-      "Useful when the perimeter needs to be solved as one coordinated scope, not a set of separate jobs.",
+      "Manual and automatic gates, repair and alignment work, plus turf, walls, patios, and related exterior upgrades.",
+    detail: "Useful when the perimeter needs to be solved as one coordinated scope.",
     image: "/images/detail-fence.jpg",
     chips: ["Access", "Walls + patios", "Full perimeter scope"],
     tone: "accent",
@@ -141,28 +136,28 @@ export const services = [
 export const gallery = [
   {
     title: "Street-facing iron work",
-    copy: "Higher-visibility frontage with decorative linework and tighter finish detail.",
+    copy: "Decorative linework with tighter finish detail.",
     image: "/images/hero-fence.jpg",
     variant: "tall",
     position: "56% center",
   },
   {
     title: "Closer finish quality",
-    copy: "The detail decisions that keep the install reading clean later.",
+    copy: "Detail decisions that keep the install reading clean later.",
     image: "/images/detail-fence.jpg",
     variant: "wide",
     position: "center center",
   },
   {
     title: "Residential perimeter",
-    copy: "Privacy, access, and stronger edge definition around the property.",
+    copy: "Privacy, access, and stronger edge definition.",
     image: "/images/hero-fence.jpg",
     variant: "square",
     position: "38% center",
   },
   {
     title: "Commercial boundary control",
-    copy: "Coverage, access, and practical perimeter planning where function matters first.",
+    copy: "Coverage, access, and practical perimeter planning.",
     image: "/images/detail-fence.jpg",
     variant: "square",
     position: "center center",
@@ -171,21 +166,19 @@ export const gallery = [
 
 export const proof = {
   eyebrow: "Why the work closes",
-  title: "Cleaner process. Better trust. Less friction for the customer.",
+  title: "Cleaner process. Better trust. Less friction.",
   differentiators: [
     {
       title: "Faster communication",
-      copy: "Quick answers, clearer scope, and less drift once the job starts moving.",
+      copy: "Quick answers, clearer scope, and less drift once the job starts.",
     },
     {
       title: "Field-tested judgment",
-      copy:
-        "Material and layout decisions improve when the crew already knows the tricky version of the work.",
+      copy: "Material and layout decisions improve when the crew already knows the tricky version of the work.",
     },
     {
       title: "Finish that still reads clean later",
-      copy:
-        "Gate alignment, corners, transitions, and edge control are treated as part of the work, not leftovers.",
+      copy: "Gate alignment, corners, transitions, and edge control are treated as part of the work, not leftovers.",
     },
   ],
   testimonial: {
@@ -204,7 +197,7 @@ export const coverage = {
   eyebrow: "Coverage",
   title: "Jurupa Valley base. Inland Empire reach.",
   body:
-    "If the property sits in or around the Inland Empire, the scope can usually be reviewed quickly and moved forward from there.",
+    "If the property sits in or around the Inland Empire, the scope can usually be reviewed quickly.",
   areas: [
     "Jurupa Valley",
     "Riverside",
@@ -223,9 +216,9 @@ export const coverage = {
 
 export const estimate = {
   eyebrow: "Estimate / booking",
-  title: "Start with the scope. Book if the schedule already makes sense.",
-  quoteTitle: "Enough detail to move the conversation forward quickly.",
-  bookingTitle: "Keep the live calendar visible and framed like part of the website.",
+  title: "Start with the scope. Book if timing works.",
+  quoteTitle: "Share enough detail to get the estimate moving.",
+  bookingTitle: "Live booking inside the site.",
   contactPoints: [
     { label: "Call", value: business.phoneDisplay, href: business.phoneHref },
     { label: "Email", value: business.email, href: business.emailHref },

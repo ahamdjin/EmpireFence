@@ -7,8 +7,7 @@ export function Footer({ business, navigation, services }) {
           <div>
             <strong>{business.name}</strong>
             <p>
-              Wrought iron, wood, vinyl, chain link, gates, and exterior upgrades across Jurupa Valley and the Inland
-              Empire.
+              Wrought iron, wood, vinyl, chain link, gates, and exterior upgrades across Jurupa Valley and the Inland Empire.
             </p>
           </div>
         </div>
