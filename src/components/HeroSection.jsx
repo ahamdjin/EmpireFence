@@ -1,7 +1,4 @@
-import { ClockIcon, CompassIcon, GateIcon } from "./icons";
 import { ButtonLink } from "./ui";
-
-const featureIcons = [GateIcon, CompassIcon, ClockIcon];
 
 export function HeroSection({ hero, heroOffset }) {
   return (
@@ -11,10 +8,13 @@ export function HeroSection({ hero, heroOffset }) {
       </div>
 
       <div className="heroSection__overlay" />
+      <div className="heroSection__glow heroSection__glow--one" />
+      <div className="heroSection__glow heroSection__glow--two" />
 
       <div className="heroSection__inner">
-        <div className="heroSection__content" data-reveal>
-          <p className="eyebrow eyebrow--light">{hero.eyebrow}</p>
+        <div className="heroSection__content">
+          <p className="eyebrow eyebrow--light heroSection__eyebrow">{hero.eyebrow}</p>
+
           <div className="heroSection__headline">
             <p className="heroSection__kicker">Premium fence and gate installation</p>
             <h1>
@@ -23,6 +23,7 @@ export function HeroSection({ hero, heroOffset }) {
               ))}
             </h1>
           </div>
+
           <p className="heroSection__lede">{hero.lede}</p>
 
           <div className="heroSection__actions">
@@ -31,30 +32,27 @@ export function HeroSection({ hero, heroOffset }) {
               {hero.secondaryCta.label}
             </ButtonLink>
           </div>
+
+          <div className="heroMeta" data-reveal>
+            {hero.visualNotes.map((note) => (
+              <article key={note.label}>
+                <span>{note.label}</span>
+                <strong>{note.value}</strong>
+              </article>
+            ))}
+          </div>
         </div>
 
-        <aside className="heroSection__panel" data-reveal>
-          <div className="heroSection__panelTop">
-            <p>Selected scope</p>
-            <span className="heroSection__scope">Fence installs, gates, and exterior upgrades.</span>
+        <aside className="heroPanel" data-reveal>
+          <div className="heroPanel__media" style={{ "--hero-shift": `${heroOffset}px` }}>
+            <img src={hero.secondaryImage.src} alt={hero.secondaryImage.alt} />
+            <div className="heroPanel__badge">
+              <span>Scope</span>
+              <strong>Fence installs, gates, exterior upgrades</strong>
+            </div>
           </div>
 
-          <div className="heroSection__features">
-            {hero.highlights.map((item, index) => {
-              const Icon = featureIcons[index] ?? GateIcon;
-
-              return (
-                <article key={item} className="heroFeature">
-                  <div className="heroFeature__icon">
-                    <Icon />
-                  </div>
-                  <p>{item}</p>
-                </article>
-              );
-            })}
-          </div>
-
-          <div className="heroSection__panelBottom">
+          <div className="heroPanel__stats">
             {hero.facts.map((fact) => (
               <article key={fact.label}>
                 <strong>{fact.value}</strong>
@@ -63,15 +61,6 @@ export function HeroSection({ hero, heroOffset }) {
             ))}
           </div>
         </aside>
-      </div>
-
-      <div className="heroRail" data-reveal>
-        {hero.visualNotes.map((note) => (
-          <article key={note.label}>
-            <span>{note.label}</span>
-            <strong>{note.value}</strong>
-          </article>
-        ))}
       </div>
     </section>
   );

@@ -1,4 +1,3 @@
-import { ArrowIcon } from "./icons";
 import { SectionTitle } from "./ui";
 
 export function GallerySection({ gallery }) {
@@ -13,11 +12,6 @@ export function GallerySection({ gallery }) {
             title="Selected installs that show clean lines, fit, and finish."
             body="Street-facing iron work, privacy fencing, and cleaner gate details."
           />
-
-          <div className="gallerySection__headerNote" data-reveal>
-            <ArrowIcon />
-            <p>Curb appeal, privacy, and practical access.</p>
-          </div>
         </div>
 
         <div className="galleryShowcase">
@@ -30,12 +24,12 @@ export function GallerySection({ gallery }) {
           </article>
 
           <div className="galleryShowcase__stack">
-            {rest.map((item) => (
+            {rest.map((item, index) => (
               <article key={item.title} className={`galleryTile galleryTile--${item.variant}`} data-reveal>
                 <img src={item.image} alt={item.title} style={{ objectPosition: item.position }} />
                 <div>
                   <span>{item.title}</span>
-                  <p>{item.copy}</p>
+                  {index === 0 ? <p>{item.copy}</p> : null}
                 </div>
               </article>
             ))}
