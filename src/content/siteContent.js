@@ -51,11 +51,11 @@ export const hero = {
   highlights: [
     "Wrought iron, vinyl, wood, chain link, and gates",
     "Residential and commercial installs",
-    "Exterior upgrades when the perimeter needs one plan",
+    "Exterior upgrades when needed",
   ],
   visualNotes: [
     { label: "Open hours", value: business.hours },
-    { label: "Primary scope", value: "Fence installs, gates, and perimeter upgrades" },
+    { label: "Service area", value: "Jurupa Valley + Inland Empire" },
   ],
   primaryImage: {
     src: "/images/hero-fence.jpg",

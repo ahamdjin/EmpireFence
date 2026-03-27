@@ -27,7 +27,7 @@ export function EstimateSection({
           <form className="quoteCard" data-reveal>
             <div className="quoteCard__header">
               <h3>{estimate.quoteTitle}</h3>
-              <p>Send the scope by email, then use the calendar if you want to move faster.</p>
+              <p>Send the scope by email, or book directly.</p>
             </div>
 
             <div className="quoteCard__grid">

@@ -11,12 +11,12 @@ export function GallerySection({ gallery }) {
           <SectionTitle
             eyebrow="Selected Work"
             title="Selected installs that show clean lines, fit, and finish."
-            body="From street-facing iron work to privacy fencing and gate details, the goal is a perimeter that looks stronger and works better."
+            body="Street-facing iron work, privacy fencing, and cleaner gate details."
           />
 
           <div className="gallerySection__headerNote" data-reveal>
             <ArrowIcon />
-            <p>Curb appeal, privacy, practical access, and a cleaner finished look.</p>
+            <p>Curb appeal, privacy, and practical access.</p>
           </div>
         </div>
 

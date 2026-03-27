@@ -36,7 +36,7 @@ export function HeroSection({ hero, heroOffset }) {
         <aside className="heroSection__panel" data-reveal>
           <div className="heroSection__panelTop">
             <p>Selected scope</p>
-            <strong>{hero.visualNotes[1]?.value}</strong>
+            <span className="heroSection__scope">Fence installs, gates, and exterior upgrades.</span>
           </div>
 
           <div className="heroSection__features">

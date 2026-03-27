@@ -9,7 +9,7 @@ export function StorySection({ business, hero, story }) {
 
         <div className="storySection__summary" data-reveal>
           <p>
-            The right perimeter upgrade should sharpen the frontage, improve privacy, and make gate access feel smoother.
+            Sharper frontage, better privacy, smoother gate access.
           </p>
           <ButtonLink href={business.phoneHref} variant="text">
             Call {business.phoneDisplay}
