@@ -65,3 +65,22 @@ export const QuoteIcon = createIcon(
     <path d="M20 7h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3V7Z" />
   </>,
 );
+
+export const StarIcon = createIcon(
+  <>
+    <path d="m12 3 2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8L12 3Z" />
+  </>,
+);
+
+export const ClockIcon = createIcon(
+  <>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M12 7v5l3 2" />
+  </>,
+);
+
+export const CheckIcon = createIcon(
+  <>
+    <path d="m5 12 4.2 4.2L19 6.5" />
+  </>,
+);

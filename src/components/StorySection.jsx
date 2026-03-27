@@ -1,17 +1,59 @@
-import { SectionTitle } from "./ui";
+import { ArrowIcon, CheckIcon, StarIcon } from "./icons";
+import { ButtonLink, SectionTitle } from "./ui";
 
-export function StorySection({ story }) {
+export function StorySection({ business, hero, story }) {
   return (
-    <section className="storySection" id="about">
-      <div className="storySection__grid">
+    <section className="storySection sectionShell" id="about">
+      <div className="storySection__intro">
         <SectionTitle eyebrow={story.eyebrow} title={story.title} body={story.intro} />
-        <div className="storySection__points">
+
+        <div className="storySection__summary" data-reveal>
+          <p>
+            The right perimeter upgrade should sharpen the frontage, improve privacy, and make gate access feel smoother
+            from the first walkthrough to the finished install.
+          </p>
+          <ButtonLink href={business.phoneHref} variant="text">
+            Call {business.phoneDisplay}
+          </ButtonLink>
+        </div>
+      </div>
+
+      <div className="storySection__grid">
+        <div className="storySection__imageWrap" data-reveal>
+          <img src={hero.secondaryImage.src} alt={hero.secondaryImage.alt} />
+          <div className="storySection__floatingNote">
+            <StarIcon />
+            <div>
+              <span>Local service, premium feel</span>
+              <strong>Built for homeowners who want the property to feel finished from the street.</strong>
+            </div>
+          </div>
+        </div>
+
+        <div className="storySection__content">
           {story.points.map((point) => (
             <article key={point.title} className="storyPoint" data-reveal>
-              <h3>{point.title}</h3>
-              <p>{point.body}</p>
+              <div className="storyPoint__icon">
+                <CheckIcon />
+              </div>
+              <div>
+                <h3>{point.title}</h3>
+                <p>{point.body}</p>
+              </div>
             </article>
           ))}
+
+          <div className="storySection__cred" data-reveal>
+            <div className="storySection__credHeader">
+              <p>Service rhythm</p>
+              <ArrowIcon />
+            </div>
+            <strong>{business.location}</strong>
+            <p>
+              Estimates, installs, and gate work across the Inland Empire with a calmer process and stronger final
+              frontage.
+            </p>
+          </div>
         </div>
       </div>
     </section>

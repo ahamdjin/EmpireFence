@@ -1,3 +1,4 @@
+import { PhoneIcon } from "./icons";
 import { ButtonLink } from "./ui";
 
 export function Header({ business, navigation, menuOpen, setMenuOpen, isScrolled }) {
@@ -24,15 +25,22 @@ export function Header({ business, navigation, menuOpen, setMenuOpen, isScrolled
         </button>
 
         <nav className={`siteNav ${menuOpen ? "is-open" : ""}`}>
-          {navigation.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
-              {item.label}
-            </a>
-          ))}
-          <ButtonLink href={business.phoneHref} variant="ghost">
-            Call
+          <div className="siteNav__links">
+            {navigation.map((item) => (
+              <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+          <a className="siteHeader__contact" href={business.phoneHref} onClick={() => setMenuOpen(false)}>
+            <PhoneIcon />
+            <span>{business.phoneDisplay}</span>
+          </a>
+
+          <ButtonLink href="#estimate" className="siteHeader__cta" onClick={() => setMenuOpen(false)}>
+            Get estimate
           </ButtonLink>
-          <ButtonLink href="#booking">Book</ButtonLink>
         </nav>
       </div>
     </header>

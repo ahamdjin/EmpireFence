@@ -1,56 +1,75 @@
-import { CompassIcon, GateIcon, ShieldIcon } from "./icons";
-import { ButtonLink, IconBadge } from "./ui";
+import { ClockIcon, CompassIcon, GateIcon } from "./icons";
+import { ButtonLink } from "./ui";
 
-const heroIcons = [ShieldIcon, GateIcon, CompassIcon];
+const featureIcons = [GateIcon, CompassIcon, ClockIcon];
 
 export function HeroSection({ hero, heroOffset }) {
   return (
     <section className="heroSection">
-      <div className="heroSection__glow heroSection__glow--left" />
-      <div className="heroSection__glow heroSection__glow--right" />
-      <div className="heroSection__grid">
-        <div className="heroSection__copy" data-reveal>
+      <div className="heroBackdrop" style={{ "--hero-shift": `${heroOffset}px` }}>
+        <img src={hero.primaryImage.src} alt={hero.primaryImage.alt} />
+      </div>
+
+      <div className="heroSection__overlay" />
+
+      <div className="heroSection__inner">
+        <div className="heroSection__content" data-reveal>
           <p className="eyebrow eyebrow--light">{hero.eyebrow}</p>
-          <h1>
-            {hero.title.map((line) => (
-              <span key={line}>{line}</span>
-            ))}
-          </h1>
+          <div className="heroSection__headline">
+            <p className="heroSection__kicker">Premium installation for homes, frontage, and gates</p>
+            <h1>
+              {hero.title.map((line) => (
+                <span key={line}>{line}</span>
+              ))}
+            </h1>
+          </div>
           <p className="heroSection__lede">{hero.lede}</p>
+
           <div className="heroSection__actions">
             <ButtonLink href={hero.primaryCta.href}>{hero.primaryCta.label}</ButtonLink>
-            <ButtonLink href={hero.secondaryCta.href} variant="text">
+            <ButtonLink href={hero.secondaryCta.href} variant="ghost">
               {hero.secondaryCta.label}
             </ButtonLink>
           </div>
-          <div className="heroSection__highlights">
-            {hero.highlights.map((item, index) => (
-              <IconBadge key={item} icon={heroIcons[index]} label="Included" value={item} />
+        </div>
+
+        <aside className="heroSection__panel" data-reveal>
+          <div className="heroSection__panelTop">
+            <p>Selected scope</p>
+            <strong>{hero.visualNotes[1]?.value}</strong>
+          </div>
+
+          <div className="heroSection__features">
+            {hero.highlights.map((item, index) => {
+              const Icon = featureIcons[index] ?? GateIcon;
+
+              return (
+                <article key={item} className="heroFeature">
+                  <div className="heroFeature__icon">
+                    <Icon />
+                  </div>
+                  <p>{item}</p>
+                </article>
+              );
+            })}
+          </div>
+
+          <div className="heroSection__panelBottom">
+            {hero.facts.map((fact) => (
+              <article key={fact.label}>
+                <strong>{fact.value}</strong>
+                <span>{fact.label}</span>
+              </article>
             ))}
           </div>
-        </div>
-
-        <div className="heroStage" data-reveal style={{ "--hero-offset": `${heroOffset}px` }}>
-          <div className="heroStage__frame heroStage__frame--primary">
-            <img src={hero.primaryImage.src} alt={hero.primaryImage.alt} />
-          </div>
-          <div className="heroStage__frame heroStage__frame--secondary">
-            <img src={hero.secondaryImage.src} alt={hero.secondaryImage.alt} />
-          </div>
-          {hero.visualNotes.map((note, index) => (
-            <article key={note.label} className={`heroNote heroNote--${index === 0 ? "top" : "bottom"}`}>
-              <span>{note.label}</span>
-              <strong>{note.value}</strong>
-            </article>
-          ))}
-        </div>
+        </aside>
       </div>
 
-      <div className="heroStats" data-reveal>
-        {hero.facts.map((fact) => (
-          <article key={fact.label} className="heroStats__card">
-            <strong>{fact.value}</strong>
-            <span>{fact.label}</span>
+      <div className="heroRail" data-reveal>
+        {hero.visualNotes.map((note) => (
+          <article key={note.label}>
+            <span>{note.label}</span>
+            <strong>{note.value}</strong>
           </article>
         ))}
       </div>

@@ -4,35 +4,36 @@ import { SectionTitle } from "./ui";
 export function ProofSection({ proof }) {
   return (
     <section className="proofSection">
-      <div className="proofSection__grid">
-        <div>
-          <SectionTitle eyebrow={proof.eyebrow} title={proof.title} />
-          <div className="proofCards">
+      <div className="sectionShell proofSection__inner">
+        <div className="proofSection__top">
+          <SectionTitle eyebrow={proof.eyebrow} title={proof.title} tone="light" />
+
+          <article className="proofQuote" data-reveal>
+            <QuoteIcon />
+            <blockquote>{proof.testimonial.quote}</blockquote>
+            <p>{proof.testimonial.source}</p>
+          </article>
+        </div>
+
+        <div className="proofSection__grid">
+          <div className="proofSteps" data-reveal>
+            {proof.process.map((step, index) => (
+              <article key={step}>
+                <span>0{index + 1}</span>
+                <p>{step}</p>
+              </article>
+            ))}
+          </div>
+
+          <div className="proofDifferentiators">
             {proof.differentiators.map((item) => (
-              <article key={item.title} className="proofCard" data-reveal>
+              <article key={item.title} data-reveal>
                 <h3>{item.title}</h3>
                 <p>{item.copy}</p>
               </article>
             ))}
           </div>
         </div>
-
-        <aside className="proofAside" data-reveal>
-          <div className="proofAside__quote">
-            <QuoteIcon />
-            <blockquote>{proof.testimonial.quote}</blockquote>
-            <span>{proof.testimonial.source}</span>
-          </div>
-
-          <div className="proofAside__process">
-            {proof.process.map((step, index) => (
-              <article key={step}>
-                <strong>{`0${index + 1}`}</strong>
-                <p>{step}</p>
-              </article>
-            ))}
-          </div>
-        </aside>
       </div>
     </section>
   );

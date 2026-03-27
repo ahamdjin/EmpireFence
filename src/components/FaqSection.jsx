@@ -2,18 +2,20 @@ import { SectionTitle } from "./ui";
 
 export function FaqSection({ faqs }) {
   return (
-    <section className="faqSection" id="faq">
-      <SectionTitle
-        eyebrow="FAQ"
-        title="Local questions answered without turning the site into a wall of text."
-        body="Keep the buying path easy to trust. Keep the answers short enough to scan."
-      />
+    <section className="faqSection sectionShell" id="faq">
+      <div className="faqSection__intro">
+        <SectionTitle
+          eyebrow="Questions"
+          title="What customers usually ask before booking."
+          body="Clear answers first, then a faster estimate once the property scope makes sense."
+        />
+      </div>
 
-      <div className="faqList">
-        {faqs.map((faq, index) => (
-          <details key={faq.question} className="faqItem" data-reveal open={index === 0}>
-            <summary>{faq.question}</summary>
-            <p>{faq.answer}</p>
+      <div className="faqSection__list">
+        {faqs.map((item) => (
+          <details key={item.question} className="faqItem" data-reveal>
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
           </details>
         ))}
       </div>

@@ -1,3 +1,4 @@
+import { MailIcon, PhoneIcon } from "./icons";
 import { ButtonLink, SectionTitle } from "./ui";
 
 export function EstimateSection({
@@ -10,86 +11,88 @@ export function EstimateSection({
 }) {
   return (
     <section className="estimateSection" id="estimate">
-      <SectionTitle eyebrow={estimate.eyebrow} title={estimate.title} tone="light" />
+      <div className="sectionShell estimateSection__inner">
+        <div className="estimateSection__copy">
+          <SectionTitle eyebrow={estimate.eyebrow} title={estimate.title} tone="light" />
 
-      <div className="estimateSection__grid">
-        <article className="estimatePanel estimatePanel--form" data-reveal>
-          <div className="panelIntro">
-            <p>Quote request</p>
-            <strong>{estimate.quoteTitle}</strong>
+          <div className="estimateSection__contactList" data-reveal>
+            {estimate.contactPoints.map((item) => (
+              <a key={item.label} href={item.href}>
+                <span>{item.label}</span>
+                <strong>{item.value}</strong>
+              </a>
+            ))}
           </div>
 
-          <form className="estimateForm" action={quoteMailto} method="post">
-            <div className="estimateForm__grid">
+          <form className="quoteCard" data-reveal>
+            <div className="quoteCard__header">
+              <h3>{estimate.quoteTitle}</h3>
+              <p>Send the scope by email now, then use the live calendar if you want to move faster.</p>
+            </div>
+
+            <div className="quoteCard__grid">
               <label>
                 <span>Name</span>
-                <input name="name" type="text" value={quoteForm.name} onChange={onInputChange} placeholder="Your name" />
+                <input name="name" value={quoteForm.name} onChange={onInputChange} placeholder="Your name" />
               </label>
               <label>
                 <span>Phone</span>
-                <input name="phone" type="tel" value={quoteForm.phone} onChange={onInputChange} placeholder="Phone" />
+                <input name="phone" value={quoteForm.phone} onChange={onInputChange} placeholder={business.phoneDisplay} />
               </label>
               <label>
                 <span>Email</span>
-                <input name="email" type="email" value={quoteForm.email} onChange={onInputChange} placeholder="Email" />
+                <input name="email" type="email" value={quoteForm.email} onChange={onInputChange} placeholder={business.email} />
               </label>
               <label>
                 <span>Service</span>
                 <select name="service" value={quoteForm.service} onChange={onInputChange}>
-                  <option value="">Select</option>
-                  <option value="Wrought iron">Wrought iron</option>
-                  <option value="Vinyl / Wood">Vinyl / Wood</option>
+                  <option value="">Select a service</option>
+                  <option value="Wrought iron fencing">Wrought iron fencing</option>
+                  <option value="Vinyl or wood fencing">Vinyl or wood fencing</option>
                   <option value="Chain link">Chain link</option>
-                  <option value="Gate work">Gate work</option>
-                  <option value="Exterior add-ons">Exterior add-ons</option>
+                  <option value="Gates">Gates</option>
+                  <option value="Exterior scope">Exterior scope</option>
                 </select>
+              </label>
+              <label className="quoteCard__full">
+                <span>Project details</span>
+                <textarea
+                  name="details"
+                  value={quoteForm.details}
+                  onChange={onInputChange}
+                  rows="5"
+                  placeholder="Address, fence type, gates, timing, and anything else useful."
+                />
               </label>
             </div>
 
-            <label>
-              <span>Project details</span>
-              <textarea
-                name="details"
-                rows="5"
-                value={quoteForm.details}
-                onChange={onInputChange}
-                placeholder="Property, rough scope, and anything that matters."
-              />
-            </label>
-
-            <button type="submit" className="buttonLink buttonLink--primary buttonLink--button">
-              <span>Send request</span>
-            </button>
+            <div className="quoteCard__actions">
+              <ButtonLink href={quoteMailto}>
+                <MailIcon />
+                <span>Email request</span>
+              </ButtonLink>
+              <ButtonLink href={business.phoneHref} variant="secondary">
+                <PhoneIcon />
+                <span>Call now</span>
+              </ButtonLink>
+            </div>
           </form>
+        </div>
 
-          <div className="contactRail">
-            {estimate.contactPoints.map((point) => (
-              <a key={point.label} href={point.href} target={point.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer">
-                <span>{point.label}</span>
-                <strong>{point.value}</strong>
-              </a>
-            ))}
-          </div>
-        </article>
-
-        <article className="estimatePanel estimatePanel--booking" data-reveal id="booking">
-          <div className="panelIntro panelIntro--light">
-            <p>Book directly</p>
+        <div className="bookingPanel" id="booking" data-reveal>
+          <div className="bookingPanel__intro">
+            <span>Live calendar</span>
             <strong>{estimate.bookingTitle}</strong>
           </div>
-          <div className="bookingFrame">
+          <div className="bookingPanel__frame">
             <iframe
               src={bookingWidget.iframeSrc}
-              title="Book an Empire Fence appointment"
               id={bookingWidget.iframeId}
-              style={{ width: "100%", border: "none", overflow: "hidden" }}
+              title="Empire Fence booking calendar"
               scrolling="no"
             />
           </div>
-          <ButtonLink href={business.phoneHref} variant="ghost" className="bookingCallout">
-            Prefer to talk first? Call {business.phoneDisplay}
-          </ButtonLink>
-        </article>
+        </div>
       </div>
     </section>
   );

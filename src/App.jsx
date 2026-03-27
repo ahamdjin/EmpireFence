@@ -97,7 +97,7 @@ export default function App() {
 
       <main id="top">
         <HeroSection hero={hero} heroOffset={heroOffset} />
-        <StorySection story={story} />
+        <StorySection business={business} hero={hero} story={story} />
         <ServicesSection services={services} />
         <GallerySection gallery={gallery} />
         <ProofSection proof={proof} />
