@@ -28,25 +28,23 @@ export const bookingWidget = {
 };
 
 export const navigation = [
-  { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Work", href: "#gallery" },
-  { label: "Coverage", href: "#coverage" },
   { label: "Quote", href: "#estimate" },
   { label: "FAQ", href: "#faq" },
 ];
 
 export const hero = {
   eyebrow: "Fence and gate contractor / Inland Empire",
-  title: ["Perimeter work", "that feels", "resolved."],
+  title: ["Fence work", "that looks", "finished."],
   lede:
-    "Empire Fence installs wrought iron, vinyl, wood, chain link, and gate systems with cleaner lines, stronger frontage, and less project drag.",
+    "Wrought iron, wood, vinyl, chain link, and gates built with cleaner lines and faster communication.",
   primaryCta: { label: "Start the estimate", href: "#estimate" },
   secondaryCta: { label: "View selected work", href: "#gallery" },
   facts: [
-    { value: "40+", label: "years in the field" },
+    { value: "40+", label: "years" },
     { value: "Free", label: "estimates" },
-    { value: "Inland Empire", label: "service area" },
+    { value: "Local", label: "service area" },
   ],
   highlights: [
     "Wrought iron, vinyl, wood, chain link, and gates",
@@ -69,19 +67,16 @@ export const hero = {
 
 export const story = {
   eyebrow: "Why Empire Fence",
-  title: "Built for stronger lines, smoother gate function, and a cleaner street view.",
-  intro:
-    "Empire Fence handles fence installs, gates, and related exterior scope so the finished perimeter feels clean instead of pieced together.",
+  title: "Built for stronger lines and smoother gate function.",
+  intro: "Fence installs, gates, and exterior work that feel clean from the street.",
   points: [
     {
       title: "Fence first. Exterior scope if needed.",
-      body:
-        "Vinyl, wood, chain link, wrought iron, gates, and the exterior upgrades that keep the final perimeter result coherent.",
+      body: "Fence, gates, and exterior scope handled as one plan.",
     },
     {
       title: "Cleaner line work and less project drag.",
-      body:
-        "Straighter runs, stronger gate alignment, quicker answers, and a finish that still reads clean later.",
+      body: "Straighter runs, cleaner alignment, quicker answers.",
     },
   ],
 };
@@ -91,9 +86,8 @@ export const services = [
     id: "wrought-iron",
     number: "01",
     title: "Wrought iron fencing",
-    copy:
-      "Decorative frontage, stronger security presence, and gate pairings that make the property read more intentional from the street.",
-    detail: "Best for curb appeal and visible perimeter work.",
+    copy: "Decorative frontage and stronger street presence.",
+    detail: "Curb appeal and visible perimeter work.",
     image: "/images/hero-fence.jpg",
     chips: ["Frontage", "Decorative security", "Custom gates"],
     tone: "dark",
@@ -102,9 +96,8 @@ export const services = [
     id: "vinyl-wood",
     number: "02",
     title: "Vinyl and wood fencing",
-    copy:
-      "Residential privacy installs built around clean lines, durable material choices, and a calmer finished look.",
-    detail: "A good fit when enclosure, maintenance, and appearance all matter.",
+    copy: "Residential privacy installs with a calmer finished look.",
+    detail: "Privacy, maintenance, and appearance.",
     image: "/images/detail-fence.jpg",
     chips: ["Privacy", "Residential", "Low maintenance"],
     tone: "light",
@@ -113,9 +106,8 @@ export const services = [
     id: "chain-link",
     number: "03",
     title: "Chain link and perimeter control",
-    copy:
-      "Practical lot coverage, utility edges, and commercial boundary work where function and access matter first.",
-    detail: "Built for faster installation and straightforward perimeter control.",
+    copy: "Practical lot coverage and commercial boundary work.",
+    detail: "Fast installation and straightforward perimeter control.",
     image: "/images/hero-fence.jpg",
     chips: ["Commercial", "Utility zones", "Fast coverage"],
     tone: "light",
@@ -124,9 +116,8 @@ export const services = [
     id: "gates-exterior",
     number: "04",
     title: "Gates and exterior scope",
-    copy:
-      "Manual and automatic gates, repair and alignment work, plus turf, walls, patios, and related exterior upgrades.",
-    detail: "Useful when the perimeter needs to be solved as one coordinated scope.",
+    copy: "Manual and automatic gates plus related exterior upgrades.",
+    detail: "One coordinated scope.",
     image: "/images/detail-fence.jpg",
     chips: ["Access", "Walls + patios", "Full perimeter scope"],
     tone: "accent",
@@ -166,19 +157,19 @@ export const gallery = [
 
 export const proof = {
   eyebrow: "Why the work closes",
-  title: "Cleaner process. Better trust. Less friction.",
+  title: "Cleaner process. Less friction.",
   differentiators: [
     {
       title: "Faster communication",
-      copy: "Quick answers, clearer scope, and less drift once the job starts.",
+      copy: "Quick answers and clearer scope.",
     },
     {
       title: "Field-tested judgment",
-      copy: "Material and layout decisions improve when the crew already knows the tricky version of the work.",
+      copy: "Better material and layout decisions in the field.",
     },
     {
       title: "Finish that still reads clean later",
-      copy: "Gate alignment, corners, transitions, and edge control are treated as part of the work, not leftovers.",
+      copy: "Gate alignment and finish detail treated as part of the job.",
     },
   ],
   testimonial: {
@@ -196,8 +187,7 @@ export const proof = {
 export const coverage = {
   eyebrow: "Coverage",
   title: "Jurupa Valley base. Inland Empire reach.",
-  body:
-    "If the property sits in or around the Inland Empire, the scope can usually be reviewed quickly.",
+  body: "Quick review for nearby projects.",
   areas: [
     "Jurupa Valley",
     "Riverside",
@@ -216,9 +206,9 @@ export const coverage = {
 
 export const estimate = {
   eyebrow: "Estimate / booking",
-  title: "Start with the scope. Book if timing works.",
-  quoteTitle: "Share enough detail to get the estimate moving.",
-  bookingTitle: "Live booking inside the site.",
+  title: "Start with the scope.",
+  quoteTitle: "Send the job details.",
+  bookingTitle: "Book a walkthrough.",
   contactPoints: [
     { label: "Call", value: business.phoneDisplay, href: business.phoneHref },
     { label: "Email", value: business.email, href: business.emailHref },
@@ -229,27 +219,22 @@ export const estimate = {
 export const faqs = [
   {
     question: "What fence types do you install?",
-    answer:
-      "Empire Fence handles wrought iron, vinyl, wood, chain link, gate work, and select exterior upgrades tied to the perimeter project.",
+    answer: "Wrought iron, vinyl, wood, chain link, gates, and related exterior work.",
   },
   {
     question: "Do you provide free estimates?",
-    answer:
-      "Yes. The current business positioning is built around direct quote requests and free estimates.",
+    answer: "Yes. Free estimates are available.",
   },
   {
     question: "Can you handle residential and commercial work?",
-    answer:
-      "Yes. The business presents itself for residential, commercial, education, and industrial property work across the Inland Empire.",
+    answer: "Yes. Residential and commercial projects are both handled.",
   },
   {
     question: "Do you only build fences?",
-    answer:
-      "No. Gates, walls, patios, turf, and surrounding exterior work can stay inside the same overall scope when needed.",
+    answer: "No. Gates and related exterior work can be included when needed.",
   },
   {
     question: "Is there warranty coverage?",
-    answer:
-      "The current business messaging references a one-year warranty. Exact warranty detail should be confirmed during the estimate for the specific project.",
+    answer: "Warranty details can be confirmed during the estimate.",
   },
 ];

@@ -1,4 +1,4 @@
-export function Footer({ business, navigation, services }) {
+export function Footer({ business, navigation }) {
   return (
     <footer className="siteFooter">
       <div className="sectionShell siteFooter__inner">
@@ -6,9 +6,7 @@ export function Footer({ business, navigation, services }) {
           <img src="/images/logo.png" alt={`${business.name} logo`} />
           <div>
             <strong>{business.name}</strong>
-            <p>
-              Wrought iron, wood, vinyl, chain link, gates, and exterior upgrades across Jurupa Valley and the Inland Empire.
-            </p>
+            <p>Jurupa Valley and the Inland Empire.</p>
           </div>
         </div>
 
@@ -19,13 +17,6 @@ export function Footer({ business, navigation, services }) {
               <a key={item.href} href={item.href}>
                 {item.label}
               </a>
-            ))}
-          </div>
-
-          <div data-reveal>
-            <span>Services</span>
-            {services.map((service) => (
-              <p key={service.id}>{service.title}</p>
             ))}
           </div>
 

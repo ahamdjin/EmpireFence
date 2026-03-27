@@ -15,19 +15,10 @@ export function EstimateSection({
         <div className="estimateSection__copy">
           <SectionTitle eyebrow={estimate.eyebrow} title={estimate.title} tone="light" />
 
-          <div className="estimateSection__contactList" data-reveal>
-            {estimate.contactPoints.map((item) => (
-              <a key={item.label} href={item.href}>
-                <span>{item.label}</span>
-                <strong>{item.value}</strong>
-              </a>
-            ))}
-          </div>
-
           <form className="quoteCard" data-reveal>
             <div className="quoteCard__header">
               <h3>{estimate.quoteTitle}</h3>
-              <p>Send the scope by email, or book directly.</p>
+              <p>Email the job, or book directly.</p>
             </div>
 
             <div className="quoteCard__grid">

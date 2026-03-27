@@ -6,8 +6,8 @@ export function ServicesSection({ services }) {
       <div className="servicesSection__intro">
         <SectionTitle
           eyebrow="Services"
-          title="Fence and gate work for privacy, access, and curb appeal."
-          body="Clear service categories for the work people actually ask for."
+          title="Services people actually ask for."
+          body="Fence, gates, privacy, and curb appeal."
         />
       </div>
 
@@ -25,7 +25,7 @@ export function ServicesSection({ services }) {
 
             <div className="serviceCard__body">
               <h3>{service.title}</h3>
-              <p>{service.copy}</p>
+              <p>{service.detail}</p>
 
               <div className="serviceCard__chips">
                 {service.chips.map((chip) => (

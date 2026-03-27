@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useState } from "react";
-import { CoverageSection } from "./components/CoverageSection";
 import { EstimateSection } from "./components/EstimateSection";
 import { FaqSection } from "./components/FaqSection";
 import { Footer } from "./components/Footer";
@@ -8,12 +7,10 @@ import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
 import { ProofSection } from "./components/ProofSection";
 import { ServicesSection } from "./components/ServicesSection";
-import { StorySection } from "./components/StorySection";
 import {
   bookingWidget,
   business,
   chatWidget,
-  coverage,
   estimate,
   faqs,
   gallery,
@@ -21,7 +18,6 @@ import {
   navigation,
   proof,
   services,
-  story,
 } from "./content/siteContent";
 import { usePageEffects } from "./hooks/usePageEffects";
 
@@ -97,11 +93,9 @@ export default function App() {
 
       <main id="top">
         <HeroSection hero={hero} heroOffset={heroOffset} />
-        <StorySection business={business} hero={hero} story={story} />
         <ServicesSection services={services} />
         <GallerySection gallery={gallery} />
         <ProofSection proof={proof} />
-        <CoverageSection coverage={coverage} business={business} />
         <EstimateSection
           business={business}
           bookingWidget={bookingWidget}
@@ -113,7 +107,7 @@ export default function App() {
         <FaqSection faqs={faqs} />
       </main>
 
-      <Footer business={business} navigation={navigation} services={services} />
+      <Footer business={business} navigation={navigation} />
     </div>
   );
 }

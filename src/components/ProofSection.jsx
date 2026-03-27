@@ -24,15 +24,6 @@ export function ProofSection({ proof }) {
               </article>
             ))}
           </div>
-
-          <div className="proofDifferentiators">
-            {proof.differentiators.map((item) => (
-              <article key={item.title} data-reveal>
-                <h3>{item.title}</h3>
-                <p>{item.copy}</p>
-              </article>
-            ))}
-          </div>
         </div>
       </div>
     </section>
