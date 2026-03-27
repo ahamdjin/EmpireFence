@@ -45,8 +45,8 @@ const heroStats = [
 ];
 
 const introParagraphs = [
-  "Empire Fence Inc. offers a comprehensive range of top-quality fencing and outdoor installation solutions in Jurupa Valley CA to meet the diverse needs of our clients. We provide solutions to fit every style and budget, ranging from sturdy vinyl fences to traditional wood fences, adaptable chain link fences to exquisite wrought iron fences. Our skilled team is adept in tailoring solutions to each project's particular requirements, guaranteeing a flawless fit and smooth integration with your home.",
-  "In addition to our wide selection of fencing options, we also provide expert installation services for turf, cinder block walls, driveways, and patios, helping you transform your outdoor space into a functional and inviting retreat. Empire Fence Inc.'s rigorous attention to detail, unshakable devotion to quality, and unwavering dedication to customer satisfaction make us your dependable partner for all your fence and outdoor installation needs. Let us help you bring your vision to life and create the outdoor oasis you've always dreamed of.",
+  "Empire Fence Inc. handles the work people call for most: privacy fences, frontage upgrades, chain link runs, gates, and cleaner perimeter control for residential and commercial properties.",
+  "The scope can extend beyond fencing too. Turf, cinder block walls, driveways, and patios let the project finish as one coordinated exterior upgrade instead of a patchwork of separate contractors.",
 ];
 
 const proofCards = [
@@ -64,48 +64,46 @@ const proofCards = [
 
 const testimonials = [
   {
-    quote:
-      "I had been trying to contact a fence company for over 2 months and no one was returning my calls. I spoke to George, got an estimate the same day, and the work was scheduled and completed within days.",
-    source: "Customer review",
+    quote: "I spoke to George, got an estimate the same day, and the work was scheduled and completed within days.",
+    source: "Yelp review",
   },
   {
     quote: "Works well with all situations. Fence came out gorgeous.",
-    source: "Customer review",
+    source: "Google review",
   },
   {
-    quote:
-      "George was quick to answer questions, very professional, and the crew did a great job. We are very happy with the results.",
-    source: "Customer review",
+    quote: "George was quick to answer questions, very professional, and the crew did a great job.",
+    source: "Google review",
   },
 ];
 
 const services = [
-  { title: "Vinyl Fence", description: "Low-maintenance privacy and clean exterior lines." },
-  { title: "Chain Link Fence", description: "Straightforward security coverage for yards and lots." },
-  { title: "Wrought Iron Fence", description: "Decorative strength for front elevation and gate lines." },
-  { title: "Wood Fence", description: "Classic backyard enclosure with flexible finish options." },
-  { title: "Custom Fence", description: "Project-specific layouts shaped around the property." },
-  { title: "Turf Installation", description: "Low-upkeep outdoor surfaces with a cleaner finish." },
-  { title: "Cinder Block Walls", description: "Hard boundary work for privacy, structure, and edge control." },
-  { title: "Driveways and Patios", description: "Concrete and hardscape work that finishes the full exterior." },
+  { title: "Vinyl Fence", description: "Privacy-driven installs with a clean, low-maintenance finish." },
+  { title: "Chain Link Fence", description: "Practical perimeter coverage for homes, lots, and commercial edges." },
+  { title: "Wrought Iron Fence", description: "Decorative security for frontage, gates, and higher-visibility elevations." },
+  { title: "Wood Fence", description: "Classic backyard enclosure with room for custom height and finish." },
+  { title: "Custom Fence", description: "Layouts shaped around slope, access, frontage, and property-specific constraints." },
+  { title: "Turf Installation", description: "Cleaner outdoor surfaces that reduce maintenance and improve presentation." },
+  { title: "Cinder Block Walls", description: "Stronger privacy and structural edge control where fencing alone is not enough." },
+  { title: "Driveways and Patios", description: "Hardscape work that completes the full outdoor scope in one pass." },
 ];
 
 const reasons = [
   {
     title: "Expertise and experience",
-    body: "Bringing a plethora of experience to every project, Empire Fence Inc. has years of experience in the fence sector. Our team consists of skilled professionals who have a deep understanding of various fencing materials, installation techniques, and design trends. Whether you're looking for a simple chain link fence or a custom wrought iron masterpiece, our experience ensures that your project is completed to the highest standards of quality and craftsmanship.",
+    body: "Years in the field means better material decisions, cleaner layouts, and fewer surprises once the install starts.",
   },
   {
     title: "Personalized service",
-    body: "At Empire Fence Inc., we believe in providing personalized service tailored to each client's specific needs and preferences. From the initial consultation to the final installation, our team takes the time to understand your vision, budget, and timeline, ensuring that every aspect of your project is executed exactly as you envision. Our objective is to build long-lasting relationships with our clients by being transparent, trustworthy, and providing excellent service.",
+    body: "The team works around your property, budget, and priorities instead of pushing a one-size-fits-all package.",
   },
   {
     title: "Quality materials and workmanship",
-    body: "Whether it's premium vinyl fencing, sturdy chain link fencing, or elegant wrought iron designs, we source materials from trusted suppliers and utilize advanced techniques to deliver superior results. Our attention to detail and commitment to excellence guarantee that your fence will not only enhance the aesthetics of your property but also provide reliable security and protection for years to come.",
+    body: "Material quality, straight lines, gate alignment, and finish detail matter because the install has to hold up and still look right later.",
   },
   {
     title: "Customer satisfaction guaranteed",
-    body: "We strive to go above and beyond our client's expectations with each job and stand behind the work we do. From the time you get in touch with us until your installation is finished, we're committed to making the process easy and stress-free for you. We intend to fulfill your expectations and then some, so that you are happy with the finished product.",
+    body: "Clear communication and dependable follow-through matter just as much as the install itself.",
   },
 ];
 
@@ -339,10 +337,9 @@ function App() {
           <div className="wrap heroStudio__grid">
             <div className="heroStudio__copy">
               <p className="eyebrow">Jurupa Valley fence contractor</p>
-              <h1>Clean installs for frontage, privacy, and perimeter control.</h1>
+              <h1>Fence and gate work with a cleaner finish.</h1>
               <p>
-                Empire Fence Inc. delivers fence, gate, and outdoor installation work that improves curb appeal,
-                sharpens security, and gives the property a more finished edge.
+                Privacy, security, frontage upgrades, and outdoor installation work across Jurupa Valley and nearby Inland Empire cities.
               </p>
               <div className="heroStudio__actions">
                 <a className="primaryButton" href="#estimate">
@@ -375,14 +372,14 @@ function App() {
         <section className="storyBand" id="about">
           <div className="wrap storyBand__grid">
             <div className="storyBand__copy">
-              <SectionLead eyebrow="About Empire Fence" title="Reliable fencing and outdoor installation solutions in Jurupa Valley." />
+              <SectionLead eyebrow="About Empire Fence" title="Built for properties that need cleaner lines, stronger coverage, and less back-and-forth." />
               {introParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
 
             <form className="quotePanel quotePanel--light" onSubmit={submitQuick}>
-              <SectionLead eyebrow="Quick estimate" title="Start with the basics." copy="Name, address, and scope is enough to get the conversation moving." />
+              <SectionLead eyebrow="Quick estimate" title="Get pricing started." copy="A few project basics are enough for the team to review the scope and follow up." />
               <div className="fieldMatrix">
                 <label><span>First name</span><input name="firstName" value={quickForm.firstName} onChange={handleQuickChange} required /></label>
                 <label><span>Last name</span><input name="lastName" value={quickForm.lastName} onChange={handleQuickChange} required /></label>
@@ -401,7 +398,7 @@ function App() {
 
         <section className="proofStudio">
           <div className="wrap">
-            <SectionLead eyebrow="Customer reviews" title="Local proof that carries the next call." centered />
+            <SectionLead eyebrow="Customer reviews" title="The kind of feedback that makes the next call easier." centered />
             <div className="proofStudio__grid">
               {proofCards.map((item) => (
                 <article key={item.title} className="proofTile">
@@ -432,7 +429,7 @@ function App() {
         <section className="serviceStudio" id="services">
           <div className="wrap serviceStudio__grid">
             <div className="serviceStudio__lead">
-              <SectionLead eyebrow="Services" title="Fence and outdoor work packaged around the jobs people actually need done." copy="Privacy, security, frontage upgrades, gates, hardscape, and exterior finishing work handled under one contractor." />
+              <SectionLead eyebrow="Services" title="Core work, clearly scoped." copy="The offering stays simple: privacy, security, frontage upgrades, gates, and exterior improvements that can be handled under one contractor." />
             </div>
             <div className="serviceStudio__cards">
               {services.map((service, index) => (
@@ -448,7 +445,7 @@ function App() {
 
         <section className="reasonStudio">
           <div className="wrap reasonStudio__grid">
-            <SectionLead eyebrow="Why choose Empire Fence Inc." title="Experience, service, and cleaner project control." />
+            <SectionLead eyebrow="Why choose Empire Fence Inc." title="What clients are really buying is less friction." />
             <div className="reasonStudio__stack">
               {reasons.map((item, index) => (
                 <article key={item.title} className="reasonTile">
@@ -465,7 +462,7 @@ function App() {
 
         <section className="industryStudio">
           <div className="wrap">
-            <SectionLead eyebrow="Industries" title="Some industries we work with." centered />
+            <SectionLead eyebrow="Project types" title="Work that fits residential, commercial, education, and industrial sites." centered />
             <div className="industryStudio__grid">
               {industries.map((item) => (
                 <article key={item.title} className="industryTile">
@@ -481,8 +478,8 @@ function App() {
           <div className="wrap statementStudio__panel">
             <div>
               <p className="eyebrow">Premier provider</p>
-              <h2>Premier fence and outdoor solutions provider in Jurupa Valley, CA.</h2>
-              <p>Empire Fence Inc. stands as the premier fence and outdoor solutions provider in Jurupa Valley CA, committed to enhancing the functionality, security, and aesthetics of residential and commercial properties.</p>
+              <h2>Built to make the property feel more complete, more secure, and easier to manage.</h2>
+              <p>That is the value underneath the install: cleaner boundaries, stronger frontage, and fewer loose ends once the project is done.</p>
             </div>
             <a className="primaryButton" href="#estimate">Contact us</a>
           </div>
@@ -523,7 +520,7 @@ function App() {
 
         <section className="faqStudio" id="faq">
           <div className="wrap faqStudio__grid">
-            <SectionLead eyebrow="FAQ" title="Clear answers before you commit to the project." />
+            <SectionLead eyebrow="FAQ" title="Clear answers before the project moves forward." />
             <div className="faqStudio__list">
               {faqs.map((item) => (
                 <details key={item.question} className="faqCard">
@@ -559,7 +556,7 @@ function App() {
               <article className="contactStudio">
                 <p className="eyebrow">Contact</p>
                 <h3>Need clarity before you book?</h3>
-                <p>Whether you're unsure about the right fence type, timeline, or installation approach, our team can walk you through the options before the project starts.</p>
+                <p>If you are still comparing scope, timing, or material options, start here and the team can walk the job with you.</p>
                 <div className="contactStudio__stack">
                   <a href={BUSINESS.phoneHref}>{BUSINESS.phoneDisplay}</a>
                   <a href={BUSINESS.emailHref}>{BUSINESS.email}</a>
@@ -595,7 +592,7 @@ function App() {
             </div>
 
             <div className="closingStudio__booking" id="book">
-              <SectionLead eyebrow="Book a visit" title="Use the live calendar." copy="The fastest path is to hold a time and let the team confirm the visit details from there." />
+              <SectionLead eyebrow="Book a visit" title="Use the live calendar." copy="If you already know you want a walkthrough, hold a time and let the team confirm the visit details from there." />
               <div className="bookingStudio">
                 <iframe
                   src={BOOKING_WIDGET.iframeSrc}
