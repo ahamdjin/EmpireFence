@@ -34,6 +34,15 @@ const BOOKING_WIDGET = {
   scriptSrc: "https://link.msgsndr.com/js/form_embed.js",
 };
 
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
+  { label: "Areas", href: "#areas" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#estimate" },
+];
+
 const topContacts = [
   { label: COMPANY.phoneDisplay, href: COMPANY.phoneHref },
   { label: COMPANY.email, href: COMPANY.emailHref },
@@ -46,59 +55,65 @@ const socialLinks = [
   { label: "Google", href: COMPANY.google },
 ];
 
-const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Areas", href: "#areas" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#estimate" },
-];
-
 const introParagraphs = [
   "Empire Fence Inc. offers a comprehensive range of top-quality fencing and outdoor installation solutions in Jurupa Valley CA to meet the diverse needs of our clients. We provide solutions to fit every style and budget, ranging from sturdy vinyl fences to traditional wood fences, adaptable chain link fences to exquisite wrought iron fences. Our skilled team is adept in tailoring solutions to each project's particular requirements, guaranteeing a flawless fit and smooth integration with your home.",
   "In addition to our wide selection of fencing options, we also provide expert installation services for turf, cinder block walls, driveways, and patios, helping you transform your outdoor space into a functional and inviting retreat. Empire Fence Inc.'s rigorous attention to detail, unshakable devotion to quality, and unwavering dedication to customer satisfaction make us your dependable partner for all your fence and outdoor installation needs. Let us help you bring your vision to life and create the outdoor oasis you've always dreamed of.",
 ];
 
-const reviewSources = [
-  {
-    title: "Yelp",
-    body: "Local visibility, customer feedback, and a quick way to check trust signals before you call.",
-    href: COMPANY.yelp,
-  },
-  {
-    title: "Google",
-    body: "Directions, business details, and live profile visibility for homeowners searching nearby.",
-    href: COMPANY.google,
-  },
-  {
-    title: "Facebook",
-    body: "Project updates, business presence, and another local proof point for nearby customers.",
-    href: COMPANY.facebook,
-  },
-];
-
-const featuredServices = [
+const serviceHighlights = [
   {
     title: "Vinyl Fence",
-    image: "/images/empire-gallery-1.webp",
-    note: "Low-maintenance privacy fencing for clean, modern curb appeal.",
+    image: "/images/hero-fence.jpg",
+    copy: "Low-maintenance privacy lines with a cleaner finish and stronger long-term durability.",
   },
   {
     title: "Chain Link Fence",
-    image: "/images/empire-gallery-2.webp",
-    note: "Simple, durable perimeter control for homes, businesses, and utility spaces.",
+    image: "/images/detail-fence.jpg",
+    copy: "Reliable perimeter control for homes, commercial lots, and utility spaces.",
   },
 ];
 
 const services = [
-  { title: "Vinyl Fence", href: "#estimate" },
-  { title: "Chain Link Fence", href: "#estimate" },
-  { title: "Wrought Iron Fence", href: "#estimate" },
-  { title: "Wood Fence", href: "#estimate" },
-  { title: "Custom Fence", href: "#estimate" },
-  { title: "Turf Installation", href: "#estimate" },
-  { title: "Cinder Block Walls", href: "#estimate" },
-  { title: "Driveway and Patio", href: "#estimate" },
+  {
+    title: "Vinyl Fence",
+    description: "Privacy, perimeter definition, and low-maintenance exterior upgrades.",
+    image: "/images/empire-gallery-1.webp",
+  },
+  {
+    title: "Chain Link Fence",
+    description: "Straightforward security fencing for residential and commercial properties.",
+    image: "/images/empire-gallery-2.webp",
+  },
+  {
+    title: "Wrought Iron Fence",
+    description: "Decorative frontage with strength, visibility, and durable framing.",
+    image: "/images/hero-fence.jpg",
+  },
+  {
+    title: "Wood Fence",
+    description: "Classic backyard enclosure with custom height and style options.",
+    image: "/images/empire-gallery-3.webp",
+  },
+  {
+    title: "Custom Fence",
+    description: "Project-specific layouts built around the property and use case.",
+    image: "/images/empire-gallery-4.webp",
+  },
+  {
+    title: "Turf Installation",
+    description: "Low-upkeep outdoor surfaces that clean up the full yard presentation.",
+    image: "/images/empire-gallery-3.webp",
+  },
+  {
+    title: "Cinder Block Walls",
+    description: "Solid boundary work with privacy, structure, and long-term durability.",
+    image: "/images/empire-gallery-4.webp",
+  },
+  {
+    title: "Driveway and Patio",
+    description: "Concrete and hardscape work that ties the front and back exterior together.",
+    image: "/images/detail-fence.jpg",
+  },
 ];
 
 const reasons = [
@@ -120,7 +135,12 @@ const reasons = [
   },
 ];
 
-const industries = ["Residential", "Commercial", "Education", "Industry"];
+const industries = [
+  { title: "Residential", note: "Frontage, side yards, privacy, and family-safe outdoor spaces." },
+  { title: "Commercial", note: "Perimeter control, access points, and durable exterior boundary work." },
+  { title: "Education", note: "Property separation, controlled entry, and clean grounds presentation." },
+  { title: "Industry", note: "Functional fencing and durable site work for operational environments." },
+];
 
 const valuePoints = [
   { title: "Experience", body: "Over 40 years of experience" },
@@ -175,9 +195,26 @@ const footerServiceLinks = [
   { label: "Custom Fence", href: "#services" },
 ];
 
+function buildMailto(subject, fields) {
+  const body = fields.map(([label, value]) => `${label}: ${value || ""}`).join("\n");
+  return `mailto:${COMPANY.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
 function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [form, setForm] = useState({
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [topForm, setTopForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    city: "",
+    state: "",
+    zip: "",
+    message: "",
+  });
+  const [estimateForm, setEstimateForm] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -185,20 +222,40 @@ function App() {
     message: "",
   });
 
-  const mailtoHref = useMemo(() => {
-    const subject = "Free Estimate Request - Empire Fence Inc";
-    const body = [
-      `First name: ${form.firstName || ""}`,
-      `Last name: ${form.lastName || ""}`,
-      `Email: ${form.email || ""}`,
-      `Phone: ${form.phone || ""}`,
-      "",
-      "Message:",
-      form.message || "",
-    ].join("\n");
+  const topFormHref = useMemo(
+    () =>
+      buildMailto("Empire Fence Quick Estimate Request", [
+        ["First name", topForm.firstName],
+        ["Last name", topForm.lastName],
+        ["Email", topForm.email],
+        ["Phone", topForm.phone],
+        ["Address", topForm.address],
+        ["City", topForm.city],
+        ["State", topForm.state],
+        ["Zip", topForm.zip],
+        ["Message", topForm.message],
+      ]),
+    [topForm],
+  );
 
-    return `mailto:${COMPANY.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }, [form]);
+  const estimateFormHref = useMemo(
+    () =>
+      buildMailto("Free Estimate Request - Empire Fence Inc", [
+        ["First name", estimateForm.firstName],
+        ["Last name", estimateForm.lastName],
+        ["Email", estimateForm.email],
+        ["Phone", estimateForm.phone],
+        ["Message", estimateForm.message],
+      ]),
+    [estimateForm],
+  );
+
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   useEffect(() => {
     const existingHost = document.querySelector(`[data-chat-widget][data-widget-id="${CHAT_WIDGET.widgetId}"]`);
@@ -217,6 +274,7 @@ function App() {
     script.dataset.widgetId = CHAT_WIDGET.widgetId;
     script.async = true;
     document.body.appendChild(script);
+    return undefined;
   }, []);
 
   useEffect(() => {
@@ -228,23 +286,34 @@ function App() {
     script.type = "text/javascript";
     script.async = true;
     document.body.appendChild(script);
+    return undefined;
   }, []);
 
-  const handleChange = (event) => {
+  const handleTopFormChange = (event) => {
     const { name, value } = event.target;
-    setForm((current) => ({ ...current, [name]: value }));
+    setTopForm((current) => ({ ...current, [name]: value }));
   };
 
-  const handleSubmit = (event) => {
+  const handleEstimateFormChange = (event) => {
+    const { name, value } = event.target;
+    setEstimateForm((current) => ({ ...current, [name]: value }));
+  };
+
+  const handleTopFormSubmit = (event) => {
     event.preventDefault();
-    window.location.href = mailtoHref;
+    window.location.href = topFormHref;
+  };
+
+  const handleEstimateSubmit = (event) => {
+    event.preventDefault();
+    window.location.href = estimateFormHref;
   };
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
     <div className="siteShell">
-      <header className="siteHeader">
+      <header className={`siteHeader ${isScrolled ? "isScrolled" : ""}`}>
         <div className="topBar">
           <div className="container topBarInner">
             <div className="topList" aria-label="Contact details">
@@ -264,186 +333,209 @@ function App() {
           </div>
         </div>
 
-        <div className="container navShell">
-          <a className="brand" href="#home" aria-label="Empire Fence home">
-            <img src="/images/logo.png" alt="Empire Fence logo" />
-            <div>
-              <strong>{COMPANY.name}</strong>
-              <span>{COMPANY.location}</span>
-            </div>
-          </a>
+        <div className="container">
+          <div className="navShell">
+            <a className="brand" href="#home" aria-label="Empire Fence home">
+              <img src="/images/logo.png" alt="Empire Fence logo" />
+              <div>
+                <strong>{COMPANY.name}</strong>
+                <span>{COMPANY.location}</span>
+              </div>
+            </a>
 
-          <div className="headerDesktop">
-            <nav className="navLinks" aria-label="Main navigation">
-              {navLinks.map((item) => (
-                <a key={item.href} href={item.href}>
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-
-            <div className="navActions">
-              <a className="button buttonGhost" href={COMPANY.phoneHref}>
-                Call Now
-              </a>
-              <a className="button buttonPrimary" href="#booking">
-                Book
-              </a>
-            </div>
-          </div>
-
-          <button
-            type="button"
-            className={`menuToggle ${mobileMenuOpen ? "isOpen" : ""}`}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            aria-expanded={mobileMenuOpen}
-            onClick={() => setMobileMenuOpen((open) => !open)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-
-          {mobileMenuOpen ? (
-            <div className="headerMobilePanel">
-              <nav className="navLinksMobile" aria-label="Mobile navigation">
+            <div className="headerDesktop">
+              <nav className="navLinks" aria-label="Main navigation">
                 {navLinks.map((item) => (
-                  <a key={item.href} href={item.href} onClick={closeMobileMenu}>
+                  <a key={item.href} href={item.href}>
                     {item.label}
                   </a>
                 ))}
               </nav>
-              <div className="headerActionsMobile">
-                <a className="button buttonGhost" href={COMPANY.phoneHref} onClick={closeMobileMenu}>
+
+              <div className="navActions">
+                <a className="button buttonGhost" href={COMPANY.phoneHref}>
                   Call Now
                 </a>
-                <a className="button buttonPrimary" href="#booking" onClick={closeMobileMenu}>
-                  Book Estimate
+                <a className="button buttonPrimary" href="#book">
+                  Book
                 </a>
               </div>
             </div>
-          ) : null}
+
+            <button
+              type="button"
+              className={`menuToggle ${mobileMenuOpen ? "isOpen" : ""}`}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={mobileMenuOpen}
+              onClick={() => setMobileMenuOpen((open) => !open)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+
+            {mobileMenuOpen ? (
+              <div className="headerMobilePanel">
+                <nav className="navLinksMobile" aria-label="Mobile navigation">
+                  {navLinks.map((item) => (
+                    <a key={item.href} href={item.href} onClick={closeMobileMenu}>
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+                <div className="headerActionsMobile">
+                  <a className="button buttonGhost" href={COMPANY.phoneHref} onClick={closeMobileMenu}>
+                    Call Now
+                  </a>
+                  <a className="button buttonPrimary" href="#book" onClick={closeMobileMenu}>
+                    Book Estimate
+                  </a>
+                </div>
+              </div>
+            ) : null}
+          </div>
         </div>
       </header>
 
       <main id="content">
         <section className="hero" id="home">
-          <div className="container heroGrid">
-            <div className="heroCopy">
+          <div className="heroBackdrop" />
+          <div className="container heroInner">
+            <div className="heroPanel">
               <p className="eyebrow">Fence and outdoor specialists</p>
               <h1>{COMPANY.heroTitle}</h1>
               <p className="heroBody">{COMPANY.heroBody}</p>
-
               <div className="heroActions">
                 <a className="button buttonPrimary" href="#estimate">
                   Contact Us
                 </a>
-                <a className="button buttonGhost" href="#booking">
-                  Start Estimate
+                <a className="button buttonGhost buttonGhostOnDark" href={COMPANY.phoneHref}>
+                  {COMPANY.phoneDisplay}
                 </a>
               </div>
-
-              <div className="heroHighlights">
-                <article className="statCard">
-                  <strong>40+</strong>
-                  <span>Years of trade experience</span>
-                </article>
-                <article className="statCard">
-                  <strong>1 year</strong>
-                  <span>Warranty positioning</span>
-                </article>
-                <article className="statCard">
-                  <strong>Premium</strong>
-                  <span>Fence and outdoor craftsmanship</span>
-                </article>
-              </div>
             </div>
-
-            <aside className="heroVisualCard">
-              <div className="heroImageWrap">
-                <img src="/images/hero-fence.jpg" alt="Fence installation in Jurupa Valley" />
-              </div>
-              <div className="heroMeta">
-                <div>
-                  <span>Location</span>
-                  <p>{COMPANY.location}</p>
-                </div>
-                <div>
-                  <span>Hours</span>
-                  <p>{COMPANY.hours}</p>
-                </div>
-                <div>
-                  <span>Reach us</span>
-                  <a href={COMPANY.phoneHref}>{COMPANY.phoneDisplay}</a>
-                </div>
-              </div>
-            </aside>
           </div>
         </section>
 
-        <section className="section" id="about">
+        <section className="section introSection" id="about">
           <div className="container introGrid">
             <div className="sectionIntro introCopy">
-              <p className="eyebrow">About the work</p>
+              <p className="eyebrow">Reliable fencing and outdoor installation</p>
               <h2>Reliable Fencing and Outdoor Installation Solutions in Jurupa Valley CA</h2>
               {introParagraphs.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
-              <a className="inlineLink" href="#estimate">
+              <a className="inlineLink" href="#services">
                 Learn More
               </a>
             </div>
 
-            <div className="bookingPanel" id="booking">
-              <div className="bookingPanelHead">
+            <form className="quickEstimateCard" onSubmit={handleTopFormSubmit}>
+              <div className="cardHeading">
                 <p className="eyebrow">Start your free estimate</p>
-                <h3>Book a time that fits your project.</h3>
-                <p>Use the live calendar for the fastest next step. The chat widget stays active for questions after hours.</p>
+                <h3>Send the scope.</h3>
               </div>
 
-              <div className="bookingFrameShell">
-                <iframe
-                  src={BOOKING_WIDGET.iframeSrc}
-                  id={BOOKING_WIDGET.iframeId}
-                  title="Empire Fence booking calendar"
-                  scrolling="no"
-                  style={{ width: "100%", border: "none", overflow: "hidden" }}
-                />
+              <div className="formGrid">
+                <label>
+                  <input
+                    name="firstName"
+                    value={topForm.firstName}
+                    onChange={handleTopFormChange}
+                    placeholder="First Name"
+                    required
+                  />
+                </label>
+                <label>
+                  <input
+                    name="lastName"
+                    value={topForm.lastName}
+                    onChange={handleTopFormChange}
+                    placeholder="Last Name"
+                    required
+                  />
+                </label>
+                <label>
+                  <input name="email" type="email" value={topForm.email} onChange={handleTopFormChange} placeholder="Email" required />
+                </label>
+                <label>
+                  <input name="phone" value={topForm.phone} onChange={handleTopFormChange} placeholder="Phone" required />
+                </label>
+                <label>
+                  <input name="address" value={topForm.address} onChange={handleTopFormChange} placeholder="Address" />
+                </label>
+                <label>
+                  <input name="city" value={topForm.city} onChange={handleTopFormChange} placeholder="City" />
+                </label>
+                <label>
+                  <input name="state" value={topForm.state} onChange={handleTopFormChange} placeholder="State" />
+                </label>
+                <label>
+                  <input name="zip" value={topForm.zip} onChange={handleTopFormChange} placeholder="Zip" />
+                </label>
+                <label className="fullWidth">
+                  <textarea
+                    name="message"
+                    value={topForm.message}
+                    onChange={handleTopFormChange}
+                    placeholder="Message"
+                    rows="4"
+                  />
+                </label>
+                <button className="button buttonPrimary fullWidth" type="submit">
+                  Submit
+                </button>
               </div>
-            </div>
+            </form>
           </div>
         </section>
 
         <section className="section reviewSection">
           <div className="container">
             <div className="sectionIntro centeredIntro">
-              <p className="eyebrow">Reviews</p>
-              <h2>Our Customer Reviews</h2>
-              <p>Same trust layer, rebuilt with a cleaner premium presentation.</p>
+              <p className="eyebrow">Our customer reviews</p>
+              <h2>Trust layered through real local proof.</h2>
             </div>
 
-            <div className="reviewGrid">
-              {reviewSources.map((item) => (
-                <article key={item.title} className="reviewCard">
-                  <span className="reviewTag">{item.title}</span>
-                  <p>{item.body}</p>
-                  <a className="inlineLink" href={item.href} target="_blank" rel="noreferrer">
-                    Open {item.title}
-                  </a>
+            <div className="highlightGrid">
+              {serviceHighlights.map((item) => (
+                <article key={item.title} className="highlightCard">
+                  <img src={item.image} alt={item.title} />
+                  <div className="highlightOverlay">
+                    <span>{item.title}</span>
+                    <p>{item.copy}</p>
+                    <a className="inlineLink inlineLinkLight" href="#estimate">
+                      Contact Us
+                    </a>
+                  </div>
                 </article>
               ))}
             </div>
 
-            <div className="featuredServiceGrid">
-              {featuredServices.map((item) => (
-                <article key={item.title} className="featuredServiceCard">
-                  <img src={item.image} alt={item.title} />
-                  <div className="featuredServiceBody">
-                    <span className="serviceBadge">{item.title}</span>
-                    <p>{item.note}</p>
-                    <a className="inlineLink" href="#estimate">
-                      Contact Us
-                    </a>
+            <div className="reviewRail">
+              {socialLinks.map((item) => (
+                <a key={item.label} href={item.href} target="_blank" rel="noreferrer" className="reviewPill">
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="section servicesSection" id="services">
+          <div className="container">
+            <div className="sectionIntro centeredIntro">
+              <p className="eyebrow">Our services</p>
+              <h2>Built for frontage, privacy, and clean exterior work.</h2>
+            </div>
+
+            <div className="serviceGalleryGrid">
+              {services.map((service) => (
+                <article key={service.title} className="serviceVisualCard">
+                  <img src={service.image} alt={service.title} />
+                  <div className="serviceVisualOverlay">
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
                   </div>
                 </article>
               ))}
@@ -451,57 +543,40 @@ function App() {
           </div>
         </section>
 
-        <section className="section" id="services">
-          <div className="container">
-            <div className="sectionIntro centeredIntro">
-              <p className="eyebrow">Services</p>
-              <h2>Our Services</h2>
-            </div>
-
-            <div className="servicesGrid">
-              {services.map((service, index) => (
-                <article key={service.title} className="serviceCard">
-                  <span className="serviceIndex">{String(index + 1).padStart(2, "0")}</span>
-                  <h3>{service.title}</h3>
-                  <a className="serviceLink" href={service.href}>
-                    View service
-                  </a>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="section sectionSoft">
+        <section className="section reasonsSection">
           <div className="container">
             <div className="sectionIntro centeredIntro narrowIntro">
-              <p className="eyebrow">Why choose Empire Fence INC?</p>
-              <h2>Precision in the details. Consistency on site.</h2>
+              <p className="eyebrow">Why choose Empire Fence Inc?</p>
+              <h2>Clear decisions. Better execution on site.</h2>
             </div>
 
-            <div className="reasonGrid">
+            <div className="reasonStack">
               {reasons.map((item) => (
-                <article key={item.title} className="reasonCard">
-                  <h3>{item.title}</h3>
-                  <p>{item.body}</p>
+                <article key={item.title} className="reasonRow">
+                  <div className="reasonMarker" />
+                  <div>
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </div>
                 </article>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section">
+        <section className="section industriesSection">
           <div className="container">
             <div className="sectionIntro centeredIntro narrowIntro">
               <p className="eyebrow">Industries</p>
-              <h2>Some Industries We Work With</h2>
+              <h2>Some industries we work with</h2>
             </div>
 
             <div className="industryGrid">
               {industries.map((item) => (
-                <article key={item} className="industryCard">
-                  <span className="industryDot" />
-                  <h3>{item}</h3>
+                <article key={item.title} className="industryCard">
+                  <span className="industryLine" />
+                  <h3>{item.title}</h3>
+                  <p>{item.note}</p>
                 </article>
               ))}
             </div>
@@ -527,17 +602,17 @@ function App() {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section valueSection">
           <div className="container">
-            <div className="sectionIntro centeredIntro">
-              <p className="eyebrow">Why work with us</p>
-              <h2>Why should you work with Us?</h2>
+            <div className="sectionIntro centeredIntro narrowIntro">
+              <p className="eyebrow">Why should you work with us?</p>
+              <h2>Simple service promises backed by real execution.</h2>
             </div>
 
             <div className="valueGrid">
               {valuePoints.map((item) => (
                 <article key={item.title} className="valueCard">
-                  <h3>{item.title}</h3>
+                  <span className="valueNumber">{item.title}</span>
                   <p>{item.body}</p>
                 </article>
               ))}
@@ -545,8 +620,8 @@ function App() {
           </div>
         </section>
 
-        <section className="section darkBand">
-          <div className="container darkBandInner">
+        <section className="section calloutSection">
+          <div className="container calloutCard">
             <div>
               <p className="eyebrow">#1 Fencing Service Providers</p>
               <h2>Trusted Fencing Solutions in Jurupa Valley CA - Contact Us!</h2>
@@ -563,11 +638,11 @@ function App() {
           </div>
         </section>
 
-        <section className="section" id="gallery">
+        <section className="section gallerySection" id="gallery">
           <div className="container">
             <div className="sectionIntro centeredIntro narrowIntro">
-              <p className="eyebrow">Gallery</p>
-              <h2>Craftsmanship, Quality, and Service You Can Trust!</h2>
+              <p className="eyebrow">Craftsmanship, quality, and service you can trust!</p>
+              <h2>Selected project work from the field.</h2>
               <p>
                 When you choose Empire Fence Inc., you can trust that you're receiving the utmost in quality,
                 reliability, and customer satisfaction.
@@ -584,11 +659,11 @@ function App() {
           </div>
         </section>
 
-        <section className="section sectionSoft" id="faq">
+        <section className="section faqSection" id="faq">
           <div className="container faqLayout">
             <div className="sectionIntro faqIntroCopy">
-              <p className="eyebrow">FAQ</p>
-              <h2>Frequently Asked Questions</h2>
+              <p className="eyebrow">Frequently asked questions</p>
+              <h2>Clear answers before you commit to the project.</h2>
             </div>
             <div className="faqList">
               {faqs.map((item) => (
@@ -601,11 +676,11 @@ function App() {
           </div>
         </section>
 
-        <section className="section" id="areas">
-          <div className="container areasLayout">
+        <section className="section areasSection" id="areas">
+          <div className="container areasGrid">
             <div className="areasCopy">
               <div className="sectionIntro">
-                <p className="eyebrow">Areas We Serve</p>
+                <p className="eyebrow">Areas we serve</p>
                 <h2>Coverage across the Inland Empire.</h2>
               </div>
 
@@ -644,65 +719,78 @@ function App() {
         </section>
 
         <section className="section estimateSection" id="estimate">
-          <div className="container estimateLayout">
-            <div className="quoteCopy">
-              <p className="eyebrow">Free estimate</p>
-              <h2>Free Estimate</h2>
-              <p>{COMPANY.topBlurb}</p>
-
-              <div className="quoteContact">
-                <a href={COMPANY.phoneHref}>{COMPANY.phoneDisplay}</a>
-                <a href={COMPANY.emailHref}>{COMPANY.email}</a>
-                <a href={COMPANY.mapHref} target="_blank" rel="noreferrer">
-                  {COMPANY.location}
-                </a>
+          <div className="container estimateSuite">
+            <div className="estimateCard">
+              <div className="sectionIntro">
+                <p className="eyebrow">Free estimate</p>
+                <h2>Free Estimate</h2>
+                <p>{COMPANY.topBlurb}</p>
               </div>
+
+              <form className="estimateForm" onSubmit={handleEstimateSubmit}>
+                <label>
+                  <input
+                    name="firstName"
+                    value={estimateForm.firstName}
+                    onChange={handleEstimateFormChange}
+                    placeholder="First Name"
+                    required
+                  />
+                </label>
+                <label>
+                  <input
+                    name="lastName"
+                    value={estimateForm.lastName}
+                    onChange={handleEstimateFormChange}
+                    placeholder="Last Name"
+                    required
+                  />
+                </label>
+                <label>
+                  <input
+                    name="email"
+                    type="email"
+                    value={estimateForm.email}
+                    onChange={handleEstimateFormChange}
+                    placeholder="Email"
+                    required
+                  />
+                </label>
+                <label>
+                  <input name="phone" value={estimateForm.phone} onChange={handleEstimateFormChange} placeholder="Phone" required />
+                </label>
+                <label className="fullWidth">
+                  <textarea
+                    name="message"
+                    value={estimateForm.message}
+                    onChange={handleEstimateFormChange}
+                    placeholder="Message"
+                    rows="6"
+                    required
+                  />
+                </label>
+                <button className="button buttonPrimary fullWidth" type="submit">
+                  Submit
+                </button>
+              </form>
             </div>
 
-            <form className="quoteForm" onSubmit={handleSubmit}>
-              <label>
-                First Name
-                <input
-                  name="firstName"
-                  value={form.firstName}
-                  onChange={handleChange}
-                  placeholder="First Name"
-                  required
+            <div className="bookingSectionCard" id="book">
+              <div className="cardHeading">
+                <p className="eyebrow">Book a visit</p>
+                <h3>Live calendar for the fastest next step.</h3>
+                <p>Use the calendar below to hold a time. The chat widget stays active if you want to ask questions first.</p>
+              </div>
+              <div className="bookingFrameShell">
+                <iframe
+                  src={BOOKING_WIDGET.iframeSrc}
+                  id={BOOKING_WIDGET.iframeId}
+                  title="Empire Fence booking calendar"
+                  scrolling="no"
+                  style={{ width: "100%", border: "none", overflow: "hidden" }}
                 />
-              </label>
-              <label>
-                Last Name
-                <input
-                  name="lastName"
-                  value={form.lastName}
-                  onChange={handleChange}
-                  placeholder="Last Name"
-                  required
-                />
-              </label>
-              <label>
-                Email
-                <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="Email" required />
-              </label>
-              <label>
-                Phone
-                <input name="phone" value={form.phone} onChange={handleChange} placeholder="Phone" required />
-              </label>
-              <label className="fullWidth">
-                Message
-                <textarea
-                  name="message"
-                  value={form.message}
-                  onChange={handleChange}
-                  placeholder="Tell us about the project."
-                  rows="6"
-                  required
-                />
-              </label>
-              <button className="button buttonPrimary fullWidth" type="submit">
-                Submit
-              </button>
-            </form>
+              </div>
+            </div>
           </div>
         </section>
       </main>
