@@ -29,167 +29,120 @@ const BOOKING_WIDGET = {
   scriptSrc: "https://link.msgsndr.com/js/form_embed.js",
 };
 
-const NAVIGATION = [
+const NAV_ITEMS = [
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Projects", href: "#gallery" },
+  { label: "Work", href: "#gallery" },
   { label: "Coverage", href: "#areas" },
-  { label: "FAQ", href: "#faq" },
   { label: "Quote", href: "#estimate" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 const HERO_FACTS = [
-  { value: "40+", label: "Years of field work" },
-  { value: "Free", label: "Estimate and site walk" },
-  { value: "Inland", label: "Empire coverage" },
+  { value: "40+", label: "years in the field" },
+  { value: "Free", label: "estimates" },
+  { value: "Inland Empire", label: "service reach" },
 ];
 
 const STORY_POINTS = [
   {
-    title: "Fence work first. Exterior scope if needed.",
+    title: "Fence first. Exterior scope if needed.",
     body:
-      "Vinyl, wood, chain link, wrought iron, gates, and the surrounding upgrades that keep the final result coherent.",
+      "Vinyl, wood, chain link, wrought iron, gates, and the supporting exterior upgrades that keep the final perimeter result coherent.",
   },
   {
-    title: "Clear line work and cleaner project flow.",
+    title: "Cleaner line work and less project drag.",
     body:
-      "The real value is not just materials. It is straight runs, aligned gates, faster answers, and a cleaner finish when the work wraps.",
+      "The value is not just material. It is straighter runs, stronger gate alignment, quicker answers, and a finish that still reads clean later.",
   },
 ];
 
-const SERVICES = [
+const SERVICE_ROWS = [
   {
-    title: "Wrought iron",
-    description: "Decorative security with stronger frontage presence and custom gate pairing.",
-    note: "Best for curb appeal, entry sequence, and visible perimeter work.",
+    number: "01",
+    title: "Wrought iron fencing",
+    copy:
+      "Decorative frontage, stronger security presence, and gate pairings that make the property read more intentional from the street.",
+    detail: "Best for curb appeal, visible perimeter work, and entry sequences that need to feel finished.",
     image: "/images/hero-fence.jpg",
-    variant: "feature",
-    tag: "Signature",
+    chips: ["Frontage", "Decorative security", "Custom gates"],
+    tone: "dark",
   },
   {
-    title: "Vinyl fencing",
-    description: "Low-maintenance privacy with a sharper finished edge for homes and side-yard resets.",
-    note: "Clean look. Fast upkeep. Strong residential demand.",
-    image: "",
+    number: "02",
+    title: "Vinyl and wood fencing",
+    copy:
+      "Residential privacy installs built around clean lines, durable material choices, and a calmer finished look in the yard or side run.",
+    detail: "The right fit when enclosure, maintenance, and the overall appearance matter equally.",
+    image: "/images/detail-fence.jpg",
+    chips: ["Privacy", "Residential", "Low maintenance"],
+    tone: "light",
+  },
+  {
+    number: "03",
+    title: "Chain link and perimeter control",
+    copy:
+      "Practical lot coverage, side-yard runs, utility edges, and commercial boundary work where function and access matter first.",
+    detail: "Built for cleaner coverage, faster installation, and straightforward perimeter control.",
+    image: "/images/hero-fence.jpg",
+    chips: ["Commercial", "Utility zones", "Fast coverage"],
+    tone: "light",
+  },
+  {
+    number: "04",
+    title: "Gates and exterior scope",
+    copy:
+      "Manual and automatic gates, repair and alignment work, plus turf, walls, patios, and related exterior upgrades when the fence is only part of the project.",
+    detail: "Useful when the perimeter needs to be solved as one coordinated scope, not a set of separate jobs.",
+    image: "/images/detail-fence.jpg",
+    chips: ["Access", "Walls + patios", "Full perimeter scope"],
+    tone: "accent",
+  },
+];
+
+const PROJECTS = [
+  {
+    title: "Street-facing iron work",
+    copy: "Higher-visibility frontage with decorative linework and tighter finish detail.",
+    image: "/images/hero-fence.jpg",
     variant: "tall",
-    tag: "Residential",
+    position: "56% center",
   },
   {
-    title: "Chain link",
-    description: "Functional perimeter coverage for lots, utility zones, commercial edges, and access control.",
-    note: "Fast, practical, and built for clear coverage.",
+    title: "Closer finish quality",
+    copy: "The detail decisions that keep the install reading clean later.",
     image: "/images/detail-fence.jpg",
     variant: "wide",
-    tag: "Commercial",
+    position: "center center",
   },
   {
-    title: "Wood fencing",
-    description: "Classic enclosure with custom height, board style, and a warmer material character.",
-    note: "A strong fit for privacy and backyard enclosure.",
-    image: "",
-    variant: "plain",
-    tag: "Privacy",
-  },
-  {
-    title: "Gates and access",
-    description: "Manual and automatic gate work, repairs, alignment, and better entry sequencing.",
-    note: "Built around access, security, and cleaner daily use.",
-    image: "",
-    variant: "plain",
-    tag: "Access",
-  },
-  {
-    title: "Walls, turf, patios",
-    description: "Supporting exterior work that keeps the property upgrade under one coordinated scope.",
-    note: "Useful when the fence is only part of the bigger perimeter refresh.",
-    image: "/images/detail-fence.jpg",
-    variant: "accent",
-    tag: "Extended scope",
+    title: "Residential perimeter",
+    copy: "Privacy, access, and stronger edge definition around the property.",
+    image: "/images/hero-fence.jpg",
+    variant: "square",
+    position: "36% center",
   },
 ];
 
 const DIFFERENTIATORS = [
   {
-    number: "01",
-    title: "Direct communication",
-    copy: "Faster answers, cleaner scope decisions, and less project drift once work begins.",
+    title: "Faster communication",
+    copy: "Quick answers, clearer scope, and less drift once the job starts moving.",
   },
   {
-    number: "02",
     title: "Field-tested judgment",
-    copy: "Material and layout decisions improve when the crew has already seen the tricky version of the job before.",
+    copy: "Material and layout decisions improve when the crew already knows the tricky version of the work.",
   },
   {
-    number: "03",
-    title: "Detail that still reads well later",
-    copy: "Lines, corners, gate swing, transitions, and finish work are treated as the point of the install, not the leftover.",
+    title: "Finish that still reads clean later",
+    copy: "Gate alignment, corners, transitions, and edge control are treated as part of the work, not leftovers.",
   },
 ];
 
-const PROCESS_STEPS = [
-  {
-    title: "Walk the property",
-    body: "Start with the line, the gate need, the frontage, and what the fence actually has to do.",
-  },
-  {
-    title: "Set scope and material",
-    body: "Define the material, layout, and extras before the project starts moving.",
-  },
-  {
-    title: "Build and finish cleanly",
-    body: "Carry the install through with tighter alignment, cleaner edges, and a result that feels deliberate.",
-  },
-];
-
-const TESTIMONIALS = [
-  {
-    quote:
-      "I spoke to George, got an estimate the same day, and the work was scheduled and completed within days.",
-    source: "Yelp review",
-  },
-  {
-    quote: "George was quick to answer questions, very professional, and the crew did a great job.",
-    source: "Google review",
-  },
-  {
-    quote: "Works well with all situations. Fence came out gorgeous.",
-    source: "Google review",
-  },
-];
-
-const GALLERY = [
-  {
-    src: "/images/hero-fence.jpg",
-    alt: "Decorative black wrought iron fence",
-    title: "Street-facing iron work",
-    copy: "Strong frontage definition with a premium visual read.",
-    variant: "portrait",
-    position: "55% center",
-  },
-  {
-    src: "/images/detail-fence.jpg",
-    alt: "Fence detail close-up",
-    title: "Closer finish quality",
-    copy: "Detail matters more on the jobs people see every day.",
-    variant: "landscape",
-    position: "center center",
-  },
-  {
-    src: "/images/hero-fence.jpg",
-    alt: "Fence perimeter installation",
-    title: "Residential perimeter",
-    copy: "Privacy and cleaner line control around the property edge.",
-    variant: "square",
-    position: "34% center",
-  },
-  {
-    src: "/images/detail-fence.jpg",
-    alt: "Fence project finish detail",
-    title: "Gate and trim work",
-    copy: "The tighter details are what make the install feel complete.",
-    variant: "square",
-    position: "74% center",
-  },
+const PROCESS = [
+  "Walk the property and set the line.",
+  "Lock the material, access, and details.",
+  "Install with cleaner alignment and finish.",
 ];
 
 const AREAS = [
@@ -206,12 +159,12 @@ const FAQS = [
   {
     question: "What fence types do you install?",
     answer:
-      "Empire Fence handles vinyl, chain link, wood, wrought iron, gate work, and select exterior upgrades tied to the perimeter project.",
+      "Empire Fence handles wrought iron, vinyl, wood, chain link, gate work, and select exterior upgrades tied to the perimeter project.",
   },
   {
     question: "Do you provide free estimates?",
     answer:
-      "Yes. The site and review content both position Empire Fence around free estimates and direct quote requests.",
+      "Yes. The current business positioning is built around direct quote requests and free estimates.",
   },
   {
     question: "Can you handle residential and commercial work?",
@@ -221,16 +174,16 @@ const FAQS = [
   {
     question: "Do you only build fences?",
     answer:
-      "No. When the project needs it, surrounding work like walls, turf, patios, and driveways can be scoped alongside the fence or gate install.",
+      "No. Gates, walls, patios, turf, and surrounding exterior work can stay inside the same overall scope when needed.",
   },
   {
     question: "Is there warranty coverage?",
     answer:
-      "The current business messaging references a one-year warranty. Final warranty detail should be confirmed during the estimate for the exact scope.",
+      "The current business messaging references a one-year warranty. Exact warranty detail should be confirmed during the estimate for the specific project.",
   },
 ];
 
-function buildMailto(subject, values) {
+function buildMailto(values) {
   const body = [
     ["Name", values.name],
     ["Phone", values.phone],
@@ -241,41 +194,13 @@ function buildMailto(subject, values) {
     .map(([label, value]) => `${label}: ${value || ""}`)
     .join("\n");
 
-  return `${BUSINESS.emailHref}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-
-function SectionLead({ eyebrow, title, copy, align = "left" }) {
-  return (
-    <div className={`sectionLead sectionLead--${align} reveal`}>
-      <p className="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
-      {copy ? <p>{copy}</p> : null}
-    </div>
-  );
-}
-
-function ServiceCard({ service }) {
-  return (
-    <article className={`serviceCard serviceCard--${service.variant} reveal`}>
-      {service.image ? (
-        <div className="serviceCard__media">
-          <img src={service.image} alt={service.title} />
-        </div>
-      ) : null}
-      <div className="serviceCard__body">
-        <span className="serviceCard__tag">{service.tag}</span>
-        <h3>{service.title}</h3>
-        <p>{service.description}</p>
-        <small>{service.note}</small>
-      </div>
-    </article>
-  );
+  return `${BUSINESS.emailHref}?subject=${encodeURIComponent(`Estimate request - ${BUSINESS.name}`)}&body=${encodeURIComponent(body)}`;
 }
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [heroDepth, setHeroDepth] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [heroShift, setHeroShift] = useState(0);
   const [quoteForm, setQuoteForm] = useState({
     name: "",
     phone: "",
@@ -284,16 +209,13 @@ export default function App() {
     details: "",
   });
 
-  const quoteMailto = useMemo(
-    () => buildMailto(`Estimate request - ${BUSINESS.name}`, quoteForm),
-    [quoteForm],
-  );
+  const quoteMailto = useMemo(() => buildMailto(quoteForm), [quoteForm]);
 
   useEffect(() => {
     const onScroll = () => {
-      const scrollY = window.scrollY;
-      setIsScrolled(scrollY > 24);
-      setHeroDepth(Math.min(scrollY * 0.18, 56));
+      const top = window.scrollY;
+      setIsScrolled(top > 18);
+      setHeroShift(Math.min(top * 0.12, 44));
     };
 
     onScroll();
@@ -317,7 +239,7 @@ export default function App() {
           }
         });
       },
-      { threshold: 0.16, rootMargin: "0px 0px -8%" },
+      { threshold: 0.18, rootMargin: "0px 0px -10%" },
     );
 
     nodes.forEach((node) => observer.observe(node));
@@ -352,9 +274,9 @@ export default function App() {
   };
 
   return (
-    <div className={`siteShell ${isScrolled ? "siteShell--scrolled" : ""}`}>
-      <header className="topbar">
-        <div className="topbar__inner">
+    <div className={`page ${isScrolled ? "page--scrolled" : ""}`}>
+      <header className="header">
+        <div className="header__inner">
           <a className="brand" href="#top" aria-label={BUSINESS.name}>
             <img src="/images/logo.png" alt={`${BUSINESS.name} logo`} />
             <div>
@@ -365,7 +287,7 @@ export default function App() {
 
           <button
             type="button"
-            className={`menuToggle ${menuOpen ? "is-open" : ""}`}
+            className={`menuButton ${menuOpen ? "is-open" : ""}`}
             aria-expanded={menuOpen}
             aria-label="Toggle navigation"
             onClick={() => setMenuOpen((open) => !open)}
@@ -374,16 +296,16 @@ export default function App() {
             <span />
           </button>
 
-          <nav className={`topbar__nav ${menuOpen ? "is-open" : ""}`}>
-            {NAVIGATION.map((item) => (
+          <nav className={`header__nav ${menuOpen ? "is-open" : ""}`}>
+            {NAV_ITEMS.map((item) => (
               <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
                 {item.label}
               </a>
             ))}
-            <a className="chipButton chipButton--ghost" href={BUSINESS.phoneHref}>
+            <a className="headerCta headerCta--ghost" href={BUSINESS.phoneHref}>
               Call
             </a>
-            <a className="chipButton" href="#booking">
+            <a className="headerCta" href="#booking">
               Book
             </a>
           </nav>
@@ -392,190 +314,136 @@ export default function App() {
 
       <main id="top">
         <section className="hero">
-          <div className="hero__ambient hero__ambient--left" />
-          <div className="hero__ambient hero__ambient--right" />
+          <div className="hero__noise" />
           <div className="hero__inner">
             <div className="hero__copy reveal is-visible">
-              <p className="eyebrow">Fence and gate contractor</p>
+              <p className="kicker kicker--light">Fence and gate contractor / Inland Empire</p>
               <h1>
-                Cleaner frontage.
+                Fence work
                 <br />
-                Sharper installs.
+                that reads
                 <br />
-                Less hassle.
+                premium.
               </h1>
               <p className="hero__lede">
-                Premium fence and gate work across Jurupa Valley and the Inland Empire,
-                built around clean layout, direct communication, and stronger final
-                presentation.
+                Empire Fence installs wrought iron, vinyl, wood, chain link, and gate
+                systems with a cleaner project rhythm, stronger frontage, and less hassle
+                once the work starts.
               </p>
 
               <div className="hero__actions">
-                <a className="primaryButton" href="#estimate">
+                <a className="primaryAction" href="#estimate">
                   Start the estimate
                 </a>
-                <a className="secondaryButton" href="#gallery">
-                  View recent work
+                <a className="textAction" href="#gallery">
+                  View selected work
                 </a>
-              </div>
-
-              <div className="hero__facts">
-                {HERO_FACTS.map((fact) => (
-                  <div key={fact.label} className="heroFact">
-                    <strong>{fact.value}</strong>
-                    <span>{fact.label}</span>
-                  </div>
-                ))}
               </div>
             </div>
 
-            <div className="hero__visual reveal is-visible" style={{ transform: `translateY(${heroDepth}px)` }}>
-              <div className="heroFrame">
-                <div className="heroFrame__image heroFrame__image--main">
-                  <img src="/images/hero-fence.jpg" alt="Empire Fence wrought iron installation" />
-                </div>
-                <div className="heroFrame__badge">
-                  <span>Available now</span>
-                  <strong>Free estimate</strong>
-                </div>
-                <div className="heroFrame__card heroFrame__card--right">
-                  <p>Primary scope</p>
-                  <strong>Fence installs and gate work</strong>
-                </div>
-                <div className="heroFrame__card heroFrame__card--bottom">
-                  <p>Open hours</p>
-                  <strong>{BUSINESS.hours}</strong>
-                </div>
+            <div className="hero__visual reveal is-visible" style={{ transform: `translateY(${heroShift}px)` }}>
+              <div className="heroVisual heroVisual--main">
+                <img src="/images/hero-fence.jpg" alt="Empire Fence wrought iron install" />
+              </div>
+              <div className="heroVisual heroVisual--detail">
+                <img src="/images/detail-fence.jpg" alt="Fence detail close-up" />
+              </div>
+              <div className="heroNote heroNote--top">
+                <span>Open hours</span>
+                <strong>{BUSINESS.hours}</strong>
+              </div>
+              <div className="heroNote heroNote--bottom">
+                <span>Primary scope</span>
+                <strong>Fence installs, gates, and perimeter upgrades</strong>
               </div>
             </div>
           </div>
-          <a className="hero__scroll" href="#about">
-            Scroll for more
-          </a>
+
+          <div className="hero__rail reveal">
+            {HERO_FACTS.map((fact) => (
+              <article key={fact.label} className="railCard">
+                <strong>{fact.value}</strong>
+                <span>{fact.label}</span>
+              </article>
+            ))}
+          </div>
         </section>
 
-        <section className="storySection" id="about">
-          <div className="storySection__inner">
-            <SectionLead
-              eyebrow="Why Empire Fence"
-              title="Built for properties that need the work to feel finished."
-              copy="The site content is simple: fences, gates, and the surrounding exterior work that keeps the result cohesive. The design does the same thing."
-            />
+        <section className="manifesto" id="about">
+          <div className="manifesto__inner">
+            <div className="manifesto__intro reveal">
+              <p className="kicker">Why Empire Fence</p>
+              <p>
+                The business content is simple. The experience should not be. This section
+                shifts the site into a calmer, more architectural rhythm.
+              </p>
+              <a href="#services">See the core scopes</a>
+            </div>
 
-            <div className="storySection__grid">
-              <div className="storySection__stack">
+            <div className="manifesto__statement reveal">
+              <h2>
+                Built for properties that need the line work, gate swing, and finish detail to
+                feel resolved.
+              </h2>
+              <div className="manifesto__details">
                 {STORY_POINTS.map((point) => (
-                  <article key={point.title} className="storyCard reveal">
+                  <article key={point.title}>
                     <h3>{point.title}</h3>
                     <p>{point.body}</p>
                   </article>
                 ))}
               </div>
-
-              <aside className="storyPanel reveal">
-                <p className="storyPanel__eyebrow">What the work covers</p>
-                <ul className="storyPanel__list">
-                  <li>Vinyl fence installation</li>
-                  <li>Wood fence replacement</li>
-                  <li>Chain link perimeter work</li>
-                  <li>Wrought iron frontage</li>
-                  <li>Custom gates and access points</li>
-                  <li>Turf, walls, patios, driveways</li>
-                </ul>
-                <div className="storyPanel__footer">
-                  <span>Coverage</span>
-                  <strong>Jurupa Valley + Inland Empire</strong>
-                </div>
-              </aside>
             </div>
           </div>
         </section>
 
-        <section className="servicesSection" id="services">
-          <div className="servicesSection__inner">
-            <SectionLead
-              eyebrow="Services"
-              title="A service mix designed like a project board, not a list."
-              copy="The highest-value scopes lead. Secondary services support. The layout behaves more like a curated Framer section than a contractor template."
-              align="center"
-            />
-
-            <div className="servicesMosaic">
-              {SERVICES.map((service) => (
-                <ServiceCard key={service.title} service={service} />
-              ))}
-            </div>
+        <section className="services" id="services">
+          <div className="sectionHead reveal">
+            <p className="kicker">Services</p>
+            <h2>Fewer modules. Bigger service moments. Stronger hierarchy.</h2>
           </div>
-        </section>
 
-        <section className="proofSection">
-          <div className="proofSection__inner">
-            <div className="proofSection__lead reveal">
-              <p className="eyebrow eyebrow--light">Why the work reads better</p>
-              <h2>More intentional rhythm. Better contractor trust signals.</h2>
-              <p>
-                The page needs a premium experience, but the business still wins on clarity,
-                field experience, and cleaner follow-through. That is what this section holds.
-              </p>
-            </div>
-
-            <div className="proofSection__grid">
-              <div className="proofCards">
-                {DIFFERENTIATORS.map((item) => (
-                  <article key={item.title} className="proofCard reveal">
-                    <span>{item.number}</span>
-                    <h3>{item.title}</h3>
-                    <p>{item.copy}</p>
-                  </article>
-                ))}
-              </div>
-
-              <div className="proofAside">
-                <div className="testimonialCard reveal">
-                  <p className="testimonialCard__label">Recent feedback</p>
-                  <blockquote>
-                    “{TESTIMONIALS[0].quote}”
-                  </blockquote>
-                  <span>{TESTIMONIALS[0].source}</span>
+          <div className="services__rows">
+            {SERVICE_ROWS.map((service, index) => (
+              <article
+                key={service.title}
+                className={`serviceRow serviceRow--${service.tone} ${index % 2 === 1 ? "serviceRow--reverse" : ""} reveal`}
+              >
+                <div className="serviceRow__visual">
+                  <img src={service.image} alt={service.title} />
                 </div>
-
-                <div className="processRail reveal">
-                  {PROCESS_STEPS.map((step, index) => (
-                    <article key={step.title}>
-                      <strong>{`0${index + 1}`}</strong>
-                      <div>
-                        <h3>{step.title}</h3>
-                        <p>{step.body}</p>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="gallerySection" id="gallery">
-          <div className="gallerySection__inner">
-            <SectionLead
-              eyebrow="Selected work"
-              title="Project imagery with more presence and less template feel."
-              copy="The goal here is a stronger luxury-contractor read: larger frames, fewer cards, more breathing room, and tighter hover behavior."
-            />
-
-            <div className="galleryGrid">
-              {GALLERY.map((item) => (
-                <article key={item.title} className={`galleryCard galleryCard--${item.variant} reveal`}>
-                  <div className="galleryCard__media">
-                    <img
-                      src={item.src}
-                      alt={item.alt}
-                      style={{ objectPosition: item.position }}
-                    />
+                <div className="serviceRow__body">
+                  <span className="serviceRow__number">{service.number}</span>
+                  <h3>{service.title}</h3>
+                  <p>{service.copy}</p>
+                  <small>{service.detail}</small>
+                  <div className="serviceRow__chips">
+                    {service.chips.map((chip) => (
+                      <span key={chip}>{chip}</span>
+                    ))}
                   </div>
-                  <div className="galleryCard__body">
-                    <h3>{item.title}</h3>
-                    <p>{item.copy}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="projects" id="gallery">
+          <div className="projects__inner">
+            <div className="sectionHead reveal">
+              <p className="kicker kicker--light">Selected work</p>
+              <h2>Premium framing, cleaner crop choices, and less template noise.</h2>
+            </div>
+
+            <div className="projects__grid">
+              {PROJECTS.map((project) => (
+                <article key={project.title} className={`projectCard projectCard--${project.variant} reveal`}>
+                  <div className="projectCard__media">
+                    <img src={project.image} alt={project.title} style={{ objectPosition: project.position }} />
+                  </div>
+                  <div className="projectCard__copy">
+                    <h3>{project.title}</h3>
+                    <p>{project.copy}</p>
                   </div>
                 </article>
               ))}
@@ -583,22 +451,58 @@ export default function App() {
           </div>
         </section>
 
-        <section className="areasSection" id="areas">
-          <div className="areasSection__inner">
-            <div className="areasSection__copy">
-              <SectionLead
-                eyebrow="Coverage"
-                title="Jurupa Valley base. Inland Empire reach."
-                copy="If the property is in or around the Inland Empire, the work can usually be reviewed quickly and scoped from there."
-              />
+        <section className="proof">
+          <div className="proof__inner">
+            <div className="proof__lead reveal">
+              <p className="kicker">Why the work closes</p>
+              <h2>Cleaner process. Better trust. Less friction for the customer.</h2>
+            </div>
 
-              <div className="areasList reveal">
+            <div className="proof__grid">
+              <div className="proof__cards">
+                {DIFFERENTIATORS.map((item) => (
+                  <article key={item.title} className="proofCard reveal">
+                    <h3>{item.title}</h3>
+                    <p>{item.copy}</p>
+                  </article>
+                ))}
+              </div>
+
+              <aside className="proofAside reveal">
+                <blockquote>
+                  “I spoke to George, got an estimate the same day, and the work was scheduled
+                  and completed within days.”
+                </blockquote>
+                <span>Yelp review</span>
+
+                <div className="processList">
+                  {PROCESS.map((step, index) => (
+                    <article key={step}>
+                      <strong>{`0${index + 1}`}</strong>
+                      <p>{step}</p>
+                    </article>
+                  ))}
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        <section className="coverage" id="areas">
+          <div className="coverage__inner">
+            <div className="coverage__copy reveal">
+              <p className="kicker">Coverage</p>
+              <h2>Jurupa Valley base. Inland Empire reach.</h2>
+              <p>
+                The geography is straightforward. If the property sits in or around the Inland
+                Empire, the scope can usually be reviewed quickly and moved forward from there.
+              </p>
+              <div className="coverage__chips">
                 {AREAS.map((area) => (
                   <span key={area}>{area}</span>
                 ))}
               </div>
-
-              <div className="areasLinks reveal">
+              <div className="coverage__links">
                 <a href={BUSINESS.google} target="_blank" rel="noreferrer">
                   Google reviews
                 </a>
@@ -611,7 +515,7 @@ export default function App() {
               </div>
             </div>
 
-            <div className="mapCard reveal">
+            <div className="coverage__map reveal">
               <iframe
                 title="Empire Fence service area map"
                 src={BUSINESS.mapEmbedSrc}
@@ -622,118 +526,105 @@ export default function App() {
           </div>
         </section>
 
-        <section className="contactSection" id="estimate">
-          <div className="contactSection__inner">
-            <div className="contactSection__lead">
-              <SectionLead
-                eyebrow="Estimate"
-                title="Send the scope. Book the walkthrough."
-                copy="The two action paths stay side by side: quick quote request on the left, live booking on the right. Both are framed to feel intentional."
-              />
+        <section className="ctaBand" id="estimate">
+          <div className="ctaBand__head reveal">
+            <p className="kicker kicker--light">Estimate / booking</p>
+            <h2>Start with the scope. Book if the schedule already makes sense.</h2>
+          </div>
 
-              <div className="contactMeta reveal">
-                <a href={BUSINESS.phoneHref}>{BUSINESS.phoneDisplay}</a>
-                <a href={BUSINESS.emailHref}>{BUSINESS.email}</a>
-                <span>{BUSINESS.location}</span>
+          <div className="ctaBand__grid">
+            <article className="quotePanel reveal">
+              <div className="panelHead">
+                <p>Quote request</p>
+                <strong>Enough detail to move the conversation forward quickly.</strong>
               </div>
-            </div>
 
-            <div className="contactSection__grid">
-              <article className="quoteCard reveal">
-                <div className="quoteCard__header">
-                  <p>Quick quote request</p>
-                  <strong>Enough detail to get the conversation moving.</strong>
-                </div>
-                <form className="quoteForm" action={quoteMailto} method="post">
-                  <div className="quoteForm__grid">
-                    <label>
-                      <span>Name</span>
-                      <input
-                        name="name"
-                        type="text"
-                        placeholder="Your name"
-                        value={quoteForm.name}
-                        onChange={handleInputChange}
-                      />
-                    </label>
-                    <label>
-                      <span>Phone</span>
-                      <input
-                        name="phone"
-                        type="tel"
-                        placeholder="Phone"
-                        value={quoteForm.phone}
-                        onChange={handleInputChange}
-                      />
-                    </label>
-                    <label>
-                      <span>Email</span>
-                      <input
-                        name="email"
-                        type="email"
-                        placeholder="Email"
-                        value={quoteForm.email}
-                        onChange={handleInputChange}
-                      />
-                    </label>
-                    <label>
-                      <span>Service</span>
-                      <select name="service" value={quoteForm.service} onChange={handleInputChange}>
-                        <option value="">Select</option>
-                        <option value="Wrought iron">Wrought iron</option>
-                        <option value="Vinyl fence">Vinyl fence</option>
-                        <option value="Chain link">Chain link</option>
-                        <option value="Wood fence">Wood fence</option>
-                        <option value="Gate work">Gate work</option>
-                        <option value="Exterior add-ons">Exterior add-ons</option>
-                      </select>
-                    </label>
-                  </div>
+              <form className="quoteForm" action={quoteMailto} method="post">
+                <div className="quoteForm__grid">
                   <label>
-                    <span>Project details</span>
-                    <textarea
-                      name="details"
-                      placeholder="Property, rough scope, and anything that matters."
-                      rows="5"
-                      value={quoteForm.details}
+                    <span>Name</span>
+                    <input
+                      name="name"
+                      type="text"
+                      placeholder="Your name"
+                      value={quoteForm.name}
                       onChange={handleInputChange}
                     />
                   </label>
-                  <button type="submit" className="primaryButton primaryButton--full">
-                    Send request
-                  </button>
-                </form>
-              </article>
-
-              <article className="bookingCard reveal" id="booking">
-                <div className="bookingCard__header">
-                  <p>Book directly</p>
-                  <strong>Use the live calendar if the schedule already makes sense.</strong>
+                  <label>
+                    <span>Phone</span>
+                    <input
+                      name="phone"
+                      type="tel"
+                      placeholder="Phone"
+                      value={quoteForm.phone}
+                      onChange={handleInputChange}
+                    />
+                  </label>
+                  <label>
+                    <span>Email</span>
+                    <input
+                      name="email"
+                      type="email"
+                      placeholder="Email"
+                      value={quoteForm.email}
+                      onChange={handleInputChange}
+                    />
+                  </label>
+                  <label>
+                    <span>Service</span>
+                    <select name="service" value={quoteForm.service} onChange={handleInputChange}>
+                      <option value="">Select</option>
+                      <option value="Wrought iron">Wrought iron</option>
+                      <option value="Vinyl / Wood">Vinyl / Wood</option>
+                      <option value="Chain link">Chain link</option>
+                      <option value="Gate work">Gate work</option>
+                      <option value="Exterior add-ons">Exterior add-ons</option>
+                    </select>
+                  </label>
                 </div>
-                <div className="bookingCard__frame">
-                  <iframe
-                    src={BOOKING_WIDGET.iframeSrc}
-                    title="Book an Empire Fence appointment"
-                    style={{ width: "100%", border: "none", overflow: "hidden" }}
-                    scrolling="no"
-                    id={BOOKING_WIDGET.iframeId}
+                <label>
+                  <span>Project details</span>
+                  <textarea
+                    name="details"
+                    placeholder="Property, rough scope, and anything that matters."
+                    rows="5"
+                    value={quoteForm.details}
+                    onChange={handleInputChange}
                   />
-                </div>
-              </article>
-            </div>
+                </label>
+                <button type="submit" className="primaryAction primaryAction--full">
+                  Send request
+                </button>
+              </form>
+            </article>
+
+            <article className="bookingPanel reveal" id="booking">
+              <div className="panelHead panelHead--light">
+                <p>Book directly</p>
+                <strong>Keep the live calendar visible and framed like part of the design.</strong>
+              </div>
+              <div className="bookingPanel__frame">
+                <iframe
+                  src={BOOKING_WIDGET.iframeSrc}
+                  title="Book an Empire Fence appointment"
+                  style={{ width: "100%", border: "none", overflow: "hidden" }}
+                  scrolling="no"
+                  id={BOOKING_WIDGET.iframeId}
+                />
+              </div>
+            </article>
           </div>
         </section>
 
-        <section className="faqSection" id="faq">
-          <div className="faqSection__inner">
-            <SectionLead
-              eyebrow="FAQ"
-              title="Short answers to the questions people ask before they call."
-              copy="The content stays close to the real business. The presentation is what gets upgraded."
-              align="center"
-            />
+        <section className="faq" id="faq">
+          <div className="faq__inner">
+            <div className="sectionHead reveal">
+              <p className="kicker">FAQ</p>
+              <h2>Short answers before the customer calls.</h2>
+            </div>
 
-            <div className="faqList">
+            <div className="faq__list">
               {FAQS.map((faq, index) => (
                 <details className="faqItem reveal" key={faq.question} open={index === 0}>
                   <summary>
