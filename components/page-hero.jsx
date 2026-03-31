@@ -7,7 +7,7 @@ import { Reveal } from "@/components/reveal";
 export function PageHero({ eyebrow, title, intro, image, stats }) {
   return (
     <section className="pageHero">
-      <div className="container">
+      <div className="pageHero__shell">
         <Reveal className="pageHero__frame" initiallyVisible variant="soft">
           <div className="pageHero__grid">
             <div className="pageHero__copy">
@@ -43,7 +43,7 @@ export function PageHero({ eyebrow, title, intro, image, stats }) {
               />
               <div className="pageHero__caption">
                 <span className="eyebrow">Empire Fence</span>
-                <p>{business.city} and nearby Inland Empire cities</p>
+                <p>{business.city}</p>
               </div>
             </div>
           </div>

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BookingWidget } from "@/components/booking-widget";
 import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
+import { ServiceCard } from "@/components/service-card";
 import { getAllServices, getServiceBySlug } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo";
 import { business, serviceAreas } from "@/lib/site";
@@ -56,7 +57,7 @@ function LocationPage({ area, services }) {
             Fence and gate work in <em>{area.title}</em>
           </>
         }
-        intro={`Privacy fencing, frontage work, entry gates, and supporting outdoor scope for homes and commercial properties in ${area.title}.`}
+        intro={`Privacy fencing, frontage work, entry gates, and supporting outdoor scope in ${area.title}.`}
         image={area.image}
       />
 
@@ -67,14 +68,7 @@ function LocationPage({ area, services }) {
             <h2>Fence lines, gates, and surrounding scope handled cleanly.</h2>
           </div>
           <div className="prose">
-            <p>
-              Projects in {area.title} can range from privacy runs and decorative frontage to wall
-              work, patios, and driveways when the property edge needs a more complete finish.
-            </p>
-            <p>
-              The goal is a better-looking result, practical recommendations, and a faster path into
-              the estimate.
-            </p>
+            <p>Projects in {area.title} can range from privacy runs and decorative frontage to wall work, patios, and driveways.</p>
           </div>
         </div>
       </section>
@@ -82,16 +76,7 @@ function LocationPage({ area, services }) {
       <section className="section section--soft">
         <div className="container serviceGrid">
           {services.slice(0, 4).map((service) => (
-            <article key={service.slug} className="serviceCard">
-              <div className="serviceCard__body">
-                <span className="eyebrow">{service.data.eyebrow}</span>
-                <h3>{service.data.title}</h3>
-                <p>{service.data.summary}</p>
-                <Link href={`/${service.slug}`} className="textLink">
-                  View service
-                </Link>
-              </div>
-            </article>
+            <ServiceCard key={service.slug} service={service} variant="tile" />
           ))}
         </div>
       </section>
@@ -168,16 +153,7 @@ function ServicePage({ service, services }) {
           </div>
           <div className="serviceGrid">
             {related.map((item) => (
-              <article key={item.slug} className="serviceCard">
-                <div className="serviceCard__body">
-                  <span className="eyebrow">{item.data.eyebrow}</span>
-                  <h3>{item.data.title}</h3>
-                  <p>{item.data.summary}</p>
-                  <Link href={`/${item.slug}`} className="textLink">
-                    View service
-                  </Link>
-                </div>
-              </article>
+              <ServiceCard key={item.slug} service={item} variant="tile" />
             ))}
           </div>
         </div>

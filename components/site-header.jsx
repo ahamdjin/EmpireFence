@@ -11,7 +11,11 @@ export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 10);
+    const handleScroll = () => {
+      const threshold = Math.max(window.innerHeight - 140, 140);
+      setScrolled(window.scrollY >= threshold);
+    };
+
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -40,6 +44,7 @@ export function SiteHeader() {
           aria-label="Toggle navigation"
           onClick={() => setOpen((current) => !current)}
         >
+          <span />
           <span />
           <span />
         </button>

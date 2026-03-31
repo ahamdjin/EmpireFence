@@ -1,7 +1,5 @@
-import Image from "next/image";
-import Link from "next/link";
-
 import { PageHero } from "@/components/page-hero";
+import { ServiceCard } from "@/components/service-card";
 import { getAllServices } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -31,25 +29,18 @@ export default async function ServicesPage() {
 
       <section className="section">
         <div className="container serviceIndex">
-          {services.map((service) => (
-            <article key={service.slug} className="serviceIndexCard">
-              <div className="serviceIndexCard__image">
-                <Image src={service.data.heroImage} alt={service.data.title} fill sizes="(max-width: 900px) 100vw, 32vw" />
-              </div>
-              <div className="serviceIndexCard__body">
-                <span className="eyebrow">{service.data.eyebrow}</span>
-                <h2>{service.data.title}</h2>
-                <p>{service.data.summary}</p>
-                <ul className="bulletList">
-                  {service.data.highlights.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-                <Link href={`/${service.slug}`} className="button button--primary">
-                  View service page
-                </Link>
-              </div>
-            </article>
+          {services.map((service, index) => (
+            <ServiceCard
+              key={service.slug}
+              service={{
+                ...service,
+                data: {
+                  ...service.data,
+                  highlights: service.data.highlights.slice(0, 2),
+                },
+              }}
+              variant={index < 2 ? "feature" : "tile"}
+            />
           ))}
         </div>
       </section>

@@ -23,7 +23,7 @@ export default function ServiceAreasPage() {
             Jurupa Valley and nearby Inland Empire <em>cities</em>.
           </>
         }
-        intro="Service across the local cities where Empire Fence regularly handles privacy fencing, frontage work, gates, and supporting outdoor scope."
+        intro="Service across the local cities where Empire Fence handles privacy fencing, frontage work, gates, and supporting outdoor scope."
         image="/client/location-riverside.jpg"
       />
 

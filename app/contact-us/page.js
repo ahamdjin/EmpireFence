@@ -22,7 +22,7 @@ export default function ContactPage() {
             Start the estimate or book the first <em>call</em>.
           </>
         }
-        intro="Use the form for project details, or book directly when you want to talk through scope and timing."
+        intro="Use the form for project details, or book directly when you want to talk through scope."
         image="/client/location-fontana.jpg"
       />
 
@@ -66,7 +66,7 @@ export default function ContactPage() {
           </div>
           <div className="panel panel--dark">
             <span className="eyebrow">Booking calendar</span>
-            <h2>Book the first conversation.</h2>
+            <h2>Book the first call.</h2>
             <BookingWidget />
           </div>
         </div>

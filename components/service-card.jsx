@@ -19,10 +19,9 @@ export function ServiceCard({ service, variant = "default", index = 0 }) {
         <div className="serviceEditorial__body">
           <span className="eyebrow">{service.data.eyebrow}</span>
           <h3>{service.data.title}</h3>
-          <p>{service.data.summary}</p>
           {highlights.length ? (
             <div className="serviceEditorial__meta">
-              {highlights.map((item) => (
+              {highlights.slice(0, 2).map((item) => (
                 <span key={item}>{item}</span>
               ))}
             </div>
@@ -69,7 +68,6 @@ export function ServiceCard({ service, variant = "default", index = 0 }) {
         <div className="serviceTile__body">
           <span className="eyebrow">{service.data.eyebrow}</span>
           <h3>{service.data.title}</h3>
-          <p>{service.data.summary}</p>
           <Link href={`/${service.slug}`} className="textLink">
             Explore
           </Link>

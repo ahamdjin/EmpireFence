@@ -25,7 +25,7 @@ export default async function BlogPage() {
             Planning notes for better fence <em>projects</em>.
           </>
         }
-        intro="Short articles on material choices, estimate prep, and outdoor scope around the property edge."
+        intro="Short articles on material choices and estimate prep."
         image="/client/gallery-1.webp"
       />
 

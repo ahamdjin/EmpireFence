@@ -22,7 +22,7 @@ export default function AboutPage() {
             Fence-first work with a cleaner <em>finish</em>.
           </>
         }
-        intro="Empire Fence handles privacy fencing, gates, walls, and selected outdoor upgrades with one standard of fit and follow-through."
+        intro="Empire Fence handles privacy fencing, gates, walls, and selected outdoor upgrades with one standard of follow-through."
         image="/client/wrought-fence.jpg"
       />
 
@@ -33,14 +33,7 @@ export default function AboutPage() {
             <h2>Clear recommendations, strong materials, and better finish quality.</h2>
           </div>
           <div className="prose">
-            <p>
-              Empire Fence is strongest when the fence line, gate, wall transition, and surrounding
-              outdoor work are treated as one coordinated project instead of disconnected trades.
-            </p>
-            <p>
-              The result should feel cleaner from the estimate onward: better layout decisions,
-              simpler communication, and a more resolved exterior once the work is done.
-            </p>
+            <p>Fence lines, gates, wall transitions, and outdoor work are treated as one coordinated project instead of disconnected trades.</p>
           </div>
         </div>
       </section>

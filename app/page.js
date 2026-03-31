@@ -47,10 +47,7 @@ export default async function HomePage() {
                 <h1>
                   Fence lines that look settled from the <em>street</em>.
                 </h1>
-                <p>
-                  Vinyl, wood, wrought iron, chain link, gates, and wall work for homes,
-                  commercial sites, and property managers across Jurupa Valley and the Inland Empire.
-                </p>
+                <p>Vinyl, wood, wrought iron, chain link, gates, and walls across Jurupa Valley and the Inland Empire.</p>
 
                 <div className="buttonRow">
                   <Link href="/contact-us" className="button button--primary">
@@ -62,11 +59,7 @@ export default async function HomePage() {
                 </div>
 
                 <div className="heroStage__review">
-                  <strong>Free estimates. Cleaner installs. One contractor for the property edge.</strong>
-                  <p>
-                    Fence runs, entry gates, walls, and adjacent outdoor scope can stay coordinated
-                    from estimate through finish.
-                  </p>
+                  <strong>Free estimates. Cleaner installs.</strong>
                 </div>
               </div>
 
@@ -83,7 +76,16 @@ export default async function HomePage() {
 
                 <div className="heroStage__note">
                   <span className="eyebrow">Selected scope</span>
-                  <p>Vinyl, wood, wrought iron, chain link, gates, walls, patios, driveways, and turf.</p>
+                  <p>Fences, gates, walls, patios, driveways, and turf.</p>
+                </div>
+
+                <div className="heroStage__secondary">
+                  <Image
+                    src="/client/wrought-fence.jpg"
+                    alt="Empire Fence wrought iron detail"
+                    fill
+                    sizes="(max-width: 900px) 48vw, 18vw"
+                  />
                 </div>
               </div>
             </div>
@@ -105,14 +107,10 @@ export default async function HomePage() {
           <Reveal className="storyCluster__lead" initiallyVisible variant="left">
             <SectionHeading
               eyebrow="Why Empire Fence"
-              title="Built for properties that need a cleaner edge."
-              copy="One contractor can carry the fence line, the gate, the wall transition, and the pieces beside it."
+              title="Built for a cleaner property edge."
+              copy="One contractor can carry the fence line, the gate, and the wall transition."
             />
             <div className="storyCluster__summary">
-              <p>
-                Fence work stays at the center, but the best result comes from how the entry, wall,
-                hardscape, and final finish work together once the job is done.
-              </p>
               <Link href="/about-us" className="textLink">
                 Learn about the company
               </Link>
@@ -123,10 +121,7 @@ export default async function HomePage() {
             <Reveal className="storyPanel" variant="up">
               <span className="eyebrow">Planning</span>
               <h3>Layout comes before material.</h3>
-              <p>
-                Gate clearance, grade, transitions, and the street-facing finish are handled before
-                the install starts.
-              </p>
+              <p>Gate clearance, grade, and transitions are handled before the install starts.</p>
             </Reveal>
 
             <Reveal className="storyPanel storyPanel--image" delay={90} variant="soft">
@@ -141,10 +136,7 @@ export default async function HomePage() {
             <Reveal className="storyPanel storyPanel--tone" delay={160} variant="right">
               <span className="eyebrow">Approach</span>
               <h3>Straight estimate path. Cleaner finish.</h3>
-              <p>
-                Clear recommendations, strong materials, and detail-focused field work do more than
-                long contractor copy ever will.
-              </p>
+              <p>Clear recommendations and detail-focused field work.</p>
             </Reveal>
           </div>
         </div>
@@ -156,7 +148,7 @@ export default async function HomePage() {
             <SectionHeading
               eyebrow="Services"
               title="Fence, gate, wall, and outdoor scope."
-              copy="Each service keeps its own page, but the whole site should still read as one brand and one standard."
+              copy="Each service keeps its own page while the brand stays visual and consistent."
               tone="contrast"
             />
 
@@ -171,10 +163,7 @@ export default async function HomePage() {
               </div>
               <div className="servicesRail__stickyCopy">
                 <span className="eyebrow">Materials + scope</span>
-                <p>
-                  Privacy fencing, decorative frontage, access control, walls, and supporting
-                  outdoor upgrades sit under one tighter visual system.
-                </p>
+                <p>Privacy runs, frontage work, walls, and supporting outdoor upgrades.</p>
                 <Link href="/services" className="button button--primary">
                   View all services
                 </Link>
@@ -202,12 +191,8 @@ export default async function HomePage() {
             <SectionHeading
               eyebrow="Selected work"
               title="Selected projects."
-              copy="Privacy runs, decorative iron, gate detail, and adjacent hardscape should feel curated instead of dumped into one gallery."
+              copy="Privacy runs, decorative iron, gate detail, and hardscape that support the property edge."
             />
-            <p>
-              A stronger local brand feels visual first. The proof should sit in the image rhythm,
-              not in oversized cards.
-            </p>
             <Link href="/gallery" className="button button--ghost">
               Open the gallery
             </Link>
@@ -238,7 +223,7 @@ export default async function HomePage() {
             <SectionHeading
               eyebrow="Process"
               title="What clients actually need."
-              copy="A quick estimate path, practical recommendations, and crews that finish cleanly."
+              copy="A quick estimate path and crews that finish cleanly."
             />
             <Link href="/gallery" className="button button--ghost">
               Browse project gallery
@@ -266,9 +251,7 @@ export default async function HomePage() {
               <div className="projectSpotlight__body">
                 <span className="eyebrow">Complete frontage</span>
                 <h3>Fence frontage, gates, walls, and hardscape can stay under one cleaner scope.</h3>
-                <p>
-                  That is the difference between a one-material installer and a stronger exterior contractor.
-                </p>
+                <p>That is the difference between a one-material installer and a stronger exterior contractor.</p>
               </div>
             </Reveal>
           </div>
@@ -280,10 +263,6 @@ export default async function HomePage() {
           <Reveal className="locationStage" initiallyVisible variant="left">
             <span className="eyebrow">Service area</span>
             <h2>Jurupa Valley first, with nearby Inland Empire coverage.</h2>
-            <p>
-              Empire Fence serves Jurupa Valley, Riverside, Ontario, Chino, Rancho Cucamonga,
-              Fontana, and San Bernardino for residential and commercial projects.
-            </p>
             <div className="chipWrap">
               {serviceAreas.map((area) => (
                 <Link key={area.slug} href={`/${area.slug}`} className="chip">
@@ -314,8 +293,8 @@ export default async function HomePage() {
         <div className="container">
           <SectionHeading
             eyebrow="Planning articles"
-            title="Short planning notes for the next project."
-            copy="Material choices, estimate prep, and scope decisions that help buyers move faster."
+            title="Planning notes."
+            copy="Material choices and estimate prep."
           />
           <div className="postGrid postGrid--feature">
             {posts.map((post, index) => (
@@ -351,10 +330,7 @@ export default async function HomePage() {
               <h2>
                 Start with the <em>scope</em>.
               </h2>
-              <p>
-                Use the form for the project details. Use the contact page when you want the
-                calendar, phone, or a faster scheduling path.
-              </p>
+              <p>Use the form for project details, or open the contact page for the calendar and phone.</p>
 
               <div className="contactStack">
                 <a href={business.phoneHref}>{business.phoneDisplay}</a>
