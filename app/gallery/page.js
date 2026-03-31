@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { PageHero } from "@/components/page-hero";
 import { galleryCollections } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -27,36 +26,26 @@ export const metadata = buildPageMetadata({
 export default function GalleryPage() {
   return (
     <>
-      <PageHero
-        variant="gallery"
-        eyebrow="Gallery"
-        title={
-          <>
-            Selected fence, gate, and frontage <em>work</em>.
-          </>
-        }
-        intro="A tighter look at privacy runs, decorative iron, gates, and the outdoor upgrades that finish the property edge."
-        image="/client/gallery-4.webp"
-        secondaryImage="/client/gallery-2.webp"
-        chips={["Vinyl privacy", "Decorative iron", "Entry gates", "Outdoor scope"]}
-      />
-
-      <section className="section">
-        <div className="container splitIntro">
+      <section className="galleryStage">
+        <div className="container galleryStage__intro">
           <div>
-            <span className="eyebrow">Project mix</span>
-            <h2>Fence installs, gate details, and supporting exterior work that read better once the whole edge is finished.</h2>
+            <span className="eyebrow">Gallery</span>
+            <h1>
+              Selected fence, gate, and frontage <em>work</em>.
+            </h1>
           </div>
-          <div className="prose">
-            <p>The strongest jobs here are not just one material. They are the ones where the frontage, transitions, and entry moments are handled as one visual scope.</p>
-          </div>
+          <p>
+            A tighter look at privacy runs, decorative iron, gates, and the outdoor upgrades that
+            finish the property edge.
+          </p>
         </div>
-      </section>
 
-      <section className="section section--soft">
-        <div className="container galleryGrid">
-          {images.map((image, index) => (
-            <figure key={image} className="galleryGrid__item">
+        <div className="container galleryStage__mosaic">
+          {images.slice(0, 5).map((image, index) => (
+            <figure
+              key={image}
+              className={`galleryStage__tile galleryStage__tile--${index === 0 ? "hero" : index === 1 ? "tall" : "default"}`}
+            >
               <Image src={image} alt={`Empire Fence gallery image ${index + 1}`} fill sizes="(max-width: 900px) 100vw, 33vw" />
             </figure>
           ))}
@@ -64,13 +53,30 @@ export default function GalleryPage() {
       </section>
 
       <section className="section">
-        <div className="container miniFeatureGrid">
-          {galleryCollections.map((item) => (
-            <article key={item.title} className="miniFeatureCard">
-              <span className="eyebrow">Collection</span>
-              <h3>{item.title}</h3>
-              <p>{item.copy}</p>
-            </article>
+        <div className="container galleryCollections">
+          <div className="galleryCollections__lead">
+            <span className="eyebrow">Project mix</span>
+            <h2>Fence installs, gate details, and supporting exterior work that read better once the whole edge is finished.</h2>
+            <p>The strongest jobs here are not just one material. They are the ones where the frontage, transitions, and entry moments are handled as one visual scope.</p>
+          </div>
+          <div className="galleryCollections__list">
+            {galleryCollections.map((item) => (
+              <article key={item.title} className="miniFeatureCard">
+                <span className="eyebrow">Collection</span>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--soft">
+        <div className="container galleryGrid">
+          {images.slice(5).map((image, index) => (
+            <figure key={image} className="galleryGrid__item">
+              <Image src={image} alt={`Empire Fence gallery image ${index + 6}`} fill sizes="(max-width: 900px) 100vw, 33vw" />
+            </figure>
           ))}
         </div>
         <div className="container sectionCtaRow">

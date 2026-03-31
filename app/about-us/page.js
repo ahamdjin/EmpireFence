@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { PageHero } from "@/components/page-hero";
 import { buildPageMetadata } from "@/lib/seo";
 import { aboutHighlights, industries, trustPoints } from "@/lib/site";
 
@@ -16,30 +15,50 @@ export const metadata = buildPageMetadata({
 export default function AboutPage() {
   return (
     <>
-      <PageHero
-        variant="about"
-        eyebrow="About the company"
-        title={
-          <>
-            Fence-first work with a cleaner <em>finish</em>.
-          </>
-        }
-        intro="Empire Fence handles privacy fencing, gates, walls, and selected outdoor upgrades with one standard of follow-through."
-        image="/client/wrought-fence.jpg"
-        secondaryImage="/client/wood-fence.jpg"
-        cards={[
-          {
-            eyebrow: "Approach",
-            title: "Residential to industrial",
-            copy: "One coordinated standard of field finish.",
-          },
-          {
-            eyebrow: "Estimate path",
-            title: "Clear recommendations first",
-            copy: "Scope, material, and transitions get settled early.",
-          },
-        ]}
-      />
+      <section className="aboutStage">
+        <div className="container aboutStage__grid">
+          <div className="aboutStage__copy">
+            <span className="eyebrow">About the company</span>
+            <h1>
+              Fence-first work with a cleaner <em>finish</em>.
+            </h1>
+            <p>
+              Empire Fence handles privacy fencing, gates, walls, and selected outdoor upgrades
+              with one standard of follow-through from the first estimate through the field finish.
+            </p>
+            <div className="buttonRow">
+              <Link href="/contact-us" className="button button--primary">
+                Start estimate
+              </Link>
+              <Link href="/gallery" className="button button--ghost">
+                View gallery
+              </Link>
+            </div>
+            <div className="aboutStage__points">
+              {trustPoints.map((point) => (
+                <article key={point.title} className="aboutPoint">
+                  <span className="eyebrow">Standard</span>
+                  <h3>{point.title}</h3>
+                  <p>{point.copy}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          <div className="aboutStage__visual">
+            <div className="aboutStage__image aboutStage__image--primary">
+              <Image src="/client/wrought-fence.jpg" alt="Empire Fence wrought iron installation" fill sizes="(max-width: 900px) 100vw, 42vw" />
+            </div>
+            <div className="aboutStage__image aboutStage__image--secondary">
+              <Image src="/client/wood-fence.jpg" alt="Empire Fence wood fencing" fill sizes="(max-width: 900px) 52vw, 24vw" />
+            </div>
+            <div className="aboutStage__badge">
+              <span className="eyebrow">Scope</span>
+              <p>Fences, gates, walls, patios, driveways, and turf under one tighter path.</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section">
         <div className="container splitIntro">
@@ -65,17 +84,6 @@ export default function AboutPage() {
                 <h3>{item.title}</h3>
                 <p>{item.copy}</p>
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="section section--contrast">
-        <div className="container trustGrid">
-          {trustPoints.map((point) => (
-            <article key={point.title} className="trustCard">
-              <h3>{point.title}</h3>
-              <p>{point.copy}</p>
             </article>
           ))}
         </div>

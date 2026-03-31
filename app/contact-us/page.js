@@ -1,5 +1,4 @@
 import { BookingWidget } from "@/components/booking-widget";
-import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
 import { buildPageMetadata } from "@/lib/seo";
 import { business, contactPrompts, serviceAreas, socialLinks } from "@/lib/site";
@@ -15,28 +14,17 @@ export const metadata = buildPageMetadata({
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        variant="contact"
-        eyebrow="Contact"
-        title={
-          <>
-            Start the estimate or book the first <em>call</em>.
-          </>
-        }
-        intro="Use the form for project details, or book directly when you want to talk through scope."
-        image="/client/location-fontana.jpg"
-        cards={[
-          { eyebrow: "Phone", title: business.phoneDisplay, href: business.phoneHref },
-          { eyebrow: "Email", title: business.email, href: business.emailHref },
-          { eyebrow: "Hours", title: business.hours },
-        ]}
-      />
-
-      <section className="section">
-        <div className="container contactGrid">
-          <article className="panel panel--dark">
-            <span className="eyebrow">Get in touch</span>
-            <h2>Talk to the team directly.</h2>
+      <section className="contactStage">
+        <div className="container contactStage__grid">
+          <article className="contactStage__intro">
+            <span className="eyebrow">Contact</span>
+            <h1>
+              Start the estimate or book the first <em>call</em>.
+            </h1>
+            <p>
+              Use the form for project details, call directly when you want to move faster, or book
+              through the live calendar below.
+            </p>
             <div className="contactStack">
               <a href={business.phoneHref}>{business.phoneDisplay}</a>
               <a href={business.emailHref}>{business.email}</a>
@@ -45,15 +33,16 @@ export default function ContactPage() {
               </a>
               <p>{business.hours}</p>
             </div>
-            <div className="chipWrap">
-              {serviceAreas.map((area) => (
-                <span key={area.slug} className="chip chip--static chip--dark">
-                  {area.title}
-                </span>
+            <div className="contactStage__socials">
+              {socialLinks.map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="button button--ghost">
+                  {link.label}
+                </a>
               ))}
             </div>
           </article>
-          <article className="panel">
+
+          <article className="contactStage__form">
             <span className="eyebrow">Estimate request</span>
             <h2>Send the scope.</h2>
             <QuoteForm />
@@ -73,29 +62,29 @@ export default function ContactPage() {
             </ul>
           </article>
           <article className="infoCard">
-            <span className="eyebrow">Social profiles</span>
-            <h3>See the business on the platforms clients already use.</h3>
-            <div className="footerLinks footerLinks--light">
-              {socialLinks.map((link) => (
-                <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
-                  {link.label}
-                </a>
+            <span className="eyebrow">Service footprint</span>
+            <h3>Jurupa Valley first, with nearby Inland Empire coverage.</h3>
+            <div className="chipWrap">
+              {serviceAreas.map((area) => (
+                <span key={area.slug} className="chip chip--static">
+                  {area.title}
+                </span>
               ))}
             </div>
           </article>
         </div>
       </section>
 
-      <section className="section section--soft" id="booking">
-        <div className="container dualPanel">
-          <div className="panel">
+      <section className="section" id="booking">
+        <div className="container contactUtility">
+          <div className="contactUtility__map">
             <span className="eyebrow">Map</span>
             <h2>Find the service footprint.</h2>
             <div className="mapCard mapCard--embedded">
               <iframe src={business.mapEmbedSrc} loading="lazy" allowFullScreen title="Empire Fence map" />
             </div>
           </div>
-          <div className="panel panel--dark">
+          <div className="contactUtility__booking">
             <span className="eyebrow">Booking calendar</span>
             <h2>Book the first call.</h2>
             <BookingWidget />

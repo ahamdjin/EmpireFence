@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { PageHero } from "@/components/page-hero";
 import { buildPageMetadata } from "@/lib/seo";
 import { business, coverageNotes, serviceAreas } from "@/lib/site";
 
@@ -16,18 +15,33 @@ export const metadata = buildPageMetadata({
 export default function ServiceAreasPage() {
   return (
     <>
-      <PageHero
-        variant="areas"
-        eyebrow="Coverage"
-        title={
-          <>
-            Jurupa Valley and nearby Inland Empire <em>cities</em>.
-          </>
-        }
-        intro="Service across the local cities where Empire Fence handles privacy fencing, frontage work, gates, and supporting outdoor scope."
-        image="/client/location-riverside.jpg"
-        chips={serviceAreas.slice(0, 6).map((area) => area.title)}
-      />
+      <section className="coverageStage">
+        <div className="container coverageStage__grid">
+          <div className="coverageStage__copy">
+            <span className="eyebrow">Coverage</span>
+            <h1>
+              Jurupa Valley and nearby Inland Empire <em>cities</em>.
+            </h1>
+            <p>
+              Service across the local cities where Empire Fence handles privacy fencing, frontage
+              work, gates, and supporting outdoor scope.
+            </p>
+            <div className="chipWrap">
+              {serviceAreas.slice(0, 6).map((area) => (
+                <span key={area.slug} className="chip chip--static">
+                  {area.title}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="coverageStage__map">
+            <div className="mapCard mapCard--standalone">
+              <iframe src={business.mapEmbedSrc} loading="lazy" allowFullScreen title="Empire Fence coverage map" />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section className="section">
         <div className="container miniFeatureGrid">
@@ -63,15 +77,12 @@ export default function ServiceAreasPage() {
       <section className="section">
         <div className="container splitIntro">
           <div>
-            <span className="eyebrow">Map coverage</span>
+            <span className="eyebrow">Coverage note</span>
             <h2>Jurupa Valley stays central, with nearby cities that fit the same estimate and install rhythm.</h2>
           </div>
           <div className="prose">
             <p>Coverage stays focused around the Inland Empire cities where Empire Fence is already doing privacy runs, frontage upgrades, gates, and supporting outdoor work.</p>
           </div>
-        </div>
-        <div className="mapCard mapCard--standalone">
-          <iframe src={business.mapEmbedSrc} loading="lazy" allowFullScreen title="Empire Fence coverage map" />
         </div>
       </section>
     </>

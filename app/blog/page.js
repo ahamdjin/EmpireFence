@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { PageHero } from "@/components/page-hero";
 import { getAllPosts } from "@/lib/content";
 import { buildBlogCollectionSchema, buildPageMetadata } from "@/lib/seo";
 
@@ -29,19 +28,36 @@ export default async function BlogPage() {
 
   return (
     <>
-      <PageHero
-        variant="blog"
-        eyebrow="Blog"
-        title={
-          <>
-            Planning notes for better fence <em>projects</em>.
-          </>
-        }
-        intro="Short articles on material choices and estimate prep."
-        image="/client/gallery-1.webp"
-        secondaryImage="/client/gallery-3.webp"
-        cards={featuredCards}
-      />
+      <section className="journalStage">
+        <div className="container journalStage__grid">
+          <div className="journalStage__copy">
+            <span className="eyebrow">Blog</span>
+            <h1>
+              Planning notes for better fence <em>projects</em>.
+            </h1>
+            <p>Short articles on material choices, estimate prep, and scope decisions around the property edge.</p>
+            <Link href="/contact-us" className="button button--primary">
+              Start estimate
+            </Link>
+          </div>
+
+          {posts[0] ? (
+            <article className="journalStage__feature">
+              <div className="journalStage__image">
+                <Image src={posts[0].data.heroImage} alt={posts[0].data.title} fill sizes="(max-width: 900px) 100vw, 42vw" />
+              </div>
+              <div className="journalStage__body">
+                <span className="eyebrow">Featured article</span>
+                <h2>{posts[0].data.title}</h2>
+                <p>{posts[0].data.excerpt}</p>
+                <Link href={`/blog/${posts[0].slug}`} className="textLink">
+                  Read article
+                </Link>
+              </div>
+            </article>
+          ) : null}
+        </div>
+      </section>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
@@ -49,30 +65,17 @@ export default async function BlogPage() {
 
       <section className="section">
         <div className="container editorialLead">
-          {posts[0] ? (
-            <article className="editorialLead__feature">
-              <div className="editorialLead__image">
-                <Image src={posts[0].data.heroImage} alt={posts[0].data.title} fill sizes="(max-width: 900px) 100vw, 50vw" />
-              </div>
-              <div className="editorialLead__body">
-                <span className="eyebrow">Featured article</span>
-                <h2>{posts[0].data.title}</h2>
-                <p>{posts[0].data.excerpt}</p>
-                <Link href={`/blog/${posts[0].slug}`} className="button button--primary">
-                  Read article
-                </Link>
-              </div>
-            </article>
-          ) : null}
+          <div className="editorialLead__body">
+            <span className="eyebrow">Article list</span>
+            <h2>Planning notes that help clients choose material, prepare estimates, and bundle scope more cleanly.</h2>
+          </div>
           <div className="editorialLead__list">
-            {posts.slice(1, 3).map((post) => (
-              <article key={post.slug} className="miniFeatureCard">
-                <span className="eyebrow">
-                  {new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(new Date(post.data.date))}
-                </span>
-                <h3>{post.data.title}</h3>
-                <p>{post.data.excerpt}</p>
-                <Link href={`/blog/${post.slug}`} className="textLink">
+            {featuredCards.map((post) => (
+              <article key={post.href} className="miniFeatureCard">
+                <span className="eyebrow">{post.eyebrow}</span>
+                <h3>{post.title}</h3>
+                <p>{post.copy}</p>
+                <Link href={post.href} className="textLink">
                   Read article
                 </Link>
               </article>
