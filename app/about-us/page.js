@@ -1,11 +1,16 @@
 import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 import { industries, trustPoints } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "About us",
-};
+  description:
+    "Learn how Empire Fence approaches fencing, gates, block walls, patios, turf, and broader exterior work across Jurupa Valley.",
+  path: "/about-us",
+  image: "/client/wrought-fence.jpg",
+});
 
 export default function AboutPage() {
   return (

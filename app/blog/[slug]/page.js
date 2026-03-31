@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { getAllPosts, getPostBySlug } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -15,10 +16,12 @@ export async function generateMetadata({ params }) {
     return {};
   }
 
-  return {
+  return buildPageMetadata({
     title: post.data.title,
     description: post.data.excerpt,
-  };
+    path: `/blog/${post.slug}`,
+    image: post.data.heroImage,
+  });
 }
 
 export default async function BlogPostPage({ params }) {

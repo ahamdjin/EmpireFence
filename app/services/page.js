@@ -3,10 +3,15 @@ import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
 import { getAllServices } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Services",
-};
+  description:
+    "Explore vinyl, wood, wrought iron, chain link, custom fencing, block walls, patios, driveways, and turf services from Empire Fence.",
+  path: "/services",
+  image: "/client/gallery-2.webp",
+});
 
 export default async function ServicesPage() {
   const services = await getAllServices();

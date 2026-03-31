@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { PageHero } from "@/components/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 
 const images = [
   "/client/gallery-1.webp",
@@ -13,9 +14,13 @@ const images = [
   "/client/location-fontana.jpg",
 ];
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Gallery",
-};
+  description:
+    "View Empire Fence project imagery covering fence installation, exterior upgrades, and perimeter work across the Inland Empire.",
+  path: "/gallery",
+  image: "/client/gallery-4.webp",
+});
 
 export default function GalleryPage() {
   return (

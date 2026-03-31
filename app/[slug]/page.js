@@ -5,6 +5,7 @@ import { BookingWidget } from "@/components/booking-widget";
 import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
 import { getAllServices, getServiceBySlug } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 import { business, serviceAreas } from "@/lib/site";
 
 function findLocation(slug) {
@@ -24,18 +25,22 @@ export async function generateMetadata({ params }) {
   const service = await getServiceBySlug(slug);
 
   if (service) {
-    return {
+    return buildPageMetadata({
       title: service.data.title,
       description: service.data.summary,
-    };
+      path: `/${service.slug}`,
+      image: service.data.heroImage,
+    });
   }
 
   const area = findLocation(slug);
   if (area) {
-    return {
+    return buildPageMetadata({
       title: area.title,
       description: area.intro,
-    };
+      path: `/${area.slug}`,
+      image: area.image,
+    });
   }
 
   return {};

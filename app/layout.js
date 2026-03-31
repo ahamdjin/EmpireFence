@@ -5,6 +5,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import { ChatWidget } from "@/components/chat-widget";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { buildLocalBusinessSchema } from "@/lib/seo";
 import { business } from "@/lib/site";
 
 const display = Cormorant_Garamond({
@@ -35,6 +36,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const localBusinessSchema = buildLocalBusinessSchema();
+
   return (
     <html lang="en">
       <body className={`${display.variable} ${sans.variable}`}>
@@ -42,6 +45,10 @@ export default function RootLayout({ children }) {
         <main>{children}</main>
         <SiteFooter />
         <ChatWidget />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
       </body>
     </html>
   );

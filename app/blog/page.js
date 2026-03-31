@@ -3,10 +3,15 @@ import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
 import { getAllPosts } from "@/lib/content";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Blog",
-};
+  description:
+    "Read Empire Fence articles on fence planning, estimate prep, and exterior project decisions for Jurupa Valley and nearby cities.",
+  path: "/blog",
+  image: "/client/gallery-1.webp",
+});
 
 export default async function BlogPage() {
   const posts = await getAllPosts();

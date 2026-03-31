@@ -1,11 +1,16 @@
 import { BookingWidget } from "@/components/booking-widget";
 import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
+import { buildPageMetadata } from "@/lib/seo";
 import { business, serviceAreas } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Contact us",
-};
+  description:
+    "Request a free estimate, book through the live calendar, or contact Empire Fence directly for fence and outdoor work in Jurupa Valley.",
+  path: "/contact-us",
+  image: "/client/location-fontana.jpg",
+});
 
 export default function ContactPage() {
   return (

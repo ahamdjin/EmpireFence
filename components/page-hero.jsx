@@ -1,27 +1,48 @@
 import Image from "next/image";
+import Link from "next/link";
+
+import { business } from "@/lib/site";
+import { Reveal } from "@/components/reveal";
 
 export function PageHero({ eyebrow, title, intro, image, stats }) {
   return (
     <section className="pageHero">
-      <div className="container pageHero__grid">
-        <div className="pageHero__copy">
-          {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
-          <h1>{title}</h1>
-          <p>{intro}</p>
-          {stats?.length ? (
-            <div className="metricRow">
-              {stats.map((stat) => (
-                <article key={stat.label} className="metricCard">
-                  <strong>{stat.value}</strong>
-                  <span>{stat.label}</span>
-                </article>
-              ))}
+      <div className="container">
+        <Reveal className="pageHero__frame">
+          <div className="pageHero__bar">
+            <span>{business.shortName}</span>
+            <span>{business.city}</span>
+            <span>Fence / gates / exterior scope</span>
+          </div>
+          <div className="pageHero__grid">
+            <div className="pageHero__copy">
+              {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
+              <h1>{title}</h1>
+              <p>{intro}</p>
+              <div className="pageHero__actions">
+                <Link href="/contact-us" className="button button--primary">
+                  Start estimate
+                </Link>
+                <a href={business.phoneHref} className="button button--ghost">
+                  {business.phoneDisplay}
+                </a>
+              </div>
+              {stats?.length ? (
+                <div className="metricRow metricRow--compact">
+                  {stats.map((stat) => (
+                    <article key={stat.label} className="metricCard metricCard--light">
+                      <strong>{stat.value}</strong>
+                      <span>{stat.label}</span>
+                    </article>
+                  ))}
+                </div>
+              ) : null}
             </div>
-          ) : null}
-        </div>
-        <div className="pageHero__media">
-          <Image src={image} alt={title} fill sizes="(max-width: 900px) 100vw, 46vw" />
-        </div>
+            <div className="pageHero__media">
+              <Image src={image} alt={title} fill sizes="(max-width: 900px) 100vw, 46vw" />
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

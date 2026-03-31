@@ -2,11 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
+import { buildPageMetadata } from "@/lib/seo";
 import { business, serviceAreas } from "@/lib/site";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Service areas",
-};
+  description:
+    "Empire Fence serves Jurupa Valley, Riverside, Ontario, Chino, Rancho Cucamonga, Fontana, and San Bernardino.",
+  path: "/service-areas",
+  image: "/client/location-riverside.jpg",
+});
 
 export default function ServiceAreasPage() {
   return (
