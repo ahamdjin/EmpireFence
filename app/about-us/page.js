@@ -1,8 +1,9 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
 import { buildPageMetadata } from "@/lib/seo";
-import { industries, trustPoints } from "@/lib/site";
+import { aboutHighlights, industries, trustPoints } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
   title: "About us",
@@ -49,6 +50,23 @@ export default function AboutPage() {
           <div className="prose">
             <p>Fence lines, gates, wall transitions, and outdoor work are treated as one coordinated project instead of disconnected trades.</p>
           </div>
+        </div>
+      </section>
+
+      <section className="section section--soft">
+        <div className="container visualFeatureGrid">
+          {aboutHighlights.map((item) => (
+            <article key={item.title} className="visualFeatureCard">
+              <div className="visualFeatureCard__media">
+                <Image src={item.image} alt={item.title} fill sizes="(max-width: 900px) 100vw, 48vw" />
+              </div>
+              <div className="visualFeatureCard__body">
+                <span className="eyebrow">{item.eyebrow}</span>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 

@@ -2,7 +2,7 @@ import { BookingWidget } from "@/components/booking-widget";
 import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
 import { buildPageMetadata } from "@/lib/seo";
-import { business, serviceAreas } from "@/lib/site";
+import { business, contactPrompts, serviceAreas, socialLinks } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
   title: "Contact us",
@@ -57,6 +57,31 @@ export default function ContactPage() {
             <span className="eyebrow">Estimate request</span>
             <h2>Send the scope.</h2>
             <QuoteForm />
+          </article>
+        </div>
+      </section>
+
+      <section className="section section--soft">
+        <div className="container splitCards">
+          <article className="infoCard">
+            <span className="eyebrow">Helpful details</span>
+            <h3>What to send before the first call.</h3>
+            <ul className="bulletList">
+              {contactPrompts.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </article>
+          <article className="infoCard">
+            <span className="eyebrow">Social profiles</span>
+            <h3>See the business on the platforms clients already use.</h3>
+            <div className="footerLinks footerLinks--light">
+              {socialLinks.map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </article>
         </div>
       </section>

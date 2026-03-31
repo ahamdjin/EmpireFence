@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { business, navLinks, serviceAreas } from "@/lib/site";
+import { business, navLinks, serviceAreas, socialLinks } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -44,16 +44,21 @@ export function SiteFooter() {
             </div>
           </div>
           <div>
+            <span className="footerLabel">Socials</span>
+            <div className="footerLinks">
+              {socialLinks.map((link) => (
+                <a key={link.label} href={link.href} target="_blank" rel="noreferrer">
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+          <div>
             <span className="footerLabel">Contact</span>
             <div className="footerLinks">
               <span>{business.hours}</span>
               <a href={business.emailHref}>{business.email}</a>
-              <a href={business.mapHref} target="_blank" rel="noreferrer">
-                {business.city}
-              </a>
-              <a href={business.yelp} target="_blank" rel="noreferrer">
-                Yelp profile
-              </a>
+              <a href={business.phoneHref}>{business.phoneDisplay}</a>
             </div>
           </div>
         </div>

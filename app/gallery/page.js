@@ -1,6 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
+import { galleryCollections } from "@/lib/site";
 import { buildPageMetadata } from "@/lib/seo";
 
 const images = [
@@ -40,12 +42,41 @@ export default function GalleryPage() {
       />
 
       <section className="section">
+        <div className="container splitIntro">
+          <div>
+            <span className="eyebrow">Project mix</span>
+            <h2>Fence installs, gate details, and supporting exterior work that read better once the whole edge is finished.</h2>
+          </div>
+          <div className="prose">
+            <p>The strongest jobs here are not just one material. They are the ones where the frontage, transitions, and entry moments are handled as one visual scope.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--soft">
         <div className="container galleryGrid">
           {images.map((image, index) => (
             <figure key={image} className="galleryGrid__item">
               <Image src={image} alt={`Empire Fence gallery image ${index + 1}`} fill sizes="(max-width: 900px) 100vw, 33vw" />
             </figure>
           ))}
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container miniFeatureGrid">
+          {galleryCollections.map((item) => (
+            <article key={item.title} className="miniFeatureCard">
+              <span className="eyebrow">Collection</span>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+        <div className="container sectionCtaRow">
+          <Link href="/contact-us" className="button button--primary">
+            Start an estimate
+          </Link>
         </div>
       </section>
     </>

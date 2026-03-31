@@ -2,6 +2,7 @@ import "./globals.css";
 
 import { Instrument_Serif, Manrope } from "next/font/google";
 
+import { ChatWidget } from "@/components/chat-widget";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { buildLocalBusinessSchema } from "@/lib/seo";
@@ -57,6 +58,7 @@ export default function RootLayout({ children }) {
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
+        <ChatWidget />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
