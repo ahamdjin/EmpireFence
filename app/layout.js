@@ -1,8 +1,7 @@
 import "./globals.css";
 
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 
-import { ChatWidget } from "@/components/chat-widget";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { buildLocalBusinessSchema } from "@/lib/seo";
@@ -14,23 +13,36 @@ const display = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
 });
 
-const sans = Inter({
+const sans = Manrope({
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#17110d",
+};
+
 export const metadata = {
   metadataBase: new URL("https://empirefenceca.com"),
   title: {
-    default: `${business.shortName} | Fence and outdoor services in Jurupa Valley`,
+    default: `Fence Company in Jurupa Valley, CA | ${business.shortName}`,
     template: `%s | ${business.shortName}`,
   },
   description:
-    "Fence installation, gates, block walls, patios, turf, and outdoor upgrades across Jurupa Valley and nearby Inland Empire cities.",
+    "Empire Fence installs fences, gates, block walls, patios, driveways, and turf across Jurupa Valley and nearby Inland Empire cities.",
+  keywords: [
+    "fence company Jurupa Valley",
+    "fence contractor Jurupa Valley",
+    "vinyl fence Jurupa Valley",
+    "wrought iron fence Jurupa Valley",
+    "chain link fence Inland Empire",
+  ],
   openGraph: {
-    title: `${business.shortName} | Fence and outdoor services in Jurupa Valley`,
+    title: `Fence Company in Jurupa Valley, CA | ${business.shortName}`,
     description:
-      "Fence installation, gates, block walls, patios, turf, and outdoor upgrades across Jurupa Valley and nearby Inland Empire cities.",
+      "Empire Fence installs fences, gates, block walls, patios, driveways, and turf across Jurupa Valley and nearby Inland Empire cities.",
     images: ["/client/hero-western.webp"],
   },
 };
@@ -44,7 +56,6 @@ export default function RootLayout({ children }) {
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
-        <ChatWidget />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}

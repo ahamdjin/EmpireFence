@@ -2,11 +2,21 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export function Reveal({ as: Tag = "div", className = "", children, delay = 0 }) {
+export function Reveal({
+  as: Tag = "div",
+  className = "",
+  children,
+  delay = 0,
+  initiallyVisible = false,
+}) {
   const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
+  const [visible, setVisible] = useState(initiallyVisible);
 
   useEffect(() => {
+    if (initiallyVisible) {
+      return undefined;
+    }
+
     const node = ref.current;
     if (!node) {
       return;
@@ -21,12 +31,12 @@ export function Reveal({ as: Tag = "div", className = "", children, delay = 0 })
           }
         });
       },
-      { threshold: 0.16, rootMargin: "0px 0px -8%" },
+      { threshold: 0.08, rootMargin: "0px 0px -4%" },
     );
 
     observer.observe(node);
     return () => observer.disconnect();
-  }, []);
+  }, [initiallyVisible]);
 
   return (
     <Tag

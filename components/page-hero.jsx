@@ -8,7 +8,7 @@ export function PageHero({ eyebrow, title, intro, image, stats }) {
   return (
     <section className="pageHero">
       <div className="container">
-        <Reveal className="pageHero__frame">
+        <Reveal className="pageHero__frame" initiallyVisible>
           <div className="pageHero__bar">
             <span>{business.shortName}</span>
             <span>{business.city}</span>
