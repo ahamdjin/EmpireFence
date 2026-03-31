@@ -4,9 +4,19 @@ import Link from "next/link";
 import { business } from "@/lib/site";
 import { Reveal } from "@/components/reveal";
 
-export function PageHero({ eyebrow, title, intro, image, stats }) {
+export function PageHero({
+  eyebrow,
+  title,
+  intro,
+  image,
+  stats,
+  variant = "default",
+  secondaryImage,
+  chips = [],
+  cards = [],
+}) {
   return (
-    <section className="pageHero">
+    <section className={`pageHero pageHero--${variant}`}>
       <div className="pageHero__shell">
         <Reveal className="pageHero__frame" initiallyVisible variant="soft">
           <div className="pageHero__grid">
@@ -33,18 +43,65 @@ export function PageHero({ eyebrow, title, intro, image, stats }) {
                 </div>
               ) : null}
             </div>
-            <div className="pageHero__media">
-              <Image
-                src={image}
-                alt={typeof title === "string" ? title : business.shortName}
-                fill
-                priority
-                sizes="(max-width: 900px) 100vw, 48vw"
-              />
-              <div className="pageHero__caption">
-                <span className="eyebrow">Empire Fence</span>
-                <p>{business.city}</p>
+            <div className="pageHero__visual">
+              <div className="pageHero__media">
+                <Image
+                  src={image}
+                  alt={typeof title === "string" ? title : business.shortName}
+                  fill
+                  priority
+                  sizes="(max-width: 900px) 100vw, 48vw"
+                />
+                <div className="pageHero__caption">
+                  <span className="eyebrow">Empire Fence</span>
+                  <p>{business.city}</p>
+                </div>
               </div>
+
+              {secondaryImage ? (
+                <div className="pageHero__secondaryMedia">
+                  <Image
+                    src={secondaryImage}
+                    alt={`${business.shortName} supporting view`}
+                    fill
+                    sizes="(max-width: 900px) 46vw, 20vw"
+                  />
+                </div>
+              ) : null}
+
+              {chips.length ? (
+                <div className="pageHero__chipCloud">
+                  {chips.map((chip) => (
+                    <span key={chip} className="chip chip--static">
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
+
+              {cards.length ? (
+                <div className="pageHero__stack">
+                  {cards.map((card) => {
+                    const content = (
+                      <>
+                        {card.eyebrow ? <span className="eyebrow">{card.eyebrow}</span> : null}
+                        {card.title ? <strong>{card.title}</strong> : null}
+                        {card.copy ? <p>{card.copy}</p> : null}
+                      </>
+                    );
+
+                    return card.href ? (
+                      <Link key={`${card.title}-${card.href}`} href={card.href} className="pageHero__miniCard">
+                        {content}
+                      </Link>
+                    ) : (
+                      <article key={`${card.title}-${card.copy}`} className="pageHero__miniCard">
+                        {content}
+                      </article>
+                    );
+                  })}
+                </div>
+              ) : null}
             </div>
           </div>
         </Reveal>

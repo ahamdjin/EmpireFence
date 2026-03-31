@@ -51,6 +51,7 @@ function LocationPage({ area, services }) {
   return (
     <>
       <PageHero
+        variant="areas"
         eyebrow="Service area"
         title={
           <>
@@ -59,6 +60,7 @@ function LocationPage({ area, services }) {
         }
         intro={`Privacy fencing, frontage work, entry gates, and supporting outdoor scope in ${area.title}.`}
         image={area.image}
+        chips={["Free estimate", "Residential", "Commercial", area.title]}
       />
 
       <section className="section">

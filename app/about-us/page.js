@@ -16,6 +16,7 @@ export default function AboutPage() {
   return (
     <>
       <PageHero
+        variant="about"
         eyebrow="About the company"
         title={
           <>
@@ -24,6 +25,19 @@ export default function AboutPage() {
         }
         intro="Empire Fence handles privacy fencing, gates, walls, and selected outdoor upgrades with one standard of follow-through."
         image="/client/wrought-fence.jpg"
+        secondaryImage="/client/wood-fence.jpg"
+        cards={[
+          {
+            eyebrow: "Approach",
+            title: "Residential to industrial",
+            copy: "One coordinated standard of field finish.",
+          },
+          {
+            eyebrow: "Estimate path",
+            title: "Clear recommendations first",
+            copy: "Scope, material, and transitions get settled early.",
+          },
+        ]}
       />
 
       <section className="section">

@@ -16,6 +16,7 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
+        variant="contact"
         eyebrow="Contact"
         title={
           <>
@@ -24,6 +25,11 @@ export default function ContactPage() {
         }
         intro="Use the form for project details, or book directly when you want to talk through scope."
         image="/client/location-fontana.jpg"
+        cards={[
+          { eyebrow: "Phone", title: business.phoneDisplay, href: business.phoneHref },
+          { eyebrow: "Email", title: business.email, href: business.emailHref },
+          { eyebrow: "Hours", title: business.hours },
+        ]}
       />
 
       <section className="section">

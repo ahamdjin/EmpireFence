@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
 import { getAllPosts } from "@/lib/content";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildBlogCollectionSchema, buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Blog",
@@ -15,10 +15,22 @@ export const metadata = buildPageMetadata({
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
+  const featuredCards = posts.slice(0, 2).map((post) => ({
+    eyebrow: new Intl.DateTimeFormat("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric",
+    }).format(new Date(post.data.date)),
+    title: post.data.title,
+    copy: post.data.excerpt,
+    href: `/blog/${post.slug}`,
+  }));
+  const blogSchema = buildBlogCollectionSchema(posts);
 
   return (
     <>
       <PageHero
+        variant="blog"
         eyebrow="Blog"
         title={
           <>
@@ -27,6 +39,12 @@ export default async function BlogPage() {
         }
         intro="Short articles on material choices and estimate prep."
         image="/client/gallery-1.webp"
+        secondaryImage="/client/gallery-3.webp"
+        cards={featuredCards}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }}
       />
 
       <section className="section">

@@ -17,6 +17,7 @@ export default function ServiceAreasPage() {
   return (
     <>
       <PageHero
+        variant="areas"
         eyebrow="Coverage"
         title={
           <>
@@ -25,6 +26,7 @@ export default function ServiceAreasPage() {
         }
         intro="Service across the local cities where Empire Fence handles privacy fencing, frontage work, gates, and supporting outdoor scope."
         image="/client/location-riverside.jpg"
+        chips={serviceAreas.slice(0, 6).map((area) => area.title)}
       />
 
       <section className="section">

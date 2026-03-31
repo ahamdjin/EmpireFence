@@ -14,8 +14,12 @@ export function SiteFooter() {
               <strong>{business.name}</strong>
               <p>Fence, gate, wall, and selected outdoor work across Jurupa Valley and nearby Inland Empire cities.</p>
               <div className="siteFooter__actions">
-                <a href={business.phoneHref}>{business.phoneDisplay}</a>
-                <Link href="/contact-us">Start estimate</Link>
+                <a href={business.phoneHref} className="button button--ghost">
+                  {business.phoneDisplay}
+                </a>
+                <Link href="/contact-us" className="button button--primary">
+                  Start estimate
+                </Link>
               </div>
             </div>
           </div>

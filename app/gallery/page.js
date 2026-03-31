@@ -26,6 +26,7 @@ export default function GalleryPage() {
   return (
     <>
       <PageHero
+        variant="gallery"
         eyebrow="Gallery"
         title={
           <>
@@ -34,6 +35,8 @@ export default function GalleryPage() {
         }
         intro="A tighter look at privacy runs, decorative iron, gates, and the outdoor upgrades that finish the property edge."
         image="/client/gallery-4.webp"
+        secondaryImage="/client/gallery-2.webp"
+        chips={["Vinyl privacy", "Decorative iron", "Entry gates", "Outdoor scope"]}
       />
 
       <section className="section">

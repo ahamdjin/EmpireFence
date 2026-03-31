@@ -2,7 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { getAllPosts, getPostBySlug } from "@/lib/content";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildBlogPostingSchema, buildPageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -32,18 +32,33 @@ export default async function BlogPostPage({ params }) {
     notFound();
   }
 
+  const articleSchema = buildBlogPostingSchema(post);
+  const publishedDate = new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  }).format(new Date(post.data.date));
+
   return (
     <>
       <section className="articleHero">
         <div className="container articleHero__shell">
           <span className="eyebrow">Planning note</span>
           <h1>{post.data.title}</h1>
+          <div className="articleHero__meta">
+            <span>{publishedDate}</span>
+            <span>{post.data.excerpt}</span>
+          </div>
           <p>{post.data.excerpt}</p>
           <div className="articleHero__image">
             <Image src={post.data.heroImage} alt={post.data.title} fill sizes="100vw" />
           </div>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <article className="section">
         <div className="container articleBody">
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
