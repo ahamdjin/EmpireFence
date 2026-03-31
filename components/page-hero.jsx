@@ -8,12 +8,7 @@ export function PageHero({ eyebrow, title, intro, image, stats }) {
   return (
     <section className="pageHero">
       <div className="container">
-        <Reveal className="pageHero__frame" initiallyVisible>
-          <div className="pageHero__bar">
-            <span>{business.shortName}</span>
-            <span>{business.city}</span>
-            <span>Fence / gates / exterior scope</span>
-          </div>
+        <Reveal className="pageHero__frame" initiallyVisible variant="soft">
           <div className="pageHero__grid">
             <div className="pageHero__copy">
               {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
@@ -39,7 +34,17 @@ export function PageHero({ eyebrow, title, intro, image, stats }) {
               ) : null}
             </div>
             <div className="pageHero__media">
-              <Image src={image} alt={title} fill sizes="(max-width: 900px) 100vw, 46vw" />
+              <Image
+                src={image}
+                alt={typeof title === "string" ? title : business.shortName}
+                fill
+                priority
+                sizes="(max-width: 900px) 100vw, 48vw"
+              />
+              <div className="pageHero__caption">
+                <span className="eyebrow">Empire Fence</span>
+                <p>{business.city} and nearby Inland Empire cities</p>
+              </div>
             </div>
           </div>
         </Reveal>

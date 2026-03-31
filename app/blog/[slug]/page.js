@@ -36,7 +36,7 @@ export default async function BlogPostPage({ params }) {
     <>
       <section className="articleHero">
         <div className="container articleHero__shell">
-          <span className="eyebrow">Blog article</span>
+          <span className="eyebrow">Planning note</span>
           <h1>{post.data.title}</h1>
           <p>{post.data.excerpt}</p>
           <div className="articleHero__image">

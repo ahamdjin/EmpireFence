@@ -27,8 +27,12 @@ export default function GalleryPage() {
     <>
       <PageHero
         eyebrow="Gallery"
-        title="Project imagery carried over from the current Empire Fence brand site."
-        intro="This page turns the current photo set into a proper gallery section instead of a small visual block on the homepage."
+        title={
+          <>
+            Selected fence, gate, and frontage <em>work</em>.
+          </>
+        }
+        intro="A tighter look at privacy runs, decorative iron, gates, and the outdoor upgrades that finish the property edge."
         image="/client/gallery-4.webp"
       />
 

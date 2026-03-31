@@ -10,7 +10,7 @@ export const metadata = buildPageMetadata({
   description:
     "Explore vinyl, wood, wrought iron, chain link, custom fencing, block walls, patios, driveways, and turf services from Empire Fence.",
   path: "/services",
-  image: "/client/gallery-2.webp",
+  image: "/client/vinyl-fence.jpg",
 });
 
 export default async function ServicesPage() {
@@ -20,9 +20,13 @@ export default async function ServicesPage() {
     <>
       <PageHero
         eyebrow="All services"
-        title="Every core offer from the current Empire Fence site, separated into individual pages."
-        intro="Fence materials, gates, block walls, patios, turf, and broader exterior scope now live in a structured service system instead of one dense homepage."
-        image="/client/gallery-2.webp"
+        title={
+          <>
+            Fence, gate, wall, and outdoor <em>services</em>.
+          </>
+        }
+        intro="Browse the main project types Empire Fence handles across Jurupa Valley and nearby Inland Empire cities."
+        image="/client/vinyl-fence.jpg"
       />
 
       <section className="section">

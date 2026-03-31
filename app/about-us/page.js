@@ -17,8 +17,12 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About the company"
-        title="Fence-first planning with a broader outdoor scope."
-        intro="Empire Fence presents itself as a Jurupa Valley contractor that can move from privacy fencing to gates, turf, driveways, patios, and block walls without breaking the project apart."
+        title={
+          <>
+            Fence-first work with a cleaner <em>finish</em>.
+          </>
+        }
+        intro="Empire Fence handles privacy fencing, gates, walls, and selected outdoor upgrades with one standard of fit and follow-through."
         image="/client/wrought-fence.jpg"
       />
 
@@ -26,17 +30,16 @@ export default function AboutPage() {
         <div className="container splitIntro">
           <div>
             <span className="eyebrow">What matters</span>
-            <h2>Premium materials, stronger execution, and a cleaner finished exterior.</h2>
+            <h2>Clear recommendations, strong materials, and better finish quality.</h2>
           </div>
           <div className="prose">
             <p>
-              The original site repeats a few themes consistently: craftsmanship, project guidance,
-              reliable communication, and the ability to handle multiple outdoor scopes under one
-              business.
+              Empire Fence is strongest when the fence line, gate, wall transition, and surrounding
+              outdoor work are treated as one coordinated project instead of disconnected trades.
             </p>
             <p>
-              This rebuild keeps those themes but gives them a clearer structure so the company
-              reads like an established contractor instead of a crowded WordPress site.
+              The result should feel cleaner from the estimate onward: better layout decisions,
+              simpler communication, and a more resolved exterior once the work is done.
             </p>
           </div>
         </div>
@@ -70,8 +73,7 @@ export default function AboutPage() {
             <span className="eyebrow">Next step</span>
             <h3>Start with a free estimate.</h3>
             <p>
-              The site keeps free estimates as the entry point. The goal is to make that path
-              obvious from every page.
+              Share the scope, get a practical recommendation, and move into the right service path.
             </p>
             <Link href="/contact-us" className="button button--primary">
               Contact the team

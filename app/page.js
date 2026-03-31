@@ -41,19 +41,15 @@ export default async function HomePage() {
       <section className="homeHero">
         <div className="container">
           <Reveal className="heroStage" initiallyVisible variant="soft">
-            <div className="heroStage__status">
-              <span>Jurupa Valley, CA</span>
-              <span>Fence / gates / walls / outdoor scope</span>
-              <span>{business.hours}</span>
-            </div>
-
             <div className="heroStage__grid">
               <div className="heroStage__copy">
-                <span className="eyebrow">Premium perimeter contractor</span>
-                <h1>Fence lines, gates, and frontage work built to feel finished.</h1>
+                <span className="eyebrow">Jurupa Valley fence contractor</span>
+                <h1>
+                  Fence lines that look settled from the <em>street</em>.
+                </h1>
                 <p>
-                  Empire Fence installs vinyl, wood, wrought iron, chain link, gates, block walls,
-                  patios, driveways, and turf across Jurupa Valley and nearby Inland Empire cities.
+                  Vinyl, wood, wrought iron, chain link, gates, and wall work for homes,
+                  commercial sites, and property managers across Jurupa Valley and the Inland Empire.
                 </p>
 
                 <div className="buttonRow">
@@ -66,10 +62,10 @@ export default async function HomePage() {
                 </div>
 
                 <div className="heroStage__review">
-                  <strong>Built for homeowners, commercial sites, and property managers who need clean follow-through.</strong>
+                  <strong>Free estimates. Cleaner installs. One contractor for the property edge.</strong>
                   <p>
-                    Privacy fencing, decorative frontage, access gates, walls, and adjacent outdoor
-                    scope can stay under one contractor instead of splitting into disconnected trades.
+                    Fence runs, entry gates, walls, and adjacent outdoor scope can stay coordinated
+                    from estimate through finish.
                   </p>
                 </div>
               </div>
@@ -85,14 +81,9 @@ export default async function HomePage() {
                   />
                 </div>
 
-                <div className="heroStage__floating heroStage__floating--top">
-                  <span className="eyebrow">Core materials</span>
-                  <p>Vinyl, wood, wrought iron, chain link, custom fence builds, and access gates.</p>
-                </div>
-
-                <div className="heroStage__floating heroStage__floating--bottom">
-                  <span className="eyebrow">Outdoor scope</span>
-                  <p>Block walls, patios, driveways, and turf upgrades when the property edge needs a more complete finish.</p>
+                <div className="heroStage__note">
+                  <span className="eyebrow">Selected scope</span>
+                  <p>Vinyl, wood, wrought iron, chain link, gates, walls, patios, driveways, and turf.</p>
                 </div>
               </div>
             </div>
@@ -114,13 +105,13 @@ export default async function HomePage() {
           <Reveal className="storyCluster__lead" initiallyVisible variant="left">
             <SectionHeading
               eyebrow="Why Empire Fence"
-              title="A cleaner perimeter plan reads better than a rushed fence quote."
-              copy="The work is not only about the fence material. It is about the line, the gate swing, the wall transition, the driveway edge, and how the frontage looks when everything is done."
+              title="Built for properties that need a cleaner edge."
+              copy="One contractor can carry the fence line, the gate, the wall transition, and the pieces beside it."
             />
             <div className="storyCluster__summary">
               <p>
-                Fence installs stay at the center, but gates, block walls, patios, driveways, and
-                turf matter because the full exterior line should feel intentional from the street.
+                Fence work stays at the center, but the best result comes from how the entry, wall,
+                hardscape, and final finish work together once the job is done.
               </p>
               <Link href="/about-us" className="textLink">
                 Learn about the company
@@ -131,10 +122,10 @@ export default async function HomePage() {
           <div className="storyCluster__stack">
             <Reveal className="storyPanel" variant="up">
               <span className="eyebrow">Planning</span>
-              <h3>Fence line, transitions, and finish quality handled as one scope.</h3>
+              <h3>Layout comes before material.</h3>
               <p>
-                Good perimeter work is not only material selection. It is gate clearance, grade,
-                wall transitions, and how the entire edge of the property reads once the project is complete.
+                Gate clearance, grade, transitions, and the street-facing finish are handled before
+                the install starts.
               </p>
             </Reveal>
 
@@ -149,10 +140,10 @@ export default async function HomePage() {
 
             <Reveal className="storyPanel storyPanel--tone" delay={160} variant="right">
               <span className="eyebrow">Approach</span>
-              <h3>Fast estimate, direct communication, and a better-finished result.</h3>
+              <h3>Straight estimate path. Cleaner finish.</h3>
               <p>
-                The strongest signal is simple: clear recommendations, strong materials, and
-                detail-focused installation work that does not feel improvised.
+                Clear recommendations, strong materials, and detail-focused field work do more than
+                long contractor copy ever will.
               </p>
             </Reveal>
           </div>
@@ -164,8 +155,8 @@ export default async function HomePage() {
           <Reveal className="servicesRail__intro" initiallyVisible variant="left">
             <SectionHeading
               eyebrow="Services"
-              title="Fence, gate, wall, and outdoor work with one consistent standard."
-              copy="The home page should feel visual first, but the service offer still needs to stay clear. Each scope gets its own image, its own rhythm, and a fast path into the detail page."
+              title="Fence, gate, wall, and outdoor scope."
+              copy="Each service keeps its own page, but the whole site should still read as one brand and one standard."
               tone="contrast"
             />
 
@@ -182,7 +173,7 @@ export default async function HomePage() {
                 <span className="eyebrow">Materials + scope</span>
                 <p>
                   Privacy fencing, decorative frontage, access control, walls, and supporting
-                  outdoor upgrades are presented as one polished service system instead of a commodity catalog.
+                  outdoor upgrades sit under one tighter visual system.
                 </p>
                 <Link href="/services" className="button button--primary">
                   View all services
@@ -210,12 +201,12 @@ export default async function HomePage() {
           <Reveal className="galleryFeature__lead" initiallyVisible variant="left">
             <SectionHeading
               eyebrow="Selected work"
-              title="A visual site needs more than one hero image."
-              copy="The strongest fence brands use image rhythm to carry trust. This section should feel like proof, not a decorative gallery dump."
+              title="Selected projects."
+              copy="Privacy runs, decorative iron, gate detail, and adjacent hardscape should feel curated instead of dumped into one gallery."
             />
             <p>
-              The project mix should show privacy fencing, decorative iron work, gate detail, and
-              the cleaner exterior finishes that sit beside the fence line.
+              A stronger local brand feels visual first. The proof should sit in the image rhythm,
+              not in oversized cards.
             </p>
             <Link href="/gallery" className="button button--ghost">
               Open the gallery
@@ -246,8 +237,8 @@ export default async function HomePage() {
           <Reveal className="proofBand__lead" initiallyVisible variant="left">
             <SectionHeading
               eyebrow="Process"
-              title="The premium feeling comes from restraint, sequencing, and finish quality."
-              copy="A clear estimate path, practical recommendations, and cleaner field execution do more for trust than dense contractor copy."
+              title="What clients actually need."
+              copy="A quick estimate path, practical recommendations, and crews that finish cleanly."
             />
             <Link href="/gallery" className="button button--ghost">
               Browse project gallery
@@ -274,9 +265,9 @@ export default async function HomePage() {
               </div>
               <div className="projectSpotlight__body">
                 <span className="eyebrow">Complete frontage</span>
-                <h3>Fence frontage, gates, walls, and adjacent hardscape can all sit under one cleaner contractor story.</h3>
+                <h3>Fence frontage, gates, walls, and hardscape can stay under one cleaner scope.</h3>
                 <p>
-                  That is what separates a stronger local brand from a one-material installer site.
+                  That is the difference between a one-material installer and a stronger exterior contractor.
                 </p>
               </div>
             </Reveal>
@@ -288,10 +279,10 @@ export default async function HomePage() {
         <div className="container locationFaq">
           <Reveal className="locationStage" initiallyVisible variant="left">
             <span className="eyebrow">Service area</span>
-            <h2>Jurupa Valley first, with coverage across the nearby Inland Empire.</h2>
+            <h2>Jurupa Valley first, with nearby Inland Empire coverage.</h2>
             <p>
               Empire Fence serves Jurupa Valley, Riverside, Ontario, Chino, Rancho Cucamonga,
-              Fontana, and San Bernardino with residential, commercial, and property-management work.
+              Fontana, and San Bernardino for residential and commercial projects.
             </p>
             <div className="chipWrap">
               {serviceAreas.map((area) => (
@@ -306,7 +297,7 @@ export default async function HomePage() {
           </Reveal>
 
           <div className="faqCluster">
-            <SectionHeading eyebrow="FAQ" title="Questions that usually come up before the estimate." />
+            <SectionHeading eyebrow="FAQ" title="Before the estimate." />
             <div className="faqList faqList--stacked">
               {faqs.map((item, index) => (
                 <Reveal key={item.question} className="faqItem" delay={index * 50} variant="up">
@@ -323,8 +314,8 @@ export default async function HomePage() {
         <div className="container">
           <SectionHeading
             eyebrow="Planning articles"
-            title="Helpful local content should answer buying questions and reinforce trust."
-            copy="These articles support the service pages, help buyers compare options, and keep the site useful without turning into a content mill."
+            title="Short planning notes for the next project."
+            copy="Material choices, estimate prep, and scope decisions that help buyers move faster."
           />
           <div className="postGrid postGrid--feature">
             {posts.map((post, index) => (
@@ -357,10 +348,12 @@ export default async function HomePage() {
           <Reveal className="ctaShell" variant="soft">
             <div className="ctaShell__copy">
               <span className="eyebrow">Start the estimate</span>
-              <h2>Tell the team what you are building and get the scope moving.</h2>
+              <h2>
+                Start with the <em>scope</em>.
+              </h2>
               <p>
-                Use the form for the estimate. Use the contact page when you want the booking
-                calendar, call details, or a faster scheduling path.
+                Use the form for the project details. Use the contact page when you want the
+                calendar, phone, or a faster scheduling path.
               </p>
 
               <div className="contactStack">

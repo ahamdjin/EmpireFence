@@ -20,8 +20,12 @@ export default async function BlogPage() {
     <>
       <PageHero
         eyebrow="Blog"
-        title="A file-based blog CMS for local authority, SEO, and conversion support."
-        intro="Blog posts now live in markdown so new articles can be added without editing page code directly."
+        title={
+          <>
+            Planning notes for better fence <em>projects</em>.
+          </>
+        }
+        intro="Short articles on material choices, estimate prep, and outdoor scope around the property edge."
         image="/client/gallery-1.webp"
       />
 

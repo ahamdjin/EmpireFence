@@ -18,8 +18,12 @@ export default function ServiceAreasPage() {
     <>
       <PageHero
         eyebrow="Coverage"
-        title="Jurupa Valley plus the Inland Empire cities already on the current site."
-        intro="Each service-area page now has a dedicated route so the business can grow local SEO content cleanly instead of stacking location text into one screen."
+        title={
+          <>
+            Jurupa Valley and nearby Inland Empire <em>cities</em>.
+          </>
+        }
+        intro="Service across the local cities where Empire Fence regularly handles privacy fencing, frontage work, gates, and supporting outdoor scope."
         image="/client/location-riverside.jpg"
       />
 

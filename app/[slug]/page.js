@@ -51,25 +51,29 @@ function LocationPage({ area, services }) {
     <>
       <PageHero
         eyebrow="Service area"
-        title={`Premier fencing solutions in ${area.title}`}
-        intro={area.intro}
+        title={
+          <>
+            Fence and gate work in <em>{area.title}</em>
+          </>
+        }
+        intro={`Privacy fencing, frontage work, entry gates, and supporting outdoor scope for homes and commercial properties in ${area.title}.`}
         image={area.image}
       />
 
       <section className="section">
         <div className="container splitIntro">
           <div>
-            <span className="eyebrow">Local service page</span>
-            <h2>Built from the city pages already on the current brand site.</h2>
+            <span className="eyebrow">Local projects</span>
+            <h2>Fence lines, gates, and surrounding scope handled cleanly.</h2>
           </div>
           <div className="prose">
             <p>
-              The existing Empire Fence site already targets this city. This rebuild preserves that
-              local SEO structure while cleaning up the design and routing.
+              Projects in {area.title} can range from privacy runs and decorative frontage to wall
+              work, patios, and driveways when the property edge needs a more complete finish.
             </p>
             <p>
-              Fence work, gates, patios, turf, and related exterior scope can now be supported by
-              individual service pages and stronger conversion paths.
+              The goal is a better-looking result, practical recommendations, and a faster path into
+              the estimate.
             </p>
           </div>
         </div>
@@ -100,7 +104,7 @@ function LocationPage({ area, services }) {
             <QuoteForm compact />
           </div>
           <div className="panel panel--dark">
-            <span className="eyebrow">Book the first conversation</span>
+            <span className="eyebrow">Book the first call</span>
             <h2>Use the live calendar.</h2>
             <BookingWidget />
           </div>
@@ -143,7 +147,7 @@ function ServicePage({ service, services }) {
         <div className="container">
           <div className="sectionHeading">
             <span className="eyebrow">Service FAQ</span>
-            <h2>Questions tied to this scope.</h2>
+            <h2>Common questions for this scope.</h2>
           </div>
           <div className="faqList">
             {service.data.faqs.map((item) => (
@@ -160,7 +164,7 @@ function ServicePage({ service, services }) {
         <div className="container">
           <div className="sectionHeading">
             <span className="eyebrow">Related services</span>
-            <h2>Other pages in the new service CMS.</h2>
+            <h2>Related work around the property edge.</h2>
           </div>
           <div className="serviceGrid">
             {related.map((item) => (
@@ -188,7 +192,7 @@ function ServicePage({ service, services }) {
           </div>
           <div className="panel">
             <span className="eyebrow">Business info</span>
-            <h2>Still the same live business details.</h2>
+            <h2>Talk to the team directly.</h2>
             <div className="contactStack">
               <a href={business.phoneHref}>{business.phoneDisplay}</a>
               <a href={business.emailHref}>{business.email}</a>

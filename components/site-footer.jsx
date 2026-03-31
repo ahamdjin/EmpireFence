@@ -12,7 +12,7 @@ export function SiteFooter() {
             <Image src="/client/logo.png" alt={business.shortName} width={72} height={72} />
             <div>
               <strong>{business.name}</strong>
-              <p>{business.reviewSummary}</p>
+              <p>Fence, gate, wall, and selected outdoor work across Jurupa Valley and nearby Inland Empire cities.</p>
               <div className="siteFooter__actions">
                 <a href={business.phoneHref}>{business.phoneDisplay}</a>
                 <Link href="/contact-us">Start estimate</Link>
@@ -54,7 +54,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="siteFooter__bottom">
-          <span>Fence, gates, walls, patios, driveways, and turf across Jurupa Valley and the Inland Empire.</span>
+          <span>Privacy fencing, frontage work, gates, walls, patios, driveways, and turf.</span>
           <span>© {new Date().getFullYear()} {business.name}</span>
         </div>
       </div>

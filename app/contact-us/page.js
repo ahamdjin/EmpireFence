@@ -17,8 +17,12 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Free estimate, direct contact details, and the live booking flow in one place."
-        intro="The original site uses contact and estimate forms throughout. This page centralizes that into a cleaner conversion page with map, contact details, and the current calendar."
+        title={
+          <>
+            Start the estimate or book the first <em>call</em>.
+          </>
+        }
+        intro="Use the form for project details, or book directly when you want to talk through scope and timing."
         image="/client/location-fontana.jpg"
       />
 
@@ -62,7 +66,7 @@ export default function ContactPage() {
           </div>
           <div className="panel panel--dark">
             <span className="eyebrow">Booking calendar</span>
-            <h2>Keep the current GHL scheduling flow live.</h2>
+            <h2>Book the first conversation.</h2>
             <BookingWidget />
           </div>
         </div>

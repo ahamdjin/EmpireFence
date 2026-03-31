@@ -1,16 +1,17 @@
 import "./globals.css";
 
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Instrument_Serif, Manrope } from "next/font/google";
 
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { buildLocalBusinessSchema } from "@/lib/seo";
 import { business } from "@/lib/site";
 
-const display = Cormorant_Garamond({
+const accent = Instrument_Serif({
   subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-accent",
+  weight: ["400"],
+  style: ["normal", "italic"],
 });
 
 const sans = Manrope({
@@ -52,7 +53,7 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={`${display.variable} ${sans.variable}`}>
+      <body className={`${accent.variable} ${sans.variable}`}>
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />
