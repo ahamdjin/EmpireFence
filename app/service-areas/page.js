@@ -15,9 +15,15 @@ export const metadata = buildPageMetadata({
 export default function ServiceAreasPage() {
   return (
     <>
-      <section className="coverageStage">
-        <div className="container coverageStage__grid">
-          <div className="coverageStage__copy">
+      <section className="coverageAtlas">
+        <div className="container coverageAtlas__grid">
+          <div className="coverageAtlas__map">
+            <div className="mapCard mapCard--standalone">
+              <iframe src={business.mapEmbedSrc} loading="lazy" allowFullScreen title="Empire Fence coverage map" />
+            </div>
+          </div>
+
+          <div className="coverageAtlas__copy">
             <span className="eyebrow">Coverage</span>
             <h1>
               Jurupa Valley and nearby Inland Empire <em>cities</em>.
@@ -32,12 +38,6 @@ export default function ServiceAreasPage() {
                   {area.title}
                 </span>
               ))}
-            </div>
-          </div>
-
-          <div className="coverageStage__map">
-            <div className="mapCard mapCard--standalone">
-              <iframe src={business.mapEmbedSrc} loading="lazy" allowFullScreen title="Empire Fence coverage map" />
             </div>
           </div>
         </div>

@@ -26,8 +26,8 @@ export const metadata = buildPageMetadata({
 export default function GalleryPage() {
   return (
     <>
-      <section className="galleryStage">
-        <div className="container galleryStage__intro">
+      <section className="galleryShowcase">
+        <div className="container galleryShowcase__intro">
           <div>
             <span className="eyebrow">Gallery</span>
             <h1>
@@ -40,11 +40,11 @@ export default function GalleryPage() {
           </p>
         </div>
 
-        <div className="container galleryStage__mosaic">
+        <div className="container galleryShowcase__mosaic">
           {images.slice(0, 5).map((image, index) => (
             <figure
               key={image}
-              className={`galleryStage__tile galleryStage__tile--${index === 0 ? "hero" : index === 1 ? "tall" : "default"}`}
+              className={`galleryShowcase__tile galleryShowcase__tile--${index === 0 ? "hero" : index === 1 ? "tall" : "default"}`}
             >
               <Image src={image} alt={`Empire Fence gallery image ${index + 1}`} fill sizes="(max-width: 900px) 100vw, 33vw" />
             </figure>
@@ -53,13 +53,13 @@ export default function GalleryPage() {
       </section>
 
       <section className="section">
-        <div className="container galleryCollections">
-          <div className="galleryCollections__lead">
+        <div className="container galleryRail">
+          <div className="galleryRail__lead">
             <span className="eyebrow">Project mix</span>
             <h2>Fence installs, gate details, and supporting exterior work that read better once the whole edge is finished.</h2>
             <p>The strongest jobs here are not just one material. They are the ones where the frontage, transitions, and entry moments are handled as one visual scope.</p>
           </div>
-          <div className="galleryCollections__list">
+          <div className="galleryRail__list">
             {galleryCollections.map((item) => (
               <article key={item.title} className="miniFeatureCard">
                 <span className="eyebrow">Collection</span>

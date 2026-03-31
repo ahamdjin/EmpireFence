@@ -14,9 +14,9 @@ export const metadata = buildPageMetadata({
 export default function ContactPage() {
   return (
     <>
-      <section className="contactStage">
-        <div className="container contactStage__grid">
-          <article className="contactStage__intro">
+      <section className="contactHub">
+        <div className="container contactHub__grid">
+          <article className="contactHub__intro">
             <span className="eyebrow">Contact</span>
             <h1>
               Start the estimate or book the first <em>call</em>.
@@ -33,7 +33,7 @@ export default function ContactPage() {
               </a>
               <p>{business.hours}</p>
             </div>
-            <div className="contactStage__socials">
+            <div className="contactHub__socials">
               {socialLinks.map((link) => (
                 <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="button button--ghost">
                   {link.label}
@@ -42,7 +42,7 @@ export default function ContactPage() {
             </div>
           </article>
 
-          <article className="contactStage__form">
+          <article className="contactHub__form">
             <span className="eyebrow">Estimate request</span>
             <h2>Send the scope.</h2>
             <QuoteForm />
@@ -51,8 +51,8 @@ export default function ContactPage() {
       </section>
 
       <section className="section section--soft">
-        <div className="container splitCards">
-          <article className="infoCard">
+        <div className="container contactChecklist">
+          <article className="contactChecklist__card">
             <span className="eyebrow">Helpful details</span>
             <h3>What to send before the first call.</h3>
             <ul className="bulletList">
@@ -61,7 +61,7 @@ export default function ContactPage() {
               ))}
             </ul>
           </article>
-          <article className="infoCard">
+          <article className="contactChecklist__card">
             <span className="eyebrow">Service footprint</span>
             <h3>Jurupa Valley first, with nearby Inland Empire coverage.</h3>
             <div className="chipWrap">
@@ -76,15 +76,15 @@ export default function ContactPage() {
       </section>
 
       <section className="section" id="booking">
-        <div className="container contactUtility">
-          <div className="contactUtility__map">
+        <div className="container contactUtilityPanel">
+          <div className="contactUtilityPanel__map">
             <span className="eyebrow">Map</span>
             <h2>Find the service footprint.</h2>
             <div className="mapCard mapCard--embedded">
               <iframe src={business.mapEmbedSrc} loading="lazy" allowFullScreen title="Empire Fence map" />
             </div>
           </div>
-          <div className="contactUtility__booking">
+          <div className="contactUtilityPanel__booking">
             <span className="eyebrow">Booking calendar</span>
             <h2>Book the first call.</h2>
             <BookingWidget />

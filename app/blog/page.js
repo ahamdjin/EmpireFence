@@ -14,7 +14,7 @@ export const metadata = buildPageMetadata({
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
-  const featuredCards = posts.slice(0, 2).map((post) => ({
+  const featuredCards = posts.slice(1, 3).map((post) => ({
     eyebrow: new Intl.DateTimeFormat("en-US", {
       month: "short",
       day: "numeric",
@@ -28,9 +28,8 @@ export default async function BlogPage() {
 
   return (
     <>
-      <section className="journalStage">
-        <div className="container journalStage__grid">
-          <div className="journalStage__copy">
+      <section className="journalDeck">
+        <div className="container journalDeck__top">
             <span className="eyebrow">Blog</span>
             <h1>
               Planning notes for better fence <em>projects</em>.
@@ -39,14 +38,15 @@ export default async function BlogPage() {
             <Link href="/contact-us" className="button button--primary">
               Start estimate
             </Link>
-          </div>
+        </div>
 
-          {posts[0] ? (
-            <article className="journalStage__feature">
-              <div className="journalStage__image">
+        {posts[0] ? (
+          <div className="container journalDeck__grid">
+            <article className="journalDeck__feature">
+              <div className="journalDeck__image">
                 <Image src={posts[0].data.heroImage} alt={posts[0].data.title} fill sizes="(max-width: 900px) 100vw, 42vw" />
               </div>
-              <div className="journalStage__body">
+              <div className="journalDeck__body">
                 <span className="eyebrow">Featured article</span>
                 <h2>{posts[0].data.title}</h2>
                 <p>{posts[0].data.excerpt}</p>
@@ -55,8 +55,20 @@ export default async function BlogPage() {
                 </Link>
               </div>
             </article>
-          ) : null}
-        </div>
+            <div className="journalDeck__side">
+              {featuredCards.map((post) => (
+                <article key={post.href} className="miniFeatureCard">
+                  <span className="eyebrow">{post.eyebrow}</span>
+                  <h3>{post.title}</h3>
+                  <p>{post.copy}</p>
+                  <Link href={post.href} className="textLink">
+                    Read article
+                  </Link>
+                </article>
+              ))}
+            </div>
+          </div>
+        ) : null}
       </section>
       <script
         type="application/ld+json"
@@ -65,21 +77,9 @@ export default async function BlogPage() {
 
       <section className="section">
         <div className="container editorialLead">
-          <div className="editorialLead__body">
+          <div className="editorialLead__body editorialLead__body--intro">
             <span className="eyebrow">Article list</span>
             <h2>Planning notes that help clients choose material, prepare estimates, and bundle scope more cleanly.</h2>
-          </div>
-          <div className="editorialLead__list">
-            {featuredCards.map((post) => (
-              <article key={post.href} className="miniFeatureCard">
-                <span className="eyebrow">{post.eyebrow}</span>
-                <h3>{post.title}</h3>
-                <p>{post.copy}</p>
-                <Link href={post.href} className="textLink">
-                  Read article
-                </Link>
-              </article>
-            ))}
           </div>
         </div>
       </section>
