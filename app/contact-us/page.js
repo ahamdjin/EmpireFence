@@ -6,7 +6,7 @@ import { business, contactPrompts, serviceAreas, socialLinks } from "@/lib/site"
 export const metadata = buildPageMetadata({
   title: "Contact us",
   description:
-    "Request a free estimate, book through the live calendar, or contact Empire Fence directly for fence and outdoor work in Jurupa Valley.",
+    "Request a free estimate, book through the live calendar, or contact Empire Fence directly for fence, gate, and wall work in Jurupa Valley.",
   path: "/contact-us",
   image: "/client/location-fontana.jpg",
 });

@@ -15,8 +15,7 @@ export const business = {
 };
 
 export const chatWidget = {
-  widgetId: "69c01d67633c74d10c369675",
-  locationId: "VUXXwCAxSkjuGBKAjon6",
+  widgetId: "69cd30d134c04424ce26efa7",
   loaderSrc: "https://widgets.leadconnectorhq.com/loader.js",
   resourcesUrl: "https://widgets.leadconnectorhq.com/chat-widget/loader.js",
 };

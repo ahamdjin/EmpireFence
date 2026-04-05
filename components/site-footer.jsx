@@ -63,7 +63,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="siteFooter__bottom">
-          <span>Privacy fencing, frontage work, gates, walls, patios, driveways, and turf.</span>
+          <span>Privacy fencing, frontage work, gates, and walls.</span>
           <span>© {new Date().getFullYear()} {business.name}</span>
         </div>
       </div>

@@ -2657,7 +2657,7 @@ a.pageHero__miniCard:hover {
   }
 
   .section {
-    padding: 52px 0;
+    padding: 40px 0;
   }
 
   .siteHeader {
@@ -2720,7 +2720,7 @@ a.pageHero__miniCard:hover {
   .heroStage,
   .pageHero__frame,
   .articleHero__shell {
-    padding: 94px 16px 18px;
+    padding: 88px 14px 14px;
   }
 
   .aboutStage,
@@ -2736,10 +2736,16 @@ a.pageHero__miniCard:hover {
     padding: 98px 0 24px;
   }
 
+  .homeHero,
+  .pageHero,
+  .articleHero {
+    min-height: auto;
+  }
+
   .heroStage__grid,
   .pageHero__grid {
     min-height: auto;
-    gap: 18px;
+    gap: 14px;
     align-content: start;
   }
 
@@ -2750,7 +2756,7 @@ a.pageHero__miniCard:hover {
   }
 
   .heroStage__copy {
-    gap: 14px;
+    gap: 12px;
     max-width: none;
   }
 
@@ -2767,11 +2773,11 @@ a.pageHero__miniCard:hover {
   }
 
   .heroStage__visual {
-    min-height: 300px;
+    min-height: 260px;
   }
 
   .heroStage__imageWrap {
-    border-radius: 26px;
+    border-radius: 22px;
   }
 
   .heroStage__note {
@@ -2779,8 +2785,8 @@ a.pageHero__miniCard:hover {
     right: 12px;
     bottom: 12px;
     width: auto;
-    padding: 14px 14px 16px;
-    border-radius: 18px;
+    padding: 12px 12px 14px;
+    border-radius: 16px;
   }
 
   .heroStage__secondary {
@@ -2790,13 +2796,13 @@ a.pageHero__miniCard:hover {
   .heroStage__metrics {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
-    margin-top: 8px;
-    padding-top: 12px;
+    margin-top: 4px;
+    padding-top: 10px;
   }
 
   .heroMetric {
-    padding: 12px;
-    border-radius: 16px;
+    padding: 10px;
+    border-radius: 14px;
   }
 
   .heroMetric strong {
@@ -2847,7 +2853,7 @@ a.pageHero__miniCard:hover {
   .proofBand,
   .contactUtility,
   .journalStage__feature {
-    gap: 18px;
+    gap: 14px;
   }
 
   .storyCluster__stack,
@@ -2859,7 +2865,7 @@ a.pageHero__miniCard:hover {
   .faqList,
   .locationGrid,
   .postGrid {
-    gap: 14px;
+    gap: 12px;
   }
 
   .storyPanel--image,
@@ -2872,31 +2878,31 @@ a.pageHero__miniCard:hover {
   .locationCard__image,
   .galleryTile,
   .articleHero__image {
-    min-height: 220px;
+    min-height: 200px;
   }
 
   .servicesRail__stickyImage {
-    min-height: 210px;
-    border-radius: 24px;
+    min-height: 180px;
+    border-radius: 20px;
   }
 
   .servicesRail__stickyCopy {
-    padding: 18px;
-    border-radius: 20px;
+    padding: 16px;
+    border-radius: 18px;
   }
 
   .servicesRail__stickyCopy .button {
     width: 100%;
   }
 
-  .servicesRail__list > *:nth-child(n + 5) {
+  .servicesRail__list > *:nth-child(n + 4) {
     display: none;
   }
 
   .serviceEditorial,
   .serviceEditorial--alt {
-    grid-template-columns: 110px minmax(0, 1fr);
-    border-radius: 22px;
+    grid-template-columns: 96px minmax(0, 1fr);
+    border-radius: 18px;
   }
 
   .serviceEditorial--alt .serviceEditorial__media {
@@ -2909,16 +2915,16 @@ a.pageHero__miniCard:hover {
 
   .serviceEditorial__body {
     gap: 8px;
-    padding: 16px;
+    padding: 14px;
   }
 
   .serviceEditorial__body h3 {
-    font-size: 1.18rem;
+    font-size: 1.05rem;
   }
 
   .serviceEditorial__body p {
-    font-size: 0.88rem;
-    line-height: 1.5;
+    font-size: 0.82rem;
+    line-height: 1.45;
   }
 
   .serviceEditorial__meta {
@@ -3057,11 +3063,11 @@ a.pageHero__miniCard:hover {
   .projectSpotlight__body,
   .ctaShell__form,
   .galleryTile__overlay {
-    padding: 18px;
+    padding: 16px;
   }
 
   .proofBand__lead {
-    gap: 14px;
+    gap: 12px;
   }
 
   .processCard,
@@ -3070,12 +3076,12 @@ a.pageHero__miniCard:hover {
   .locationCard__body,
   .postCard__body,
   .serviceIndexCard__body {
-    padding: 18px;
+    padding: 16px;
   }
 
   .ctaShell {
-    padding: 20px;
-    border-radius: 26px;
+    padding: 18px;
+    border-radius: 22px;
   }
 
   .ctaShell h2 {
@@ -3083,17 +3089,21 @@ a.pageHero__miniCard:hover {
   }
 
   .ctaShell__form {
-    padding: 16px;
-    border-radius: 22px;
+    padding: 14px;
+    border-radius: 18px;
   }
 
   .quoteForm {
-    gap: 12px;
+    gap: 10px;
   }
 
   .quoteForm__grid {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
+  }
+
+  .siteFooter {
+    padding: 44px 0 22px;
   }
 }
 

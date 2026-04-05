@@ -70,7 +70,7 @@ function LocationPage({ area, services }) {
             <h2>Fence lines, gates, and surrounding scope handled cleanly.</h2>
           </div>
           <div className="prose">
-            <p>Projects in {area.title} can range from privacy runs and decorative frontage to wall work, patios, and driveways.</p>
+            <p>Projects in {area.title} can range from privacy runs and decorative frontage to wall work and gate scope.</p>
           </div>
         </div>
       </section>

@@ -6,7 +6,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Services",
   description:
-    "Explore vinyl, wood, wrought iron, chain link, custom fencing, block walls, patios, driveways, and turf services from Empire Fence.",
+    "Explore vinyl, wood, wrought iron, chain link, custom fencing, gates, and block wall services from Empire Fence.",
   path: "/services",
   image: "/client/vinyl-fence.jpg",
 });

@@ -19,7 +19,7 @@ import {
 export const metadata = buildPageMetadata({
   title: "Fence company in Jurupa Valley, CA",
   description:
-    "Empire Fence installs vinyl, wood, wrought iron, chain link, gates, block walls, patios, driveways, and turf across Jurupa Valley and nearby Inland Empire cities.",
+    "Empire Fence installs vinyl, wood, wrought iron, chain link, gates, and block walls across Jurupa Valley and nearby Inland Empire cities.",
   path: "/",
   keywords: [
     "vinyl fence Jurupa Valley",
@@ -47,7 +47,7 @@ export default async function HomePage() {
                 <h1>
                   Fence lines that look settled from the <em>street</em>.
                 </h1>
-                <p>Vinyl, wood, wrought iron, chain link, gates, and walls across Jurupa Valley and the Inland Empire.</p>
+                <p>Vinyl, wood, wrought iron, chain link, gates, and block walls across Jurupa Valley and the Inland Empire.</p>
 
                 <div className="buttonRow">
                   <Link href="/contact-us" className="button button--primary">
@@ -76,7 +76,7 @@ export default async function HomePage() {
 
                 <div className="heroStage__note">
                   <span className="eyebrow">Selected scope</span>
-                  <p>Fences, gates, walls, patios, driveways, and turf.</p>
+                  <p>Fences, gates, and walls.</p>
                 </div>
 
                 <div className="heroStage__secondary">

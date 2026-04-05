@@ -68,8 +68,6 @@ export function QuoteForm({ compact = false }) {
             <option value="Chain link fence">Chain link fence</option>
             <option value="Custom fence">Custom fence</option>
             <option value="Cinder block walls">Cinder block walls</option>
-            <option value="Driveway and patio">Driveway and patio</option>
-            <option value="Turf installation">Turf installation</option>
           </select>
         </label>
         <label>

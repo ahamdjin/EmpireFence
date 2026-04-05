@@ -33,7 +33,7 @@ export const metadata = {
     template: `%s | ${business.shortName}`,
   },
   description:
-    "Empire Fence installs fences, gates, block walls, patios, driveways, and turf across Jurupa Valley and nearby Inland Empire cities.",
+    "Empire Fence installs fences, gates, and block walls across Jurupa Valley and nearby Inland Empire cities.",
   keywords: [
     "fence company Jurupa Valley",
     "fence contractor Jurupa Valley",
@@ -44,7 +44,7 @@ export const metadata = {
   openGraph: {
     title: `Fence Company in Jurupa Valley, CA | ${business.shortName}`,
     description:
-      "Empire Fence installs fences, gates, block walls, patios, driveways, and turf across Jurupa Valley and nearby Inland Empire cities.",
+      "Empire Fence installs fences, gates, and block walls across Jurupa Valley and nearby Inland Empire cities.",
     images: ["/client/hero-western.webp"],
   },
 };

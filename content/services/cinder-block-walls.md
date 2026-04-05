@@ -13,7 +13,7 @@ faqs:
   - question: Are cinder block walls only for large properties?
     answer: No. They can work for residential privacy, retaining needs, and stronger perimeter lines depending on the property and local requirements.
   - question: Can block walls be paired with other scope?
-    answer: Yes. They often sit inside a broader exterior project with gates, fencing, patios, or driveway work.
+    answer: Yes. They often sit inside a broader exterior project with gates and fencing when the frontage needs a cleaner transition.
 ---
 Empire Fence builds **cinder block walls** for projects that need more structural presence than a light fence line can provide.
 

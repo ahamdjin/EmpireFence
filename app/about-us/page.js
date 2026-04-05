@@ -7,7 +7,7 @@ import { aboutHighlights, industries, trustPoints } from "@/lib/site";
 export const metadata = buildPageMetadata({
   title: "About us",
   description:
-    "Learn how Empire Fence approaches fencing, gates, block walls, patios, turf, and broader exterior work across Jurupa Valley.",
+    "Learn how Empire Fence approaches fencing, gates, and block wall work across Jurupa Valley.",
   path: "/about-us",
   image: "/client/wrought-fence.jpg",
 });

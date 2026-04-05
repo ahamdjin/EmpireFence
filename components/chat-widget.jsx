@@ -62,7 +62,6 @@ export function ChatWidget() {
     <div
       data-chat-widget=""
       data-widget-id={chatWidget.widgetId}
-      data-location-id={chatWidget.locationId}
     />
   );
 }
