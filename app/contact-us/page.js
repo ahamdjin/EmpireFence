@@ -35,7 +35,7 @@ export default function ContactPage() {
             </div>
             <div className="contactHub__socials">
               {socialLinks.map((link) => (
-                <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="button button--ghost">
+                <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="textLink">
                   {link.label}
                 </a>
               ))}

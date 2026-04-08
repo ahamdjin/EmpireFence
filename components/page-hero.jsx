@@ -15,6 +15,9 @@ export function PageHero({
   chips = [],
   cards = [],
 }) {
+  const heroChips = chips.slice(0, variant === "areas" ? 3 : 2);
+  const showCaption = variant !== "areas";
+
   return (
     <section className={`pageHero pageHero--${variant}`}>
       <div className="pageHero__shell">
@@ -24,6 +27,15 @@ export function PageHero({
               {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
               <h1>{title}</h1>
               <p>{intro}</p>
+              {heroChips.length ? (
+                <div className="pageHero__copyMeta">
+                  {heroChips.map((chip) => (
+                    <span key={chip} className="pageHero__tag">
+                      {chip}
+                    </span>
+                  ))}
+                </div>
+              ) : null}
               <div className="pageHero__actions">
                 <Link href="/contact-us" className="button button--primary">
                   Start estimate
@@ -52,10 +64,12 @@ export function PageHero({
                   priority
                   sizes="(max-width: 900px) 100vw, 48vw"
                 />
-                <div className="pageHero__caption">
-                  <span className="eyebrow">Empire Fence</span>
-                  <p>{business.city}</p>
-                </div>
+                {showCaption ? (
+                  <div className="pageHero__caption">
+                    <span className="pageHero__captionLabel">Empire Fence</span>
+                    <span className="pageHero__captionValue">{business.city}</span>
+                  </div>
+                ) : null}
               </div>
 
               {secondaryImage ? (
@@ -66,16 +80,6 @@ export function PageHero({
                     fill
                     sizes="(max-width: 900px) 46vw, 20vw"
                   />
-                </div>
-              ) : null}
-
-              {chips.length ? (
-                <div className="pageHero__chipCloud">
-                  {chips.map((chip) => (
-                    <span key={chip} className="chip chip--static">
-                      {chip}
-                    </span>
-                  ))}
                 </div>
               ) : null}
 

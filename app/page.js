@@ -49,16 +49,22 @@ export default async function HomePage() {
                 </h1>
                 <p>Vinyl, wood, wrought iron, chain link, gates, and block walls across Jurupa Valley and the Inland Empire.</p>
 
+                <div className="heroStage__scope">
+                  <span>Fence, gate, and wall work</span>
+                  <span>Jurupa Valley + Inland Empire</span>
+                </div>
+
                 <div className="buttonRow">
                   <Link href="/contact-us" className="button button--primary">
                     Start a free estimate
                   </Link>
-                  <Link href="/gallery" className="button button--ghost">
+                  <Link href="/gallery" className="textLink">
                     View project gallery
                   </Link>
                 </div>
 
                 <div className="heroStage__review">
+                  <span className="heroStage__reviewLabel">Estimate path</span>
                   <strong>Free estimates. Cleaner installs.</strong>
                 </div>
               </div>
@@ -72,11 +78,6 @@ export default async function HomePage() {
                     priority
                     sizes="(max-width: 900px) 100vw, 44vw"
                   />
-                </div>
-
-                <div className="heroStage__note">
-                  <span className="eyebrow">Selected scope</span>
-                  <p>Fences, gates, and walls.</p>
                 </div>
 
                 <div className="heroStage__secondary">
@@ -193,7 +194,7 @@ export default async function HomePage() {
               title="Selected projects."
               copy="Privacy runs, decorative iron, gate detail, and hardscape that support the property edge."
             />
-            <Link href="/gallery" className="button button--ghost">
+            <Link href="/gallery" className="textLink">
               Open the gallery
             </Link>
           </Reveal>
@@ -225,7 +226,7 @@ export default async function HomePage() {
               title="What clients actually need."
               copy="A quick estimate path and crews that finish cleanly."
             />
-            <Link href="/gallery" className="button button--ghost">
+            <Link href="/gallery" className="textLink">
               Browse project gallery
             </Link>
           </Reveal>
