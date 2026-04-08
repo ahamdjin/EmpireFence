@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata } from "@/lib/seo";
 import { business, coverageNotes, serviceAreas } from "@/lib/site";
 
@@ -60,7 +61,13 @@ export default function ServiceAreasPage() {
           {serviceAreas.map((area) => (
             <article key={area.slug} className="locationCard">
               <div className="locationCard__image">
-                <Image src={area.image} alt={area.title} fill sizes="(max-width: 900px) 100vw, 32vw" />
+                <Image
+                  src={area.image}
+                  alt={area.title}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 32vw"
+                  style={getImagePresentation(area.image, "locationCard")}
+                />
               </div>
               <div className="locationCard__body">
                 <h2>{area.title}</h2>

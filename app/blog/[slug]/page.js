@@ -2,6 +2,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 import { getAllPosts, getPostBySlug } from "@/lib/content";
+import { getImagePresentation } from "@/lib/image-presentation";
 import { buildBlogPostingSchema, buildPageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
@@ -51,7 +52,13 @@ export default async function BlogPostPage({ params }) {
           </div>
           <p>{post.data.excerpt}</p>
           <div className="articleHero__image">
-            <Image src={post.data.heroImage} alt={post.data.title} fill sizes="100vw" />
+            <Image
+              src={post.data.heroImage}
+              alt={post.data.title}
+              fill
+              sizes="100vw"
+              style={getImagePresentation(post.data.heroImage, "articleHero")}
+            />
           </div>
         </div>
       </section>

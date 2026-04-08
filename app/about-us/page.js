@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata } from "@/lib/seo";
 import { aboutHighlights, industries, trustPoints } from "@/lib/site";
 
@@ -17,7 +18,13 @@ export default function AboutPage() {
     <>
       <section className="aboutCanvas">
         <div className="aboutCanvas__media">
-          <Image src="/client/wrought-fence.jpg" alt="Empire Fence frontage installation" fill sizes="(max-width: 900px) 100vw, 52vw" />
+          <Image
+            src="/client/wrought-fence.jpg"
+            alt="Empire Fence frontage installation"
+            fill
+            sizes="(max-width: 900px) 100vw, 52vw"
+            style={getImagePresentation("/client/wrought-fence.jpg", "aboutCanvas")}
+          />
         </div>
         <div className="container aboutCanvas__shell">
           <div className="aboutCanvas__copy">
@@ -66,7 +73,13 @@ export default function AboutPage() {
           {aboutHighlights.map((item, index) => (
             <article key={item.title} className={`aboutEditorial__row${index % 2 ? " is-reversed" : ""}`}>
               <div className="aboutEditorial__media">
-                <Image src={item.image} alt={item.title} fill sizes="(max-width: 900px) 100vw, 48vw" />
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 48vw"
+                  style={getImagePresentation(item.image, "aboutEditorial")}
+                />
               </div>
               <div className="aboutEditorial__body">
                 <span className="eyebrow">{item.eyebrow}</span>

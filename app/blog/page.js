@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { getAllPosts } from "@/lib/content";
+import { getImagePresentation } from "@/lib/image-presentation";
 import { buildBlogCollectionSchema, buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -44,7 +45,13 @@ export default async function BlogPage() {
           <div className="container journalDeck__grid">
             <article className="journalDeck__feature">
               <div className="journalDeck__image">
-                <Image src={posts[0].data.heroImage} alt={posts[0].data.title} fill sizes="(max-width: 900px) 100vw, 42vw" />
+                <Image
+                  src={posts[0].data.heroImage}
+                  alt={posts[0].data.title}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 42vw"
+                  style={getImagePresentation(posts[0].data.heroImage, "journalFeature")}
+                />
               </div>
               <div className="journalDeck__body">
                 <span className="eyebrow">Featured article</span>
@@ -89,7 +96,13 @@ export default async function BlogPage() {
           {posts.map((post) => (
             <article key={post.slug} className="postCard">
               <div className="postCard__image">
-                <Image src={post.data.heroImage} alt={post.data.title} fill sizes="(max-width: 900px) 100vw, 32vw" />
+                <Image
+                  src={post.data.heroImage}
+                  alt={post.data.title}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 32vw"
+                  style={getImagePresentation(post.data.heroImage, "postCard")}
+                />
               </div>
               <div className="postCard__body">
                 <span className="eyebrow">

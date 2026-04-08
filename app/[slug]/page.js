@@ -4,10 +4,12 @@ import { notFound } from "next/navigation";
 import { BookingWidget } from "@/components/booking-widget";
 import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
 import { getAllServices, getServiceBySlug } from "@/lib/content";
 import { buildPageMetadata } from "@/lib/seo";
-import { business, serviceAreas } from "@/lib/site";
+import { business, coverageNotes, serviceAreas } from "@/lib/site";
 
 function findLocation(slug) {
   return serviceAreas.find((area) => area.slug === slug);
@@ -48,6 +50,9 @@ export async function generateMetadata({ params }) {
 }
 
 function LocationPage({ area, services }) {
+  const nearbyAreas = serviceAreas.filter((item) => item.slug !== area.slug).slice(0, 4);
+  const localServices = services.slice(0, 4);
+
   return (
     <>
       <PageHero
@@ -60,41 +65,104 @@ function LocationPage({ area, services }) {
         }
         intro={`Privacy fencing, frontage work, entry gates, and supporting outdoor scope in ${area.title}.`}
         image={area.image}
-        chips={["Residential", "Commercial"]}
+        chips={["Residential frontage", "Commercial perimeter"]}
       />
 
       <section className="section">
-        <div className="container splitIntro">
-          <div>
-            <span className="eyebrow">Local projects</span>
-            <h2>Fence lines, gates, and surrounding scope handled cleanly.</h2>
-          </div>
-          <div className="prose">
-            <p>Projects in {area.title} can range from privacy runs and decorative frontage to wall work and gate scope.</p>
-          </div>
+        <div className="container coverageAtlas__grid locationCoverage">
+          <Reveal className="coverageAtlas__copy locationCoverage__copy" initiallyVisible variant="left">
+            <span className="eyebrow">Local coverage</span>
+            <h2>{area.title} stays inside the same estimate and install rhythm Empire Fence uses across nearby Inland Empire cities.</h2>
+            <p>{area.intro}</p>
+            <div className="chipWrap">
+              <span className="chip chip--static">{area.title}</span>
+              {nearbyAreas.map((item) => (
+                <Link key={item.slug} href={`/${item.slug}`} className="chip">
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+            <div className="buttonRow">
+              <Link href="/contact-us" className="button button--primary">
+                Start estimate
+              </Link>
+              <a href={business.phoneHref} className="textLink">
+                {business.phoneDisplay}
+              </a>
+            </div>
+          </Reveal>
+
+          <Reveal className="locationCoverage__map" delay={90} variant="soft">
+            <div className="mapCard mapCard--standalone">
+              <iframe src={business.mapEmbedSrc} loading="lazy" allowFullScreen title={`Empire Fence coverage map near ${area.title}`} />
+            </div>
+          </Reveal>
         </div>
       </section>
 
       <section className="section section--soft">
-        <div className="container serviceGrid">
-          {services.slice(0, 4).map((service) => (
-            <ServiceCard key={service.slug} service={service} variant="tile" />
-          ))}
+        <div className="container">
+          <SectionHeading
+            eyebrow="Work profile"
+            title={`What typically comes up in ${area.title}.`}
+            copy="The mix is usually privacy runs, frontage cleanup, gate work, and the adjacent outdoor scope that needs to stay coordinated."
+          />
+          <div className="miniFeatureGrid">
+            {coverageNotes.map((item, index) => (
+              <Reveal key={item.title} className="miniFeatureCard" delay={index * 70} variant="up">
+                <span className="eyebrow">0{index + 1}</span>
+                <h3>{item.title}</h3>
+                <p>{item.copy}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
       <section className="section">
-        <div className="container dualPanel">
-          <div className="panel">
+        <div className="container locationServiceDeck">
+          <Reveal className="locationServiceDeck__lead" initiallyVisible variant="left">
+            <SectionHeading
+              eyebrow="Popular scope"
+              title={`The service mix Empire Fence most often handles in ${area.title}.`}
+              copy="Use the city page to start local, then move into the exact service page if the material direction is already clear."
+            />
+            <Link href="/services" className="textLink">
+              Browse all services
+            </Link>
+          </Reveal>
+
+          <div className="locationServiceDeck__list">
+            <Reveal variant="soft">
+              <ServiceCard service={localServices[0]} variant="feature" />
+            </Reveal>
+
+            <div className="serviceGrid">
+              {localServices.slice(1).map((service, index) => (
+                <Reveal key={service.slug} delay={(index + 1) * 70} variant="soft">
+                  <ServiceCard service={service} variant="tile" />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--contrast">
+        <div className="container contactUtility locationUtility">
+          <Reveal className="locationQuotePanel" variant="soft">
             <span className="eyebrow">Request a quote</span>
             <h2>Start the estimate for {area.title}.</h2>
+            <p>Share the property address, photos, and whether this is privacy fencing, frontage work, gate scope, or a broader exterior upgrade.</p>
             <QuoteForm compact />
-          </div>
-          <div className="panel panel--dark">
+          </Reveal>
+
+          <Reveal className="contactUtility__booking locationBookingPanel" delay={90} variant="soft">
             <span className="eyebrow">Book the first call</span>
-            <h2>Use the live calendar.</h2>
+            <h2>Use the live calendar for {area.title}.</h2>
+            <p>That is the fastest path if you already want a real conversation around scope, timing, and site conditions.</p>
             <BookingWidget />
-          </div>
+          </Reveal>
         </div>
       </section>
     </>
@@ -103,6 +171,13 @@ function LocationPage({ area, services }) {
 
 function ServicePage({ service, services }) {
   const related = services.filter((item) => item.slug !== service.slug).slice(0, 3);
+  const highlights = service.data.highlights ?? [];
+  const faqs = service.data.faqs ?? [];
+  const proofNotes = [
+    "Used to set direction before material, transitions, and field details get locked in.",
+    "Keeps the finished work feeling cleaner from the street and more resolved on the property.",
+    "Useful when this install needs stronger fit, better coordination, or a more durable outcome.",
+  ];
 
   return (
     <>
@@ -111,75 +186,162 @@ function ServicePage({ service, services }) {
         title={service.data.title}
         intro={service.data.summary}
         image={service.data.heroImage}
+        chips={highlights.slice(0, 2)}
       />
 
+      <section className="section section--soft">
+        <div className="container serviceProofBand">
+          <Reveal className="serviceProofBand__intro" initiallyVisible variant="left">
+            <span className="eyebrow">Service overview</span>
+            <h2>This scope gets planned around the property edge, not dropped in as a stock install.</h2>
+            <p>{service.data.summary}</p>
+            <div className="buttonRow">
+              <Link href="/contact-us" className="button button--primary">
+                Request estimate
+              </Link>
+              <a href={business.phoneHref} className="textLink">
+                {business.phoneDisplay}
+              </a>
+            </div>
+          </Reveal>
+
+          <div className="serviceProofBand__grid">
+            {highlights.map((item, index) => (
+              <Reveal key={item} className="processCard serviceProofCard" delay={index * 60} variant="up">
+                <span className="eyebrow">0{index + 1}</span>
+                <h3>{item}</h3>
+                <p>{proofNotes[index] ?? proofNotes[proofNotes.length - 1]}</p>
+              </Reveal>
+            ))}
+
+            <Reveal className="serviceProofSpotlight" delay={200} variant="soft">
+              <span className="eyebrow">Project fit</span>
+              <h3>Plan the fence line, gates, transitions, and finish details in the same conversation.</h3>
+              <p>
+                This is where Empire Fence can keep the install practical, cleaner to look at, and easier to scope
+                before work starts.
+              </p>
+              <Link href="/contact-us#booking" className="textLink">
+                Open the booking calendar
+              </Link>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       <section className="section">
-        <div className="container serviceBody">
-          <div className="articleBody" dangerouslySetInnerHTML={{ __html: service.html }} />
-          <aside className="stickyCard">
-            <span className="eyebrow">Service highlights</span>
+        <div className="container serviceStory">
+          <Reveal className="serviceStory__article" initiallyVisible variant="soft">
+            <span className="eyebrow">Scope notes</span>
+            <div className="articleBody" dangerouslySetInnerHTML={{ __html: service.html }} />
+          </Reveal>
+
+          <Reveal className="serviceStory__aside" delay={90} variant="up">
+            <span className="eyebrow">Planning cues</span>
+            <h2>Bring the footage, site photos, and any gate or wall coordination into the estimate early.</h2>
             <ul className="bulletList">
-              {service.data.highlights.map((item) => (
+              {highlights.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
-            <Link href="/contact-us" className="button button--primary">
-              Request estimate
-            </Link>
-          </aside>
+            <div className="contactStack">
+              <a href={business.phoneHref}>{business.phoneDisplay}</a>
+              <a href={business.emailHref}>{business.email}</a>
+              <p>{business.hours}</p>
+            </div>
+            <div className="buttonRow">
+              <Link href="/contact-us" className="button button--primary">
+                Start estimate
+              </Link>
+              <Link href="/gallery" className="textLink">
+                Browse project gallery
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 
-      <section className="section section--soft">
-        <div className="container">
-          <div className="sectionHeading">
+      <section className="section">
+        <div className="container locationFaq">
+          <Reveal className="locationStage serviceFaqStage" initiallyVisible variant="left">
             <span className="eyebrow">Service FAQ</span>
-            <h2>Common questions for this scope.</h2>
-          </div>
-          <div className="faqList">
-            {service.data.faqs.map((item) => (
-              <article key={item.question} className="faqItem">
-                <h3>{item.question}</h3>
-                <p>{item.answer}</p>
-              </article>
-            ))}
+            <h2>Questions that usually come up before this scope gets priced.</h2>
+            <p>Start with the material direction, frontage conditions, and whether gates or adjacent wall work are part of the plan.</p>
+            <div className="chipWrap">
+              {highlights.map((item) => (
+                <span key={item} className="chip chip--static">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </Reveal>
+
+          <div className="faqCluster">
+            <div className="faqList faqList--stacked">
+              {faqs.map((item) => (
+                <article key={item.question} className="faqItem">
+                  <h3>{item.question}</h3>
+                  <p>{item.answer}</p>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section className="section">
-        <div className="container">
-          <div className="sectionHeading">
-            <span className="eyebrow">Related services</span>
-            <h2>Related work around the property edge.</h2>
-          </div>
-          <div className="serviceGrid">
-            {related.map((item) => (
-              <ServiceCard key={item.slug} service={item} variant="tile" />
+        <div className="container servicesRail">
+          <Reveal className="servicesRail__intro" initiallyVisible variant="left">
+            <SectionHeading
+              eyebrow="Related services"
+              title="Adjacent scope around the same property edge."
+              copy="If this project needs more than one material or a cleaner transition, compare the nearby service pages next."
+            />
+            <Link href="/services" className="textLink">
+              Browse all services
+            </Link>
+          </Reveal>
+
+          <div className="servicesRail__list">
+            {related.map((item, index) => (
+              <Reveal key={item.slug} delay={index * 80} variant="soft">
+                <ServiceCard service={item} variant="editorial" index={index} />
+              </Reveal>
             ))}
           </div>
         </div>
       </section>
 
       <section className="section section--contrast">
-        <div className="container dualPanel">
-          <div className="panel panel--dark">
-            <span className="eyebrow">Free estimate</span>
-            <h2>Send the details for this project.</h2>
-            <QuoteForm compact />
-          </div>
-          <div className="panel">
-            <span className="eyebrow">Business info</span>
-            <h2>Talk to the team directly.</h2>
-            <div className="contactStack">
-              <a href={business.phoneHref}>{business.phoneDisplay}</a>
-              <a href={business.emailHref}>{business.email}</a>
-              <p>{business.city}</p>
-              <p>{business.hours}</p>
+        <div className="container">
+          <Reveal className="ctaShell serviceCtaShell" variant="soft">
+            <div className="ctaShell__copy">
+              <span className="eyebrow">Free estimate</span>
+              <h2>Start this {service.data.title.toLowerCase()} project with the real site details.</h2>
+              <p>Share photos, approximate footage, and any gate or wall coordination so the estimate starts from the actual scope.</p>
+              <div className="contactStack">
+                <a href={business.phoneHref}>{business.phoneDisplay}</a>
+                <a href={business.emailHref}>{business.email}</a>
+                <p>{business.city}</p>
+              </div>
+              <div className="buttonRow">
+                <Link href="/contact-us" className="button button--primary">
+                  Open contact page
+                </Link>
+                <a href={business.phoneHref} className="button button--ghost">
+                  Call the team
+                </a>
+              </div>
             </div>
-          </div>
+
+            <div className="ctaShell__form">
+              <span className="eyebrow">Quick request</span>
+              <QuoteForm compact />
+            </div>
+          </Reveal>
         </div>
       </section>
+
     </>
   );
 }

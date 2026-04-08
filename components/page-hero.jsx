@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getImagePresentation } from "@/lib/image-presentation";
 import { business } from "@/lib/site";
 import { Reveal } from "@/components/reveal";
 
@@ -63,6 +64,7 @@ export function PageHero({
                   fill
                   priority
                   sizes="(max-width: 900px) 100vw, 48vw"
+                  style={getImagePresentation(image, "pageHero")}
                 />
                 {showCaption ? (
                   <div className="pageHero__caption">
@@ -79,6 +81,7 @@ export function PageHero({
                     alt={`${business.shortName} supporting view`}
                     fill
                     sizes="(max-width: 900px) 46vw, 20vw"
+                    style={getImagePresentation(secondaryImage, "pageHeroSecondary")}
                   />
                 </div>
               ) : null}

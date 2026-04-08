@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { galleryCollections } from "@/lib/site";
+import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata } from "@/lib/seo";
 
 const images = [
@@ -46,7 +47,13 @@ export default function GalleryPage() {
               key={image}
               className={`galleryShowcase__tile galleryShowcase__tile--${index === 0 ? "hero" : index === 1 ? "tall" : "default"}`}
             >
-              <Image src={image} alt={`Empire Fence gallery image ${index + 1}`} fill sizes="(max-width: 900px) 100vw, 33vw" />
+              <Image
+                src={image}
+                alt={`Empire Fence gallery image ${index + 1}`}
+                fill
+                sizes="(max-width: 900px) 100vw, 33vw"
+                style={getImagePresentation(image, "galleryShowcase")}
+              />
             </figure>
           ))}
         </div>
@@ -75,7 +82,13 @@ export default function GalleryPage() {
         <div className="container galleryGrid">
           {images.slice(5).map((image, index) => (
             <figure key={image} className="galleryGrid__item">
-              <Image src={image} alt={`Empire Fence gallery image ${index + 6}`} fill sizes="(max-width: 900px) 100vw, 33vw" />
+              <Image
+                src={image}
+                alt={`Empire Fence gallery image ${index + 6}`}
+                fill
+                sizes="(max-width: 900px) 100vw, 33vw"
+                style={getImagePresentation(image, "galleryGrid")}
+              />
             </figure>
           ))}
         </div>

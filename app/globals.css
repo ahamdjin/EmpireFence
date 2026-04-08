@@ -560,7 +560,8 @@ p {
 
 .heroStage__imageWrap img {
   object-fit: cover;
-  transform: scale(1.05);
+  object-position: var(--media-object-position, 50% 50%);
+  transform: scale(var(--media-scale, 1.05));
   animation: hero-image-drift 16s ease-in-out infinite alternate;
 }
 
@@ -604,6 +605,9 @@ p {
 
 .heroStage__secondary img {
   object-fit: cover;
+  object-position: var(--media-object-position, 50% 50%);
+  transform: scale(var(--media-scale, 1.04));
+  transition: transform 420ms var(--ease), object-position 320ms var(--ease);
 }
 
 .heroStage__note p {
@@ -856,6 +860,9 @@ p {
 .articleHero__image img,
 .pageHero__media img {
   object-fit: cover;
+  object-position: var(--media-object-position, 50% 50%);
+  transform: scale(var(--media-scale, 1.03));
+  transition: transform 420ms var(--ease), object-position 320ms var(--ease);
 }
 
 .storyPanel--tone {
@@ -866,6 +873,7 @@ p {
 
 .servicesRail__stickyImage {
   min-height: 360px;
+  aspect-ratio: 1.08;
   border-radius: 32px;
 }
 
@@ -917,6 +925,20 @@ p {
   box-shadow: var(--shadow-md);
 }
 
+.serviceEditorial:hover img,
+.serviceFeature:hover img,
+.serviceCard:hover img,
+.serviceTile:hover img,
+.postCard:hover img,
+.locationCard:hover img,
+.projectSpotlight:hover img,
+.galleryShowcase__tile:hover img,
+.galleryGrid__item:hover img,
+.journalDeck__feature:hover img,
+.aboutEditorial__row:hover img {
+  transform: scale(var(--media-hover-scale, 1.08));
+}
+
 .serviceEditorial--alt {
   grid-template-columns: minmax(0, 0.56fr) minmax(220px, 0.44fr);
 }
@@ -927,6 +949,7 @@ p {
 
 .serviceEditorial__media {
   min-height: 260px;
+  aspect-ratio: 1.04;
 }
 
 .serviceEditorial__media::after,
@@ -1014,12 +1037,12 @@ p {
 }
 
 .galleryTile img {
-  transform: scale(1.04);
-  transition: transform 520ms var(--ease);
+  transform: scale(var(--media-scale, 1.06));
+  transition: transform 520ms var(--ease), object-position 320ms var(--ease);
 }
 
 .galleryTile:hover img {
-  transform: scale(1.08);
+  transform: scale(var(--media-hover-scale, 1.1));
 }
 
 .galleryTile--tall {
@@ -1067,6 +1090,7 @@ p {
 
 .projectSpotlight__image {
   min-height: 360px;
+  aspect-ratio: 1.18;
 }
 
 .projectSpotlight__body {
@@ -1146,6 +1170,7 @@ p {
 
 .serviceFeature__media {
   min-height: 440px;
+  aspect-ratio: 1.05;
 }
 
 .serviceTile,
@@ -1161,6 +1186,7 @@ p {
 .serviceIndexCard__image,
 .locationCard__image {
   min-height: 280px;
+  aspect-ratio: 4 / 3;
 }
 
 .serviceTile__body h3,
@@ -1184,6 +1210,158 @@ p {
 
 .serviceBody {
   align-items: start;
+}
+
+.serviceProofBand,
+.serviceStory {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+  gap: clamp(24px, 4vw, 44px);
+  align-items: start;
+}
+
+.serviceProofBand__intro,
+.serviceFaqStage {
+  display: grid;
+  gap: 18px;
+}
+
+.serviceProofBand__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.serviceProofCard {
+  min-height: 100%;
+}
+
+.serviceProofCard h3,
+.serviceProofSpotlight h3,
+.serviceStory__aside h2 {
+  font-size: clamp(1.34rem, 1.8vw, 1.86rem);
+  line-height: 1.04;
+}
+
+.serviceProofSpotlight,
+.serviceStory__aside {
+  display: grid;
+  gap: 16px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.serviceProofSpotlight {
+  grid-column: 1 / -1;
+  padding: clamp(24px, 3vw, 30px);
+  background:
+    radial-gradient(circle at 82% 16%, rgba(184, 138, 91, 0.18), transparent 18%),
+    linear-gradient(145deg, #1d1714 0%, #14100e 44%, #1d1714 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow-md);
+  color: var(--white);
+}
+
+.serviceProofSpotlight p,
+.serviceProofSpotlight .textLink {
+  color: var(--white-soft);
+}
+
+.serviceProofSpotlight .textLink {
+  text-decoration-color: rgba(247, 242, 234, 0.28);
+}
+
+.serviceStory__article {
+  padding: clamp(24px, 3vw, 32px);
+  border-radius: 34px;
+  border: 1px solid var(--line);
+  background: rgba(255, 251, 246, 0.82);
+  box-shadow: var(--shadow-sm);
+}
+
+.serviceStory__article .articleBody {
+  max-width: none;
+  margin-top: 10px;
+}
+
+.serviceStory__article .articleBody h2:first-child {
+  margin-top: 8px;
+}
+
+.serviceStory__aside {
+  position: sticky;
+  top: 108px;
+  padding: clamp(24px, 3vw, 30px);
+  background:
+    radial-gradient(circle at 86% 14%, rgba(184, 138, 91, 0.16), transparent 20%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(246, 240, 232, 0.84));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+}
+
+.serviceStory__aside .buttonRow {
+  margin-top: 6px;
+}
+
+.serviceFaqStage {
+  position: sticky;
+  top: 108px;
+}
+
+.serviceCtaShell h2 {
+  max-width: 10ch;
+}
+
+.locationCoverage__copy,
+.locationServiceDeck__lead,
+.locationServiceDeck__list,
+.locationQuotePanel,
+.locationBookingPanel {
+  display: grid;
+  gap: 18px;
+}
+
+.locationCoverage__map .mapCard,
+.locationCoverage__map iframe {
+  min-height: 100%;
+}
+
+.locationCoverage__map iframe {
+  min-height: 540px;
+}
+
+.locationServiceDeck {
+  display: grid;
+  grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.locationServiceDeck__lead {
+  position: sticky;
+  top: 108px;
+}
+
+.locationQuotePanel {
+  padding: clamp(26px, 4vw, 34px);
+  border-radius: 34px;
+  background: rgba(255, 251, 246, 0.94);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+}
+
+.locationQuotePanel p {
+  color: var(--ink-soft);
+  line-height: 1.68;
+}
+
+.locationUtility {
+  align-items: start;
+}
+
+.locationBookingPanel .bookingWidget {
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .stickyCard {
@@ -1348,6 +1526,9 @@ p {
 
 .pageHero__secondaryMedia img {
   object-fit: cover;
+  object-position: var(--media-object-position, 50% 50%);
+  transform: scale(var(--media-scale, 1.05));
+  transition: transform 420ms var(--ease), object-position 320ms var(--ease);
 }
 
 .pageHero__caption {
@@ -1606,6 +1787,7 @@ a.pageHero__miniCard:hover {
 
 .articleHero__image {
   min-height: min(62svh, 620px);
+  aspect-ratio: 16 / 10;
   margin-top: 28px;
   border-radius: 32px;
   box-shadow: var(--shadow-lg);
@@ -1657,6 +1839,8 @@ a.pageHero__miniCard:hover {
 
 .aboutCanvas__media img {
   object-fit: cover;
+  object-position: var(--media-object-position, 50% 50%);
+  transform: scale(var(--media-scale, 1.07));
 }
 
 .aboutCanvas__shell {
@@ -1717,10 +1901,14 @@ a.pageHero__miniCard:hover {
 .aboutEditorial__media {
   position: relative;
   min-height: 340px;
+  aspect-ratio: 1.08;
 }
 
 .aboutEditorial__media img {
   object-fit: cover;
+  object-position: var(--media-object-position, 50% 50%);
+  transform: scale(var(--media-scale, 1.04));
+  transition: transform 420ms var(--ease), object-position 320ms var(--ease);
 }
 
 .aboutEditorial__body {
@@ -1841,8 +2029,18 @@ a.pageHero__miniCard:hover {
   box-shadow: var(--shadow-md);
 }
 
+.galleryGrid__item {
+  min-height: 260px;
+  aspect-ratio: 4 / 3;
+  border-radius: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
 .galleryShowcase__tile img {
   object-fit: cover;
+  object-position: var(--media-object-position, 50% 50%);
+  transform: scale(var(--media-scale, 1.08));
+  transition: transform 520ms var(--ease), object-position 320ms var(--ease);
 }
 
 .galleryShowcase__tile--hero {
@@ -1915,10 +2113,15 @@ a.pageHero__miniCard:hover {
 
 .journalDeck__image {
   position: relative;
+  min-height: 100%;
+  aspect-ratio: 1.04;
 }
 
 .journalDeck__image img {
   object-fit: cover;
+  object-position: var(--media-object-position, 50% 50%);
+  transform: scale(var(--media-scale, 1.05));
+  transition: transform 420ms var(--ease), object-position 320ms var(--ease);
 }
 
 .journalDeck__body,
@@ -2551,6 +2754,9 @@ a.pageHero__miniCard:hover {
   .dualPanel,
   .contactGrid,
   .splitCards,
+  .serviceProofBand,
+  .serviceStory,
+  .locationServiceDeck,
   .serviceBody,
   .serviceIndexCard,
   .pageHero__grid,
@@ -2559,7 +2765,10 @@ a.pageHero__miniCard:hover {
   }
 
   .servicesRail__intro,
-  .galleryFeature__lead {
+  .galleryFeature__lead,
+  .locationServiceDeck__lead,
+  .serviceFaqStage,
+  .serviceStory__aside {
     position: static;
   }
 
@@ -2568,6 +2777,7 @@ a.pageHero__miniCard:hover {
     grid-template-columns: 1fr;
   }
 
+  .serviceProofBand__grid,
   .proofBand__grid,
   .trustGrid,
   .postGrid,
@@ -2593,6 +2803,7 @@ a.pageHero__miniCard:hover {
   .journalStage__grid,
   .contactHub__grid,
   .contactUtilityPanel,
+  .locationServiceDeck,
   .coverageAtlas__grid,
   .journalDeck__grid,
   .aboutEditorial__row,
@@ -2624,6 +2835,10 @@ a.pageHero__miniCard:hover {
 
   .pageHero__visual {
     min-height: 460px;
+  }
+
+  .locationCoverage__map iframe {
+    min-height: 420px;
   }
 }
 
@@ -2658,6 +2873,7 @@ a.pageHero__miniCard:hover {
 
   .heroStage__grid,
   .proofBand__grid,
+  .serviceProofBand__grid,
   .projectSpotlight,
   .quoteForm__grid,
   .faqList,
@@ -2694,6 +2910,10 @@ a.pageHero__miniCard:hover {
   .serviceEditorial,
   .serviceEditorial--alt {
     grid-template-columns: 1fr;
+  }
+
+  .serviceProofSpotlight {
+    grid-column: auto;
   }
 
   .pageHero__stack,
@@ -2978,6 +3198,9 @@ a.pageHero__miniCard:hover {
   .dualPanel,
   .contactGrid,
   .splitCards,
+  .serviceProofBand,
+  .serviceStory,
+  .locationServiceDeck,
   .serviceBody,
   .serviceIndexCard,
   .proofBand,
@@ -2991,6 +3214,7 @@ a.pageHero__miniCard:hover {
   .servicesRail__sticky,
   .servicesRail__list,
   .proofBand__grid,
+  .serviceProofBand__grid,
   .galleryFeature__grid,
   .faqList,
   .locationGrid,
@@ -3183,6 +3407,10 @@ a.pageHero__miniCard:hover {
   .faqItem,
   .infoCard,
   .stickyCard,
+  .serviceProofSpotlight,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
   .serviceCard__body,
   .serviceTile__body,
   .serviceFeature__body,
@@ -3201,10 +3429,14 @@ a.pageHero__miniCard:hover {
   }
 
   .processCard,
+  .serviceProofSpotlight,
   .projectSpotlight__body,
   .faqItem,
   .locationCard__body,
   .postCard__body,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
   .serviceIndexCard__body {
     padding: 16px;
   }

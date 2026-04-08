@@ -6,6 +6,7 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
 import { getAllPosts, getAllServices } from "@/lib/content";
+import { getImagePresentation } from "@/lib/image-presentation";
 import { buildFaqSchema, buildPageMetadata, buildServiceListSchema } from "@/lib/seo";
 import {
   business,
@@ -77,6 +78,7 @@ export default async function HomePage() {
                     fill
                     priority
                     sizes="(max-width: 900px) 100vw, 44vw"
+                    style={getImagePresentation("/client/hero-western.webp", "heroStage")}
                   />
                 </div>
 
@@ -86,6 +88,7 @@ export default async function HomePage() {
                     alt="Empire Fence wrought iron detail"
                     fill
                     sizes="(max-width: 900px) 48vw, 18vw"
+                    style={getImagePresentation("/client/wrought-fence.jpg", "heroStageSecondary")}
                   />
                 </div>
               </div>
@@ -131,6 +134,7 @@ export default async function HomePage() {
                 alt="Wrought iron fence detail"
                 fill
                 sizes="(max-width: 900px) 100vw, 44vw"
+                style={getImagePresentation("/client/wrought-fence.jpg", "story")}
               />
             </Reveal>
 
@@ -160,6 +164,7 @@ export default async function HomePage() {
                   alt="Vinyl fence project"
                   fill
                   sizes="(max-width: 900px) 100vw, 32vw"
+                  style={getImagePresentation("/client/vinyl-fence.jpg", "railSticky")}
                 />
               </div>
               <div className="servicesRail__stickyCopy">
@@ -207,7 +212,13 @@ export default async function HomePage() {
                 delay={index * 70}
                 variant="soft"
               >
-                <Image src={item.image} alt={item.title} fill sizes="(max-width: 900px) 100vw, 33vw" />
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 900px) 100vw, 33vw"
+                  style={getImagePresentation(item.image, "galleryFeature")}
+                />
                 <div className="galleryTile__overlay">
                   <span className="eyebrow">{item.eyebrow}</span>
                   <h3>{item.title}</h3>
@@ -247,6 +258,7 @@ export default async function HomePage() {
                   alt="Empire Fence wall and frontage project"
                   fill
                   sizes="(max-width: 900px) 100vw, 48vw"
+                  style={getImagePresentation("/client/cinder-block-wall.jpg", "projectSpotlight")}
                 />
               </div>
               <div className="projectSpotlight__body">
@@ -301,7 +313,13 @@ export default async function HomePage() {
             {posts.map((post, index) => (
               <Reveal key={post.slug} className="postCard" delay={index * 70} variant="soft">
                 <div className="postCard__image">
-                  <Image src={post.data.heroImage} alt={post.data.title} fill sizes="(max-width: 900px) 100vw, 46vw" />
+                  <Image
+                    src={post.data.heroImage}
+                    alt={post.data.title}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 46vw"
+                    style={getImagePresentation(post.data.heroImage, "postCard")}
+                  />
                 </div>
                 <div className="postCard__body">
                   <span className="eyebrow">
