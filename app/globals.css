@@ -475,13 +475,13 @@ p {
 .heroStage__copy {
   display: grid;
   gap: 20px;
-  max-width: 520px;
+  max-width: 548px;
 }
 
 .heroStage h1 {
   font-size: clamp(3.2rem, 5.9vw, 5.4rem);
   line-height: 0.88;
-  max-width: 7ch;
+  max-width: 7.6ch;
 }
 
 .heroStage p {
@@ -2882,6 +2882,11 @@ a.pageHero__miniCard:hover {
     min-height: 32px;
     padding: 0 12px;
     font-size: 0.74rem;
+  }
+
+  .heroStage__scope span:last-child,
+  .heroStage__review {
+    display: none;
   }
 
   .heroStage p,
