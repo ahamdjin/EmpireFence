@@ -61,8 +61,8 @@ export function SiteHeader() {
           <a href={business.phoneHref} className="button button--ghost" onClick={() => setOpen(false)}>
             Call
           </a>
-          <Link href="/contact-us#booking" className="button button--primary" onClick={() => setOpen(false)}>
-            Book
+          <Link href="/contact-us" className="button button--primary" onClick={() => setOpen(false)}>
+            Estimate
           </Link>
         </nav>
       </div>

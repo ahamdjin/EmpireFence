@@ -1,4 +1,3 @@
-import { BookingWidget } from "@/components/booking-widget";
 import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
 import { buildPageMetadata } from "@/lib/seo";
@@ -7,7 +6,7 @@ import { business, contactPrompts, serviceAreas, socialLinks } from "@/lib/site"
 export const metadata = buildPageMetadata({
   title: "Contact us",
   description:
-    "Request a free estimate, book through the live calendar, or contact Empire Fence directly for fence, gate, and wall work in Jurupa Valley.",
+    "Request a free estimate or contact Empire Fence directly for fence, gate, and wall work in Jurupa Valley.",
   path: "/contact-us",
   image: "/client/location-fontana.jpg",
 });
@@ -74,7 +73,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section" id="booking">
+      <section className="section">
         <div className="container contactUtilityPanel">
           <div className="contactUtilityPanel__map">
             <span className="eyebrow">Map</span>
@@ -84,9 +83,22 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="contactUtilityPanel__booking">
-            <span className="eyebrow">Booking calendar</span>
-            <h2>Book the first call.</h2>
-            <BookingWidget />
+            <span className="eyebrow">Direct contact</span>
+            <h2>Call, email, or send the estimate request.</h2>
+            <p>Skip the calendar. Use the contact form, call the team directly, or send the project photos and address by email.</p>
+            <div className="contactStack">
+              <a href={business.phoneHref}>{business.phoneDisplay}</a>
+              <a href={business.emailHref}>{business.email}</a>
+              <p>{business.hours}</p>
+            </div>
+            <div className="buttonRow">
+              <a href={business.phoneHref} className="button button--primary">
+                Call now
+              </a>
+              <a href={business.emailHref} className="button button--ghost">
+                Send email
+              </a>
+            </div>
           </div>
         </div>
       </section>

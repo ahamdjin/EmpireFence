@@ -52,6 +52,8 @@ export function PageHero({
 }) {
   const heroChips = chips.slice(0, variant === "areas" ? 3 : 2);
   const showCaption = variant !== "areas";
+  const showInlineCards = cards.length && variant === "blog";
+  const showVisualCards = cards.length && variant !== "blog";
   const resolvedPrimaryAction = primaryAction ?? {
     href: "/contact-us",
     label: "Start estimate",
@@ -90,7 +92,7 @@ export function PageHero({
                     fallbackClassName="button button--ghost"
                   />
                 </div>
-                {cards.length ? (
+                {showInlineCards ? (
                   <div className="pageHero__stack pageHero__stack--inline">
                     {cards.map((card) => {
                       const content = (
@@ -159,9 +161,9 @@ export function PageHero({
                 </div>
               ) : null}
 
-              {cards.length ? (
-                <div className="pageHero__stack">
-                  {cards.map((card) => {
+                {showVisualCards ? (
+                  <div className="pageHero__stack">
+                    {cards.map((card) => {
                     const content = (
                       <>
                         {card.eyebrow ? <span className="eyebrow">{card.eyebrow}</span> : null}

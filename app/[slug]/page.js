@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
-import { BookingWidget } from "@/components/booking-widget";
 import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
 import { Reveal } from "@/components/reveal";
@@ -158,10 +157,22 @@ function LocationPage({ area, services }) {
           </Reveal>
 
           <Reveal className="contactUtility__booking locationBookingPanel" delay={90} variant="soft">
-            <span className="eyebrow">Book the first call</span>
-            <h2>Use the live calendar for {area.title}.</h2>
-            <p>That is the fastest path if you already want a real conversation around scope, timing, and site conditions.</p>
-            <BookingWidget />
+            <span className="eyebrow">Direct estimate path</span>
+            <h2>Call or send the request for {area.title}.</h2>
+            <p>Use the contact page, call the team, or email the address, photos, and rough footage instead of going through a booking widget.</p>
+            <div className="contactStack">
+              <a href={business.phoneHref}>{business.phoneDisplay}</a>
+              <a href={business.emailHref}>{business.email}</a>
+              <p>{business.hours}</p>
+            </div>
+            <div className="buttonRow">
+              <Link href="/contact-us" className="button button--primary">
+                Open contact page
+              </Link>
+              <a href={business.phoneHref} className="button button--ghost">
+                Call the team
+              </a>
+            </div>
           </Reveal>
         </div>
       </section>
@@ -221,8 +232,8 @@ function ServicePage({ service, services }) {
                 This is where Empire Fence can keep the install practical, cleaner to look at, and easier to scope
                 before work starts.
               </p>
-              <Link href="/contact-us#booking" className="textLink">
-                Open the booking calendar
+              <Link href="/contact-us" className="textLink">
+                Open the contact page
               </Link>
             </Reveal>
           </div>

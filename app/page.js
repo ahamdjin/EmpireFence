@@ -349,7 +349,7 @@ export default async function HomePage() {
               <h2>
                 Start with the <em>scope</em>.
               </h2>
-              <p>Use the form for project details, or open the contact page for the calendar and phone.</p>
+              <p>Use the form for project details, or open the contact page for the phone, email, and estimate request.</p>
 
               <div className="contactStack">
                 <a href={business.phoneHref}>{business.phoneDisplay}</a>
@@ -361,9 +361,9 @@ export default async function HomePage() {
                 <Link href="/contact-us" className="button button--primary">
                   Open contact page
                 </Link>
-                <Link href="/contact-us#booking" className="button button--ghost">
-                  Open booking calendar
-                </Link>
+                <a href={business.phoneHref} className="button button--ghost">
+                  Call the team
+                </a>
               </div>
             </div>
 
