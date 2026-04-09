@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./ui-pass-5.css";
 
 import { Instrument_Serif, Manrope } from "next/font/google";
 
