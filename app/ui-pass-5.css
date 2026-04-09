@@ -1,6 +1,7 @@
 /* Reliable UI pass 5
    Imported through app/layout.js so it overrides globals.css consistently.
-   Focus: hero fill, sticky services, cleaner mobile service cards, and tighter mobile type.
+   Focus: hero fill, sticky services, cleaner mobile service cards, tighter mobile type,
+   and better inner-page typography width for services, blogs, and area pages.
 */
 
 :root {
@@ -438,6 +439,193 @@
     justify-content: flex-start;
     font-size: 0.95rem;
   }
+
+  /* Inner pages: more usable width and less side-column feel */
+  .pageHero__frame,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy,
+  .contactStage__intro,
+  .contactStage__form,
+  .contactHub__intro,
+  .contactHub__form,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactUtility__booking,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .serviceIndexCard__body,
+  .panel,
+  .panel--dark,
+  .infoCard,
+  .faqItem,
+  .stickyCard,
+  .locationCard__body,
+  .postCard__body,
+  .storyPanel,
+  .processCard,
+  .trustCard {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .pageHero__frame {
+    margin: 10px;
+    padding: 82px 16px 18px;
+    border-radius: 22px;
+    min-height: auto;
+  }
+
+  .pageHero__grid,
+  .aboutStage__grid,
+  .contactStage__grid,
+  .coverageStage__grid,
+  .journalStage__grid,
+  .contactHub__grid,
+  .contactUtilityPanel,
+  .coverageAtlas__grid,
+  .journalDeck__grid,
+  .aboutEditorial__row,
+  .galleryStage__intro,
+  .galleryCollections,
+  .contactUtility,
+  .journalStage__feature,
+  .serviceStory,
+  .serviceProofBand,
+  .locationServiceDeck,
+  .serviceBody,
+  .serviceIndexCard,
+  .dualPanel,
+  .splitCards,
+  .splitIntro,
+  .locationFaq,
+  .ctaShell,
+  .sectionHeading {
+    gap: 16px;
+  }
+
+  .pageHero__copyPanel,
+  .pageHero__media,
+  .pageHero__visual,
+  .pageHero__copy,
+  .pageHero__stack,
+  .pageHero__chipCloud,
+  .pageHero__secondaryMedia,
+  .pageHero__caption,
+  .pageHero__miniCard {
+    max-width: none;
+  }
+
+  .pageHero__copyPanel {
+    min-height: auto;
+    padding: 22px 20px;
+    gap: 14px;
+    border-radius: 22px;
+  }
+
+  .pageHero h1,
+  .articleHero h1,
+  .aboutStage h1,
+  .contactStage h1,
+  .galleryStage h1,
+  .coverageStage h1,
+  .journalStage h1 {
+    font-size: clamp(2rem, 8.4vw, 3rem);
+    line-height: 0.98;
+    max-width: 12ch;
+  }
+
+  .pageHero__copy p,
+  .articleHero p,
+  .aboutStage p,
+  .contactStage p,
+  .galleryStage p,
+  .coverageStage p,
+  .journalStage p,
+  .serviceStory__article .articleBody,
+  .serviceStory__article .articleBody p {
+    max-width: none;
+    font-size: 0.98rem;
+    line-height: 1.68;
+  }
+
+  .articleHero__shell,
+  .aboutStage,
+  .contactStage,
+  .galleryStage,
+  .coverageStage,
+  .journalStage,
+  .aboutCanvas,
+  .contactHub,
+  .galleryShowcase,
+  .coverageAtlas,
+  .journalDeck {
+    padding-top: 96px;
+  }
+
+  .articleBody {
+    max-width: none;
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+
+  .articleBody h2 {
+    margin: 28px 0 12px;
+  }
+
+  .articleBody p + p,
+  .serviceStory__article .articleBody p + p {
+    margin-top: 14px;
+  }
+
+  .articleBody ul,
+  .articleBody ol {
+    padding-left: 18px;
+  }
+
+  .serviceStory__article {
+    padding: 22px 20px;
+    border-radius: 24px;
+  }
+
+  .serviceStory__aside,
+  .serviceFaqStage,
+  .locationServiceDeck__lead,
+  .galleryFeature__lead,
+  .servicesRail__intro {
+    position: static;
+  }
+
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .contactUtility__booking,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactHub__intro,
+  .contactHub__form,
+  .contactStage__intro,
+  .contactStage__form,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy {
+    border-radius: 24px;
+  }
+
+  .pageHero__miniCard {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .pageHero__miniCard strong {
+    font-size: 0.94rem;
+    line-height: 1.28;
+  }
+
+  .pageHero__miniCard p {
+    font-size: 0.84rem;
+    line-height: 1.52;
+  }
 }
 
 @media (max-width: 640px) {
@@ -537,6 +725,74 @@
 
   .serviceEditorial__body .textLink {
     font-size: 0.92rem;
+  }
+
+  .pageHero__frame {
+    margin: 8px;
+    padding: 78px 12px 16px;
+  }
+
+  .pageHero__copyPanel,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .contactStage__intro,
+  .contactStage__form,
+  .contactHub__intro,
+  .contactHub__form,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactUtility__booking,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy,
+  .panel,
+  .panel--dark,
+  .infoCard,
+  .faqItem,
+  .stickyCard,
+  .locationCard__body,
+  .postCard__body,
+  .storyPanel,
+  .processCard,
+  .trustCard,
+  .projectSpotlight__body,
+  .serviceIndexCard__body {
+    padding: 16px;
+  }
+
+  .pageHero h1,
+  .articleHero h1,
+  .aboutStage h1,
+  .contactStage h1,
+  .galleryStage h1,
+  .coverageStage h1,
+  .journalStage h1 {
+    font-size: clamp(1.8rem, 9vw, 2.4rem);
+    max-width: none;
+  }
+
+  .pageHero__copy p,
+  .articleHero p,
+  .aboutStage p,
+  .contactStage p,
+  .galleryStage p,
+  .coverageStage p,
+  .journalStage p,
+  .articleBody,
+  .articleBody p,
+  .serviceStory__article .articleBody,
+  .serviceStory__article .articleBody p {
+    font-size: 0.94rem;
+    line-height: 1.64;
+  }
+
+  .pageHero__miniCard strong {
+    font-size: 0.9rem;
+  }
+
+  .pageHero__miniCard p {
+    font-size: 0.8rem;
   }
 
   .servicesRail__list > *:nth-child(-n + 3) {
