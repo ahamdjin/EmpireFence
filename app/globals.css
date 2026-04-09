@@ -419,11 +419,16 @@ iframe:focus-visible {
 }
 
 .homeHero,
-.pageHero,
 .articleHero {
   position: relative;
   min-height: 100svh;
   padding: 0;
+}
+
+.pageHero {
+  position: relative;
+  min-height: auto;
+  padding: 0 0 clamp(18px, 2vw, 24px);
 }
 
 .siteHeader .button--ghost,
@@ -2536,6 +2541,14 @@ a.pageHero__miniCard:hover {
 .footerLinks a,
 .footerLinks span {
   width: fit-content;
+}
+
+.footerAddress {
+  margin: 0;
+  max-width: 22ch;
+  font-style: normal;
+  line-height: 1.55;
+  color: var(--white);
 }
 
 .footerLinks a,

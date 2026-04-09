@@ -1,35 +1,38 @@
 ---
 slug: vinyl-fence
 order: 1
-title: Vinyl Fence
-eyebrow: Durable privacy fencing
-summary: Premium vinyl fence installation for privacy, low maintenance, and a cleaner perimeter finish in Jurupa Valley and nearby Inland Empire cities.
+title: Vinyl Fence Installation
+eyebrow: Clean privacy with low maintenance
+summary: Custom vinyl fence installation for privacy, curb appeal, and long-term durability without the maintenance load of traditional fence materials.
 heroImage: /client/vinyl-fence.jpg
 highlights:
-  - Low-maintenance material with long-term curb appeal
-  - Strong choice for privacy and boundary definition
-  - Multiple profiles, colors, and layout options
+  - Strong privacy fencing for homes and larger property edges
+  - Clean look with low upkeep over time
+  - Vinyl gates and layout options tailored to the site
 faqs:
-  - question: Is vinyl fencing a good fit for privacy?
-    answer: Yes. Vinyl is one of the clearest privacy upgrades on the current service lineup because it gives full enclosure with less maintenance over time.
-  - question: Does Empire Fence help with style selection?
-    answer: Yes. The service positioning is built around helping clients choose the right fence profile, finish, and scope for the property.
+  - question: Why do property owners choose vinyl fencing?
+    answer: Vinyl is a popular choice because it combines privacy, a clean finished look, and low maintenance in one durable fence system.
+  - question: Does Empire Fence install vinyl gates too?
+    answer: Yes. Vinyl fencing can be planned with matching gates and layout options based on the needs of the property.
 ---
-Empire Fence installs **vinyl fencing** for homeowners and property owners who want privacy, a cleaner finished look, and a material that stays easier to maintain over time.
+Empire Fence installs **vinyl fence systems** in Jurupa Valley for homeowners and businesses who want a cleaner perimeter, dependable privacy, and long-term value.
 
-The original site positions vinyl as a practical upgrade for boundaries, side-yard runs, and backyard enclosure. This page keeps that same service focus while presenting it with a more structured experience.
+Vinyl remains one of the most practical fence options for modern properties because it gives a finished look without constant upkeep. It works especially well for backyard fencing, privacy upgrades, side-yard runs, and properties that need a durable enclosure without a maintenance-heavy material.
 
-## Where vinyl works best
+## What makes vinyl a strong fit
 
-- Backyard privacy lines
-- Side-yard boundary fencing
-- Clean residential frontage
-- Properties that need lower maintenance after installation
+- Strong privacy around backyards and outdoor living areas
+- Clean boundaries for side yards and residential lot lines
+- Consistent curb appeal with less maintenance over time
+- Flexible fence profiles, heights, and gate layouts
 
-## What is included
+## Service approach
 
-Empire Fence handles layout, material planning, line setting, and installation with an emphasis on a cleaner final perimeter. The goal is not only to install panels. The goal is to make the full run read finished when the project is complete.
+Empire Fence handles the planning, layout, material selection, and installation so the fence feels right for the property instead of looking like a generic drop-in product. The job is not just to install panels. It is to deliver a fence line that feels finished once the run is complete.
 
-## Why clients choose this service
+## Common vinyl projects
 
-Vinyl stays popular because it solves two problems at once: it improves privacy and keeps the property looking cleaner without the same upkeep expected from more maintenance-heavy materials.
+- Backyard privacy fencing
+- Vinyl fence replacement
+- Property boundary upgrades
+- Vinyl gates and matching enclosure work

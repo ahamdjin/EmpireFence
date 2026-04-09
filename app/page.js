@@ -20,7 +20,7 @@ import {
 export const metadata = buildPageMetadata({
   title: "Fence company in Jurupa Valley, CA",
   description:
-    "Empire Fence installs vinyl, wood, wrought iron, chain link, gates, and block walls across Jurupa Valley and nearby Inland Empire cities.",
+    "Empire Fence handles vinyl, wood, wrought iron, chain link, metal fencing, fence repairs, railings, patio enclosures, gazebo builds, and related exterior fence work across Jurupa Valley and nearby Inland Empire cities.",
   path: "/",
   keywords: [
     "vinyl fence Jurupa Valley",
@@ -46,9 +46,9 @@ export default async function HomePage() {
               <div className="heroStage__copy">
                 <span className="eyebrow">Jurupa Valley fence contractor</span>
                 <h1>
-                  Fence lines that look settled from the <em>street</em>.
+                  #1 Fencing Contractor in <em>Jurupa Valley</em>
                 </h1>
-                <p>Vinyl, wood, wrought iron, chain link, gates, and block walls across Jurupa Valley and the Inland Empire.</p>
+                <p>Vinyl, wood, wrought iron, chain link, metal fencing, fence repairs, railings, patio enclosures, gazebo builds, and related exterior work across Jurupa Valley and the Inland Empire.</p>
 
                 <div className="heroStage__scope">
                   <span>Fence, gate, and wall work</span>

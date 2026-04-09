@@ -1,35 +1,35 @@
 ---
 slug: wood-fence
 order: 2
-title: Wood Fence
-eyebrow: Classic privacy and character
-summary: Custom wood fence installation for privacy, warmth, and tailored exterior character across Jurupa Valley and surrounding service areas.
+title: Wood Fence Installation
+eyebrow: Privacy, warmth, and custom character
+summary: Custom wood fence installation for residential and commercial properties that want privacy, security, and a classic material with design flexibility.
 heroImage: /client/wood-fence.jpg
 highlights:
-  - Natural material with flexible design options
-  - Works for privacy, decorative, and horizontal layouts
-  - Built around property style and landscape context
+  - Strong choice for privacy fences and perimeter definition
+  - Flexible enough for traditional, decorative, and modern layouts
+  - Built around the home, lot, and finish goals of the property
 faqs:
-  - question: Can Empire Fence build modern horizontal wood fences?
-    answer: Yes. The service description directly supports custom wood solutions, including clean-lined modern layouts and classic privacy fencing.
-  - question: Is wood fencing only for residential work?
-    answer: No. The site positions wood fencing for both homes and businesses depending on the look, privacy level, and scope required.
+  - question: Can wood fencing be built for privacy?
+    answer: Yes. Wood fencing is one of the strongest choices for backyard privacy, side-yard separation, and a more defined outdoor space.
+  - question: Does Empire Fence handle custom wood layouts?
+    answer: Yes. Wood fences can be planned around the style of the property, including traditional privacy runs and cleaner modern layouts.
 ---
-Empire Fence builds **wood fencing** for clients who want privacy and a more natural, character-driven finish around the property.
+Empire Fence builds **wood fences** in Jurupa Valley for clients who want privacy, security, and a natural material that can be shaped to the character of the property.
 
-Wood remains one of the most flexible materials on the service list. It can read traditional, modern, rustic, or minimal depending on the board layout and finish strategy.
+Wood remains one of the most flexible fence materials because it can read traditional, modern, decorative, or straightforward depending on the board layout, proportions, and finish direction.
 
-## Common wood fence scopes
+## Common wood fence projects
 
 - Full privacy fences
-- Horizontal fence designs
+- Horizontal wood layouts
 - Decorative yard enclosures
-- Replacement runs that need to match the property better
+- Fence replacement for aging runs
 
-## Material and finish decisions
+## Why property owners choose wood
 
-The main value here is not just installing posts and boards. It is choosing the right wood species, proportions, and finish details so the fence feels integrated with the home or lot.
+Wood fencing creates a strong visual edge while still feeling warm and residential. It can improve privacy, define the property line, and make the outdoor space feel more finished without losing flexibility in style.
 
-## The outcome
+## Installation focus
 
-A strong wood fence should improve privacy, define the edge of the property, and still feel visually appropriate for the setting. That is the standard this service is built around.
+Empire Fence approaches wood fence installation around layout, privacy level, and the overall fit of the property so the fence feels intentional instead of generic once the project is done.

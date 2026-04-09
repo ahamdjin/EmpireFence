@@ -2,24 +2,27 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { business, navLinks } from "@/lib/site";
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const forceScrolled = pathname !== "/";
 
   useEffect(() => {
     const handleScroll = () => {
       const threshold = Math.max(window.innerHeight - 140, 140);
-      setScrolled(window.scrollY >= threshold);
+      setScrolled(forceScrolled || window.scrollY >= threshold);
     };
 
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [forceScrolled]);
 
   useEffect(() => {
     document.body.classList.toggle("nav-open", open);

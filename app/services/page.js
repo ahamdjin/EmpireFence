@@ -6,7 +6,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata = buildPageMetadata({
   title: "Services",
   description:
-    "Explore vinyl, wood, wrought iron, chain link, custom fencing, gates, and block wall services from Empire Fence.",
+    "Explore vinyl, wood, wrought iron, chain link, metal fencing, fence repairs, gazebo building, fence supply, railing, and patio enclosure services from Empire Fence.",
   path: "/services",
   image: "/client/vinyl-fence.jpg",
 });
@@ -19,7 +19,7 @@ export default async function ServicesPage() {
       <PageHero
         eyebrow="Our services"
         title="Fencing Services"
-        intro="Vinyl, wood, wrought iron, chain link, gates, and block walls. Professional installation for homes and businesses."
+        intro="Ten focused service lines covering vinyl, wood, wrought iron, chain link, metal fencing, repairs, railings, patio enclosures, gazebo builds, and fence supply support."
         image="/client/vinyl-fence.jpg"
         primaryAction={{ href: "/contact-us", label: "Get free quote" }}
         secondaryAction={{ href: "/gallery", label: "See projects" }}

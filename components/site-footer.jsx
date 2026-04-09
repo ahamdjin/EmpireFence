@@ -56,7 +56,7 @@ export function SiteFooter() {
           <div>
             <span className="footerLabel">Contact</span>
             <div className="footerLinks">
-              <span>{business.address}</span>
+              <address className="footerAddress">{business.address}</address>
               <span>{business.hours}</span>
               <a href={business.emailHref}>{business.email}</a>
               <a href={business.phoneHref}>{business.phoneDisplay}</a>
