@@ -1,7 +1,16 @@
 /* Reliable UI pass 5
    Imported through app/layout.js so it overrides globals.css consistently.
-   Focus: hero fill, sticky services, broken gallery/process mobile sections, and tighter mobile type.
+   Focus: hero fill, sticky services, cleaner mobile service cards, and tighter mobile type.
 */
+
+:root {
+  --ui-mobile-copy-size: 0.96rem;
+  --ui-mobile-copy-line: 1.62;
+  --ui-mobile-card-padding: 16px;
+  --ui-mobile-card-padding-tight: 14px;
+  --ui-mobile-card-radius: 18px;
+  --ui-mobile-card-radius-lg: 22px;
+}
 
 @media (min-width: 921px) {
   main {
@@ -71,7 +80,7 @@
   }
 
   .processCard {
-    padding: 16px;
+    padding: var(--ui-mobile-card-padding);
   }
 
   .processCard h3 {
@@ -95,7 +104,7 @@
   }
 
   .projectSpotlight__body {
-    padding: 16px;
+    padding: var(--ui-mobile-card-padding);
     gap: 10px;
   }
 
@@ -121,7 +130,7 @@
     min-height: 160px;
     grid-column: auto;
     grid-row: auto;
-    border-radius: 18px;
+    border-radius: var(--ui-mobile-card-radius);
   }
 
   .galleryTile__overlay {
@@ -161,6 +170,65 @@
     border-radius: 18px;
     max-height: calc(100svh - 88px);
     overflow-y: auto;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+
+  .sectionHeading h2,
+  .splitIntro h2,
+  .locationStage h2,
+  .panel h2,
+  .panel--dark h2,
+  .infoCard h3,
+  .faqItem h3,
+  .serviceIndexCard h2,
+  .locationCard h2,
+  .trustCard h3,
+  .serviceCard h3,
+  .serviceTile h3,
+  .serviceFeature h3,
+  .articleBody h2,
+  .storyPanel h3,
+  .processCard h3,
+  .projectSpotlight h3,
+  .galleryTile__overlay h3,
+  .serviceEditorial__body h3,
+  .ctaShell h2 {
+    font-size: clamp(1.42rem, 6.6vw, 1.95rem);
+    line-height: 1.06;
+  }
+
+  .sectionHeading .prose p,
+  .splitIntro .prose p,
+  .storyCluster__summary,
+  .locationStage > p,
+  .storyPanel p,
+  .processCard p,
+  .projectSpotlight p,
+  .serviceCard p,
+  .serviceTile p,
+  .serviceFeature p,
+  .serviceEditorial__body p,
+  .trustCard p,
+  .infoCard p,
+  .postCard p,
+  .locationCard p,
+  .faqItem p,
+  .articleBody,
+  .articleBody p,
+  .heroStage__note p,
+  .pageHero__copy p,
+  .pageHero__caption p,
+  .ctaShell p,
+  .panel p,
+  .contactStack p,
+  .contactStack a,
+  .serviceIndexCard__body p {
+    font-size: var(--ui-mobile-copy-size);
+    line-height: var(--ui-mobile-copy-line);
   }
 
   .homeHero .heroStage {
@@ -289,7 +357,23 @@
   .projectSpotlight__body,
   .ctaShell__form,
   .galleryTile__overlay {
-    padding: 14px;
+    padding: var(--ui-mobile-card-padding-tight);
+  }
+
+  .servicesRail__stickyCopy {
+    padding: var(--ui-mobile-card-padding);
+    border-radius: var(--ui-mobile-card-radius);
+  }
+
+  .servicesRail__stickyCopy p {
+    font-size: 0.95rem;
+    line-height: 1.58;
+    color: rgba(247, 242, 234, 0.8);
+  }
+
+  .servicesRail__stickyCopy .button {
+    width: 100%;
+    min-height: 48px;
   }
 
   .servicesRail__list > * {
@@ -305,9 +389,54 @@
     border-radius: 18px;
   }
 
-  .servicesRail__stickyCopy {
-    padding: 14px;
-    border-radius: 16px;
+  .serviceEditorial,
+  .serviceEditorial--alt {
+    grid-template-columns: 1fr;
+    border-radius: var(--ui-mobile-card-radius-lg);
+  }
+
+  .serviceEditorial--alt .serviceEditorial__media {
+    order: 0;
+  }
+
+  .serviceEditorial__media {
+    min-height: 176px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .serviceEditorial__body {
+    display: grid;
+    align-content: start;
+    gap: 10px;
+    padding: 16px 16px 18px;
+  }
+
+  .serviceEditorial__body .eyebrow {
+    margin-bottom: 2px;
+  }
+
+  .serviceEditorial__body h3 {
+    font-size: clamp(1.18rem, 5vw, 1.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    max-width: 14ch;
+  }
+
+  .serviceEditorial__meta {
+    display: none;
+  }
+
+  .serviceEditorial__index {
+    left: 12px;
+    bottom: 12px;
+    font-size: 0.98rem;
+  }
+
+  .serviceEditorial__body .textLink {
+    width: fit-content;
+    max-width: 100%;
+    justify-content: flex-start;
+    font-size: 0.95rem;
   }
 }
 
@@ -339,6 +468,29 @@
     grid-template-columns: 1fr;
   }
 
+  .sectionHeading h2,
+  .splitIntro h2,
+  .locationStage h2,
+  .panel h2,
+  .panel--dark h2,
+  .infoCard h3,
+  .faqItem h3,
+  .serviceIndexCard h2,
+  .locationCard h2,
+  .trustCard h3,
+  .serviceCard h3,
+  .serviceTile h3,
+  .serviceFeature h3,
+  .articleBody h2,
+  .storyPanel h3,
+  .processCard h3,
+  .projectSpotlight h3,
+  .galleryTile__overlay h3,
+  .serviceEditorial__body h3,
+  .ctaShell h2 {
+    font-size: clamp(1.3rem, 7vw, 1.72rem);
+  }
+
   .galleryFeature__grid {
     grid-auto-rows: 144px;
   }
@@ -363,6 +515,28 @@
 
   .projectSpotlight__image {
     min-height: 180px;
+  }
+
+  .serviceEditorial__media {
+    min-height: 152px;
+  }
+
+  .serviceEditorial__body {
+    gap: 8px;
+    padding: 14px 14px 16px;
+  }
+
+  .serviceEditorial__body h3 {
+    font-size: clamp(1.08rem, 6vw, 1.28rem);
+    max-width: none;
+  }
+
+  .serviceEditorial__body .eyebrow {
+    font-size: 0.68rem;
+  }
+
+  .serviceEditorial__body .textLink {
+    font-size: 0.92rem;
   }
 
   .servicesRail__list > *:nth-child(-n + 3) {
