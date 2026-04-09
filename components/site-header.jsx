@@ -3,14 +3,44 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
-import { business, navLinks } from "@/lib/site";
+import { business, navLinks, services } from "@/lib/site";
+
+// Service icons mapping
+const serviceIcons = {
+  "vinyl-fence": "🏠",
+  "wood-fence": "🌲",
+  "wrought-iron-fence": "⚒️",
+  "chain-link-fence": "🔗",
+  "metal-fence": "🔩",
+  "fence-repairs": "🔧",
+  "fence-supply": "📦",
+  "gazebo-builder": "🏛️",
+  "patio-enclosures": "🏖️",
+  "railing-contractor": "🛡️",
+};
+
+// Service descriptions for hover
+const serviceDescriptions = {
+  "vinyl-fence": "Privacy & durability",
+  "wood-fence": "Natural beauty",
+  "wrought-iron-fence": "Elegant security",
+  "chain-link-fence": "Affordable protection",
+  "metal-fence": "Long-lasting strength",
+  "fence-repairs": "Restore & renew",
+  "fence-supply": "Quality materials",
+  "gazebo-builder": "Outdoor living",
+  "patio-enclosures": "Extended spaces",
+  "railing-contractor": "Safety & style",
+};
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef(null);
   const forceScrolled = pathname !== "/";
 
   useEffect(() => {
@@ -28,6 +58,54 @@ export function SiteHeader() {
     document.body.classList.toggle("nav-open", open);
     return () => document.body.classList.remove("nav-open");
   }, [open]);
+
+  // Handle mobile services toggle
+  const handleServicesToggle = (e) => {
+    if (window.innerWidth <= 900) {
+      e.preventDefault();
+      setServicesOpen(!servicesOpen);
+    }
+  };
+
+  // Close services dropdown on mobile when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target)) {
+        setServicesOpen(false);
+      }
+    };
+
+    if (window.innerWidth <= 900) {
+      document.addEventListener("click", handleClickOutside);
+      return () => document.removeEventListener("click", handleClickOutside);
+    }
+  }, []);
+
+  // Handle ESC key
+  useEffect(() => {
+    const handleEsc = (e) => {
+      if (e.key === "Escape") {
+        setServicesOpen(false);
+        setOpen(false);
+      }
+    };
+    document.addEventListener("keydown", handleEsc);
+    return () => document.removeEventListener("keydown", handleEsc);
+  }, []);
+
+  // Filter services for dropdown
+  const servicesList = [
+    { slug: "vinyl-fence", title: "Vinyl Fence" },
+    { slug: "wood-fence", title: "Wood Fence" },
+    { slug: "wrought-iron-fence", title: "Wrought Iron" },
+    { slug: "chain-link-fence", title: "Chain Link" },
+    { slug: "metal-fence", title: "Metal Fence" },
+    { slug: "fence-repairs", title: "Fence Repairs" },
+    { slug: "fence-supply", title: "Fence Supply" },
+    { slug: "gazebo-builder", title: "Gazebo Builder" },
+    { slug: "patio-enclosures", title: "Patio Enclosures" },
+    { slug: "railing-contractor", title: "Railing Contractor" },
+  ];
 
   return (
     <header className={`siteHeader${scrolled ? " siteHeader--scrolled" : ""}`}>
@@ -53,11 +131,61 @@ export function SiteHeader() {
         </button>
 
         <nav className={`siteHeader__nav${open ? " is-open" : ""}`}>
-          {navLinks.map((link) => (
-            <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
-              {link.label}
-            </Link>
-          ))}
+          <Link href="/about-us" onClick={() => setOpen(false)}>About</Link>
+
+          {/* Services Dropdown */}
+          <div
+            className={`navDropdown${servicesOpen ? " is-open" : ""}`}
+            ref={servicesRef}
+          >
+            <div className="navDropdown__wrapper">
+              <Link href="/services" className="navDropdown__link" onClick={() => setOpen(false)}>
+                Services
+              </Link>
+              <button
+                type="button"
+                className="navDropdown__toggle"
+                aria-expanded={servicesOpen}
+                aria-haspopup="true"
+                aria-label="Toggle services menu"
+                onClick={handleServicesToggle}
+              >
+                <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M2 4L6 8L10 4" />
+                </svg>
+              </button>
+            </div>
+            <div className="navDropdown__menu">
+              <div className="navDropdown__header">
+                <span className="navDropdown__title">Our Services</span>
+                <Link href="/services" className="navDropdown__viewAll" onClick={() => setOpen(false)}>
+                  View all →
+                </Link>
+              </div>
+              <div className="navDropdown__grid">
+                {servicesList.map((service) => (
+                  <Link
+                    key={service.slug}
+                    href={`/${service.slug}`}
+                    className="navDropdown__item"
+                    onClick={() => setOpen(false)}
+                  >
+                    <span className="navDropdown__icon">{serviceIcons[service.slug]}</span>
+                    <span className="navDropdown__text">
+                      <span className="navDropdown__label">{service.title}</span>
+                      <span className="navDropdown__meta">{serviceDescriptions[service.slug]}</span>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <Link href="/gallery" onClick={() => setOpen(false)}>Gallery</Link>
+          <Link href="/service-areas" onClick={() => setOpen(false)}>Areas</Link>
+          <Link href="/blog" onClick={() => setOpen(false)}>Blog</Link>
+          <Link href="/contact-us" onClick={() => setOpen(false)}>Contact</Link>
+
           <a href={business.phoneHref} className="button button--ghost" onClick={() => setOpen(false)}>
             Call
           </a>
