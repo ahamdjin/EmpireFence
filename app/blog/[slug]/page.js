@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 
 import { getAllPosts, getPostBySlug } from "@/lib/content";
 import { getImagePresentation } from "@/lib/image-presentation";
-import { buildBlogPostingSchema, buildPageMetadata } from "@/lib/seo";
+import { buildBlogPostingSchema, buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -34,6 +34,11 @@ export default async function BlogPostPage({ params }) {
   }
 
   const articleSchema = buildBlogPostingSchema(post);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", href: "/" },
+    { name: "Blog", href: "/blog" },
+    { name: post.data.title },
+  ]);
   const publishedDate = new Intl.DateTimeFormat("en-US", {
     month: "long",
     day: "numeric",
@@ -71,6 +76,10 @@ export default async function BlogPostPage({ params }) {
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </div>
       </article>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
     </>
   );
 }

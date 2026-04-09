@@ -7,7 +7,7 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
 import { getAllServices, getServiceBySlug } from "@/lib/content";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
 import { business, coverageNotes, serviceAreas } from "@/lib/site";
 
 function findLocation(slug) {
@@ -51,6 +51,11 @@ export async function generateMetadata({ params }) {
 function LocationPage({ area, services }) {
   const nearbyAreas = serviceAreas.filter((item) => item.slug !== area.slug).slice(0, 4);
   const localServices = services.slice(0, 4);
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", href: "/" },
+    { name: "Service Areas", href: "/service-areas" },
+    { name: area.title },
+  ]);
 
   return (
     <>
@@ -176,6 +181,10 @@ function LocationPage({ area, services }) {
           </Reveal>
         </div>
       </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
     </>
   );
 }
@@ -189,6 +198,11 @@ function ServicePage({ service, services }) {
     "Keeps the finished work feeling cleaner from the street and more resolved on the property.",
     "Useful when this install needs stronger fit, better coordination, or a more durable outcome.",
   ];
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", href: "/" },
+    { name: "Services", href: "/services" },
+    { name: service.data.title },
+  ]);
 
   return (
     <>
@@ -353,6 +367,10 @@ function ServicePage({ service, services }) {
         </div>
       </section>
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
     </>
   );
 }
