@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { PageHero } from "@/components/page-hero";
 import { galleryCollections } from "@/lib/site";
 import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata } from "@/lib/seo";
@@ -27,19 +28,17 @@ export const metadata = buildPageMetadata({
 export default function GalleryPage() {
   return (
     <>
+      <PageHero
+        variant="gallery"
+        eyebrow="Project gallery"
+        title="Our Work"
+        intro="Browse our portfolio of completed fence installations throughout Jurupa Valley and the Inland Empire."
+        image="/client/gallery-1.webp"
+        primaryAction={{ href: "/contact-us", label: "Get free quote" }}
+        secondaryAction={{ href: "/services", label: "Services" }}
+      />
+
       <section className="galleryShowcase">
-        <div className="container galleryShowcase__intro">
-          <div>
-            <span className="eyebrow">Gallery</span>
-            <h1>
-              Selected fence, gate, and frontage <em>work</em>.
-            </h1>
-          </div>
-          <p>
-            A tighter look at privacy runs, decorative iron, gates, and the outdoor upgrades that
-            finish the property edge.
-          </p>
-        </div>
 
         <div className="container galleryShowcase__mosaic">
           {images.slice(0, 5).map((image, index) => (

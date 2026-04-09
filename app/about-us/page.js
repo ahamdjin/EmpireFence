@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { PageHero } from "@/components/page-hero";
 import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata } from "@/lib/seo";
-import { aboutHighlights, industries, trustPoints } from "@/lib/site";
+import { aboutHighlights, industries } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
   title: "About us",
@@ -16,45 +17,15 @@ export const metadata = buildPageMetadata({
 export default function AboutPage() {
   return (
     <>
-      <section className="aboutCanvas">
-        <div className="aboutCanvas__media">
-          <Image
-            src="/client/wrought-fence.jpg"
-            alt="Empire Fence frontage installation"
-            fill
-            sizes="(max-width: 900px) 100vw, 52vw"
-            style={getImagePresentation("/client/wrought-fence.jpg", "aboutCanvas")}
-          />
-        </div>
-        <div className="container aboutCanvas__shell">
-          <div className="aboutCanvas__copy">
-            <span className="eyebrow">About the company</span>
-            <h1>
-              Fence-first work with a cleaner <em>finish</em>.
-            </h1>
-            <p>
-              Empire Fence handles privacy fencing, gates, walls, and selected outdoor upgrades
-              with one standard of follow-through from the first estimate through the field finish.
-            </p>
-            <div className="buttonRow">
-              <Link href="/contact-us" className="button button--primary">
-                Start estimate
-              </Link>
-              <Link href="/gallery" className="button button--ghost">
-                View gallery
-              </Link>
-            </div>
-            <div className="aboutCanvas__points">
-              {trustPoints.map((point) => (
-                <article key={point.title} className="aboutCanvas__point">
-                  <h3>{point.title}</h3>
-                  <p>{point.copy}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        variant="about"
+        eyebrow="About us"
+        title="About Empire Fence"
+        intro="40+ years of combined experience installing quality fences throughout Jurupa Valley and the Inland Empire."
+        image="/client/wrought-fence.jpg"
+        primaryAction={{ href: "/contact-us", label: "Get free estimate" }}
+        secondaryAction={{ href: "/gallery", label: "View gallery" }}
+      />
 
       <section className="section">
         <div className="container splitIntro">

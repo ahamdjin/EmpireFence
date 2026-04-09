@@ -1,4 +1,5 @@
 import { BookingWidget } from "@/components/booking-widget";
+import { PageHero } from "@/components/page-hero";
 import { QuoteForm } from "@/components/quote-form";
 import { buildPageMetadata } from "@/lib/seo";
 import { business, contactPrompts, serviceAreas, socialLinks } from "@/lib/site";
@@ -14,25 +15,25 @@ export const metadata = buildPageMetadata({
 export default function ContactPage() {
   return (
     <>
-      <section className="contactHub">
+      <PageHero
+        variant="contact"
+        eyebrow="Contact us"
+        title="Get a Free Estimate"
+        intro="Call us now or fill out the form for a free fence installation quote. We serve Jurupa Valley and the entire Inland Empire."
+        image="/client/location-fontana.jpg"
+        primaryAction={{ href: business.phoneHref, label: `Call ${business.phoneDisplay}` }}
+        secondaryAction={{ href: "#form", label: "Send message" }}
+      />
+
+      <section className="contactHub" id="form">
         <div className="container contactHub__grid">
           <article className="contactHub__intro">
-            <span className="eyebrow">Contact</span>
-            <h1>
-              Start the estimate or book the first <em>call</em>.
-            </h1>
+            <span className="eyebrow">Quick Request</span>
+            <h2>Send us your project details</h2>
             <p>
-              Use the form for project details, call directly when you want to move faster, or book
-              through the live calendar below.
+              Fill out the form below and we'll get back to you within 24 hours
+              with a free estimate for your fencing project.
             </p>
-            <div className="contactStack">
-              <a href={business.phoneHref}>{business.phoneDisplay}</a>
-              <a href={business.emailHref}>{business.email}</a>
-              <a href={business.mapHref} target="_blank" rel="noreferrer">
-                {business.city}
-              </a>
-              <p>{business.hours}</p>
-            </div>
             <div className="contactHub__socials">
               {socialLinks.map((link) => (
                 <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className="textLink">
@@ -43,8 +44,6 @@ export default function ContactPage() {
           </article>
 
           <article className="contactHub__form">
-            <span className="eyebrow">Estimate request</span>
-            <h2>Send the scope.</h2>
             <QuoteForm />
           </article>
         </div>

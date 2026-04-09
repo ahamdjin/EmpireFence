@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { PageHero } from "@/components/page-hero";
 import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata } from "@/lib/seo";
 import { business, coverageNotes, serviceAreas } from "@/lib/site";
@@ -16,7 +17,18 @@ export const metadata = buildPageMetadata({
 export default function ServiceAreasPage() {
   return (
     <>
-      <section className="coverageAtlas">
+      <PageHero
+        variant="areas"
+        eyebrow="Service areas"
+        title="Serving the Inland Empire"
+        intro="Professional fence installation throughout Jurupa Valley, Riverside, Ontario, Chino, and surrounding areas."
+        image="/client/location-riverside.jpg"
+        chips={["Jurupa Valley", "Riverside", "Ontario"]}
+        primaryAction={{ href: "/contact-us", label: "Get free quote" }}
+        secondaryAction={{ href: "#locations", label: "View locations" }}
+      />
+
+      <section className="coverageAtlas" id="map">
         <div className="container coverageAtlas__grid">
           <div className="coverageAtlas__map">
             <div className="mapCard mapCard--standalone">
@@ -25,19 +37,17 @@ export default function ServiceAreasPage() {
           </div>
 
           <div className="coverageAtlas__copy">
-            <span className="eyebrow">Coverage</span>
-            <h1>
-              Jurupa Valley and nearby Inland Empire <em>cities</em>.
-            </h1>
+            <span className="eyebrow">Our Coverage</span>
+            <h2>Local Service You Can Trust</h2>
             <p>
-              Service across the local cities where Empire Fence handles privacy fencing, frontage
-              work, gates, and supporting outdoor scope.
+              Based at {business.address}, we provide fast, reliable fencing services
+              across the entire Inland Empire region.
             </p>
             <div className="chipWrap">
-              {serviceAreas.slice(0, 6).map((area) => (
-                <span key={area.slug} className="chip chip--static">
+              {serviceAreas.map((area) => (
+                <Link key={area.slug} href={`/${area.slug}`} className="chip chip--static">
                   {area.title}
-                </span>
+                </Link>
               ))}
             </div>
           </div>
@@ -56,7 +66,7 @@ export default function ServiceAreasPage() {
         </div>
       </section>
 
-      <section className="section section--soft">
+      <section className="section section--soft" id="locations">
         <div className="container locationGrid">
           {serviceAreas.map((area) => (
             <article key={area.slug} className="locationCard">

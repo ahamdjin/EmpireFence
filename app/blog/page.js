@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { PageHero } from "@/components/page-hero";
 import { getAllPosts } from "@/lib/content";
 import { getImagePresentation } from "@/lib/image-presentation";
 import { buildBlogCollectionSchema, buildPageMetadata } from "@/lib/seo";
@@ -29,17 +30,18 @@ export default async function BlogPage() {
 
   return (
     <>
+      <PageHero
+        variant="blog"
+        eyebrow="Our blog"
+        title="Fence Tips & Advice"
+        intro="Learn about fence materials, installation tips, and how to plan your next fencing project."
+        image="/client/gallery-1.webp"
+        primaryAction={{ href: "/contact-us", label: "Get free quote" }}
+        secondaryAction={{ href: "/services", label: "Services" }}
+        cards={featuredCards}
+      />
+
       <section className="journalDeck">
-        <div className="container journalDeck__top">
-            <span className="eyebrow">Blog</span>
-            <h1>
-              Planning notes for better fence <em>projects</em>.
-            </h1>
-            <p>Short articles on material choices, estimate prep, and scope decisions around the property edge.</p>
-            <Link href="/contact-us" className="button button--primary">
-              Start estimate
-            </Link>
-        </div>
 
         {posts[0] ? (
           <div className="container journalDeck__grid">

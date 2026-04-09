@@ -5,6 +5,38 @@ import { getImagePresentation } from "@/lib/image-presentation";
 import { business } from "@/lib/site";
 import { Reveal } from "@/components/reveal";
 
+function HeroAction({ action, fallbackClassName }) {
+  if (!action?.href || !action?.label) {
+    return null;
+  }
+
+  const className = action.className || fallbackClassName;
+  const isInternal =
+    action.href.startsWith("/") &&
+    !action.href.startsWith("//") &&
+    !action.external &&
+    !action.target;
+
+  if (isInternal) {
+    return (
+      <Link href={action.href} className={className}>
+        {action.label}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={action.href}
+      className={className}
+      target={action.target}
+      rel={action.target === "_blank" ? "noreferrer" : undefined}
+    >
+      {action.label}
+    </a>
+  );
+}
+
 export function PageHero({
   eyebrow,
   title,
@@ -15,9 +47,19 @@ export function PageHero({
   secondaryImage,
   chips = [],
   cards = [],
+  primaryAction,
+  secondaryAction,
 }) {
   const heroChips = chips.slice(0, variant === "areas" ? 3 : 2);
   const showCaption = variant !== "areas";
+  const resolvedPrimaryAction = primaryAction ?? {
+    href: "/contact-us",
+    label: "Start estimate",
+  };
+  const resolvedSecondaryAction = secondaryAction ?? {
+    href: business.phoneHref,
+    label: business.phoneDisplay,
+  };
 
   return (
     <section className={`pageHero pageHero--${variant}`}>
@@ -25,36 +67,67 @@ export function PageHero({
         <Reveal className="pageHero__frame" initiallyVisible variant="soft">
           <div className="pageHero__grid">
             <div className="pageHero__copy">
-              {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
-              <h1>{title}</h1>
-              <p>{intro}</p>
-              {heroChips.length ? (
-                <div className="pageHero__copyMeta">
-                  {heroChips.map((chip) => (
-                    <span key={chip} className="pageHero__tag">
-                      {chip}
-                    </span>
-                  ))}
+              <div className="pageHero__copyPanel">
+                {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
+                <h1>{title}</h1>
+                <p>{intro}</p>
+                {heroChips.length ? (
+                  <div className="pageHero__copyMeta">
+                    {heroChips.map((chip) => (
+                      <span key={chip} className="pageHero__tag">
+                        {chip}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
+                <div className="pageHero__actions">
+                  <HeroAction
+                    action={resolvedPrimaryAction}
+                    fallbackClassName="button button--primary"
+                  />
+                  <HeroAction
+                    action={resolvedSecondaryAction}
+                    fallbackClassName="button button--ghost"
+                  />
                 </div>
-              ) : null}
-              <div className="pageHero__actions">
-                <Link href="/contact-us" className="button button--primary">
-                  Start estimate
-                </Link>
-                <a href={business.phoneHref} className="button button--ghost">
-                  {business.phoneDisplay}
-                </a>
+                {cards.length ? (
+                  <div className="pageHero__stack pageHero__stack--inline">
+                    {cards.map((card) => {
+                      const content = (
+                        <>
+                          {card.eyebrow ? <span className="eyebrow">{card.eyebrow}</span> : null}
+                          {card.title ? <strong>{card.title}</strong> : null}
+                          {card.copy ? <p>{card.copy}</p> : null}
+                        </>
+                      );
+
+                      return card.href ? (
+                        <Link
+                          key={`${card.title}-${card.href}`}
+                          href={card.href}
+                          className="pageHero__miniCard"
+                        >
+                          {content}
+                        </Link>
+                      ) : (
+                        <article key={`${card.title}-${card.copy}`} className="pageHero__miniCard">
+                          {content}
+                        </article>
+                      );
+                    })}
+                  </div>
+                ) : null}
+                {stats?.length ? (
+                  <div className="metricRow metricRow--compact">
+                    {stats.map((stat) => (
+                      <article key={stat.label} className="metricCard metricCard--light">
+                        <strong>{stat.value}</strong>
+                        <span>{stat.label}</span>
+                      </article>
+                    ))}
+                  </div>
+                ) : null}
               </div>
-              {stats?.length ? (
-                <div className="metricRow metricRow--compact">
-                  {stats.map((stat) => (
-                    <article key={stat.label} className="metricCard metricCard--light">
-                      <strong>{stat.value}</strong>
-                      <span>{stat.label}</span>
-                    </article>
-                  ))}
-                </div>
-              ) : null}
             </div>
             <div className="pageHero__visual">
               <div className="pageHero__media">

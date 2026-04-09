@@ -17,14 +17,12 @@ export default async function ServicesPage() {
   return (
     <>
       <PageHero
-        eyebrow="All services"
-        title={
-          <>
-            Fence, gate, wall, and outdoor <em>services</em>.
-          </>
-        }
-        intro="Browse the main project types Empire Fence handles across Jurupa Valley and nearby Inland Empire cities."
+        eyebrow="Our services"
+        title="Fencing Services"
+        intro="Vinyl, wood, wrought iron, chain link, gates, and block walls. Professional installation for homes and businesses."
         image="/client/vinyl-fence.jpg"
+        primaryAction={{ href: "/contact-us", label: "Get free quote" }}
+        secondaryAction={{ href: "/gallery", label: "See projects" }}
       />
 
       <section className="section">
