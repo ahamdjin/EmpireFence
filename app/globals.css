@@ -6698,3 +6698,76 @@ span {
     gap: 8px;
   }
 }
+
+/* =========================================================
+   STEP 10 PATCH - homepage width fix + footer contact width
+   ADD BELOW STEP 9 PATCH
+   ========================================================= */
+
+@media (min-width: 1280px) {
+  .homeHero .container,
+  .container.storyCluster,
+  .container.servicesRail,
+  .container.galleryFeature,
+  .container.proofBand,
+  .container.locationFaq,
+  .finalCta .container {
+    width: min(1460px, calc(100vw - 56px));
+    max-width: none;
+  }
+
+  .heroStage__grid {
+    grid-template-columns: minmax(360px, 0.78fr) minmax(760px, 1.22fr);
+    gap: 28px;
+    align-items: start;
+  }
+
+  .heroStage__copy {
+    max-width: 640px;
+  }
+
+  .heroStage__visual {
+    min-height: 460px;
+  }
+
+  .heroStage__imageWrap {
+    inset: 0;
+  }
+
+  .heroStage__metrics {
+    margin-top: 18px;
+  }
+
+  .siteFooter__grid {
+    grid-template-columns:
+      minmax(320px, 1.45fr)
+      minmax(120px, 0.75fr)
+      minmax(170px, 0.95fr)
+      minmax(120px, 0.7fr)
+      minmax(280px, 1.15fr);
+    gap: 28px;
+  }
+
+  .siteFooter .footerLinks a[href^="mailto:"] {
+    white-space: nowrap;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+}
+
+@media (min-width: 1600px) {
+  .homeHero .container,
+  .container.storyCluster,
+  .container.servicesRail,
+  .container.galleryFeature,
+  .container.proofBand,
+  .container.locationFaq,
+  .finalCta .container {
+    width: min(1540px, calc(100vw - 72px));
+  }
+
+  .heroStage__grid {
+    grid-template-columns: minmax(380px, 0.76fr) minmax(820px, 1.24fr);
+  }
+}
+
