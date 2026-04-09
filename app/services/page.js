@@ -37,7 +37,7 @@ export default async function ServicesPage() {
                   highlights: service.data.highlights.slice(0, 2),
                 },
               }}
-              variant={index < 2 ? "feature" : "tile"}
+              variant={index < 6 ? "feature" : "tile"}
             />
           ))}
         </div>

@@ -1152,7 +1152,7 @@ iframe:focus-visible {
 
 .faqCluster {
   display: grid;
-  gap: 22px;
+  gap: 18px;
 }
 
 .chipWrap,
@@ -1183,7 +1183,9 @@ iframe:focus-visible {
 }
 
 .faqList--stacked {
+  counter-reset: faq-items;
   grid-template-columns: 1fr;
+  gap: 16px;
 }
 
 .postGrid,
@@ -1220,6 +1222,12 @@ iframe:focus-visible {
   aspect-ratio: 1.05;
 }
 
+.serviceFeature__body {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+}
+
 .serviceTile,
 .serviceCard,
 .postCard,
@@ -1247,6 +1255,10 @@ iframe:focus-visible {
 .serviceIndexCard {
   overflow: hidden;
   grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
+}
+
+.serviceIndex {
+  grid-template-columns: 1fr;
 }
 
 .serviceIndexCard__body {
@@ -1415,6 +1427,53 @@ iframe:focus-visible {
   position: sticky;
   top: 118px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(246, 240, 232, 0.74));
+}
+
+.faqItem {
+  position: relative;
+  display: grid;
+  gap: 16px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba(184, 138, 91, 0.14), transparent 24%),
+    linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(241, 233, 222, 0.9));
+  border-color: rgba(38, 28, 21, 0.1);
+  box-shadow: 0 22px 58px rgba(24, 17, 11, 0.08);
+}
+
+.faqList--stacked .faqItem {
+  counter-increment: faq-items;
+}
+
+.faqList--stacked .faqItem::before {
+  content: "0" counter(faq-items) " / Question";
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(184, 138, 91, 0.1);
+  border: 1px solid rgba(184, 138, 91, 0.18);
+  color: var(--brand-strong);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.faqItem h3 {
+  max-width: 24ch;
+  font-size: clamp(1.24rem, 1.7vw, 1.74rem);
+  line-height: 1.14;
+  letter-spacing: -0.035em;
+}
+
+.faqItem p {
+  max-width: 62ch;
+  padding-top: 16px;
+  border-top: 1px solid rgba(38, 28, 21, 0.1);
+  font-size: 0.99rem;
+  line-height: 1.78;
 }
 
 .bulletList {
@@ -2808,6 +2867,10 @@ a.pageHero__miniCard:hover {
     grid-template-columns: 1fr;
   }
 
+  .serviceFeature {
+    grid-template-columns: 1fr;
+  }
+
   .serviceProofSpotlight {
     grid-column: auto;
   }
@@ -2891,7 +2954,7 @@ a.pageHero__miniCard:hover {
   }
 
   .section {
-    padding: 40px 0;
+    padding: 52px 0;
   }
 
   .siteHeader {
@@ -2954,7 +3017,7 @@ a.pageHero__miniCard:hover {
   .heroStage,
   .pageHero__frame,
   .articleHero__shell {
-    padding: 88px 14px 14px;
+    padding: 88px 16px 18px;
   }
 
   .aboutStage,
@@ -2979,14 +3042,20 @@ a.pageHero__miniCard:hover {
   .heroStage__grid,
   .pageHero__grid {
     min-height: auto;
-    gap: 14px;
+    gap: 18px;
     align-content: start;
+  }
+
+  .pageHero__frame {
+    margin: 12px;
+    min-height: auto;
+    border-radius: 24px;
   }
 
   .pageHero__copyPanel {
     min-height: auto;
-    padding: 22px 18px;
-    gap: 14px;
+    padding: 22px 20px;
+    gap: 16px;
     border-radius: 22px;
   }
 
@@ -3020,8 +3089,8 @@ a.pageHero__miniCard:hover {
   .pageHero__copy p,
   .articleHero__copy p {
     max-width: none;
-    font-size: 0.94rem;
-    line-height: 1.58;
+    font-size: 0.98rem;
+    line-height: 1.64;
   }
 
   .heroStage__review {
@@ -3113,7 +3182,7 @@ a.pageHero__miniCard:hover {
   .proofBand,
   .contactUtility,
   .journalStage__feature {
-    gap: 14px;
+    gap: 18px;
   }
 
   .storyCluster__stack,
@@ -3126,12 +3195,13 @@ a.pageHero__miniCard:hover {
   .faqList,
   .locationGrid,
   .postGrid {
-    gap: 12px;
+    gap: 14px;
   }
 
   .storyPanel--image,
   .servicesRail__stickyImage,
   .projectSpotlight__image,
+  .serviceFeature__media,
   .serviceTile__media,
   .serviceCard__image,
   .postCard__image,
@@ -3328,7 +3398,7 @@ a.pageHero__miniCard:hover {
   .projectSpotlight__body,
   .ctaShell__form,
   .galleryTile__overlay {
-    padding: 16px;
+    padding: 18px;
   }
 
   .proofBand__lead {
@@ -3345,7 +3415,63 @@ a.pageHero__miniCard:hover {
   .serviceStory__aside,
   .locationQuotePanel,
   .serviceIndexCard__body {
-    padding: 16px;
+    padding: 18px;
+  }
+
+  .serviceFeature__body,
+  .serviceCard__body,
+  .serviceTile__body,
+  .serviceIndexCard__body {
+    gap: 12px;
+  }
+
+  .serviceFeature__media {
+    min-height: 240px;
+  }
+
+  .serviceFeature__body .bulletList {
+    gap: 8px;
+    font-size: 0.92rem;
+    line-height: 1.56;
+  }
+
+  .faqList--stacked {
+    gap: 14px;
+  }
+
+  .faqItem {
+    gap: 12px;
+    border-radius: 24px;
+  }
+
+  .faqList--stacked .faqItem::before {
+    min-height: 30px;
+    padding: 0 10px;
+    font-size: 0.66rem;
+    letter-spacing: 0.12em;
+  }
+
+  .faqItem h3 {
+    max-width: none;
+    font-size: 1.14rem;
+    line-height: 1.2;
+  }
+
+  .faqItem p {
+    padding-top: 12px;
+    font-size: 0.94rem;
+    line-height: 1.66;
+  }
+
+  .mapCard--framed,
+  .mapCard--embedded,
+  .mapCard--standalone {
+    padding: 10px;
+  }
+
+  .mapCard iframe {
+    min-height: 320px;
+    border-radius: 18px;
   }
 
   .ctaShell {
