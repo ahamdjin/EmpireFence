@@ -22,6 +22,12 @@ export async function generateMetadata({ params }) {
     description: post.data.excerpt,
     path: `/blog/${post.slug}`,
     image: post.data.heroImage,
+    keywords: [
+      post.data.title,
+      "fence planning blog",
+      "Jurupa Valley fence tips",
+      "Empire Fence blog",
+    ],
   });
 }
 
@@ -53,7 +59,7 @@ export default async function BlogPostPage({ params }) {
           <h1>{post.data.title}</h1>
           <div className="articleHero__meta">
             <span>{publishedDate}</span>
-            <span>{post.data.excerpt}</span>
+            <span>Empire Fence Blog</span>
           </div>
           <p>{post.data.excerpt}</p>
           <div className="articleHero__image">
