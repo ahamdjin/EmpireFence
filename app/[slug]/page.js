@@ -84,7 +84,7 @@ function LocationPage({ area, services }) {
   return (
     <>
       <PageHero
-        variant="areas"
+        variant="service"
         eyebrow="Service area"
         title={
           <>
