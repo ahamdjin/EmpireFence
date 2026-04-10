@@ -50,8 +50,8 @@ export function PageHero({
   primaryAction,
   secondaryAction,
 }) {
-  const heroChips = chips.slice(0, variant === "areas" ? 3 : 2);
-  const showCaption = variant !== "areas";
+  const heroChips = chips.slice(0, 2);
+  const showCaption = true;
   const showInlineCards = cards.length && variant === "blog";
   const showVisualCards = cards.length && variant !== "blog";
   const resolvedPrimaryAction = primaryAction ?? {

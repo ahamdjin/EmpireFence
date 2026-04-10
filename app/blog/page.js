@@ -9,9 +9,15 @@ import { buildBlogCollectionSchema, buildPageMetadata, buildWebPageSchema } from
 export const metadata = buildPageMetadata({
   title: "Blog",
   description:
-    "Read Empire Fence articles on fence planning, estimate prep, and exterior project decisions for Jurupa Valley and nearby cities.",
+    "Read Empire Fence articles on fence materials, estimate prep, repair decisions, gates, and local project planning for Jurupa Valley and nearby Inland Empire cities.",
   path: "/blog",
   image: "/client/gallery-1.webp",
+  keywords: [
+    "fence blog Jurupa Valley",
+    "fence estimate advice",
+    "vinyl vs wood fence",
+    "repair or replace fence",
+  ],
 });
 
 export default async function BlogPage() {

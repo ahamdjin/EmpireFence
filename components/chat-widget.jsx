@@ -6,16 +6,18 @@ import { chatWidget } from "@/lib/site";
 
 export function ChatWidget() {
   const [enabled, setEnabled] = useState(false);
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
     const evaluate = () => {
       const isMobile = window.innerWidth <= 640;
-      if (!isMobile) {
-        setEnabled(true);
+      if (enabled) {
         return;
       }
 
-      setEnabled(window.scrollY > 1400);
+      if (!isMobile || window.scrollY > 1400) {
+        setEnabled(true);
+      }
     };
 
     evaluate();
@@ -26,7 +28,7 @@ export function ChatWidget() {
       window.removeEventListener("resize", evaluate);
       window.removeEventListener("scroll", evaluate);
     };
-  }, []);
+  }, [enabled]);
 
   useEffect(() => {
     if (!enabled) {
@@ -34,7 +36,9 @@ export function ChatWidget() {
     }
 
     const scriptId = "empire-chat-widget";
-    if (document.getElementById(scriptId)) {
+    const existing = document.getElementById(scriptId);
+    if (existing) {
+      setHydrated(true);
       return undefined;
     }
 
@@ -44,14 +48,10 @@ export function ChatWidget() {
     script.async = true;
     script.dataset.resourcesUrl = chatWidget.resourcesUrl;
     script.dataset.widgetId = chatWidget.widgetId;
+    script.addEventListener("load", () => setHydrated(true), { once: true });
     document.body.appendChild(script);
 
-    return () => {
-      const existing = document.getElementById(scriptId);
-      if (existing) {
-        existing.remove();
-      }
-    };
+    return undefined;
   }, [enabled]);
 
   if (!enabled) {
@@ -62,6 +62,7 @@ export function ChatWidget() {
     <div
       data-chat-widget=""
       data-widget-id={chatWidget.widgetId}
+      data-widget-ready={hydrated ? "true" : "false"}
     />
   );
 }

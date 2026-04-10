@@ -27,6 +27,7 @@ export async function generateMetadata({ params }) {
     description: post.data.excerpt,
     path: `/blog/${post.slug}`,
     image: post.data.heroImage,
+    keywords: post.data.keywords || [],
   });
 }
 

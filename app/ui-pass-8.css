@@ -3,23 +3,28 @@
    Keeps homepage hero direction unchanged while improving reusable service-page readability.
 */
 
-.pageHero--service .pageHero__frame {
+.pageHero--service .pageHero__frame,
+.pageHero--areas .pageHero__frame {
   padding: clamp(88px, 8vw, 108px) clamp(24px, 3.8vw, 40px) clamp(28px, 3.4vw, 38px);
 }
 
-.pageHero--service .pageHero__copyPanel {
+.pageHero--service .pageHero__copyPanel,
+.pageHero--areas .pageHero__copyPanel {
   gap: 20px;
 }
 
-.pageHero--service .pageHero__copy p {
+.pageHero--service .pageHero__copy p,
+.pageHero--areas .pageHero__copy p {
   max-width: 40ch;
 }
 
-.pageHero--service .pageHero__copyMeta {
+.pageHero--service .pageHero__copyMeta,
+.pageHero--areas .pageHero__copyMeta {
   gap: 8px;
 }
 
-.pageHero--service .pageHero__tag {
+.pageHero--service .pageHero__tag,
+.pageHero--areas .pageHero__tag {
   min-height: 34px;
   padding: 0 12px;
   background: rgba(247, 242, 234, 0.1);
@@ -96,11 +101,13 @@
 }
 
 @media (max-width: 920px) {
-  .pageHero--service .pageHero__frame {
+  .pageHero--service .pageHero__frame,
+  .pageHero--areas .pageHero__frame {
     padding: 84px 18px 22px;
   }
 
   .pageHero--service .pageHero__copyPanel,
+  .pageHero--areas .pageHero__copyPanel,
   .serviceProofSpotlight,
   .serviceStory__article,
   .serviceStory__aside,
@@ -112,6 +119,7 @@
   .serviceProofBand__intro p,
   .serviceStory__aside p,
   .serviceFaqStage p,
+  .pageHero--areas .pageHero__copy p,
   .pageHero--service .pageHero__copy p {
     max-width: none;
   }
@@ -128,11 +136,13 @@
 }
 
 @media (max-width: 640px) {
-  .pageHero--service .pageHero__frame {
+  .pageHero--service .pageHero__frame,
+  .pageHero--areas .pageHero__frame {
     padding: 80px 14px 18px;
   }
 
   .pageHero--service .pageHero__copyPanel,
+  .pageHero--areas .pageHero__copyPanel,
   .serviceProofSpotlight,
   .serviceStory__article,
   .serviceStory__aside,

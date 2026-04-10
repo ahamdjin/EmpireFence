@@ -38,6 +38,11 @@ export async function generateMetadata({ params }) {
       description: service.data.summary,
       path: `/${service.slug}`,
       image: service.data.heroImage,
+      keywords: [
+        `${service.data.title} Jurupa Valley`,
+        `${service.data.title} Inland Empire`,
+        `${service.data.title.toLowerCase()} estimate`,
+      ],
     });
   }
 
@@ -48,6 +53,12 @@ export async function generateMetadata({ params }) {
       description: area.summary || area.intro,
       path: `/${area.slug}`,
       image: area.image,
+      keywords: [
+        `fence company ${area.title}`,
+        `fence contractor ${area.title}`,
+        `gate contractor ${area.title}`,
+        `vinyl fence ${area.title}`,
+      ],
     });
   }
 
@@ -83,6 +94,8 @@ function LocationPage({ area, services }) {
         intro={area.summary || `Privacy fencing, frontage work, entry gates, and supporting outdoor scope in ${area.title}.`}
         image={area.image}
         chips={["Residential frontage", "Commercial perimeter"]}
+        primaryAction={{ href: "/contact-us", label: "Start estimate" }}
+        secondaryAction={{ href: business.phoneHref, label: business.phoneDisplay }}
       />
 
       <section className="section">
