@@ -1408,4 +1408,57 @@
   }
 }
 
+/* Targeted production fixes: services hero spill, area service deck overlap, and blog article mobile hero. */
+.pageHero--services {
+  background: linear-gradient(180deg, #181411 0%, #201a17 12%, #f3ede4 12%, #f8f4ee 100%);
+}
+
+.pageHero--services + .section {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(180deg, #f3ede4 0%, #f8f4ee 100%);
+}
+
+.locationServiceDeck__list {
+  min-width: 0;
+}
+
+@media (min-width: 1181px) {
+  .locationServiceDeck .serviceFeature {
+    grid-template-columns: 1fr;
+  }
+
+  .locationServiceDeck .serviceFeature__media {
+    min-height: 320px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .locationServiceDeck .serviceFeature__body {
+    padding: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .articleHero__shell {
+    min-height: auto;
+    padding: 92px 16px 22px;
+  }
+
+  .articleHero h1 {
+    max-width: 9ch;
+  }
+
+  .articleHero p {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .articleHero__image {
+    min-height: 190px;
+    margin-top: 18px;
+    border-radius: 24px;
+    aspect-ratio: 16 / 9;
+  }
+}
 
