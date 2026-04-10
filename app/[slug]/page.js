@@ -7,8 +7,14 @@ import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
 import { getAllServices, getServiceBySlug } from "@/lib/content";
-import { buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
-import { business, coverageNotes, serviceAreas } from "@/lib/site";
+import {
+  buildAreaServiceSchema,
+  buildBreadcrumbSchema,
+  buildFaqSchema,
+  buildPageMetadata,
+  buildServiceSchema,
+} from "@/lib/seo";
+import { business, serviceAreas } from "@/lib/site";
 
 function findLocation(slug) {
   return serviceAreas.find((area) => area.slug === slug);
@@ -39,7 +45,7 @@ export async function generateMetadata({ params }) {
   if (area) {
     return buildPageMetadata({
       title: area.title,
-      description: area.intro,
+      description: area.summary || area.intro,
       path: `/${area.slug}`,
       image: area.image,
     });
@@ -50,12 +56,19 @@ export async function generateMetadata({ params }) {
 
 function LocationPage({ area, services }) {
   const nearbyAreas = serviceAreas.filter((item) => item.slug !== area.slug).slice(0, 4);
-  const localServices = services.slice(0, 4);
+  const localServices = (area.featuredServiceSlugs?.length
+    ? area.featuredServiceSlugs
+        .map((slug) => services.find((item) => item.slug === slug))
+        .filter(Boolean)
+    : services
+  ).slice(0, 4);
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
     { name: "Service Areas", href: "/service-areas" },
     { name: area.title },
   ]);
+  const pageSchema = buildAreaServiceSchema(area, localServices);
+  const faqSchema = area.localFaqs?.length ? buildFaqSchema(area.localFaqs) : null;
 
   return (
     <>
@@ -67,7 +80,7 @@ function LocationPage({ area, services }) {
             Fence and gate work in <em>{area.title}</em>
           </>
         }
-        intro={`Privacy fencing, frontage work, entry gates, and supporting outdoor scope in ${area.title}.`}
+        intro={area.summary || `Privacy fencing, frontage work, entry gates, and supporting outdoor scope in ${area.title}.`}
         image={area.image}
         chips={["Residential frontage", "Commercial perimeter"]}
       />
@@ -77,7 +90,8 @@ function LocationPage({ area, services }) {
           <Reveal className="coverageAtlas__copy locationCoverage__copy" initiallyVisible variant="left">
             <span className="eyebrow">Local coverage</span>
             <h2>{area.title} stays inside the same estimate and install rhythm Empire Fence uses across nearby Inland Empire cities.</h2>
-            <p>{area.intro}</p>
+            <p>{area.summary || area.intro}</p>
+            <p>{area.estimateLead}</p>
             <div className="chipWrap">
               <span className="chip chip--static">{area.title}</span>
               {nearbyAreas.map((item) => (
@@ -109,16 +123,29 @@ function LocationPage({ area, services }) {
           <SectionHeading
             eyebrow="Work profile"
             title={`What typically comes up in ${area.title}.`}
-            copy="The mix is usually privacy runs, frontage cleanup, gate work, and the adjacent outdoor scope that needs to stay coordinated."
+            copy="The best city pages explain the actual property mix, the common fence problems, and the service choices that tend to make sense locally."
           />
           <div className="miniFeatureGrid">
-            {coverageNotes.map((item, index) => (
+            {area.propertyFocus.map((item, index) => (
               <Reveal key={item.title} className="miniFeatureCard" delay={index * 70} variant="up">
                 <span className="eyebrow">0{index + 1}</span>
                 <h3>{item.title}</h3>
                 <p>{item.copy}</p>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container splitIntro">
+          <div>
+            <span className="eyebrow">Estimate strategy</span>
+            <h2>What helps a {area.title} estimate move faster and come back more accurately.</h2>
+          </div>
+          <div className="prose">
+            <p>{area.estimateLead}</p>
+            <p>This matters because city pages should narrow the conversation. They should help the owner understand the property conditions, common material fit, and the kinds of photos or notes that make the estimate more useful from the first review.</p>
           </div>
         </div>
       </section>
@@ -181,10 +208,42 @@ function LocationPage({ area, services }) {
           </Reveal>
         </div>
       </section>
+      {area.localFaqs?.length ? (
+        <section className="section">
+          <div className="container locationFaq">
+            <Reveal className="locationStage serviceFaqStage" initiallyVisible variant="left">
+              <span className="eyebrow">Local FAQ</span>
+              <h2>Questions that usually come up in {area.title} before the project gets priced.</h2>
+              <p>These are the issues that tend to shape the estimate early: material direction, gate layout, and whether the site needs repair, replacement, or a more complete upgrade.</p>
+            </Reveal>
+
+            <div className="faqCluster">
+              <div className="faqList faqList--stacked">
+                {area.localFaqs.map((item) => (
+                  <article key={item.question} className="faqItem">
+                    <h3>{item.question}</h3>
+                    <p>{item.answer}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : null}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
+      {faqSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      ) : null}
     </>
   );
 }
@@ -203,6 +262,8 @@ function ServicePage({ service, services }) {
     { name: "Services", href: "/services" },
     { name: service.data.title },
   ]);
+  const pageSchema = buildServiceSchema(service);
+  const faqSchema = faqs.length ? buildFaqSchema(faqs) : null;
 
   return (
     <>
@@ -372,6 +433,16 @@ function ServicePage({ service, services }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
+      {faqSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      ) : null}
     </>
   );
 }

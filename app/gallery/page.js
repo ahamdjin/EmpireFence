@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { galleryCollections } from "@/lib/site";
 import { getImagePresentation } from "@/lib/image-presentation";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
 const galleryImages = [
   { src: "/client/gallery-1.webp", alt: "Wrought iron fence with decorative gate in Jurupa Valley" },
@@ -26,6 +26,15 @@ export const metadata = buildPageMetadata({
 });
 
 export default function GalleryPage() {
+  const pageSchema = buildWebPageSchema({
+    title: "Gallery",
+    description:
+      "Review Empire Fence project imagery across vinyl, wood, wrought iron, chain link, patio, gate, and related exterior boundary work.",
+    path: "/gallery",
+    image: "/client/gallery-4.webp",
+    type: "CollectionPage",
+  });
+
   return (
     <>
       <PageHero
@@ -77,6 +86,19 @@ export default function GalleryPage() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="container splitIntro">
+          <div>
+            <span className="eyebrow">What to look for</span>
+            <h2>The useful project proof is usually in the line, the gate fit, and the transition detail.</h2>
+          </div>
+          <div className="prose">
+            <p>A strong fence gallery should show more than a finished panel. It should show alignment, how the material sits against grade, whether the gates feel integrated, and whether the visible parts of the property edge look resolved from the street.</p>
+            <p>That is why Empire Fence treats the gallery as proof of planning as much as proof of installation. The best projects are the ones where the edge reads cleanly from multiple angles.</p>
+          </div>
+        </div>
+      </section>
+
       <section className="section section--soft">
         <div className="container galleryGrid">
           {galleryImages.slice(5).map((image, index) => (
@@ -97,6 +119,11 @@ export default function GalleryPage() {
           </Link>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
     </>
   );
 }

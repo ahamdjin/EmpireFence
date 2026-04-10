@@ -4,7 +4,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { getAllPosts } from "@/lib/content";
 import { getImagePresentation } from "@/lib/image-presentation";
-import { buildBlogCollectionSchema, buildPageMetadata } from "@/lib/seo";
+import { buildBlogCollectionSchema, buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
   title: "Blog",
@@ -27,6 +27,14 @@ export default async function BlogPage() {
     href: `/blog/${post.slug}`,
   }));
   const blogSchema = buildBlogCollectionSchema(posts);
+  const pageSchema = buildWebPageSchema({
+    title: "Blog",
+    description:
+      "Read Empire Fence articles on fence materials, estimate prep, repair decisions, gates, and project planning for Jurupa Valley and nearby Inland Empire cities.",
+    path: "/blog",
+    image: "/client/gallery-1.webp",
+    type: "CollectionPage",
+  });
 
   return (
     <>
@@ -93,6 +101,26 @@ export default async function BlogPage() {
         </div>
       </section>
 
+      <section className="section">
+        <div className="container miniFeatureGrid">
+          <article className="miniFeatureCard">
+            <span className="eyebrow">Buying topic</span>
+            <h3>Material decisions</h3>
+            <p>The strongest fence articles help a buyer decide between privacy, durability, curb appeal, and long-term maintenance instead of just listing material names.</p>
+          </article>
+          <article className="miniFeatureCard">
+            <span className="eyebrow">Buying topic</span>
+            <h3>Estimate prep</h3>
+            <p>Good estimate guidance reduces wasted time by helping the client gather photos, footage, gate notes, and site context before the first call.</p>
+          </article>
+          <article className="miniFeatureCard">
+            <span className="eyebrow">Buying topic</span>
+            <h3>Repair versus replacement</h3>
+            <p>This is one of the most commercial questions in local fence SEO because the buyer is already close to acting and just needs the right next step.</p>
+          </article>
+        </div>
+      </section>
+
       <section className="section section--soft">
         <div className="container postGrid">
           {posts.map((post) => (
@@ -112,6 +140,7 @@ export default async function BlogPage() {
                 </span>
                 <h2>{post.data.title}</h2>
                 <p>{post.data.excerpt}</p>
+                <p className="postCard__meta">{post.readingTimeMinutes} min read</p>
                 <Link href={`/blog/${post.slug}`} className="textLink">
                   Read article
                 </Link>
@@ -120,6 +149,11 @@ export default async function BlogPage() {
           ))}
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
+      />
     </>
   );
 }

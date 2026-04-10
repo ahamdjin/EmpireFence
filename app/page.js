@@ -7,7 +7,12 @@ import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
 import { getAllPosts, getAllServices } from "@/lib/content";
 import { getImagePresentation } from "@/lib/image-presentation";
-import { buildFaqSchema, buildPageMetadata, buildServiceListSchema } from "@/lib/seo";
+import {
+  buildFaqSchema,
+  buildPageMetadata,
+  buildServiceListSchema,
+  buildWebPageSchema,
+} from "@/lib/seo";
 import {
   business,
   faqs,
@@ -36,6 +41,13 @@ export default async function HomePage() {
   const posts = (await getAllPosts()).slice(0, 2);
   const faqSchema = buildFaqSchema(faqs);
   const servicesSchema = buildServiceListSchema(services);
+  const pageSchema = buildWebPageSchema({
+    title: "Fence company in Jurupa Valley, CA",
+    description:
+      "Empire Fence installs vinyl, wood, wrought iron, chain link, metal fencing, repairs, railings, patio enclosures, and related exterior boundary work in Jurupa Valley and nearby Inland Empire cities.",
+    path: "/",
+    image: "/client/hero-western.webp",
+  });
 
   return (
     <>
@@ -331,6 +343,7 @@ export default async function HomePage() {
                   </span>
                   <h3>{post.data.title}</h3>
                   <p>{post.data.excerpt}</p>
+                  <p className="postCard__meta">{post.readingTimeMinutes} min read</p>
                   <Link href={`/blog/${post.slug}`} className="textLink">
                     Read article
                   </Link>
@@ -378,6 +391,10 @@ export default async function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
       <script
         type="application/ld+json"

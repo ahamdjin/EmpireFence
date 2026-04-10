@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
 import { getImagePresentation } from "@/lib/image-presentation";
-import { buildFaqSchema, buildPageMetadata } from "@/lib/seo";
+import { buildFaqSchema, buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 import { business, coverageNotes, serviceAreas } from "@/lib/site";
 
 const areaTitles = serviceAreas.map((area) => area.title);
@@ -38,6 +38,13 @@ export const metadata = buildPageMetadata({
 
 export default function ServiceAreasPage() {
   const faqSchema = buildFaqSchema(serviceAreaFaqs);
+  const pageSchema = buildWebPageSchema({
+    title: "Service areas across the Inland Empire",
+    description: `Empire Fence serves ${areaTitles.join(", ")} with fence installation, gate work, repairs, and exterior boundary upgrades.`,
+    path: "/service-areas",
+    image: "/client/location-riverside.jpg",
+    type: "CollectionPage",
+  });
 
   return (
     <>
@@ -105,7 +112,7 @@ export default function ServiceAreasPage() {
               </div>
               <div className="locationCard__body">
                 <h2>{area.title}</h2>
-                <p>{area.intro}</p>
+                <p>{area.summary || area.intro}</p>
                 <Link href={`/${area.slug}`} className="textLink">
                   Open area page
                 </Link>
@@ -150,14 +157,31 @@ export default function ServiceAreasPage() {
             <h2>Jurupa Valley stays central, with nearby cities that fit the same estimate and install rhythm.</h2>
           </div>
           <div className="prose">
-            <p>Coverage stays focused around the Inland Empire cities where Empire Fence is already doing privacy runs, frontage upgrades, gates, and supporting outdoor work.</p>
+            <p>Coverage stays focused around Inland Empire cities where Empire Fence can actually support the estimate, field planning, and install timeline without stretching into weak service territory.</p>
+            <p>That matters because a strong city page should explain the type of properties and project decisions that tend to show up there, not just repeat the same copy under a different city name.</p>
           </div>
+        </div>
+      </section>
+
+      <section className="section section--soft">
+        <div className="container miniFeatureGrid">
+          {serviceAreas.slice(0, 3).map((area, index) => (
+            <article key={area.slug} className="miniFeatureCard">
+              <span className="eyebrow">0{index + 1}</span>
+              <h3>{area.title}</h3>
+              <p>{area.estimateLead}</p>
+            </article>
+          ))}
         </div>
       </section>
 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
     </>
   );

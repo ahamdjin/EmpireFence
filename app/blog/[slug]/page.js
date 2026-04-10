@@ -3,7 +3,12 @@ import { notFound } from "next/navigation";
 
 import { getAllPosts, getPostBySlug } from "@/lib/content";
 import { getImagePresentation } from "@/lib/image-presentation";
-import { buildBlogPostingSchema, buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
+import {
+  buildBlogPostingSchema,
+  buildBreadcrumbSchema,
+  buildPageMetadata,
+  buildWebPageSchema,
+} from "@/lib/seo";
 
 export async function generateStaticParams() {
   const posts = await getAllPosts();
@@ -44,16 +49,23 @@ export default async function BlogPostPage({ params }) {
     day: "numeric",
     year: "numeric",
   }).format(new Date(post.data.date));
+  const pageSchema = buildWebPageSchema({
+    title: post.data.title,
+    description: post.data.excerpt,
+    path: `/blog/${post.slug}`,
+    image: post.data.heroImage,
+    type: "Article",
+  });
 
   return (
     <>
       <section className="articleHero">
         <div className="container articleHero__shell">
-          <span className="eyebrow">Planning note</span>
+          <span className="eyebrow">{post.data.articleSection || "Fence planning"}</span>
           <h1>{post.data.title}</h1>
           <div className="articleHero__meta">
             <span>{publishedDate}</span>
-            <span>{post.data.excerpt}</span>
+            <span>{post.readingTimeMinutes} min read</span>
           </div>
           <p>{post.data.excerpt}</p>
           <div className="articleHero__image">
@@ -70,6 +82,10 @@ export default async function BlogPostPage({ params }) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(pageSchema) }}
       />
       <article className="section">
         <div className="container articleBody">
