@@ -3,18 +3,42 @@ import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
 import { getImagePresentation } from "@/lib/image-presentation";
-import { buildPageMetadata } from "@/lib/seo";
+import { buildFaqSchema, buildPageMetadata } from "@/lib/seo";
 import { business, coverageNotes, serviceAreas } from "@/lib/site";
 
+const areaTitles = serviceAreas.map((area) => area.title);
+const listedAreas = `${areaTitles.slice(0, -1).join(", ")}, and ${areaTitles.at(-1)}`;
+const serviceAreaFaqs = [
+  {
+    question: "Which Inland Empire cities does Empire Fence serve?",
+    answer: `Empire Fence currently highlights ${listedAreas} on the service areas directory, with Jurupa Valley as the main base.`,
+  },
+  {
+    question: "Can I request a fence estimate even if I already know the city and service type?",
+    answer:
+      "Yes. Use the service area page to start local, then move into the exact service page or contact page with photos, rough footage, and any gate or wall notes.",
+  },
+  {
+    question: "Does Empire Fence handle both residential and commercial work in these cities?",
+    answer:
+      "Yes. The service area coverage includes residential frontage, privacy fencing, gate work, and commercial perimeter upgrades across the listed Inland Empire cities.",
+  },
+];
+
 export const metadata = buildPageMetadata({
-  title: "Service areas",
-  description:
-    "Empire Fence serves Jurupa Valley, Riverside, Ontario, Chino, Rancho Cucamonga, Fontana, and San Bernardino.",
+  title: "Service areas across the Inland Empire",
+  description: `Empire Fence serves ${areaTitles.join(", ")} with fence installation, gate work, repairs, and exterior boundary upgrades.`,
   path: "/service-areas",
   image: "/client/location-riverside.jpg",
+  keywords: areaTitles.flatMap((title) => [
+    `fence company ${title}`,
+    `fence contractor ${title}`,
+  ]),
 });
 
 export default function ServiceAreasPage() {
+  const faqSchema = buildFaqSchema(serviceAreaFaqs);
+
   return (
     <>
       <PageHero
@@ -38,10 +62,10 @@ export default function ServiceAreasPage() {
 
           <div className="coverageAtlas__copy">
             <span className="eyebrow">Our Coverage</span>
-            <h2>Local Service You Can Trust</h2>
+            <h2>Local service you can trust</h2>
             <p>
-              Based at {business.address}, we provide fast, reliable fencing services
-              across the entire Inland Empire region.
+              Based at {business.address}, Empire Fence provides fence installation, gate work, repairs,
+              and exterior boundary upgrades across the Inland Empire cities listed below.
             </p>
             <div className="chipWrap">
               {serviceAreas.map((area) => (
@@ -92,6 +116,34 @@ export default function ServiceAreasPage() {
       </section>
 
       <section className="section">
+        <div className="container locationFaq">
+          <div className="locationStage serviceFaqStage">
+            <span className="eyebrow">Area FAQ</span>
+            <h2>Questions people usually ask before they choose a service area page.</h2>
+            <p>Start with the city, then move into the exact service page if you already know the material or project type.</p>
+            <div className="chipWrap">
+              {serviceAreas.slice(0, 4).map((area) => (
+                <Link key={area.slug} href={`/${area.slug}`} className="chip">
+                  {area.title}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="faqCluster">
+            <div className="faqList faqList--stacked">
+              {serviceAreaFaqs.map((item) => (
+                <article key={item.question} className="faqItem">
+                  <h3>{item.question}</h3>
+                  <p>{item.answer}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container splitIntro">
           <div>
             <span className="eyebrow">Coverage note</span>
@@ -102,6 +154,11 @@ export default function ServiceAreasPage() {
           </div>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
     </>
   );
 }

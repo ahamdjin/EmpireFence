@@ -1,0 +1,182 @@
+/* UI pass 7
+   - fix service chips by letting them fit content
+   - add more shared padding and text room across inner pages
+   - keep hero direction from pass 9 unchanged
+*/
+
+@media (min-width: 921px) {
+  .serviceEditorial__meta {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .serviceEditorial__meta span {
+    min-height: 30px;
+    padding: 0 12px;
+    max-width: none;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .serviceEditorial__body,
+  .serviceCard__body,
+  .serviceTile__body,
+  .serviceFeature__body,
+  .postCard__body,
+  .locationCard__body,
+  .projectSpotlight__body,
+  .storyPanel,
+  .processCard,
+  .infoCard,
+  .faqItem,
+  .trustCard,
+  .panel,
+  .panel--dark,
+  .stickyCard,
+  .serviceIndexCard__body,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .contactHub__intro,
+  .contactHub__form,
+  .contactStage__intro,
+  .contactStage__form,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactUtility__booking,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy,
+  .pageHero__copyPanel {
+    padding: 28px;
+  }
+
+  .pageHero__copy p,
+  .articleBody,
+  .articleBody p,
+  .serviceStory__article .articleBody,
+  .serviceStory__article .articleBody p,
+  .panel p,
+  .infoCard p,
+  .faqItem p,
+  .serviceIndexCard__body p,
+  .postCard p,
+  .locationCard p,
+  .storyPanel p,
+  .processCard p,
+  .projectSpotlight p {
+    max-width: none;
+  }
+}
+
+@media (max-width: 920px) {
+  .pageHero__frame {
+    margin: 12px;
+    padding: 84px 18px 22px;
+    border-radius: 24px;
+  }
+
+  .pageHero__copyPanel,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .contactStage__intro,
+  .contactStage__form,
+  .contactHub__intro,
+  .contactHub__form,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactUtility__booking,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy,
+  .panel,
+  .panel--dark,
+  .infoCard,
+  .faqItem,
+  .stickyCard,
+  .locationCard__body,
+  .postCard__body,
+  .storyPanel,
+  .processCard,
+  .trustCard,
+  .projectSpotlight__body,
+  .serviceIndexCard__body,
+  .serviceCard__body,
+  .serviceTile__body,
+  .serviceFeature__body,
+  .serviceEditorial__body,
+  .ctaShell__form {
+    padding: 20px;
+  }
+
+  .pageHero__copy p,
+  .articleBody,
+  .articleBody p,
+  .serviceStory__article .articleBody,
+  .serviceStory__article .articleBody p,
+  .panel p,
+  .infoCard p,
+  .faqItem p,
+  .serviceIndexCard__body p,
+  .postCard p,
+  .locationCard p,
+  .storyPanel p,
+  .processCard p,
+  .projectSpotlight p,
+  .pageHero__caption p,
+  .contactStack p,
+  .contactStack a {
+    max-width: none;
+  }
+
+  .serviceEditorial__body {
+    gap: 10px;
+  }
+
+  .serviceEditorial__body .textLink {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageHero__frame {
+    margin: 10px;
+    padding: 80px 14px 18px;
+  }
+
+  .pageHero__copyPanel,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .contactStage__intro,
+  .contactStage__form,
+  .contactHub__intro,
+  .contactHub__form,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactUtility__booking,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy,
+  .panel,
+  .panel--dark,
+  .infoCard,
+  .faqItem,
+  .stickyCard,
+  .locationCard__body,
+  .postCard__body,
+  .storyPanel,
+  .processCard,
+  .trustCard,
+  .projectSpotlight__body,
+  .serviceIndexCard__body,
+  .serviceCard__body,
+  .serviceTile__body,
+  .serviceFeature__body,
+  .serviceEditorial__body,
+  .ctaShell__form {
+    padding: 18px;
+  }
+}

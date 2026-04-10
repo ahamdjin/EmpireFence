@@ -1,0 +1,805 @@
+/* Reliable UI pass 5
+   Imported through app/layout.js so it overrides globals.css consistently.
+   Focus: hero fill, sticky services, cleaner mobile service cards, tighter mobile type,
+   and better inner-page typography width for services, blogs, and area pages.
+*/
+
+:root {
+  --ui-mobile-copy-size: 0.96rem;
+  --ui-mobile-copy-line: 1.62;
+  --ui-mobile-card-padding: 16px;
+  --ui-mobile-card-padding-tight: 14px;
+  --ui-mobile-card-radius: 18px;
+  --ui-mobile-card-radius-lg: 22px;
+}
+
+@media (min-width: 921px) {
+  main {
+    overflow-x: clip;
+    overflow-y: visible;
+  }
+
+  .homeHero {
+    min-height: 100svh;
+  }
+
+  .homeHero .heroStage {
+    min-height: 100svh;
+    padding-top: clamp(118px, 11vh, 146px);
+    padding-bottom: clamp(32px, 5vh, 56px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .homeHero .heroStage__grid {
+    min-height: 0;
+    align-items: center;
+    flex: 1 1 auto;
+  }
+
+  .homeHero .heroStage__copy {
+    align-self: center;
+  }
+
+  .homeHero .heroStage__visual {
+    min-height: clamp(440px, 62svh, 680px);
+  }
+}
+
+@media (min-width: 1101px) {
+  .servicesRail,
+  .storyCluster,
+  .galleryFeature,
+  .proofBand,
+  .locationFaq {
+    align-items: start;
+  }
+
+  .servicesRail__intro {
+    position: sticky;
+    top: 108px;
+    align-self: start;
+  }
+}
+
+@media (max-width: 1100px) {
+  .proofBand__lead {
+    display: grid;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .proofBand__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .proofBand__grid > * {
+    min-width: 0;
+  }
+
+  .processCard {
+    padding: var(--ui-mobile-card-padding);
+  }
+
+  .processCard h3 {
+    font-size: clamp(1.1rem, 3vw, 1.34rem);
+    line-height: 1.14;
+  }
+
+  .processCard p {
+    font-size: 0.94rem;
+    line-height: 1.58;
+  }
+
+  .projectSpotlight {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .projectSpotlight__image {
+    min-height: 220px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .projectSpotlight__body {
+    padding: var(--ui-mobile-card-padding);
+    gap: 10px;
+  }
+
+  .projectSpotlight__body h3 {
+    font-size: clamp(1.1rem, 3vw, 1.34rem);
+    line-height: 1.14;
+  }
+
+  .projectSpotlight__body p {
+    font-size: 0.94rem;
+    line-height: 1.58;
+  }
+
+  .galleryFeature__grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 160px;
+    gap: 10px;
+  }
+
+  .galleryTile,
+  .galleryTile--tall,
+  .galleryTile--wide {
+    min-height: 160px;
+    grid-column: auto;
+    grid-row: auto;
+    border-radius: var(--ui-mobile-card-radius);
+  }
+
+  .galleryTile__overlay {
+    padding: 12px;
+    gap: 4px;
+  }
+
+  .galleryTile__overlay h3 {
+    font-size: clamp(0.98rem, 2.8vw, 1.16rem);
+    line-height: 1.12;
+    max-width: 11ch;
+  }
+}
+
+@media (max-width: 920px) {
+  .siteHeader {
+    padding: 10px 10px 0;
+  }
+
+  .siteHeader__shell,
+  .homeHero .container,
+  .container {
+    width: min(100vw - 20px, 100%);
+  }
+
+  .siteHeader__shell {
+    min-height: 60px;
+    padding: 7px 10px 7px 12px;
+    gap: 10px;
+    border-radius: 18px;
+  }
+
+  .siteHeader__nav {
+    inset: 72px 10px auto;
+    gap: 10px;
+    padding: 14px;
+    border-radius: 18px;
+    max-height: calc(100svh - 88px);
+    overflow-y: auto;
+  }
+
+  .eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+  }
+
+  .sectionHeading h2,
+  .splitIntro h2,
+  .locationStage h2,
+  .panel h2,
+  .panel--dark h2,
+  .infoCard h3,
+  .faqItem h3,
+  .serviceIndexCard h2,
+  .locationCard h2,
+  .trustCard h3,
+  .serviceCard h3,
+  .serviceTile h3,
+  .serviceFeature h3,
+  .articleBody h2,
+  .storyPanel h3,
+  .processCard h3,
+  .projectSpotlight h3,
+  .galleryTile__overlay h3,
+  .serviceEditorial__body h3,
+  .ctaShell h2 {
+    font-size: clamp(1.42rem, 6.6vw, 1.95rem);
+    line-height: 1.06;
+  }
+
+  .sectionHeading .prose p,
+  .splitIntro .prose p,
+  .storyCluster__summary,
+  .locationStage > p,
+  .storyPanel p,
+  .processCard p,
+  .projectSpotlight p,
+  .serviceCard p,
+  .serviceTile p,
+  .serviceFeature p,
+  .serviceEditorial__body p,
+  .trustCard p,
+  .infoCard p,
+  .postCard p,
+  .locationCard p,
+  .faqItem p,
+  .articleBody,
+  .articleBody p,
+  .heroStage__note p,
+  .pageHero__copy p,
+  .pageHero__caption p,
+  .ctaShell p,
+  .panel p,
+  .contactStack p,
+  .contactStack a,
+  .serviceIndexCard__body p {
+    font-size: var(--ui-mobile-copy-size);
+    line-height: var(--ui-mobile-copy-line);
+  }
+
+  .homeHero .heroStage {
+    padding: 80px 14px 16px;
+    min-height: auto;
+  }
+
+  .homeHero .heroStage__grid {
+    min-height: auto;
+    gap: 14px;
+    align-items: start;
+  }
+
+  .homeHero .heroStage__copy {
+    gap: 12px;
+    max-width: none;
+  }
+
+  .homeHero .heroStage h1 {
+    font-size: clamp(2rem, 8vw, 2.9rem);
+    line-height: 1;
+    max-width: none;
+  }
+
+  .homeHero .heroStage p {
+    max-width: none;
+    font-size: 0.93rem;
+    line-height: 1.56;
+  }
+
+  .homeHero .heroStage__visual {
+    min-height: 220px;
+  }
+
+  .homeHero .heroStage__imageWrap {
+    inset: 0;
+    border-radius: 18px;
+  }
+
+  .homeHero .heroStage__secondary,
+  .homeHero .heroStage__review {
+    display: none;
+  }
+
+  .homeHero .heroStage__metrics {
+    margin-top: 6px;
+    padding: 8px;
+    gap: 8px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-radius: 14px;
+  }
+
+  .homeHero .heroMetric {
+    padding: 10px 8px;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  .homeHero .heroMetric strong {
+    font-size: 0.88rem;
+  }
+
+  .homeHero .heroMetric span {
+    margin-top: 4px;
+    font-size: 0.68rem;
+    line-height: 1.28;
+  }
+
+  .buttonRow {
+    gap: 8px;
+  }
+
+  .buttonRow .button,
+  .buttonRow .textLink,
+  .pageHero__actions .button,
+  .pageHero__actions .textLink {
+    width: 100%;
+    min-height: 46px;
+    justify-content: center;
+  }
+
+  .buttonRow .textLink {
+    border: 1px solid rgba(159, 114, 70, 0.18);
+    border-radius: 999px;
+    background: rgba(255, 251, 246, 0.82);
+    text-decoration: none;
+  }
+
+  .section {
+    padding: 40px 0;
+  }
+
+  .storyCluster,
+  .galleryFeature,
+  .servicesRail,
+  .proofBand,
+  .locationFaq,
+  .ctaShell,
+  .sectionHeading,
+  .contactUtility,
+  .journalStage__feature {
+    gap: 14px;
+  }
+
+  .storyCluster__stack,
+  .servicesRail__intro,
+  .servicesRail__sticky,
+  .servicesRail__list,
+  .proofBand__grid,
+  .galleryFeature__grid,
+  .faqList,
+  .locationGrid,
+  .postGrid {
+    gap: 10px;
+  }
+
+  .storyPanel,
+  .processCard,
+  .faqItem,
+  .serviceCard__body,
+  .serviceTile__body,
+  .serviceFeature__body,
+  .serviceEditorial__body,
+  .postCard__body,
+  .locationCard__body,
+  .projectSpotlight__body,
+  .ctaShell__form,
+  .galleryTile__overlay {
+    padding: var(--ui-mobile-card-padding-tight);
+  }
+
+  .servicesRail__stickyCopy {
+    padding: var(--ui-mobile-card-padding);
+    border-radius: var(--ui-mobile-card-radius);
+  }
+
+  .servicesRail__stickyCopy p {
+    font-size: 0.95rem;
+    line-height: 1.58;
+    color: rgba(247, 242, 234, 0.8);
+  }
+
+  .servicesRail__stickyCopy .button {
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .servicesRail__list > * {
+    display: none;
+  }
+
+  .servicesRail__list > *:nth-child(-n + 4) {
+    display: block;
+  }
+
+  .servicesRail__stickyImage {
+    min-height: 160px;
+    border-radius: 18px;
+  }
+
+  .serviceEditorial,
+  .serviceEditorial--alt {
+    grid-template-columns: 1fr;
+    border-radius: var(--ui-mobile-card-radius-lg);
+  }
+
+  .serviceEditorial--alt .serviceEditorial__media {
+    order: 0;
+  }
+
+  .serviceEditorial__media {
+    min-height: 176px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .serviceEditorial__body {
+    display: grid;
+    align-content: start;
+    gap: 10px;
+    padding: 16px 16px 18px;
+  }
+
+  .serviceEditorial__body .eyebrow {
+    margin-bottom: 2px;
+  }
+
+  .serviceEditorial__body h3 {
+    font-size: clamp(1.18rem, 5vw, 1.5rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    max-width: 14ch;
+  }
+
+  .serviceEditorial__meta {
+    display: none;
+  }
+
+  .serviceEditorial__index {
+    left: 12px;
+    bottom: 12px;
+    font-size: 0.98rem;
+  }
+
+  .serviceEditorial__body .textLink {
+    width: fit-content;
+    max-width: 100%;
+    justify-content: flex-start;
+    font-size: 0.95rem;
+  }
+
+  /* Inner pages: more usable width and less side-column feel */
+  .pageHero__frame,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy,
+  .contactStage__intro,
+  .contactStage__form,
+  .contactHub__intro,
+  .contactHub__form,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactUtility__booking,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .serviceIndexCard__body,
+  .panel,
+  .panel--dark,
+  .infoCard,
+  .faqItem,
+  .stickyCard,
+  .locationCard__body,
+  .postCard__body,
+  .storyPanel,
+  .processCard,
+  .trustCard {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .pageHero__frame {
+    margin: 10px;
+    padding: 82px 16px 18px;
+    border-radius: 22px;
+    min-height: auto;
+  }
+
+  .pageHero__grid,
+  .aboutStage__grid,
+  .contactStage__grid,
+  .coverageStage__grid,
+  .journalStage__grid,
+  .contactHub__grid,
+  .contactUtilityPanel,
+  .coverageAtlas__grid,
+  .journalDeck__grid,
+  .aboutEditorial__row,
+  .galleryStage__intro,
+  .galleryCollections,
+  .contactUtility,
+  .journalStage__feature,
+  .serviceStory,
+  .serviceProofBand,
+  .locationServiceDeck,
+  .serviceBody,
+  .serviceIndexCard,
+  .dualPanel,
+  .splitCards,
+  .splitIntro,
+  .locationFaq,
+  .ctaShell,
+  .sectionHeading {
+    gap: 16px;
+  }
+
+  .pageHero__copyPanel,
+  .pageHero__media,
+  .pageHero__visual,
+  .pageHero__copy,
+  .pageHero__stack,
+  .pageHero__chipCloud,
+  .pageHero__secondaryMedia,
+  .pageHero__caption,
+  .pageHero__miniCard {
+    max-width: none;
+  }
+
+  .pageHero__copyPanel {
+    min-height: auto;
+    padding: 22px 20px;
+    gap: 14px;
+    border-radius: 22px;
+  }
+
+  .pageHero h1,
+  .articleHero h1,
+  .aboutStage h1,
+  .contactStage h1,
+  .galleryStage h1,
+  .coverageStage h1,
+  .journalStage h1 {
+    font-size: clamp(2rem, 8.4vw, 3rem);
+    line-height: 0.98;
+    max-width: 12ch;
+  }
+
+  .pageHero__copy p,
+  .articleHero p,
+  .aboutStage p,
+  .contactStage p,
+  .galleryStage p,
+  .coverageStage p,
+  .journalStage p,
+  .serviceStory__article .articleBody,
+  .serviceStory__article .articleBody p {
+    max-width: none;
+    font-size: 0.98rem;
+    line-height: 1.68;
+  }
+
+  .articleHero__shell,
+  .aboutStage,
+  .contactStage,
+  .galleryStage,
+  .coverageStage,
+  .journalStage,
+  .aboutCanvas,
+  .contactHub,
+  .galleryShowcase,
+  .coverageAtlas,
+  .journalDeck {
+    padding-top: 96px;
+  }
+
+  .articleBody {
+    max-width: none;
+    font-size: 0.98rem;
+    line-height: 1.72;
+  }
+
+  .articleBody h2 {
+    margin: 28px 0 12px;
+  }
+
+  .articleBody p + p,
+  .serviceStory__article .articleBody p + p {
+    margin-top: 14px;
+  }
+
+  .articleBody ul,
+  .articleBody ol {
+    padding-left: 18px;
+  }
+
+  .serviceStory__article {
+    padding: 22px 20px;
+    border-radius: 24px;
+  }
+
+  .serviceStory__aside,
+  .serviceFaqStage,
+  .locationServiceDeck__lead,
+  .galleryFeature__lead,
+  .servicesRail__intro {
+    position: static;
+  }
+
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .contactUtility__booking,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactHub__intro,
+  .contactHub__form,
+  .contactStage__intro,
+  .contactStage__form,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy {
+    border-radius: 24px;
+  }
+
+  .pageHero__miniCard {
+    padding: 14px;
+    border-radius: 18px;
+  }
+
+  .pageHero__miniCard strong {
+    font-size: 0.94rem;
+    line-height: 1.28;
+  }
+
+  .pageHero__miniCard p {
+    font-size: 0.84rem;
+    line-height: 1.52;
+  }
+}
+
+@media (max-width: 640px) {
+  .siteHeader {
+    padding: 8px 8px 0;
+  }
+
+  .siteHeader__shell,
+  .homeHero .container,
+  .container {
+    width: min(100vw - 16px, 100%);
+  }
+
+  .siteHeader__nav {
+    inset: 68px 8px auto;
+    padding: 10px;
+  }
+
+  .homeHero .heroStage {
+    padding: 76px 10px 14px;
+  }
+
+  .homeHero .heroStage h1 {
+    font-size: clamp(1.8rem, 9vw, 2.35rem);
+  }
+
+  .homeHero .heroStage__metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionHeading h2,
+  .splitIntro h2,
+  .locationStage h2,
+  .panel h2,
+  .panel--dark h2,
+  .infoCard h3,
+  .faqItem h3,
+  .serviceIndexCard h2,
+  .locationCard h2,
+  .trustCard h3,
+  .serviceCard h3,
+  .serviceTile h3,
+  .serviceFeature h3,
+  .articleBody h2,
+  .storyPanel h3,
+  .processCard h3,
+  .projectSpotlight h3,
+  .galleryTile__overlay h3,
+  .serviceEditorial__body h3,
+  .ctaShell h2 {
+    font-size: clamp(1.3rem, 7vw, 1.72rem);
+  }
+
+  .galleryFeature__grid {
+    grid-auto-rows: 144px;
+  }
+
+  .galleryTile,
+  .galleryTile--tall,
+  .galleryTile--wide {
+    min-height: 144px;
+  }
+
+  .galleryTile__overlay h3,
+  .processCard h3,
+  .projectSpotlight__body h3 {
+    font-size: clamp(1rem, 5.3vw, 1.2rem);
+  }
+
+  .processCard p,
+  .projectSpotlight__body p {
+    font-size: 0.9rem;
+    line-height: 1.54;
+  }
+
+  .projectSpotlight__image {
+    min-height: 180px;
+  }
+
+  .serviceEditorial__media {
+    min-height: 152px;
+  }
+
+  .serviceEditorial__body {
+    gap: 8px;
+    padding: 14px 14px 16px;
+  }
+
+  .serviceEditorial__body h3 {
+    font-size: clamp(1.08rem, 6vw, 1.28rem);
+    max-width: none;
+  }
+
+  .serviceEditorial__body .eyebrow {
+    font-size: 0.68rem;
+  }
+
+  .serviceEditorial__body .textLink {
+    font-size: 0.92rem;
+  }
+
+  .pageHero__frame {
+    margin: 8px;
+    padding: 78px 12px 16px;
+  }
+
+  .pageHero__copyPanel,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .contactStage__intro,
+  .contactStage__form,
+  .contactHub__intro,
+  .contactHub__form,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactUtility__booking,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy,
+  .panel,
+  .panel--dark,
+  .infoCard,
+  .faqItem,
+  .stickyCard,
+  .locationCard__body,
+  .postCard__body,
+  .storyPanel,
+  .processCard,
+  .trustCard,
+  .projectSpotlight__body,
+  .serviceIndexCard__body {
+    padding: 16px;
+  }
+
+  .pageHero h1,
+  .articleHero h1,
+  .aboutStage h1,
+  .contactStage h1,
+  .galleryStage h1,
+  .coverageStage h1,
+  .journalStage h1 {
+    font-size: clamp(1.8rem, 9vw, 2.4rem);
+    max-width: none;
+  }
+
+  .pageHero__copy p,
+  .articleHero p,
+  .aboutStage p,
+  .contactStage p,
+  .galleryStage p,
+  .coverageStage p,
+  .journalStage p,
+  .articleBody,
+  .articleBody p,
+  .serviceStory__article .articleBody,
+  .serviceStory__article .articleBody p {
+    font-size: 0.94rem;
+    line-height: 1.64;
+  }
+
+  .pageHero__miniCard strong {
+    font-size: 0.9rem;
+  }
+
+  .pageHero__miniCard p {
+    font-size: 0.8rem;
+  }
+
+  .servicesRail__list > *:nth-child(-n + 3) {
+    display: block;
+  }
+
+  .servicesRail__list > *:nth-child(n + 4) {
+    display: none;
+  }
+}

@@ -3,9 +3,46 @@ import Link from "next/link";
 
 import { getImagePresentation } from "@/lib/image-presentation";
 
+const EDITORIAL_CHIPS = {
+  "vinyl-fence": ["Privacy runs", "Low upkeep"],
+  "wood-fence": ["Privacy fence", "Custom layout"],
+  "wrought-iron-fence": ["Curb appeal", "Gate detail"],
+  "chain-link-fence": ["Secure boundary", "Fast install"],
+  "metal-fence": ["Steel lines", "Modern edge"],
+  "fence-repairs": ["Repair work", "Reset lines"],
+  "railing-contractor": ["Railings", "Entry safety"],
+  "patio-enclosures": ["Covered space", "Outdoor shade"],
+  "gazebo-builder": ["Gazebo builds", "Yard feature"],
+  "fence-supply": ["Fence supply", "Project pickup"],
+};
+
+function shortenHighlight(text) {
+  return text
+    .replace(/^Strong choice for\s+/i, "")
+    .replace(/^Strong\s+/i, "")
+    .replace(/^Clean look with\s+/i, "")
+    .replace(/^Flexible enough for\s+/i, "")
+    .replace(/^Built around\s+/i, "")
+    .replace(/^Vinyl gates and\s+/i, "")
+    .replace(/\s+for homes and larger property edges$/i, "")
+    .replace(/\s+over time$/i, "")
+    .replace(/\s+of the property$/i, "")
+    .replace(/\s+tailored to the site$/i, "")
+    .replace(/\s+and perimeter definition$/i, "")
+    .replace(/\s+traditional, decorative, and modern layouts$/i, "custom layouts")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function getEditorialChip(service, text, index) {
+  const mapped = EDITORIAL_CHIPS[service.slug]?.[index];
+  if (mapped) return mapped;
+  return shortenHighlight(text);
+}
+
 export function ServiceCard({ service, variant = "default", index = 0 }) {
   if (variant === "editorial") {
-    const highlights = service.data.highlights?.slice(0, 3) ?? [];
+    const highlights = service.data.highlights?.slice(0, 2) ?? [];
 
     return (
       <article className={`serviceEditorial${index % 2 === 1 ? " serviceEditorial--alt" : ""}`}>
@@ -24,8 +61,8 @@ export function ServiceCard({ service, variant = "default", index = 0 }) {
           <h3>{service.data.title}</h3>
           {highlights.length ? (
             <div className="serviceEditorial__meta">
-              {highlights.slice(0, 2).map((item) => (
-                <span key={item}>{item}</span>
+              {highlights.map((item, chipIndex) => (
+                <span key={item}>{getEditorialChip(service, item, chipIndex)}</span>
               ))}
             </div>
           ) : null}
