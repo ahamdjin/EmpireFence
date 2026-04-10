@@ -207,6 +207,7 @@ function ServicePage({ service, services }) {
   return (
     <>
       <PageHero
+        variant="service"
         eyebrow={service.data.eyebrow}
         title={service.data.title}
         intro={service.data.summary}
@@ -314,7 +315,7 @@ function ServicePage({ service, services }) {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section serviceRelatedSection">
         <div className="container servicesRail">
           <Reveal className="servicesRail__intro" initiallyVisible variant="left">
             <SectionHeading
