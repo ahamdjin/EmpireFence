@@ -1,9 +1,5 @@
 import "./globals.css";
-import "./ui-pass-5.css";
-import "./ui-pass-6.css";
-import "./ui-pass-7.css";
-import "./ui-pass-8.css";
-import "./ui-pass-10.css";
+import "./ui-overrides.css";
 
 import { Instrument_Serif, Manrope } from "next/font/google";
 
@@ -38,18 +34,20 @@ export const metadata = {
     template: `%s | ${business.shortName}`,
   },
   description:
-    "Empire Fence installs fences, gates, and block walls across Jurupa Valley and nearby Inland Empire cities.",
+    "Empire Fence installs fences, gates, repairs, and exterior boundary upgrades across Jurupa Valley and nearby Inland Empire cities.",
   keywords: [
     "fence company Jurupa Valley",
     "fence contractor Jurupa Valley",
     "vinyl fence Jurupa Valley",
     "wrought iron fence Jurupa Valley",
     "chain link fence Inland Empire",
+    "gate contractor Jurupa Valley",
+    "fence repair Jurupa Valley",
   ],
   openGraph: {
     title: `Fence Company in Jurupa Valley, CA | ${business.shortName}`,
     description:
-      "Empire Fence installs fences, gates, and block walls across Jurupa Valley and nearby Inland Empire cities.",
+      "Empire Fence installs fences, gates, repairs, and exterior boundary upgrades across Jurupa Valley and nearby Inland Empire cities.",
     images: ["/client/hero-western.webp"],
   },
 };

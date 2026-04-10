@@ -1,3 +1,6 @@
+/* Consolidated UI override layer. Preserves previous pass order: 5 -> 6 -> 7 -> 8 -> 10. */
+
+/* === ui-pass-5.css === */
 /* Reliable UI pass 5
    Imported through app/layout.js so it overrides globals.css consistently.
    Focus: hero fill, sticky services, cleaner mobile service cards, tighter mobile type,
@@ -803,3 +806,606 @@
     display: none;
   }
 }
+
+
+/* === ui-pass-6.css === */
+/* UI pass 6
+   Design breathing room for the homepage hero, services, selected work, and process.
+   This pass keeps content intact but gives the text more usable width and calmer spacing.
+*/
+
+@media (min-width: 921px) {
+  .homeHero .heroStage__grid {
+    grid-template-columns: minmax(0, 0.96fr) minmax(0, 1.04fr);
+    gap: clamp(24px, 3.2vw, 44px);
+  }
+
+  .homeHero .heroStage__copy {
+    max-width: 640px;
+    gap: 18px;
+  }
+
+  .homeHero .heroStage h1 {
+    max-width: 12.5ch;
+    font-size: clamp(3rem, 4.8vw, 4.9rem);
+    line-height: 0.94;
+  }
+
+  .homeHero .heroStage p {
+    max-width: 40ch;
+    font-size: clamp(0.98rem, 0.92rem + 0.18vw, 1.04rem);
+    line-height: 1.68;
+  }
+
+  .homeHero .heroStage__scope {
+    gap: 8px;
+  }
+
+  .homeHero .heroStage__scope span {
+    min-height: 34px;
+    padding: 0 12px;
+    font-size: 0.74rem;
+  }
+
+  .homeHero .heroStage__review {
+    display: none;
+  }
+
+  .servicesRail {
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    gap: clamp(26px, 3vw, 48px);
+  }
+
+  .servicesRail__stickyCopy {
+    padding: 24px;
+    gap: 12px;
+    border-radius: 22px;
+  }
+
+  .servicesRail__stickyCopy p {
+    max-width: 32ch;
+  }
+
+  .serviceEditorial,
+  .serviceEditorial--alt {
+    grid-template-columns: minmax(220px, 0.4fr) minmax(0, 0.6fr);
+  }
+
+  .serviceEditorial__body {
+    gap: 12px;
+    padding: 24px 24px 26px;
+  }
+
+  .serviceEditorial__body h3 {
+    max-width: none;
+    font-size: clamp(1.28rem, 1.7vw, 1.66rem);
+    line-height: 1.08;
+  }
+
+  .serviceEditorial__meta {
+    gap: 8px;
+  }
+
+  .serviceEditorial__meta span {
+    min-height: 30px;
+    padding: 0 10px;
+    font-size: 0.7rem;
+    max-width: 17ch;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .galleryTile__overlay {
+    max-width: min(72%, 320px);
+    padding: 20px;
+    gap: 6px;
+  }
+
+  .galleryTile__overlay h3 {
+    max-width: none;
+    font-size: clamp(1.16rem, 1.55vw, 1.48rem);
+    line-height: 1.06;
+  }
+
+  .proofBand__lead h2 {
+    font-size: clamp(1.72rem, 2.25vw, 2.2rem);
+    line-height: 1.08;
+    max-width: 11ch;
+  }
+
+  .proofBand__lead p {
+    max-width: 36ch;
+  }
+
+  .processCard {
+    padding: 24px;
+  }
+
+  .processCard h3 {
+    font-size: clamp(1.18rem, 1.45vw, 1.42rem);
+    line-height: 1.12;
+  }
+
+  .processCard p {
+    font-size: 0.96rem;
+    line-height: 1.64;
+  }
+}
+
+@media (max-width: 920px) {
+  .homeHero .heroStage__copy {
+    gap: 14px;
+  }
+
+  .homeHero .heroStage h1 {
+    max-width: 13ch;
+  }
+
+  .galleryTile__overlay {
+    max-width: 78%;
+    padding: 12px 12px 14px;
+  }
+
+  .galleryTile__overlay h3 {
+    max-width: none;
+  }
+
+  .proofBand__lead h2 {
+    font-size: clamp(1.32rem, 6.4vw, 1.68rem);
+    line-height: 1.1;
+    max-width: 12ch;
+  }
+
+  .processCard h3,
+  .projectSpotlight__body h3 {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .homeHero .heroStage h1 {
+    max-width: none;
+    font-size: clamp(1.78rem, 8.8vw, 2.28rem);
+  }
+
+  .servicesRail__stickyCopy {
+    padding: 15px;
+  }
+
+  .galleryTile__overlay {
+    max-width: 82%;
+  }
+
+  .serviceEditorial__body {
+    padding: 14px 14px 16px;
+  }
+}
+
+
+/* === ui-pass-7.css === */
+/* UI pass 7
+   - fix service chips by letting them fit content
+   - add more shared padding and text room across inner pages
+   - keep hero direction from pass 9 unchanged
+*/
+
+@media (min-width: 921px) {
+  .serviceEditorial__meta {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .serviceEditorial__meta span {
+    min-height: 30px;
+    padding: 0 12px;
+    max-width: none;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .serviceEditorial__body,
+  .serviceCard__body,
+  .serviceTile__body,
+  .serviceFeature__body,
+  .postCard__body,
+  .locationCard__body,
+  .projectSpotlight__body,
+  .storyPanel,
+  .processCard,
+  .infoCard,
+  .faqItem,
+  .trustCard,
+  .panel,
+  .panel--dark,
+  .stickyCard,
+  .serviceIndexCard__body,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .contactHub__intro,
+  .contactHub__form,
+  .contactStage__intro,
+  .contactStage__form,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactUtility__booking,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy,
+  .pageHero__copyPanel {
+    padding: 28px;
+  }
+
+  .pageHero__copy p,
+  .articleBody,
+  .articleBody p,
+  .serviceStory__article .articleBody,
+  .serviceStory__article .articleBody p,
+  .panel p,
+  .infoCard p,
+  .faqItem p,
+  .serviceIndexCard__body p,
+  .postCard p,
+  .locationCard p,
+  .storyPanel p,
+  .processCard p,
+  .projectSpotlight p {
+    max-width: none;
+  }
+}
+
+@media (max-width: 920px) {
+  .pageHero__frame {
+    margin: 12px;
+    padding: 84px 18px 22px;
+    border-radius: 24px;
+  }
+
+  .pageHero__copyPanel,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .contactStage__intro,
+  .contactStage__form,
+  .contactHub__intro,
+  .contactHub__form,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactUtility__booking,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy,
+  .panel,
+  .panel--dark,
+  .infoCard,
+  .faqItem,
+  .stickyCard,
+  .locationCard__body,
+  .postCard__body,
+  .storyPanel,
+  .processCard,
+  .trustCard,
+  .projectSpotlight__body,
+  .serviceIndexCard__body,
+  .serviceCard__body,
+  .serviceTile__body,
+  .serviceFeature__body,
+  .serviceEditorial__body,
+  .ctaShell__form {
+    padding: 20px;
+  }
+
+  .pageHero__copy p,
+  .articleBody,
+  .articleBody p,
+  .serviceStory__article .articleBody,
+  .serviceStory__article .articleBody p,
+  .panel p,
+  .infoCard p,
+  .faqItem p,
+  .serviceIndexCard__body p,
+  .postCard p,
+  .locationCard p,
+  .storyPanel p,
+  .processCard p,
+  .projectSpotlight p,
+  .pageHero__caption p,
+  .contactStack p,
+  .contactStack a {
+    max-width: none;
+  }
+
+  .serviceEditorial__body {
+    gap: 10px;
+  }
+
+  .serviceEditorial__body .textLink {
+    width: fit-content;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageHero__frame {
+    margin: 10px;
+    padding: 80px 14px 18px;
+  }
+
+  .pageHero__copyPanel,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .locationQuotePanel,
+  .contactStage__intro,
+  .contactStage__form,
+  .contactHub__intro,
+  .contactHub__form,
+  .coverageAtlas__copy,
+  .journalDeck__body,
+  .contactUtility__booking,
+  .aboutStage__copy,
+  .coverageStage__copy,
+  .journalStage__copy,
+  .panel,
+  .panel--dark,
+  .infoCard,
+  .faqItem,
+  .stickyCard,
+  .locationCard__body,
+  .postCard__body,
+  .storyPanel,
+  .processCard,
+  .trustCard,
+  .projectSpotlight__body,
+  .serviceIndexCard__body,
+  .serviceCard__body,
+  .serviceTile__body,
+  .serviceFeature__body,
+  .serviceEditorial__body,
+  .ctaShell__form {
+    padding: 18px;
+  }
+}
+
+
+/* === ui-pass-8.css === */
+/* UI pass 8
+   Service slug contrast and spacing.
+   Keeps homepage hero direction unchanged while improving reusable service-page readability.
+*/
+
+.pageHero--service .pageHero__frame,
+.pageHero--areas .pageHero__frame {
+  padding: clamp(88px, 8vw, 108px) clamp(24px, 3.8vw, 40px) clamp(28px, 3.4vw, 38px);
+}
+
+.pageHero--service .pageHero__copyPanel,
+.pageHero--areas .pageHero__copyPanel {
+  gap: 20px;
+}
+
+.pageHero--service .pageHero__copy p,
+.pageHero--areas .pageHero__copy p {
+  max-width: 40ch;
+}
+
+.pageHero--service .pageHero__copyMeta,
+.pageHero--areas .pageHero__copyMeta {
+  gap: 8px;
+}
+
+.pageHero--service .pageHero__tag,
+.pageHero--areas .pageHero__tag {
+  min-height: 34px;
+  padding: 0 12px;
+  background: rgba(247, 242, 234, 0.1);
+  border-color: rgba(247, 242, 234, 0.16);
+  color: rgba(247, 242, 234, 0.92);
+}
+
+.serviceProofBand__intro,
+.serviceStory__article,
+.serviceStory__aside,
+.serviceFaqStage,
+.serviceRelatedSection .servicesRail__intro {
+  gap: 20px;
+}
+
+.serviceProofBand__intro p,
+.serviceStory__aside p,
+.serviceFaqStage p {
+  max-width: 44ch;
+}
+
+.serviceProofSpotlight {
+  padding: clamp(26px, 3.4vw, 34px);
+}
+
+.serviceProofSpotlight h3 {
+  max-width: 16ch;
+}
+
+.serviceStory__article,
+.serviceStory__aside {
+  padding: clamp(28px, 3.4vw, 36px);
+}
+
+.serviceRelatedSection .serviceEditorial {
+  background: linear-gradient(180deg, rgba(34, 27, 22, 0.96), rgba(21, 16, 14, 0.98));
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.serviceRelatedSection .serviceEditorial__media::after {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.5)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 100%);
+  background-size: auto, 30px 100%;
+}
+
+.serviceRelatedSection .serviceEditorial__index {
+  left: 12px;
+  bottom: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(18, 14, 12, 0.64);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.96);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  font-size: 0.92rem;
+}
+
+.serviceRelatedSection .serviceEditorial__body {
+  background: linear-gradient(180deg, rgba(42, 33, 27, 0.9), rgba(24, 18, 15, 0.98));
+}
+
+.serviceRelatedSection .serviceEditorial__body h3 {
+  color: #fff7ee;
+}
+
+.serviceRelatedSection .serviceEditorial__body .eyebrow {
+  color: #d8a978;
+}
+
+.serviceRelatedSection .serviceEditorial__body .textLink {
+  color: #fff7ee;
+  text-decoration-color: rgba(255, 247, 238, 0.3);
+}
+
+@media (max-width: 920px) {
+  .pageHero--service .pageHero__frame,
+  .pageHero--areas .pageHero__frame {
+    padding: 84px 18px 22px;
+  }
+
+  .pageHero--service .pageHero__copyPanel,
+  .pageHero--areas .pageHero__copyPanel,
+  .serviceProofSpotlight,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .serviceProofCard,
+  .serviceRelatedSection .serviceEditorial__body {
+    padding: 20px;
+  }
+
+  .serviceProofBand__intro p,
+  .serviceStory__aside p,
+  .serviceFaqStage p,
+  .pageHero--areas .pageHero__copy p,
+  .pageHero--service .pageHero__copy p {
+    max-width: none;
+  }
+
+  .serviceRelatedSection .servicesRail,
+  .serviceRelatedSection .servicesRail__list {
+    gap: 14px;
+  }
+
+  .serviceRelatedSection .serviceEditorial__media {
+    min-height: 184px;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageHero--service .pageHero__frame,
+  .pageHero--areas .pageHero__frame {
+    padding: 80px 14px 18px;
+  }
+
+  .pageHero--service .pageHero__copyPanel,
+  .pageHero--areas .pageHero__copyPanel,
+  .serviceProofSpotlight,
+  .serviceStory__article,
+  .serviceStory__aside,
+  .serviceProofCard,
+  .serviceRelatedSection .serviceEditorial__body {
+    padding: 18px;
+  }
+
+  .serviceRelatedSection .serviceEditorial__index {
+    font-size: 0.82rem;
+    padding: 5px 9px;
+  }
+}
+
+
+/* === ui-pass-10.css === */
+.pageHero--services .pageHero__frame {
+  min-height: clamp(460px, 62svh, 560px);
+  padding: clamp(84px, 7vw, 96px) clamp(22px, 3.2vw, 34px) clamp(24px, 2.8vw, 30px);
+}
+
+.pageHero--services .pageHero__grid {
+  grid-template-columns: minmax(300px, 0.76fr) minmax(0, 1.24fr);
+  min-height: clamp(340px, 46svh, 410px);
+  align-items: stretch;
+}
+
+.pageHero--services .pageHero__copy {
+  align-self: start;
+}
+
+.pageHero--services .pageHero__copyPanel {
+  min-height: auto;
+  justify-content: center;
+  gap: 16px;
+  padding: clamp(24px, 2.8vw, 32px);
+}
+
+.pageHero--services h1 {
+  max-width: 11ch;
+  font-size: clamp(2.3rem, 3.7vw, 3.5rem);
+}
+
+.pageHero--services .pageHero__copy p {
+  max-width: 40ch;
+}
+
+.pageHero--services .pageHero__media,
+.pageHero--services .pageHero__visual {
+  min-height: clamp(340px, 46svh, 410px);
+}
+
+.pageHero--services .pageHero__actions {
+  margin-top: 2px;
+}
+
+@media (max-width: 920px) {
+  .pageHero--services .pageHero__frame {
+    min-height: auto;
+    padding: 84px 18px 22px;
+  }
+
+  .pageHero--services .pageHero__grid {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .pageHero--services .pageHero__copyPanel {
+    min-height: auto;
+    padding: 22px 20px;
+  }
+
+  .pageHero--services .pageHero__visual,
+  .pageHero--services .pageHero__media {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageHero--services .pageHero__frame {
+    padding: 80px 14px 18px;
+  }
+
+  .pageHero--services .pageHero__copyPanel {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .pageHero--services .pageHero__visual,
+  .pageHero--services .pageHero__media {
+    min-height: 260px;
+  }
+}
+
+

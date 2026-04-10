@@ -27,7 +27,7 @@ const aboutFaqs = [
 export const metadata = buildPageMetadata({
   title: "About us",
   description:
-    "Learn how Empire Fence approaches fencing, gates, and block wall work across Jurupa Valley.",
+    "Learn how Empire Fence approaches fencing, gates, repairs, and coordinated exterior boundary work across Jurupa Valley.",
   path: "/about-us",
   image: "/client/wrought-fence.jpg",
 });

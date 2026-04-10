@@ -66,8 +66,8 @@ export function QuoteForm({ compact = false }) {
             <option value="Wood fence">Wood fence</option>
             <option value="Wrought iron fence">Wrought iron fence</option>
             <option value="Chain link fence">Chain link fence</option>
-            <option value="Custom fence">Custom fence</option>
-            <option value="Cinder block walls">Cinder block walls</option>
+            <option value="Metal fence">Metal fence</option>
+            <option value="Fence repairs">Fence repairs</option>
           </select>
         </label>
         <label>
