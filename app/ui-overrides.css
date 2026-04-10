@@ -1462,3 +1462,136 @@
   }
 }
 
+/* Shared layout rhythm pass: align hero content to the same body container,
+   reduce oversized media sections, and lighten the mobile reading rhythm. */
+.pageHero__shell,
+.articleHero .container {
+  width: var(--container);
+  max-width: none;
+  margin: 0 auto;
+}
+
+.pageHero__frame {
+  margin: 20px 0 0;
+}
+
+.articleHero__shell {
+  min-height: auto;
+  padding: clamp(108px, 11vw, 134px) 0 clamp(28px, 3.4vw, 42px);
+}
+
+.articleHero__image {
+  min-height: clamp(300px, 40vw, 500px);
+  max-height: 500px;
+  aspect-ratio: 16 / 9;
+}
+
+.galleryShowcase__tile--hero,
+.galleryShowcase__tile--tall {
+  min-height: clamp(360px, 38vw, 500px);
+}
+
+.galleryShowcase__tile--default {
+  min-height: 240px;
+}
+
+@media (min-width: 1380px) {
+  .pageHero__shell,
+  .articleHero .container {
+    width: min(1240px, calc(100vw - 96px));
+  }
+
+  .pageHero__frame {
+    margin-top: 24px;
+  }
+
+  .galleryShowcase__tile--hero,
+  .galleryShowcase__tile--tall {
+    min-height: 460px;
+  }
+}
+
+@media (max-width: 920px) {
+  .pageHero__shell,
+  .articleHero .container {
+    width: min(100vw - 24px, 100%);
+  }
+
+  .pageHero__frame {
+    margin: 10px 0 0;
+  }
+
+  .galleryShowcase__tile--hero,
+  .galleryShowcase__tile--tall {
+    min-height: 320px;
+  }
+
+  .galleryShowcase__tile--default {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 54px 0;
+  }
+
+  .pageHero__shell,
+  .articleHero .container {
+    width: min(100vw - 20px, 100%);
+  }
+
+  .pageHero__frame {
+    margin-top: 8px;
+  }
+
+  .pageHero__copyPanel {
+    padding: 18px 16px;
+    gap: 14px;
+  }
+
+  .pageHero h1,
+  .articleHero h1 {
+    font-size: clamp(1.86rem, 8.6vw, 2.7rem);
+    line-height: 0.98;
+  }
+
+  .pageHero__copy p,
+  .articleHero p {
+    font-size: 0.93rem;
+    line-height: 1.56;
+  }
+
+  .pageHero__media,
+  .pageHero__visual {
+    min-height: 240px;
+  }
+
+  .articleHero__shell {
+    padding: 88px 0 18px;
+  }
+
+  .articleHero__image {
+    min-height: 180px;
+    max-height: 240px;
+    margin-top: 16px;
+    border-radius: 22px;
+  }
+
+  .galleryShowcase__tile--hero,
+  .galleryShowcase__tile--tall,
+  .galleryShowcase__tile--default {
+    min-height: 210px;
+  }
+
+  .galleryRail__lead,
+  .galleryRail__list,
+  .articleBody {
+    gap: 14px;
+  }
+
+  .articleBody {
+    font-size: 0.95rem;
+    line-height: 1.62;
+  }
+}
