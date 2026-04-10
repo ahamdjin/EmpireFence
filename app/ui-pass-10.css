@@ -1,0 +1,77 @@
+.pageHero--services .pageHero__frame {
+  min-height: clamp(460px, 62svh, 560px);
+  padding: clamp(84px, 7vw, 96px) clamp(22px, 3.2vw, 34px) clamp(24px, 2.8vw, 30px);
+}
+
+.pageHero--services .pageHero__grid {
+  grid-template-columns: minmax(300px, 0.76fr) minmax(0, 1.24fr);
+  min-height: clamp(340px, 46svh, 410px);
+  align-items: stretch;
+}
+
+.pageHero--services .pageHero__copy {
+  align-self: start;
+}
+
+.pageHero--services .pageHero__copyPanel {
+  min-height: auto;
+  justify-content: center;
+  gap: 16px;
+  padding: clamp(24px, 2.8vw, 32px);
+}
+
+.pageHero--services h1 {
+  max-width: 11ch;
+  font-size: clamp(2.3rem, 3.7vw, 3.5rem);
+}
+
+.pageHero--services .pageHero__copy p {
+  max-width: 40ch;
+}
+
+.pageHero--services .pageHero__media,
+.pageHero--services .pageHero__visual {
+  min-height: clamp(340px, 46svh, 410px);
+}
+
+.pageHero--services .pageHero__actions {
+  margin-top: 2px;
+}
+
+@media (max-width: 920px) {
+  .pageHero--services .pageHero__frame {
+    min-height: auto;
+    padding: 84px 18px 22px;
+  }
+
+  .pageHero--services .pageHero__grid {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .pageHero--services .pageHero__copyPanel {
+    min-height: auto;
+    padding: 22px 20px;
+  }
+
+  .pageHero--services .pageHero__visual,
+  .pageHero--services .pageHero__media {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  .pageHero--services .pageHero__frame {
+    padding: 80px 14px 18px;
+  }
+
+  .pageHero--services .pageHero__copyPanel {
+    padding: 18px;
+    gap: 14px;
+  }
+
+  .pageHero--services .pageHero__visual,
+  .pageHero--services .pageHero__media {
+    min-height: 260px;
+  }
+}
