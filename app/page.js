@@ -172,11 +172,11 @@ export default async function HomePage() {
             <div className="servicesRail__sticky">
               <div className="servicesRail__stickyImage">
                 <Image
-                  src="/client/services/vinyl-fence/vinyl-privacy-fence-side-yard.jpg"
-                  alt="Vinyl privacy fence installation project"
+                  src="/client/services/vinyl-fence/vinyl-fence-installation.jpg"
+                  alt="Vinyl fence professional installation project"
                   fill
                   sizes="(max-width: 900px) 100vw, 32vw"
-                  style={getImagePresentation("/client/services/vinyl-fence/vinyl-privacy-fence-side-yard.jpg", "railSticky")}
+                  style={getImagePresentation("/client/services/vinyl-fence/vinyl-fence-installation.jpg", "railSticky")}
                 />
               </div>
               <div className="servicesRail__stickyCopy">
@@ -266,11 +266,11 @@ export default async function HomePage() {
             <Reveal className="projectSpotlight" delay={210} variant="soft">
               <div className="projectSpotlight__image">
                 <Image
-                  src="/client/services/gates/double-vinyl-gates.jpg"
-                  alt="Empire Fence custom double gate installation"
+                  src="/client/projects/completed-fence-installation.jpg"
+                  alt="Empire Fence completed fence and gate installation project"
                   fill
                   sizes="(max-width: 900px) 100vw, 48vw"
-                  style={getImagePresentation("/client/services/gates/double-vinyl-gates.jpg", "projectSpotlight")}
+                  style={getImagePresentation("/client/projects/completed-fence-installation.jpg", "projectSpotlight")}
                 />
               </div>
               <div className="projectSpotlight__body">
