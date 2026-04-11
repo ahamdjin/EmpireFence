@@ -7,14 +7,14 @@ import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
 const galleryImages = [
-  { src: "/client/wrought-fence.jpg", alt: "Black metal yard fence installed by Empire Fence" },
-  { src: "/client/vinyl-fence.jpg", alt: "Vinyl privacy fence installation beside a pool" },
-  { src: "/client/wood-fence.jpg", alt: "Long wood privacy fence installation along a side yard" },
-  { src: "/client/chain-link.jpg", alt: "Chain link backyard enclosure with matching gate" },
-  { src: "/client/location-fontana.jpg", alt: "Vinyl privacy fence illuminated at dusk in Jurupa Valley" },
-  { src: "/client/location-riverside.jpg", alt: "Vinyl fence garden run installed by Empire Fence" },
-  { src: "/client/gbp/entry-gate.jpg", alt: "Entry gate installed between stucco columns" },
-  { src: "/client/gbp/crew-on-site.jpg", alt: "Empire Fence team member on site" },
+  { src: "/client/gallery/wrought-iron-fence-gallery-1.jpg", alt: "Black metal wrought iron fence installed by Empire Fence in Jurupa Valley" },
+  { src: "/client/gallery/vinyl-privacy-fence-gallery.jpg", alt: "Vinyl privacy fence installation beside a pool in Inland Empire" },
+  { src: "/client/gallery/wood-fence-gallery-1.jpg", alt: "Long wood privacy fence installation along a side yard" },
+  { src: "/client/gallery/chain-link-fence-gallery.jpg", alt: "Chain link backyard enclosure with matching gate" },
+  { src: "/client/locations/fontana/fontana-ca-fence-project.jpg", alt: "Vinyl privacy fence installed at dusk in Fontana CA" },
+  { src: "/client/locations/riverside/riverside-ca-fence-project.jpg", alt: "Wood fence garden run installed by Empire Fence in Riverside" },
+  { src: "/client/services/gates/double-vinyl-gates.jpg", alt: "Double vinyl entry gate installed by Empire Fence" },
+  { src: "/client/gallery/gallery-feature-6.jpg", alt: "Empire Fence professional fence installation crew on site" },
 ];
 
 export const metadata = buildPageMetadata({

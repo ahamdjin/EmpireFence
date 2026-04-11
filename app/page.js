@@ -46,7 +46,7 @@ export default async function HomePage() {
     description:
       "Empire Fence installs vinyl, wood, wrought iron, chain link, metal fencing, repairs, railings, patio enclosures, and related exterior boundary work in Jurupa Valley and nearby Inland Empire cities.",
     path: "/",
-    image: "/client/vinyl-fence.jpg",
+    image: "/client/home/hero-fence-project-1.jpg",
   });
 
   return (
@@ -85,22 +85,22 @@ export default async function HomePage() {
               <div className="heroStage__visual">
                 <div className="heroStage__imageWrap">
                   <Image
-                    src="/client/vinyl-fence.jpg"
-                    alt="Empire Fence vinyl privacy fence project"
+                    src="/client/home/hero-fence-project-1.jpg"
+                    alt="Empire Fence vinyl privacy fence project in Jurupa Valley"
                     fill
                     priority
                     sizes="(max-width: 900px) 100vw, 44vw"
-                    style={getImagePresentation("/client/vinyl-fence.jpg", "heroStage")}
+                    style={getImagePresentation("/client/home/hero-fence-project-1.jpg", "heroStage")}
                   />
                 </div>
 
                 <div className="heroStage__secondary">
                   <Image
-                    src="/client/wrought-fence.jpg"
-                    alt="Empire Fence wrought iron detail"
+                    src="/client/home/hero-fence-project-2.jpg"
+                    alt="Empire Fence professional fence installation"
                     fill
                     sizes="(max-width: 900px) 48vw, 18vw"
-                    style={getImagePresentation("/client/wrought-fence.jpg", "heroStageSecondary")}
+                    style={getImagePresentation("/client/home/hero-fence-project-2.jpg", "heroStageSecondary")}
                   />
                 </div>
               </div>
@@ -142,11 +142,11 @@ export default async function HomePage() {
 
             <Reveal className="storyPanel storyPanel--image" delay={90} variant="soft">
               <Image
-                src="/client/wrought-fence.jpg"
-                alt="Wrought iron fence detail"
+                src="/client/gallery/wrought-iron-fence-gallery-2.jpg"
+                alt="Wrought iron decorative fence detail work"
                 fill
                 sizes="(max-width: 900px) 100vw, 44vw"
-                style={getImagePresentation("/client/wrought-fence.jpg", "story")}
+                style={getImagePresentation("/client/gallery/wrought-iron-fence-gallery-2.jpg", "story")}
               />
             </Reveal>
 
@@ -172,11 +172,11 @@ export default async function HomePage() {
             <div className="servicesRail__sticky">
               <div className="servicesRail__stickyImage">
                 <Image
-                  src="/client/vinyl-fence.jpg"
-                  alt="Vinyl fence project"
+                  src="/client/services/vinyl-fence/vinyl-privacy-fence-side-yard.jpg"
+                  alt="Vinyl privacy fence installation project"
                   fill
                   sizes="(max-width: 900px) 100vw, 32vw"
-                  style={getImagePresentation("/client/vinyl-fence.jpg", "railSticky")}
+                  style={getImagePresentation("/client/services/vinyl-fence/vinyl-privacy-fence-side-yard.jpg", "railSticky")}
                 />
               </div>
               <div className="servicesRail__stickyCopy">
@@ -266,11 +266,11 @@ export default async function HomePage() {
             <Reveal className="projectSpotlight" delay={210} variant="soft">
               <div className="projectSpotlight__image">
                 <Image
-                  src="/client/gbp/entry-gate.jpg"
-                  alt="Empire Fence gate and frontage project"
+                  src="/client/services/gates/double-vinyl-gates.jpg"
+                  alt="Empire Fence custom double gate installation"
                   fill
                   sizes="(max-width: 900px) 100vw, 48vw"
-                  style={getImagePresentation("/client/gbp/entry-gate.jpg", "projectSpotlight")}
+                  style={getImagePresentation("/client/services/gates/double-vinyl-gates.jpg", "projectSpotlight")}
                 />
               </div>
               <div className="projectSpotlight__body">
