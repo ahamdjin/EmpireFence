@@ -18,18 +18,18 @@ const galleryImages = [
 ];
 
 export const metadata = buildPageMetadata({
-  title: "Gallery",
+  title: "Fence Project Gallery in Jurupa Valley, CA",
   description:
-    "View Empire Fence project imagery covering fence installation, exterior upgrades, and perimeter work across the Inland Empire.",
+    "Browse completed fence installations by Empire Fence: vinyl privacy fences, wrought iron gates, wood enclosures, chain link, and patio covers across Jurupa Valley and the Inland Empire.",
   path: "/gallery",
   image: "/client/wrought-fence.jpg",
 });
 
 export default function GalleryPage() {
   const pageSchema = buildWebPageSchema({
-    title: "Gallery",
+    title: "Fence Installation Gallery in Jurupa Valley, CA",
     description:
-      "Review Empire Fence project imagery across vinyl, wood, wrought iron, chain link, patio, gate, and related exterior boundary work.",
+      "Review Empire Fence project imagery across vinyl, wood, wrought iron, chain link, patio, gate, and related exterior boundary work throughout the Inland Empire.",
     path: "/gallery",
     image: "/client/wrought-fence.jpg",
     type: "CollectionPage",
@@ -40,7 +40,7 @@ export default function GalleryPage() {
       <PageHero
         variant="gallery"
         eyebrow="Project gallery"
-        title="Our Work"
+        title="Our Fence Installation Gallery"
         intro="Browse our portfolio of completed fence installations throughout Jurupa Valley and the Inland Empire."
         image={galleryImages[0].src}
         primaryAction={{ href: "/contact-us", label: "Get free quote" }}
