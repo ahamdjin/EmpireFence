@@ -4,7 +4,7 @@ order: 8
 title: Fence Supply Store
 eyebrow: Fence materials, matching parts, and custom supply guidance
 summary: Fence supply support for property owners, managers, and contractors who need material direction, matching parts, repair planning, or a clearer product path before moving into installation.
-heroImage: /client/chain-link.jpg
+heroImage: /client/gallery/chain-link-fence-gallery.jpg
 highlights:
   - Vinyl, wood, chain link, wrought iron, and metal fence material guidance
   - Useful for both new installations and custom repair work

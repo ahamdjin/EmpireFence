@@ -4,7 +4,7 @@ order: 7
 title: Gazebo Builder
 eyebrow: Custom gazebos for shade, structure, and outdoor use
 summary: Custom gazebo building for residential and commercial properties that need better shade, a more usable gathering area, and an outdoor structure planned around the way the space is actually used.
-heroImage: /client/driveway-patio.jpg
+heroImage: /client/gbp/outdoor-deck-space.jpg
 highlights:
   - Custom gazebo design and build based on the property layout
   - Backyard and commercial gazebo solutions with practical planning

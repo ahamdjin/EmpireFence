@@ -172,11 +172,11 @@ export default async function HomePage() {
             <div className="servicesRail__sticky">
               <div className="servicesRail__stickyImage">
                 <Image
-                  src="/client/services/vinyl-fence/vinyl-fence-installation.jpg"
-                  alt="Vinyl fence professional installation project"
+                  src="/client/gbp/vinyl-slope-boundary.jpg"
+                  alt="Empire Fence vinyl privacy fence project with long boundary run"
                   fill
                   sizes="(max-width: 900px) 100vw, 32vw"
-                  style={getImagePresentation("/client/services/vinyl-fence/vinyl-fence-installation.jpg", "railSticky")}
+                  style={getImagePresentation("/client/gbp/vinyl-slope-boundary.jpg", "railSticky")}
                 />
               </div>
               <div className="servicesRail__stickyCopy">

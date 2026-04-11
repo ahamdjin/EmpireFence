@@ -4,7 +4,7 @@ title: How to Prepare for a Better Fence Estimate
 date: 2026-03-19
 modifiedDate: 2026-04-10
 excerpt: The details that help a fence estimate move faster, reduce guesswork, and lead to a much more useful project conversation.
-heroImage: /client/location-fontana.jpg
+heroImage: /client/gbp/vinyl-install-crew.jpg
 articleSection: Estimate Planning
 keywords:
   - fence estimate checklist

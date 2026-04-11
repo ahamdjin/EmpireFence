@@ -7,14 +7,14 @@ import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
 const galleryImages = [
-  { src: "/client/gallery/wrought-iron-fence-gallery-1.jpg", alt: "Black metal wrought iron fence installed by Empire Fence in Jurupa Valley" },
-  { src: "/client/gallery/vinyl-privacy-fence-gallery.jpg", alt: "Vinyl privacy fence installation beside a pool in Inland Empire" },
-  { src: "/client/gallery/wood-fence-gallery-1.jpg", alt: "Long wood privacy fence installation along a side yard" },
-  { src: "/client/gallery/chain-link-fence-gallery.jpg", alt: "Chain link backyard enclosure with matching gate" },
-  { src: "/client/locations/fontana/fontana-ca-fence-project.jpg", alt: "Vinyl privacy fence installed at dusk in Fontana CA" },
-  { src: "/client/locations/riverside/riverside-ca-fence-project.jpg", alt: "Wood fence garden run installed by Empire Fence in Riverside" },
-  { src: "/client/services/gates/double-vinyl-gates.jpg", alt: "Double vinyl entry gate installed by Empire Fence" },
-  { src: "/client/gallery/gallery-feature-6.jpg", alt: "Empire Fence professional fence installation crew on site" },
+  { src: "/client/home/hero-fence-project-1.jpg", alt: "Empire Fence vinyl privacy fence installed beside a backyard pool" },
+  { src: "/client/locations/fontana/fontana-ca-fence-project.jpg", alt: "Empire Fence long vinyl privacy fence project in Fontana" },
+  { src: "/client/locations/riverside/riverside-ca-fence-project.jpg", alt: "Empire Fence wood fence project in Riverside" },
+  { src: "/client/gallery/chain-link-fence-gallery.jpg", alt: "Empire Fence chain link perimeter fence across a large sloped property edge" },
+  { src: "/client/gbp/vinyl-slope-boundary.jpg", alt: "Empire Fence vinyl boundary fence across a long residential slope" },
+  { src: "/client/gbp/security-walk-gate.jpg", alt: "Empire Fence black metal security gate detail at a residential entry" },
+  { src: "/client/services/gates/double-vinyl-gates.jpg", alt: "Empire Fence double vinyl gate installation" },
+  { src: "/client/projects/completed-fence-installation.jpg", alt: "Empire Fence completed wood fence and gate installation beside a backyard pool" },
 ];
 
 export const metadata = buildPageMetadata({
@@ -22,7 +22,7 @@ export const metadata = buildPageMetadata({
   description:
     "Browse completed fence installations by Empire Fence: vinyl privacy fences, wrought iron gates, wood enclosures, chain link, and patio covers across Jurupa Valley and the Inland Empire.",
   path: "/gallery",
-  image: "/client/gallery/wrought-iron-fence-gallery-1.jpg",
+  image: "/client/home/hero-fence-project-1.jpg",
 });
 
 export default function GalleryPage() {
@@ -31,7 +31,7 @@ export default function GalleryPage() {
     description:
       "Review Empire Fence project imagery across vinyl, wood, wrought iron, chain link, patio, gate, and related exterior boundary work throughout the Inland Empire.",
     path: "/gallery",
-    image: "/client/gallery/wrought-iron-fence-gallery-1.jpg",
+    image: "/client/home/hero-fence-project-1.jpg",
     type: "CollectionPage",
   });
 

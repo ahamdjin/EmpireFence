@@ -4,7 +4,7 @@ order: 10
 title: Patio Enclosures
 eyebrow: Custom patio coverage, shade, and outdoor enclosure planning
 summary: Custom patio enclosure solutions for residential and commercial properties that need more shade, weather protection, privacy, and a more usable outdoor area through more of the year.
-heroImage: /client/driveway-patio.jpg
+heroImage: /client/gbp/outdoor-seating-area.jpg
 highlights:
   - Custom patio enclosures built around the property layout
   - Patio covers, pergola-style shade, and practical covered outdoor solutions
