@@ -29,7 +29,7 @@ export const metadata = buildPageMetadata({
   description:
     "Learn how Empire Fence approaches fencing, gates, repairs, and coordinated exterior boundary work across Jurupa Valley.",
   path: "/about-us",
-  image: "/client/wrought-fence.jpg",
+  image: "/client/about/empire-fence-team.jpg",
 });
 
 export default function AboutPage() {
@@ -38,7 +38,7 @@ export default function AboutPage() {
     description:
       "Learn how Empire Fence approaches fence installation, gate planning, and coordinated exterior boundary work across Jurupa Valley and the Inland Empire.",
     path: "/about-us",
-    image: "/client/wrought-fence.jpg",
+    image: "/client/about/empire-fence-team.jpg",
     type: "AboutPage",
   });
   const faqSchema = buildFaqSchema(aboutFaqs);
@@ -50,7 +50,7 @@ export default function AboutPage() {
         eyebrow="About us"
         title="About Empire Fence"
         intro="40+ years of combined experience installing quality fences throughout Jurupa Valley and the Inland Empire."
-        image="/client/wrought-fence.jpg"
+        image="/client/about/empire-fence-team.jpg"
         primaryAction={{ href: "/contact-us", label: "Get free estimate" }}
         secondaryAction={{ href: "/gallery", label: "View gallery" }}
       />

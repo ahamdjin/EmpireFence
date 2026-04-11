@@ -22,7 +22,7 @@ export const metadata = buildPageMetadata({
   description:
     "Browse completed fence installations by Empire Fence: vinyl privacy fences, wrought iron gates, wood enclosures, chain link, and patio covers across Jurupa Valley and the Inland Empire.",
   path: "/gallery",
-  image: "/client/wrought-fence.jpg",
+  image: "/client/gallery/wrought-iron-fence-gallery-1.jpg",
 });
 
 export default function GalleryPage() {
@@ -31,7 +31,7 @@ export default function GalleryPage() {
     description:
       "Review Empire Fence project imagery across vinyl, wood, wrought iron, chain link, patio, gate, and related exterior boundary work throughout the Inland Empire.",
     path: "/gallery",
-    image: "/client/wrought-fence.jpg",
+    image: "/client/gallery/wrought-iron-fence-gallery-1.jpg",
     type: "CollectionPage",
   });
 
