@@ -7,14 +7,14 @@ import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
 const galleryImages = [
-  { src: "/client/gallery-1.webp", alt: "Wrought iron fence with decorative gate in Jurupa Valley" },
-  { src: "/client/gallery-2.webp", alt: "Vinyl privacy fence installation in Inland Empire" },
-  { src: "/client/gallery-3.webp", alt: "Wood fence with clean finish for residential property" },
-  { src: "/client/gallery-4.webp", alt: "Chain link fence with privacy slats for commercial property" },
-  { src: "/client/wrought-fence.jpg", alt: "Wrought iron decorative fence with scrollwork detail" },
-  { src: "/client/wood-fence.jpg", alt: "Natural wood privacy fence with horizontal boards" },
-  { src: "/client/vinyl-fence.jpg", alt: "White vinyl fence with matching gate installation" },
-  { src: "/client/location-fontana.jpg", alt: "Completed fence project in Fontana California" },
+  { src: "/client/wrought-fence.jpg", alt: "Black metal yard fence installed by Empire Fence" },
+  { src: "/client/vinyl-fence.jpg", alt: "Vinyl privacy fence installation beside a pool" },
+  { src: "/client/wood-fence.jpg", alt: "Long wood privacy fence installation along a side yard" },
+  { src: "/client/chain-link.jpg", alt: "Chain link backyard enclosure with matching gate" },
+  { src: "/client/location-fontana.jpg", alt: "Vinyl privacy fence illuminated at dusk in Jurupa Valley" },
+  { src: "/client/location-riverside.jpg", alt: "Vinyl fence garden run installed by Empire Fence" },
+  { src: "/client/gbp/entry-gate.jpg", alt: "Entry gate installed between stucco columns" },
+  { src: "/client/gbp/crew-on-site.jpg", alt: "Empire Fence team member on site" },
 ];
 
 export const metadata = buildPageMetadata({
@@ -22,7 +22,7 @@ export const metadata = buildPageMetadata({
   description:
     "View Empire Fence project imagery covering fence installation, exterior upgrades, and perimeter work across the Inland Empire.",
   path: "/gallery",
-  image: "/client/gallery-4.webp",
+  image: "/client/wrought-fence.jpg",
 });
 
 export default function GalleryPage() {
@@ -31,7 +31,7 @@ export default function GalleryPage() {
     description:
       "Review Empire Fence project imagery across vinyl, wood, wrought iron, chain link, patio, gate, and related exterior boundary work.",
     path: "/gallery",
-    image: "/client/gallery-4.webp",
+    image: "/client/wrought-fence.jpg",
     type: "CollectionPage",
   });
 

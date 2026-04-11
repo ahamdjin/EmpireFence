@@ -4,7 +4,7 @@ order: 6
 title: Metal Fence Installation
 eyebrow: Durable metal fencing for stronger boundaries
 summary: Custom metal fence installation for homes and businesses that need strength, security, and a finished look tailored to the property.
-heroImage: /client/hero-western.webp
+heroImage: /client/wrought-fence.jpg
 highlights:
   - Strong fit for residential and commercial boundaries
   - Good balance of security and finished appearance

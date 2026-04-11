@@ -4,7 +4,7 @@ title: Questions to Ask Before Hiring a Fence Contractor
 date: 2026-04-07
 modifiedDate: 2026-04-10
 excerpt: The questions that help property owners hire a fence contractor based on scope clarity, real fit, and project execution instead of vague promises.
-heroImage: /client/gallery-4.webp
+heroImage: /client/gbp/crew-on-site.jpg
 articleSection: Hiring Guide
 keywords:
   - questions to ask a fence contractor

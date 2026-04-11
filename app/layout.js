@@ -48,7 +48,7 @@ export const metadata = {
     title: `Fence Company in Jurupa Valley, CA | ${business.shortName}`,
     description:
       "Empire Fence installs fences, gates, repairs, and exterior boundary upgrades across Jurupa Valley and nearby Inland Empire cities.",
-    images: ["/client/hero-western.webp"],
+    images: ["/client/vinyl-fence.jpg"],
   },
 };
 

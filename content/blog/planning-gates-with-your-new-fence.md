@@ -4,7 +4,7 @@ title: Plan the Gates at the Same Time as the Fence
 date: 2026-04-06
 modifiedDate: 2026-04-10
 excerpt: Why gates should never be treated as an afterthought when a new fence is being planned, priced, and installed.
-heroImage: /client/gallery-1.webp
+heroImage: /client/gbp/entry-gate.jpg
 articleSection: Gate Planning
 keywords:
   - fence gate planning

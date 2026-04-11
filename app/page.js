@@ -46,7 +46,7 @@ export default async function HomePage() {
     description:
       "Empire Fence installs vinyl, wood, wrought iron, chain link, metal fencing, repairs, railings, patio enclosures, and related exterior boundary work in Jurupa Valley and nearby Inland Empire cities.",
     path: "/",
-    image: "/client/hero-western.webp",
+    image: "/client/vinyl-fence.jpg",
   });
 
   return (
@@ -85,12 +85,12 @@ export default async function HomePage() {
               <div className="heroStage__visual">
                 <div className="heroStage__imageWrap">
                   <Image
-                    src="/client/hero-western.webp"
-                    alt="Empire Fence premium wrought iron project"
+                    src="/client/vinyl-fence.jpg"
+                    alt="Empire Fence vinyl privacy fence project"
                     fill
                     priority
                     sizes="(max-width: 900px) 100vw, 44vw"
-                    style={getImagePresentation("/client/hero-western.webp", "heroStage")}
+                    style={getImagePresentation("/client/vinyl-fence.jpg", "heroStage")}
                   />
                 </div>
 
@@ -266,11 +266,11 @@ export default async function HomePage() {
             <Reveal className="projectSpotlight" delay={210} variant="soft">
               <div className="projectSpotlight__image">
                 <Image
-                  src="/client/cinder-block-wall.jpg"
-                  alt="Empire Fence wall and frontage project"
+                  src="/client/gbp/entry-gate.jpg"
+                  alt="Empire Fence gate and frontage project"
                   fill
                   sizes="(max-width: 900px) 100vw, 48vw"
-                  style={getImagePresentation("/client/cinder-block-wall.jpg", "projectSpotlight")}
+                  style={getImagePresentation("/client/gbp/entry-gate.jpg", "projectSpotlight")}
                 />
               </div>
               <div className="projectSpotlight__body">

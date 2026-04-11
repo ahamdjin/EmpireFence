@@ -11,7 +11,7 @@ export const metadata = buildPageMetadata({
   description:
     "Read Empire Fence articles on fence materials, estimate prep, repair decisions, gates, and local project planning for Jurupa Valley and nearby Inland Empire cities.",
   path: "/blog",
-  image: "/client/gallery-1.webp",
+  image: "/client/gbp/crew-on-site.jpg",
   keywords: [
     "fence blog Jurupa Valley",
     "fence estimate advice",
@@ -38,7 +38,7 @@ export default async function BlogPage() {
     description:
       "Read Empire Fence articles on fence materials, estimate prep, repair decisions, gates, and project planning for Jurupa Valley and nearby Inland Empire cities.",
     path: "/blog",
-    image: "/client/gallery-1.webp",
+    image: "/client/gbp/crew-on-site.jpg",
     type: "CollectionPage",
   });
 
@@ -49,7 +49,7 @@ export default async function BlogPage() {
         eyebrow="Our blog"
         title="Fence Tips & Advice"
         intro="Learn about fence materials, installation tips, and how to plan your next fencing project."
-        image="/client/gallery-1.webp"
+        image="/client/gbp/crew-on-site.jpg"
         primaryAction={{ href: "/contact-us", label: "Get free quote" }}
         secondaryAction={{ href: "/services", label: "Services" }}
         cards={featuredCards}

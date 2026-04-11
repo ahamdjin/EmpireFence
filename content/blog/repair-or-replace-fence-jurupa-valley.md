@@ -4,7 +4,7 @@ title: Should You Repair or Replace Your Fence?
 date: 2026-04-03
 modifiedDate: 2026-04-10
 excerpt: How to tell whether a fence should be repaired, partially rebuilt, or replaced entirely before more money goes into the wrong fix.
-heroImage: /client/custom-fence.webp
+heroImage: /client/wood-fence.jpg
 articleSection: Fence Repairs
 keywords:
   - repair or replace fence
