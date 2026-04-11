@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { LeadConnectorForm } from "@/components/leadconnector-form";
 import { PageHero } from "@/components/page-hero";
-import { QuoteForm } from "@/components/quote-form";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
@@ -198,7 +198,7 @@ function LocationPage({ area, services }) {
             <span className="eyebrow">Request a quote</span>
             <h2>Start the estimate for {area.title}.</h2>
             <p>Share the property address, photos, and whether this is privacy fencing, frontage work, gate scope, or a broader exterior upgrade.</p>
-            <QuoteForm compact />
+            <LeadConnectorForm compact instance={`area-${area.slug}`} />
           </Reveal>
 
           <Reveal className="contactUtility__booking locationBookingPanel" delay={90} variant="soft">
@@ -436,7 +436,7 @@ function ServicePage({ service, services }) {
 
             <div className="ctaShell__form">
               <span className="eyebrow">Quick request</span>
-              <QuoteForm compact />
+              <LeadConnectorForm compact instance={`service-${service.slug}`} />
             </div>
           </Reveal>
         </div>

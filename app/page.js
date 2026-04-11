@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { QuoteForm } from "@/components/quote-form";
+import { LeadConnectorForm } from "@/components/leadconnector-form";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
@@ -382,7 +382,7 @@ export default async function HomePage() {
 
             <div className="ctaShell__form">
               <span className="eyebrow">Quick estimate request</span>
-              <QuoteForm compact />
+              <LeadConnectorForm compact instance="home-final-cta" />
             </div>
           </Reveal>
         </div>

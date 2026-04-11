@@ -2706,6 +2706,41 @@ a.pageHero__miniCard:hover {
   margin: 0;
 }
 
+.leadConnectorForm {
+  width: 100%;
+  max-width: 720px;
+  justify-self: start;
+}
+
+.leadConnectorForm--compact {
+  max-width: 100%;
+}
+
+.leadConnectorForm__frame {
+  width: 100%;
+  min-height: 630px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(24, 20, 18, 0.08);
+  box-shadow: var(--shadow-sm);
+}
+
+.leadConnectorForm iframe {
+  display: block;
+}
+
+.contactHub__form .leadConnectorForm,
+.ctaShell__form .leadConnectorForm,
+.locationQuotePanel .leadConnectorForm {
+  max-width: 100%;
+}
+
+.contactHub__form .leadConnectorForm__frame,
+.ctaShell__form .leadConnectorForm__frame {
+  background: transparent;
+}
+
 .quoteForm {
   display: grid;
   gap: 16px;
@@ -2778,6 +2813,10 @@ a.pageHero__miniCard:hover {
 .ctaShell__form {
   background: rgba(255, 251, 246, 0.96);
   color: var(--ink);
+}
+
+.ctaShell__form .leadConnectorForm {
+  margin-top: 12px;
 }
 
 .ctaShell__form .quoteForm {
@@ -3179,6 +3218,10 @@ a.pageHero__miniCard:hover {
 
   .heroStage__visual {
     min-height: 46svh;
+  }
+
+  .leadConnectorForm__frame {
+    min-height: 650px;
   }
 
   .heroStage__imageWrap {
@@ -3904,6 +3947,11 @@ a.pageHero__miniCard:hover {
     border-radius: 18px;
   }
 
+  .leadConnectorForm__frame {
+    min-height: 620px;
+    border-radius: 24px;
+  }
+
   .quoteForm {
     gap: 10px;
   }
@@ -3937,4 +3985,3 @@ a.pageHero__miniCard:hover {
     filter: none;
   }
 }
-

@@ -6,6 +6,8 @@ import { galleryCollections } from "@/lib/site";
 import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
+const galleryHeroImage = "/client/gallery/white-vinyl-fence-gallery.jpg";
+
 const galleryImages = [
   { src: "/client/home/hero-fence-project-1.jpg", alt: "Empire Fence vinyl privacy fence installed beside a backyard pool" },
   { src: "/client/locations/fontana/fontana-ca-fence-project.jpg", alt: "Empire Fence long vinyl privacy fence project in Fontana" },
@@ -22,7 +24,7 @@ export const metadata = buildPageMetadata({
   description:
     "Browse completed fence installations by Empire Fence: vinyl privacy fences, wrought iron gates, wood enclosures, chain link, and patio covers across Jurupa Valley and the Inland Empire.",
   path: "/gallery",
-  image: "/client/home/hero-fence-project-1.jpg",
+  image: galleryHeroImage,
 });
 
 export default function GalleryPage() {
@@ -31,7 +33,7 @@ export default function GalleryPage() {
     description:
       "Review Empire Fence project imagery across vinyl, wood, wrought iron, chain link, patio, gate, and related exterior boundary work throughout the Inland Empire.",
     path: "/gallery",
-    image: "/client/home/hero-fence-project-1.jpg",
+    image: galleryHeroImage,
     type: "CollectionPage",
   });
 
@@ -42,7 +44,7 @@ export default function GalleryPage() {
         eyebrow="Project gallery"
         title="Our Fence Installation Gallery"
         intro="Browse our portfolio of completed fence installations throughout Jurupa Valley and the Inland Empire."
-        image={galleryImages[0].src}
+        image={galleryHeroImage}
         primaryAction={{ href: "/contact-us", label: "Get free quote" }}
         secondaryAction={{ href: "/services", label: "Services" }}
       />

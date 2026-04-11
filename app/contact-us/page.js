@@ -1,5 +1,5 @@
 import { PageHero } from "@/components/page-hero";
-import { QuoteForm } from "@/components/quote-form";
+import { LeadConnectorForm } from "@/components/leadconnector-form";
 import { buildFaqSchema, buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 import { business, contactPrompts, serviceAreas, socialLinks } from "@/lib/site";
 
@@ -71,7 +71,7 @@ export default function ContactPage() {
           </article>
 
           <article className="contactHub__form">
-            <QuoteForm />
+            <LeadConnectorForm instance="contact-page" />
           </article>
         </div>
       </section>

@@ -11,7 +11,7 @@ export const metadata = buildPageMetadata({
   description:
     "Expert fence articles from Empire Fence covering vinyl vs wood, wrought iron gates, chain link enclosures, cost estimates, repair decisions, and project planning for Jurupa Valley and the Inland Empire.",
   path: "/blog",
-  image: "/client/gbp/crew-on-site.jpg",
+  image: "/client/projects/professional-site-cleanup.jpg",
   keywords: [
     "fence blog Jurupa Valley",
     "fence estimate advice",
@@ -25,6 +25,7 @@ export default async function BlogPage() {
   const posts = await getAllPosts();
   const featuredPost = posts[0] ?? null;
   const sidePosts = posts.slice(1, 3);
+  const remainingPosts = posts.slice(3);
   const featuredCards = sidePosts.map((post) => ({
     eyebrow: new Intl.DateTimeFormat("en-US", {
       month: "short",
@@ -42,7 +43,7 @@ export default async function BlogPage() {
     description:
       "Read Empire Fence articles on fence materials, estimate prep, repair decisions, gates, and project planning for Jurupa Valley and the Inland Empire.",
     path: "/blog",
-    image: "/client/gbp/crew-on-site.jpg",
+    image: "/client/projects/professional-site-cleanup.jpg",
     type: "CollectionPage",
   });
 
@@ -53,7 +54,7 @@ export default async function BlogPage() {
         eyebrow="Our blog"
         title="Fence Tips & Advice for Jurupa Valley Homeowners"
         intro="Expert guidance on fence materials, installation planning, repair decisions, and project budgeting for Jurupa Valley and the Inland Empire."
-        image="/client/gbp/crew-on-site.jpg"
+        image="/client/projects/professional-site-cleanup.jpg"
         primaryAction={{ href: "/contact-us", label: "Get free quote" }}
         secondaryAction={{ href: "/services", label: "Services" }}
         cards={featuredCards}
@@ -140,34 +141,36 @@ export default async function BlogPage() {
         </div>
       </section>
 
-      <section className="section section--soft">
-        <div className="container postGrid">
-          {posts.map((post) => (
-            <article key={post.slug} className="postCard">
-              <div className="postCard__image">
-                <Image
-                  src={post.data.heroImage}
-                  alt={post.data.title}
-                  fill
-                  sizes="(max-width: 900px) 100vw, 32vw"
-                  style={getImagePresentation(post.data.heroImage, "postCard")}
-                />
-              </div>
-              <div className="postCard__body">
-                <span className="eyebrow">
-                  {new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(new Date(post.data.date))}
-                </span>
-                <h2>{post.data.title}</h2>
-                <p>{post.data.excerpt}</p>
-                <p className="postCard__meta">{post.readingTimeMinutes} min read</p>
-                <Link href={`/blog/${post.slug}`} className="textLink">
-                  Read article
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+      {remainingPosts.length ? (
+        <section className="section section--soft">
+          <div className="container postGrid">
+            {remainingPosts.map((post) => (
+              <article key={post.slug} className="postCard">
+                <div className="postCard__image">
+                  <Image
+                    src={post.data.heroImage}
+                    alt={post.data.title}
+                    fill
+                    sizes="(max-width: 900px) 100vw, 32vw"
+                    style={getImagePresentation(post.data.heroImage, "postCard")}
+                  />
+                </div>
+                <div className="postCard__body">
+                  <span className="eyebrow">
+                    {new Intl.DateTimeFormat("en-US", { month: "long", day: "numeric", year: "numeric" }).format(new Date(post.data.date))}
+                  </span>
+                  <h2>{post.data.title}</h2>
+                  <p>{post.data.excerpt}</p>
+                  <p className="postCard__meta">{post.readingTimeMinutes} min read</p>
+                  <Link href={`/blog/${post.slug}`} className="textLink">
+                    Read article
+                  </Link>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <script
         type="application/ld+json"
