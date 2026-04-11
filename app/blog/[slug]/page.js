@@ -62,13 +62,15 @@ export default async function BlogPostPage({ params }) {
     <>
       <section className="articleHero">
         <div className="container articleHero__shell">
-          <span className="eyebrow">{post.data.articleSection || "Fence planning"}</span>
-          <h1>{post.data.title}</h1>
-          <div className="articleHero__meta">
-            <span>{publishedDate}</span>
-            <span>{post.readingTimeMinutes} min read</span>
+          <div className="articleHero__copy">
+            <span className="eyebrow">{post.data.articleSection || "Fence planning"}</span>
+            <h1>{post.data.title}</h1>
+            <div className="articleHero__meta">
+              <span>{publishedDate}</span>
+              <span>{post.readingTimeMinutes} min read</span>
+            </div>
+            <p>{post.data.excerpt}</p>
           </div>
-          <p>{post.data.excerpt}</p>
           <div className="articleHero__image">
             <Image
               src={post.data.heroImage}

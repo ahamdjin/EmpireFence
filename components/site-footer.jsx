@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="siteFooter__grid">
           <div className="siteFooter__brand">
             <Image src="/client/logo.png" alt={business.shortName} width={72} height={72} />
-            <div>
+            <div className="siteFooter__brandCopy">
               <strong>{business.name}</strong>
               <p>Fence, gate, wall, and selected outdoor work across Jurupa Valley and nearby Inland Empire cities.</p>
               <div className="siteFooter__actions">
@@ -64,7 +64,7 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="siteFooter__bottom">
-          <span>Privacy fencing, frontage work, gates, and walls.</span>
+          <span>Privacy fencing, frontage work, gates, and selected outdoor work.</span>
           <span>© {new Date().getFullYear()} {business.name}</span>
         </div>
       </div>

@@ -22,7 +22,9 @@ export const metadata = buildPageMetadata({
 
 export default async function BlogPage() {
   const posts = await getAllPosts();
-  const featuredCards = posts.slice(1, 3).map((post) => ({
+  const featuredPost = posts[0] ?? null;
+  const sidePosts = posts.slice(1, 3);
+  const featuredCards = sidePosts.map((post) => ({
     eyebrow: new Intl.DateTimeFormat("en-US", {
       month: "short",
       day: "numeric",
@@ -31,6 +33,7 @@ export default async function BlogPage() {
     title: post.data.title,
     copy: post.data.excerpt,
     href: `/blog/${post.slug}`,
+    readingTimeMinutes: post.readingTimeMinutes,
   }));
   const blogSchema = buildBlogCollectionSchema(posts);
   const pageSchema = buildWebPageSchema({
@@ -56,24 +59,32 @@ export default async function BlogPage() {
       />
 
       <section className="journalDeck">
-
-        {posts[0] ? (
+        {featuredPost ? (
           <div className="container journalDeck__grid">
-            <article className="journalDeck__feature">
-              <div className="journalDeck__image">
+            <article className="journalDeck__feature journalDeck__feature--stacked">
+              <div className="journalDeck__image journalDeck__image--feature">
                 <Image
-                  src={posts[0].data.heroImage}
-                  alt={posts[0].data.title}
+                  src={featuredPost.data.heroImage}
+                  alt={featuredPost.data.title}
                   fill
                   sizes="(max-width: 900px) 100vw, 42vw"
-                  style={getImagePresentation(posts[0].data.heroImage, "journalFeature")}
+                  style={getImagePresentation(featuredPost.data.heroImage, "journalFeature")}
                 />
               </div>
-              <div className="journalDeck__body">
+              <div className="journalDeck__body journalDeck__body--feature">
                 <span className="eyebrow">Featured article</span>
-                <h2>{posts[0].data.title}</h2>
-                <p>{posts[0].data.excerpt}</p>
-                <Link href={`/blog/${posts[0].slug}`} className="textLink">
+                <h2>{featuredPost.data.title}</h2>
+                <p>{featuredPost.data.excerpt}</p>
+                <p className="journalDeck__meta">
+                  {new Intl.DateTimeFormat("en-US", {
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  }).format(new Date(featuredPost.data.date))}
+                  <span aria-hidden="true">•</span>
+                  <span>{featuredPost.readingTimeMinutes} min read</span>
+                </p>
+                <Link href={`/blog/${featuredPost.slug}`} className="textLink">
                   Read article
                 </Link>
               </div>
@@ -84,6 +95,7 @@ export default async function BlogPage() {
                   <span className="eyebrow">{post.eyebrow}</span>
                   <h3>{post.title}</h3>
                   <p>{post.copy}</p>
+                  <p className="postCard__meta">{post.readingTimeMinutes} min read</p>
                   <Link href={post.href} className="textLink">
                     Read article
                   </Link>
