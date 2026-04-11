@@ -7,9 +7,9 @@ import { getImagePresentation } from "@/lib/image-presentation";
 import { buildBlogCollectionSchema, buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Blog",
+  title: "Fence Tips & Advice Blog for Jurupa Valley Homeowners",
   description:
-    "Read Empire Fence articles on fence materials, estimate prep, repair decisions, gates, and local project planning for Jurupa Valley and nearby Inland Empire cities.",
+    "Expert fence articles from Empire Fence covering vinyl vs wood, wrought iron gates, chain link enclosures, cost estimates, repair decisions, and project planning for Jurupa Valley and the Inland Empire.",
   path: "/blog",
   image: "/client/gbp/crew-on-site.jpg",
   keywords: [
@@ -17,6 +17,7 @@ export const metadata = buildPageMetadata({
     "fence estimate advice",
     "vinyl vs wood fence",
     "repair or replace fence",
+    "Inland Empire fence tips",
   ],
 });
 
@@ -37,9 +38,9 @@ export default async function BlogPage() {
   }));
   const blogSchema = buildBlogCollectionSchema(posts);
   const pageSchema = buildWebPageSchema({
-    title: "Blog",
+    title: "Fence Tips & Advice Blog for Jurupa Valley Homeowners",
     description:
-      "Read Empire Fence articles on fence materials, estimate prep, repair decisions, gates, and project planning for Jurupa Valley and nearby Inland Empire cities.",
+      "Read Empire Fence articles on fence materials, estimate prep, repair decisions, gates, and project planning for Jurupa Valley and the Inland Empire.",
     path: "/blog",
     image: "/client/gbp/crew-on-site.jpg",
     type: "CollectionPage",
@@ -50,8 +51,8 @@ export default async function BlogPage() {
       <PageHero
         variant="blog"
         eyebrow="Our blog"
-        title="Fence Tips & Advice"
-        intro="Learn about fence materials, installation tips, and how to plan your next fencing project."
+        title="Fence Tips & Advice for Jurupa Valley Homeowners"
+        intro="Expert guidance on fence materials, installation planning, repair decisions, and project budgeting for Jurupa Valley and the Inland Empire."
         image="/client/gbp/crew-on-site.jpg"
         primaryAction={{ href: "/contact-us", label: "Get free quote" }}
         secondaryAction={{ href: "/services", label: "Services" }}
