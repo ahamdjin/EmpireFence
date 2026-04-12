@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { getImagePresentation } from "@/lib/image-presentation";
+import { servicePath } from "@/lib/paths";
 
 const EDITORIAL_CHIPS = {
   "vinyl-fence": ["Privacy runs", "Low upkeep"],
@@ -66,7 +67,7 @@ export function ServiceCard({ service, variant = "default", index = 0 }) {
               ))}
             </div>
           ) : null}
-          <Link href={`/${service.slug}`} className="textLink">
+          <Link href={servicePath(service.slug)} className="textLink">
             View service page
           </Link>
         </div>
@@ -97,7 +98,7 @@ export function ServiceCard({ service, variant = "default", index = 0 }) {
               ))}
             </ul>
           ) : null}
-          <Link href={`/${service.slug}`} className="button button--primary">
+          <Link href={servicePath(service.slug)} className="button button--primary">
             View service
           </Link>
         </div>
@@ -120,7 +121,7 @@ export function ServiceCard({ service, variant = "default", index = 0 }) {
         <div className="serviceTile__body">
           <span className="eyebrow">{service.data.eyebrow}</span>
           <h3>{service.data.title}</h3>
-          <Link href={`/${service.slug}`} className="textLink">
+          <Link href={servicePath(service.slug)} className="textLink">
             Explore
           </Link>
         </div>
@@ -143,7 +144,7 @@ export function ServiceCard({ service, variant = "default", index = 0 }) {
         <span className="eyebrow">{service.data.eyebrow}</span>
         <h3>{service.data.title}</h3>
         <p>{service.data.summary}</p>
-        <Link href={`/${service.slug}`} className="textLink">
+        <Link href={servicePath(service.slug)} className="textLink">
           View service
         </Link>
       </div>

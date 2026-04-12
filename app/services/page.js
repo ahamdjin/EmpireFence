@@ -4,6 +4,7 @@ import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
 import { getAllServices } from "@/lib/content";
+import { areasIndexPath } from "@/lib/paths";
 import {
   buildBreadcrumbSchema,
   buildFaqSchema,
@@ -165,7 +166,7 @@ export default async function ServicesPage() {
             <h2>Questions buyers usually ask before they choose the right service page.</h2>
             <p>Use the directory to narrow the closest service path first, then move into the exact service page, city page, gallery, or contact page with the real site details.</p>
             <div className="chipWrap">
-              <Link href="/service-areas" className="chip">
+              <Link href={areasIndexPath} className="chip">
                 Service areas
               </Link>
               <Link href="/gallery" className="chip">

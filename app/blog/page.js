@@ -4,6 +4,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { getAllPosts } from "@/lib/content";
 import { getImagePresentation } from "@/lib/image-presentation";
+import { servicesIndexPath } from "@/lib/paths";
 import { buildBlogCollectionSchema, buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
@@ -56,7 +57,7 @@ export default async function BlogPage() {
         intro="Expert guidance on fence materials, installation planning, repair decisions, and project budgeting for Jurupa Valley and the Inland Empire."
         image="/client/projects/professional-site-cleanup.jpg"
         primaryAction={{ href: "/contact-us", label: "Get free quote" }}
-        secondaryAction={{ href: "/services", label: "Services" }}
+        secondaryAction={{ href: servicesIndexPath, label: "Services" }}
         cards={featuredCards}
       />
 

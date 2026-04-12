@@ -1,5 +1,6 @@
 import { getAllPosts, getAllServices } from "@/lib/content";
 import { business, serviceAreas } from "@/lib/site";
+import { areaPath, areasIndexPath, privacyPolicyPath, servicePath, servicesIndexPath, termsPath } from "@/lib/paths";
 
 export default async function sitemap() {
   const services = await getAllServices();
@@ -7,11 +8,13 @@ export default async function sitemap() {
   const staticRoutes = [
     "",
     "/about-us",
-    "/services",
+    servicesIndexPath,
     "/gallery",
-    "/service-areas",
+    areasIndexPath,
     "/contact-us",
     "/blog",
+    privacyPolicyPath,
+    termsPath,
   ];
 
   return [
@@ -20,11 +23,11 @@ export default async function sitemap() {
       lastModified: new Date(),
     })),
     ...services.map((service) => ({
-      url: `${business.website.replace(/\/$/, "")}/${service.slug}`,
+      url: `${business.website.replace(/\/$/, "")}${servicePath(service.slug)}`,
       lastModified: new Date(),
     })),
     ...serviceAreas.map((area) => ({
-      url: `${business.website.replace(/\/$/, "")}/${area.slug}`,
+      url: `${business.website.replace(/\/$/, "")}${areaPath(area.slug)}`,
       lastModified: new Date(),
     })),
     ...posts.map((post) => ({

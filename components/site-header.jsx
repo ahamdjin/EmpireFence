@@ -5,7 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 
-import { business, navLinks, services } from "@/lib/site";
+import { areaPath, areasIndexPath, servicePath } from "@/lib/paths";
+import { business } from "@/lib/site";
 
 // Service icons mapping
 const serviceIcons = {
@@ -166,7 +167,7 @@ export function SiteHeader() {
                 {servicesList.map((service) => (
                   <Link
                     key={service.slug}
-                    href={`/${service.slug}`}
+                    href={servicePath(service.slug)}
                     className="navDropdown__item"
                     onClick={() => setOpen(false)}
                   >
@@ -182,7 +183,7 @@ export function SiteHeader() {
           </div>
 
           <Link href="/gallery" onClick={() => setOpen(false)}>Gallery</Link>
-          <Link href="/service-areas" onClick={() => setOpen(false)}>Areas</Link>
+          <Link href={areasIndexPath} onClick={() => setOpen(false)}>Areas</Link>
           <Link href="/blog" onClick={() => setOpen(false)}>Blog</Link>
           <Link href="/contact-us" onClick={() => setOpen(false)}>Contact</Link>
 

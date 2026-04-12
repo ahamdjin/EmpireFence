@@ -7,6 +7,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
 import { getAllPosts, getAllServices } from "@/lib/content";
 import { getImagePresentation } from "@/lib/image-presentation";
+import { areaPath } from "@/lib/paths";
 import {
   buildFaqSchema,
   buildPageMetadata,
@@ -142,11 +143,11 @@ export default async function HomePage() {
 
             <Reveal className="storyPanel storyPanel--image" delay={90} variant="soft">
               <Image
-                src="/client/gallery/wrought-iron-fence-gallery-2.jpg"
+                src="/client/locations/rancho-cucamonga/rancho-cucamonga-ca-wrought-iron.jpg"
                 alt="Wrought iron decorative fence detail work"
                 fill
                 sizes="(max-width: 900px) 100vw, 44vw"
-                style={getImagePresentation("/client/gallery/wrought-iron-fence-gallery-2.jpg", "story")}
+                style={getImagePresentation("/client/locations/rancho-cucamonga/rancho-cucamonga-ca-wrought-iron.jpg", "story")}
               />
             </Reveal>
 
@@ -290,7 +291,7 @@ export default async function HomePage() {
             <h2>Jurupa Valley first, with nearby Inland Empire coverage.</h2>
             <div className="chipWrap">
               {serviceAreas.map((area) => (
-                <Link key={area.slug} href={`/${area.slug}`} className="chip">
+                <Link key={area.slug} href={areaPath(area.slug)} className="chip">
                   {area.title}
                 </Link>
               ))}

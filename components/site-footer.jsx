@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { areaPath, privacyPolicyPath, termsPath } from "@/lib/paths";
 import { business, navLinks, serviceAreas, socialLinks } from "@/lib/site";
 
 export function SiteFooter() {
@@ -37,7 +38,7 @@ export function SiteFooter() {
             <span className="footerLabel">Areas</span>
             <div className="footerLinks">
               {serviceAreas.map((area) => (
-                <Link key={area.slug} href={`/${area.slug}`}>
+                <Link key={area.slug} href={areaPath(area.slug)}>
                   {area.title}
                 </Link>
               ))}
@@ -64,7 +65,11 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="siteFooter__bottom">
-          <span>Privacy fencing, frontage work, gates, and selected outdoor work.</span>
+          <span>
+            <Link href={privacyPolicyPath}>Privacy Policy</Link>
+            {" · "}
+            <Link href={termsPath}>Terms & Conditions</Link>
+          </span>
           <span>© {new Date().getFullYear()} {business.name}</span>
         </div>
       </div>
