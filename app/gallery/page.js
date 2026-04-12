@@ -6,17 +6,18 @@ import { galleryCollections } from "@/lib/site";
 import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
-const galleryHeroImage = "/client/gallery/white-vinyl-fence-gallery.jpg";
+const galleryHeroImage = "/client/locations/chino/chino-ca-fence-installation.jpg";
 
 const galleryImages = [
   { src: "/client/home/hero-fence-project-1.jpg", alt: "Empire Fence vinyl privacy fence installed beside a backyard pool" },
-  { src: "/client/locations/fontana/fontana-ca-fence-project.jpg", alt: "Empire Fence long vinyl privacy fence project in Fontana" },
-  { src: "/client/locations/riverside/riverside-ca-fence-project.jpg", alt: "Empire Fence wood fence project in Riverside" },
-  { src: "/client/gallery/chain-link-fence-gallery.jpg", alt: "Empire Fence chain link perimeter fence across a large sloped property edge" },
-  { src: "/client/gbp/vinyl-slope-boundary.jpg", alt: "Empire Fence vinyl boundary fence across a long residential slope" },
+  { src: "/client/locations/rancho-cucamonga/rancho-cucamonga-ca-wrought-iron.jpg", alt: "Empire Fence decorative wrought iron fence work in Rancho Cucamonga" },
+  { src: "/client/services/wood-fence/wood-fence-property-line.jpg", alt: "Empire Fence wood privacy fence along a residential property line" },
+  { src: "/client/services/chain-link-fence/chain-link-backyard-enclosure.jpg", alt: "Empire Fence chain link backyard enclosure with gate access" },
+  { src: "/client/locations/fontana/fontana-ca-perimeter-fence.jpg", alt: "Empire Fence long perimeter fence run in Fontana" },
   { src: "/client/gbp/security-walk-gate.jpg", alt: "Empire Fence black metal security gate detail at a residential entry" },
   { src: "/client/services/gates/double-vinyl-gates.jpg", alt: "Empire Fence double vinyl gate installation" },
-  { src: "/client/projects/completed-fence-installation.jpg", alt: "Empire Fence completed wood fence and gate installation beside a backyard pool" },
+  { src: "/client/services/patio-enclosures/driveway-patio-cover-2.jpg", alt: "Empire Fence covered patio and enclosure improvement project" },
+  { src: "/client/projects/completed-fence-installation.jpg", alt: "Empire Fence completed fence and gate installation beside a backyard pool" },
 ];
 
 export const metadata = buildPageMetadata({

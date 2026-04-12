@@ -4,7 +4,7 @@ title: Choosing the Right Fence for Your Property in Jurupa Valley
 date: 2026-03-28
 modifiedDate: 2026-04-10
 excerpt: A practical way to decide between vinyl, wood, wrought iron, chain link, and metal fencing based on privacy, curb appeal, maintenance, and how the property is actually used.
-heroImage: /client/home/hero-fence-project-2.jpg
+heroImage: /client/services/vinyl-fence/vinyl-fence-installation.jpg
 articleSection: Fence Materials
 keywords:
   - choosing the right fence

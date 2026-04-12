@@ -4,7 +4,7 @@ title: Best Front Yard Fence Options for Curb Appeal and Security
 date: 2026-04-04
 modifiedDate: 2026-04-11
 excerpt: The front-yard fence materials and layouts that work best when the property needs security, visibility, and a stronger finished look from the street.
-heroImage: /client/wrought-fence.jpg
+heroImage: /client/gallery/gallery-feature-11.jpg
 articleSection: Frontage Design
 keywords:
   - front yard fence ideas

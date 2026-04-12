@@ -4,7 +4,7 @@ order: 1
 title: Vinyl Fence Installation
 eyebrow: Clean privacy with low maintenance
 summary: Custom vinyl fence installation for privacy, curb appeal, and long-term durability without the maintenance load of traditional fence materials.
-heroImage: /client/vinyl-fence.jpg
+heroImage: /client/services/vinyl-fence/vinyl-privacy-fence-pool.jpg
 highlights:
   - Strong privacy fencing for homes and larger property edges
   - Clean look with low upkeep over time

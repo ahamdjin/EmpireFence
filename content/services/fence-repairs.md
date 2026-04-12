@@ -4,7 +4,7 @@ order: 5
 title: Fence Repairs
 eyebrow: Repair work with a clear next-step recommendation
 summary: Fence repair service for damaged, unstable, or worn fence sections, with honest guidance on whether repair or replacement makes more sense.
-heroImage: /client/gbp/screen-side-gate.jpg
+heroImage: /client/projects/fence-transformation-complete.jpg
 highlights:
   - Repair path for residential and commercial fencing
   - Direct guidance on repair versus replacement

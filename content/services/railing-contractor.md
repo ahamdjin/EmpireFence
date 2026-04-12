@@ -4,7 +4,7 @@ order: 9
 title: Railing Contractor
 eyebrow: Custom railings, repairs, and finished entry detailing
 summary: Custom railing installation and repair for residential and commercial properties that need better safety, cleaner edge definition, and a more finished look around stairs, entries, patios, and elevated sections.
-heroImage: /client/gbp/security-walk-gate.jpg
+heroImage: /client/gbp/screen-side-gate.jpg
 highlights:
   - New railing installation for stairs, entries, balconies, and exterior transitions
   - Repair support for damaged, loose, worn, or rusting railing systems

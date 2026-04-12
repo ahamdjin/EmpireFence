@@ -26,7 +26,7 @@ export const metadata = buildPageMetadata({
   description:
     "Request a free estimate or contact Empire Fence directly for fence, gate, and wall work in Jurupa Valley.",
   path: "/contact-us",
-  image: "/client/location-fontana.jpg",
+  image: "/client/about/company-work-site.jpg",
 });
 
 export default function ContactPage() {
@@ -35,7 +35,7 @@ export default function ContactPage() {
     description:
       "Request a free fence estimate, call Empire Fence directly, or send project photos for fence, gate, railing, and boundary work in Jurupa Valley and nearby Inland Empire cities.",
     path: "/contact-us",
-    image: "/client/location-fontana.jpg",
+    image: "/client/about/company-work-site.jpg",
     type: "ContactPage",
   });
   const faqSchema = buildFaqSchema(contactFaqs);
@@ -47,7 +47,7 @@ export default function ContactPage() {
         eyebrow="Contact us"
         title="Get a Free Estimate"
         intro="Call us now or fill out the form for a free fence installation quote. We serve Jurupa Valley and the entire Inland Empire."
-        image="/client/location-fontana.jpg"
+        image="/client/about/company-work-site.jpg"
         primaryAction={{ href: business.phoneHref, label: `Call ${business.phoneDisplay}` }}
         secondaryAction={{ href: "#form", label: "Send message" }}
       />

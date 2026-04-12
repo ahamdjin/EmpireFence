@@ -4,7 +4,7 @@ title: "Vinyl vs Wood Fence in Jurupa Valley: Which One Makes More Sense?"
 date: 2026-04-02
 modifiedDate: 2026-04-11
 excerpt: The practical tradeoffs between vinyl and wood fencing when the real choice is privacy, maintenance, curb appeal, and long-term ownership.
-heroImage: /client/vinyl-fence.jpg
+heroImage: /client/services/wood-fence/wood-privacy-fence-backyard.jpg
 articleSection: Fence Materials
 keywords:
   - vinyl vs wood fence
