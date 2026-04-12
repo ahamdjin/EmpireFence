@@ -45,6 +45,7 @@ Important rule:
 - Example:
   - real file: `public/client/blog/my-post/hero.jpg`
   - markdown path: `/client/blog/my-post/hero.jpg`
+- If you rename a blog post slug, also rename the image folder path so the `heroImage` path and slug stay aligned.
 
 ## 3. How to change an image on an existing page
 
