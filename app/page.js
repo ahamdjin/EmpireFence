@@ -86,12 +86,12 @@ export default async function HomePage() {
               <div className="heroStage__visual">
                 <div className="heroStage__imageWrap">
                   <Image
-                    src="/client/home/hero-fence-project-1.jpg"
-                    alt="Empire Fence vinyl privacy fence project in Jurupa Valley"
+                    src="/client/services/custom-fence/custom-fence-design-2.jpg"
+                    alt="Empire Fence custom fence project in Jurupa Valley"
                     fill
                     priority
                     sizes="(max-width: 900px) 100vw, 44vw"
-                    style={getImagePresentation("/client/home/hero-fence-project-1.jpg", "heroStage")}
+                    style={getImagePresentation("/client/services/custom-fence/custom-fence-design-2.jpg", "heroStage")}
                   />
                 </div>
 

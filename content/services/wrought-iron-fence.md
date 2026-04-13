@@ -4,7 +4,7 @@ order: 3
 title: Wrought Iron Fence Installation
 eyebrow: Decorative security with curb appeal
 summary: Custom wrought iron fence installation for homes and businesses that want stronger security, visual presence, and a refined frontage finish.
-heroImage: /client/locations/rancho-cucamonga/rancho-cucamonga-ca-wrought-iron.jpg
+heroImage: /client/services/wrought-iron-fence/wrought-iron-decorative-fence.jpg
 highlights:
   - Strong fit for front fences, gates, and visible perimeter sections
   - Adds security without losing architectural character
