@@ -143,11 +143,11 @@ export default async function HomePage() {
 
             <Reveal className="storyPanel storyPanel--image" delay={90} variant="soft">
               <Image
-                src="/client/locations/rancho-cucamonga/rancho-cucamonga-ca-wrought-iron.jpg"
+                src="/client/locations/ontario/ontario-ca-privacy-fence.jpg"
                 alt="Wrought iron decorative fence detail work"
                 fill
                 sizes="(max-width: 900px) 100vw, 44vw"
-                style={getImagePresentation("/client/locations/rancho-cucamonga/rancho-cucamonga-ca-wrought-iron.jpg", "story")}
+                style={getImagePresentation("/client/locations/ontario/ontario-ca-privacy-fence.jpg", "story")}
               />
             </Reveal>
 
@@ -173,11 +173,11 @@ export default async function HomePage() {
             <div className="servicesRail__sticky">
               <div className="servicesRail__stickyImage">
                 <Image
-                  src="/client/gbp/vinyl-slope-boundary.jpg"
+                  src="/client/gbp/vinyl-install-crew.jpg"
                   alt="Empire Fence vinyl privacy fence project with long boundary run"
                   fill
                   sizes="(max-width: 900px) 100vw, 32vw"
-                  style={getImagePresentation("/client/gbp/vinyl-slope-boundary.jpg", "railSticky")}
+                  style={getImagePresentation("/client/gbp/vinyl-install-crew.jpg", "railSticky")}
                 />
               </div>
               <div className="servicesRail__stickyCopy">

@@ -12,7 +12,7 @@ export const metadata = buildPageMetadata({
   description:
     "Expert fence articles from Empire Fence covering vinyl vs wood, wrought iron gates, chain link enclosures, cost estimates, repair decisions, and project planning for Jurupa Valley and the Inland Empire.",
   path: "/blog",
-  image: "/client/projects/professional-site-cleanup.jpg",
+  image: "/client/home/hero-fence-project-2.jpg",
   keywords: [
     "fence blog Jurupa Valley",
     "fence estimate advice",
@@ -44,7 +44,7 @@ export default async function BlogPage() {
     description:
       "Read Empire Fence articles on fence materials, estimate prep, repair decisions, gates, and project planning for Jurupa Valley and the Inland Empire.",
     path: "/blog",
-    image: "/client/projects/professional-site-cleanup.jpg",
+    image: "/client/home/hero-fence-project-2.jpg",
     type: "CollectionPage",
   });
 
@@ -55,7 +55,7 @@ export default async function BlogPage() {
         eyebrow="Our blog"
         title="Fence Tips & Advice for Jurupa Valley Homeowners"
         intro="Expert guidance on fence materials, installation planning, repair decisions, and project budgeting for Jurupa Valley and the Inland Empire."
-        image="/client/projects/professional-site-cleanup.jpg"
+        image="/client/home/hero-fence-project-2.jpg"
         primaryAction={{ href: "/contact-us", label: "Get free quote" }}
         secondaryAction={{ href: servicesIndexPath, label: "Services" }}
         cards={featuredCards}

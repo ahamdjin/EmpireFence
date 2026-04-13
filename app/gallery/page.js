@@ -6,18 +6,18 @@ import { galleryCollections } from "@/lib/site";
 import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
-const galleryHeroImage = "/client/locations/chino/chino-ca-fence-installation.jpg";
+const galleryHeroImage = "/client/gallery/gallery-feature-9.jpg";
 
 const galleryImages = [
-  { src: "/client/home/hero-fence-project-1.jpg", alt: "Empire Fence vinyl privacy fence installed beside a backyard pool" },
-  { src: "/client/locations/rancho-cucamonga/rancho-cucamonga-ca-wrought-iron.jpg", alt: "Empire Fence decorative wrought iron fence work in Rancho Cucamonga" },
-  { src: "/client/services/wood-fence/wood-fence-property-line.jpg", alt: "Empire Fence wood privacy fence along a residential property line" },
-  { src: "/client/services/chain-link-fence/chain-link-backyard-enclosure.jpg", alt: "Empire Fence chain link backyard enclosure with gate access" },
-  { src: "/client/locations/fontana/fontana-ca-perimeter-fence.jpg", alt: "Empire Fence long perimeter fence run in Fontana" },
-  { src: "/client/gbp/security-walk-gate.jpg", alt: "Empire Fence black metal security gate detail at a residential entry" },
-  { src: "/client/services/gates/double-vinyl-gates.jpg", alt: "Empire Fence double vinyl gate installation" },
-  { src: "/client/services/patio-enclosures/driveway-patio-cover-2.jpg", alt: "Empire Fence covered patio and enclosure improvement project" },
-  { src: "/client/projects/completed-fence-installation.jpg", alt: "Empire Fence completed fence and gate installation beside a backyard pool" },
+  { src: "/client/gallery/gallery-feature-9.jpg", alt: "Empire Fence gallery feature showing a clean finished fence installation" },
+  { src: "/client/gallery/gallery-feature-11.jpg", alt: "Empire Fence tall gallery feature focused on a finished fence detail" },
+  { src: "/client/gallery/gallery-feature-6.jpg", alt: "Empire Fence gallery feature with a finished residential fence run" },
+  { src: "/client/gallery/gallery-feature-12.jpg", alt: "Empire Fence portrait gallery feature from a completed project" },
+  { src: "/client/gallery/gallery-feature-7.jpg", alt: "Empire Fence gallery feature highlighting a finished property edge" },
+  { src: "/client/locations/rancho-cucamonga/rancho-cucamonga-ca-fence.jpg", alt: "Empire Fence finished fence project in Rancho Cucamonga" },
+  { src: "/client/locations/fontana/fontana-ca-security-fence.jpg", alt: "Empire Fence security-focused fence project in Fontana" },
+  { src: "/client/locations/chino/chino-backyard-fence.jpg", alt: "Empire Fence backyard fence installation in Chino" },
+  { src: "/client/gbp/entry-gate.jpg", alt: "Empire Fence entry gate detail from a completed project" },
 ];
 
 export const metadata = buildPageMetadata({
