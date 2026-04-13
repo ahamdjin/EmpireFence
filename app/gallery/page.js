@@ -6,18 +6,23 @@ import { galleryCollections } from "@/lib/site";
 import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
-const galleryHeroImage = "/client/gallery/gallery-feature-9.jpg";
+const galleryHeroImage = "/client/gallery/gallery-feature-6.jpg";
 
 const galleryImages = [
-  { src: "/client/gallery/gallery-feature-9.jpg", alt: "Empire Fence gallery feature showing a clean finished fence installation" },
-  { src: "/client/gallery/gallery-feature-11.jpg", alt: "Empire Fence tall gallery feature focused on a finished fence detail" },
-  { src: "/client/gallery/gallery-feature-6.jpg", alt: "Empire Fence gallery feature with a finished residential fence run" },
-  { src: "/client/gallery/gallery-feature-12.jpg", alt: "Empire Fence portrait gallery feature from a completed project" },
-  { src: "/client/gallery/gallery-feature-7.jpg", alt: "Empire Fence gallery feature highlighting a finished property edge" },
-  { src: "/client/locations/rancho-cucamonga/rancho-cucamonga-ca-fence.jpg", alt: "Empire Fence finished fence project in Rancho Cucamonga" },
-  { src: "/client/locations/fontana/fontana-ca-security-fence.jpg", alt: "Empire Fence security-focused fence project in Fontana" },
-  { src: "/client/locations/chino/chino-backyard-fence.jpg", alt: "Empire Fence backyard fence installation in Chino" },
-  { src: "/client/gbp/entry-gate.jpg", alt: "Empire Fence entry gate detail from a completed project" },
+  { src: "/client/gallery/gallery-feature-6.jpg", alt: "Empire Fence gallery hero featuring a finished fence project" },
+  { src: "/client/services/vinyl-fence/vinyl-privacy-fence-side-yard.jpg", alt: "Empire Fence vinyl privacy fence installation along a side yard" },
+  { src: "/client/services/wood-fence/wood-fence-natural-finish.jpg", alt: "Empire Fence wood fence installation with a natural warm finish" },
+  { src: "/client/services/wrought-iron-fence/wrought-iron-decorative-fence.jpg", alt: "Empire Fence decorative wrought iron fence installation" },
+  { src: "/client/services/chain-link-fence/chain-link-security-fence.jpg", alt: "Empire Fence chain link security fence installation" },
+  { src: "/client/services/gates/double-vinyl-gates.jpg", alt: "Empire Fence double vinyl gate installation" },
+  { src: "/client/services/patio-enclosures/driveway-patio-cover-1.jpg", alt: "Empire Fence patio enclosure and covered outdoor project" },
+  { src: "/client/services/custom-fence/custom-fence-design-1.jpg", alt: "Empire Fence custom fence design project" },
+  { src: "/client/projects/fence-repair-after.jpg", alt: "Empire Fence fence repair result after cleanup and reconstruction" },
+  { src: "/client/projects/fence-damage-repair.jpg", alt: "Empire Fence damaged fence repair project in progress" },
+  { src: "/client/gbp/crew-on-site.jpg", alt: "Empire Fence crew onsite during a real fence project" },
+  { src: "/client/locations/riverside/riverside-ca-wood-fence.jpg", alt: "Empire Fence wood fence project in Riverside" },
+  { src: "/client/locations/ontario/ontario-ca-vinyl-fence.jpg", alt: "Empire Fence vinyl fence project in Ontario" },
+  { src: "/client/locations/san-bernardino/san-bernardino-ca-metal-fence.jpg", alt: "Empire Fence metal fence project in San Bernardino" },
 ];
 
 export const metadata = buildPageMetadata({

@@ -30,7 +30,7 @@ export const metadata = buildPageMetadata({
   title: "Service areas across the Inland Empire",
   description: `Empire Fence serves ${areaTitles.join(", ")} with fence installation, gate work, repairs, and exterior boundary upgrades.`,
   path: "/areas",
-  image: "/client/locations/fontana/fontana-ca-security-fence.jpg",
+  image: "/client/gbp/vinyl-slope-boundary.jpg",
   keywords: areaTitles.flatMap((title) => [
     `fence company ${title}`,
     `fence contractor ${title}`,
@@ -43,7 +43,7 @@ export default function AreasPage() {
     title: "Service areas across the Inland Empire",
     description: `Empire Fence serves ${areaTitles.join(", ")} with fence installation, gate work, repairs, and exterior boundary upgrades.`,
     path: "/areas",
-    image: "/client/locations/fontana/fontana-ca-security-fence.jpg",
+    image: "/client/gbp/vinyl-slope-boundary.jpg",
     type: "CollectionPage",
   });
 
@@ -54,7 +54,7 @@ export default function AreasPage() {
         eyebrow="Service areas"
         title="Serving the Inland Empire"
         intro="Professional fence installation throughout Jurupa Valley, Riverside, Ontario, Chino, and surrounding areas."
-        image="/client/locations/fontana/fontana-ca-security-fence.jpg"
+        image="/client/gbp/vinyl-slope-boundary.jpg"
         chips={["Jurupa Valley", "Riverside", "Ontario"]}
         primaryAction={{ href: "/contact-us", label: "Get free quote" }}
         secondaryAction={{ href: "#locations", label: "View locations" }}
