@@ -146,12 +146,18 @@ export function LocationPage({ area, services }) {
               </div>
             </Reveal>
 
-            <Reveal className="panel panel--dark locationBookingPanel" delay={90} variant="soft">
+            <Reveal className="panel locationBookingPanel" delay={90} variant="soft">
               <span className="eyebrow">Why owners call Empire Fence</span>
               <h2>What usually needs to be right before the work starts in {area.title}.</h2>
-              <p>These are the details that usually separate a clean estimate and finished install from a vague quote that misses how the property actually works.</p>
+              <div className="prose">
+                {area.whyChooseNarrative?.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                )) ?? (
+                  <p>These are the details that usually separate a clean estimate and finished install from a vague quote that misses how the property actually works.</p>
+                )}
+              </div>
               {area.trustBullets?.length ? (
-                <ul className="bulletList bulletList--light">
+                <ul className="bulletList">
                   {area.trustBullets.map((item) => (
                     <li key={item}>{item}</li>
                   ))}
@@ -191,6 +197,63 @@ export function LocationPage({ area, services }) {
                   <p>{item.copy}</p>
                 </Reveal>
               ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {area.fullServiceSections?.length ? (
+        <section className="section">
+          <div className="container">
+            <SectionHeading
+              eyebrow="Our services"
+              title={`The full service mix Empire Fence can handle in ${area.title}.`}
+              copy="These are the fence and outdoor-improvement paths most often discussed when the city page turns into a real estimate."
+            />
+            <div className="serviceGrid">
+              {area.fullServiceSections.map((item, index) => (
+                <Reveal key={item.title} className="infoCard" delay={index * 60} variant="up">
+                  <span className="eyebrow">0{index + 1}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.copy}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {area.fenceTypeSections?.length ? (
+        <section className="section section--soft">
+          <div className="container">
+            <SectionHeading
+              eyebrow="Fence types"
+              title={`Fence types Empire Fence installs in ${area.title}.`}
+              copy="The right material depends on privacy, visibility, maintenance expectations, property use, and how the finished edge should feel once the job is done."
+            />
+            <div className="serviceGrid">
+              {area.fenceTypeSections.map((item, index) => (
+                <Reveal key={item.title} className="infoCard" delay={index * 60} variant="up">
+                  <span className="eyebrow">0{index + 1}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.copy}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {area.recentProjectNote ? (
+        <section className="section">
+          <div className="container splitIntro">
+            <div>
+              <span className="eyebrow">Recent local work</span>
+              <h2>What nearby jobs usually look like in {area.title}.</h2>
+            </div>
+            <div className="prose">
+              <p>{area.recentProjectNote}</p>
+              <p>That local context matters because the right estimate usually comes from the kinds of jobs that are already common in the area, not from forcing every property into the same fence recommendation.</p>
             </div>
           </div>
         </section>
