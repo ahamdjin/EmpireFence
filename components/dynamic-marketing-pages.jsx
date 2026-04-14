@@ -133,6 +133,35 @@ export function LocationPage({ area, services }) {
         </div>
       </section>
 
+      {area.serviceNarrative?.length || area.trustBullets?.length ? (
+        <section className="section">
+          <div className="container contactUtility">
+            <Reveal className="locationQuotePanel" initiallyVisible variant="left">
+              <span className="eyebrow">Local service context</span>
+              <h2>How fence, gate, and outdoor projects usually take shape in {area.title}.</h2>
+              <div className="prose">
+                {area.serviceNarrative?.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal className="panel panel--dark locationBookingPanel" delay={90} variant="soft">
+              <span className="eyebrow">Why owners call Empire Fence</span>
+              <h2>What usually needs to be right before the work starts in {area.title}.</h2>
+              <p>These are the details that usually separate a clean estimate and finished install from a vague quote that misses how the property actually works.</p>
+              {area.trustBullets?.length ? (
+                <ul className="bulletList bulletList--light">
+                  {area.trustBullets.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
+
       <section className="section">
         <div className="container splitIntro">
           <div>
@@ -145,6 +174,27 @@ export function LocationPage({ area, services }) {
           </div>
         </div>
       </section>
+
+      {area.serviceBreakdown?.length ? (
+        <section className="section section--soft">
+          <div className="container">
+            <SectionHeading
+              eyebrow="Service breakdown"
+              title={`What Empire Fence usually ends up solving in ${area.title}.`}
+              copy="The stronger city pages make the scope clearer before the quote. They should show the kinds of installs, repairs, and access issues that actually come up on local properties."
+            />
+            <div className="serviceGrid">
+              {area.serviceBreakdown.map((item, index) => (
+                <Reveal key={item.title} className="infoCard" delay={index * 70} variant="up">
+                  <span className="eyebrow">0{index + 1}</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.copy}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
 
       <section className="section">
         <div className="container locationServiceDeck">
@@ -181,6 +231,13 @@ export function LocationPage({ area, services }) {
             <span className="eyebrow">Request a quote</span>
             <h2>Start the estimate for {area.title}.</h2>
             <p>Share the property address, photos, and whether this is privacy fencing, frontage work, gate scope, or a broader exterior upgrade.</p>
+            {area.quoteChecklist?.length ? (
+              <ul className="bulletList">
+                {area.quoteChecklist.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            ) : null}
             <LeadConnectorForm compact instance={`area-${area.slug}`} />
           </Reveal>
 
