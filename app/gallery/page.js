@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
-import { galleryGridImages, galleryHeroImage, galleryImageManifest, galleryMosaicImages } from "@/lib/gallery-image-manifest";
+import { galleryGridImages, galleryHeroImage, galleryMosaicImages } from "@/lib/gallery-image-manifest";
 import { galleryCollections } from "@/lib/site";
 import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
@@ -104,7 +104,6 @@ export default function GalleryPage() {
           ))}
         </div>
         <div className="container sectionCtaRow">
-          <p className="galleryGrid__count">Showing all {galleryImageManifest.length} project images currently organized in the gallery library.</p>
           <Link href="/contact-us" className="button button--primary">
             Start an estimate
           </Link>
