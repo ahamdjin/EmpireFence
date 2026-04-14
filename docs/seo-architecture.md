@@ -14,11 +14,11 @@ Build a local-service SEO structure that can scale cleanly across:
 - `/`
 - `/about-us`
 - `/services`
+- `/services/{service-slug}`
 - `/gallery`
-- `/service-areas`
+- `/areas`
+- `/areas/{city-slug}`
 - `/contact-us`
-- `/{service-slug}`
-- `/{city-slug}`
 - `/blog`
 - `/blog/{post-slug}`
 
@@ -29,7 +29,8 @@ Build a local-service SEO structure that can scale cleanly across:
 - default site metadata in `app/layout.js`
 - page metadata on key static routes
 - dynamic metadata in:
-  - `app/[slug]/page.js`
+  - `app/services/[slug]/page.js`
+  - `app/areas/[slug]/page.js`
   - `app/blog/[slug]/page.js`
 
 ### Structured data
@@ -83,7 +84,7 @@ Blog should support:
 
 ## Next SEO additions
 
-1. add JSON-LD helpers
-2. add sitemap + robots
-3. tighten service/city metadata copy
-4. add Open Graph image strategy per route group
+1. keep service/city metadata copy sharp as content expands
+2. keep sitemap dates tied to real content updates
+3. keep Open Graph image choices intentional by route group
+4. avoid reintroducing duplicate legacy paths without a real migration need
