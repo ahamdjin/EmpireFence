@@ -2216,6 +2216,24 @@ a.pageHero__miniCard:hover {
   box-shadow: var(--shadow-sm);
 }
 
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.galleryGrid__item {
+  margin: 0;
+}
+
+.galleryGrid__count {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  text-align: center;
+}
+
 .galleryShowcase__tile img {
   object-fit: cover;
   object-position: var(--media-object-position, 50% 50%);
@@ -3067,6 +3085,10 @@ a.pageHero__miniCard:hover {
   .locationCoverage__map iframe {
     min-height: 420px;
   }
+
+  .galleryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 920px) {
@@ -3731,6 +3753,16 @@ a.pageHero__miniCard:hover {
 
   .galleryShowcase__mosaic {
     gap: 12px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .galleryGrid__item {
+    min-height: 220px;
+    aspect-ratio: auto;
   }
 
   .aboutStage__copy,

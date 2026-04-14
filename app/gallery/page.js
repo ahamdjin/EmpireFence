@@ -2,28 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { PageHero } from "@/components/page-hero";
+import { galleryGridImages, galleryHeroImage, galleryImageManifest, galleryMosaicImages } from "@/lib/gallery-image-manifest";
 import { galleryCollections } from "@/lib/site";
 import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
-
-const galleryHeroImage = "/client/gallery/gallery-feature-6.jpg";
-
-const galleryImages = [
-  { src: "/client/gallery/gallery-feature-6.jpg", alt: "Empire Fence gallery hero featuring a finished fence project" },
-  { src: "/client/services/vinyl-fence/vinyl-privacy-fence-side-yard.jpg", alt: "Empire Fence vinyl privacy fence installation along a side yard" },
-  { src: "/client/services/wood-fence/wood-fence-natural-finish.jpg", alt: "Empire Fence wood fence installation with a natural warm finish" },
-  { src: "/client/services/wrought-iron-fence/wrought-iron-decorative-fence.jpg", alt: "Empire Fence decorative wrought iron fence installation" },
-  { src: "/client/services/chain-link-fence/chain-link-security-fence.jpg", alt: "Empire Fence chain link security fence installation" },
-  { src: "/client/services/gates/double-vinyl-gates.jpg", alt: "Empire Fence double vinyl gate installation" },
-  { src: "/client/services/patio-enclosures/driveway-patio-cover-1.jpg", alt: "Empire Fence patio enclosure and covered outdoor project" },
-  { src: "/client/services/custom-fence/custom-fence-design-1.jpg", alt: "Empire Fence custom fence design project" },
-  { src: "/client/projects/fence-repair-after.jpg", alt: "Empire Fence fence repair result after cleanup and reconstruction" },
-  { src: "/client/projects/fence-damage-repair.jpg", alt: "Empire Fence damaged fence repair project in progress" },
-  { src: "/client/gbp/crew-on-site.jpg", alt: "Empire Fence crew onsite during a real fence project" },
-  { src: "/client/locations/riverside/riverside-ca-wood-fence.jpg", alt: "Empire Fence wood fence project in Riverside" },
-  { src: "/client/locations/ontario/ontario-ca-vinyl-fence.jpg", alt: "Empire Fence vinyl fence project in Ontario" },
-  { src: "/client/locations/san-bernardino/san-bernardino-ca-metal-fence.jpg", alt: "Empire Fence metal fence project in San Bernardino" },
-];
 
 export const metadata = buildPageMetadata({
   title: "Fence Project Gallery in Jurupa Valley, CA",
@@ -58,7 +40,7 @@ export default function GalleryPage() {
       <section className="galleryShowcase">
 
         <div className="container galleryShowcase__mosaic">
-          {galleryImages.slice(0, 5).map((image, index) => (
+          {galleryMosaicImages.map((image, index) => (
             <figure
               key={image.src}
               className={`galleryShowcase__tile galleryShowcase__tile--${index === 0 ? "hero" : index === 1 ? "tall" : "default"}`}
@@ -109,7 +91,7 @@ export default function GalleryPage() {
 
       <section className="section section--soft">
         <div className="container galleryGrid">
-          {galleryImages.slice(5).map((image, index) => (
+          {galleryGridImages.map((image) => (
             <figure key={image.src} className="galleryGrid__item">
               <Image
                 src={image.src}
@@ -122,6 +104,7 @@ export default function GalleryPage() {
           ))}
         </div>
         <div className="container sectionCtaRow">
+          <p className="galleryGrid__count">Showing all {galleryImageManifest.length} project images currently organized in the gallery library.</p>
           <Link href="/contact-us" className="button button--primary">
             Start an estimate
           </Link>
