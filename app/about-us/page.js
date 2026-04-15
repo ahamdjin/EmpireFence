@@ -4,7 +4,78 @@ import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { getImagePresentation } from "@/lib/image-presentation";
 import { buildFaqSchema, buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
-import { aboutHighlights, industries } from "@/lib/site";
+import { business, industries } from "@/lib/site";
+
+const aboutStorySections = [
+  {
+    eyebrow: "Who we are",
+    title: "A fence contractor built around privacy, security, curb appeal, and dependable field execution.",
+    copy:
+      "Empire Fence works with homeowners, businesses, and property managers who need fencing that does more than mark a property line. The work has to improve security, create privacy where it matters, hold up under daily use, and still look like it belongs on the property once the install is done.",
+    image: "/client/about/company-work-site.jpg",
+  },
+  {
+    eyebrow: "Why we started",
+    title: "The company was built to fix the part customers hate most: poor communication and rushed work.",
+    copy:
+      "Too many property owners end up with weak materials, vague scope, and crews that move too fast to care about the finish. Empire Fence was built around the opposite approach: clear communication, practical recommendations, dependable workmanship, and a finished result that still looks right after the job is complete.",
+    image: "/client/about/empire-fence-team.jpg",
+  },
+];
+
+const teamRoles = [
+  {
+    title: "Estimating and scope planning",
+    copy:
+      "The first job is making the scope clearer. That means understanding the property, the material direction, the gate layout, and whether the site really needs repair, replacement, or a broader upgrade.",
+  },
+  {
+    title: "Project coordination",
+    copy:
+      "Strong projects do not come from guesswork. Scheduling, site-readiness, material expectations, and handoff between estimate and field all need to stay clean if the install is going to feel professional.",
+  },
+  {
+    title: "Field installation",
+    copy:
+      "Install quality still comes down to the people on site. Layout, transitions, finish quality, gate fit, and how the property is treated during the work all matter as much as the material itself.",
+  },
+];
+
+const credibilityPoints = [
+  {
+    title: "40 years of combined experience",
+    copy:
+      "That experience shows up in material fit, repair-versus-replacement judgment, gate planning, and the small layout decisions that make the finished fence feel cleaner.",
+  },
+  {
+    title: "Residential and commercial service",
+    copy:
+      "Empire Fence works across homes, business properties, mixed-use sites, and practical perimeter jobs that need durability, security, and more organized scope.",
+  },
+  {
+    title: "Licensed, insured, and warranty-backed",
+    copy:
+      "The work is expected to meet professional standards, local requirements, and real customer expectations. Projects are backed by a 1-year workmanship warranty.",
+  },
+];
+
+const trustReasons = [
+  {
+    title: "People trust the company because the process is direct.",
+    copy:
+      "Customers want a contractor who shows up, communicates clearly, and gives honest guidance on what the property actually needs. That trust is built before the first post goes in the ground.",
+  },
+  {
+    title: "What makes Empire Fence different is the refusal to use one-size-fits-all answers.",
+    copy:
+      "Privacy, security, curb appeal, safety, long-term durability, and budget all matter differently from one property to the next. The right solution should reflect the site, not a template.",
+  },
+  {
+    title: "The goal is to help customers make confident decisions.",
+    copy:
+      "From the estimate and material discussion through scheduling and installation, the work is meant to reduce guesswork and give the owner a fence solution that is practical, durable, and visually right for the property.",
+  },
+];
 
 const aboutFaqs = [
   {
@@ -27,7 +98,7 @@ const aboutFaqs = [
 export const metadata = buildPageMetadata({
   title: "About us",
   description:
-    "Learn how Empire Fence approaches fencing, gates, repairs, and coordinated exterior boundary work across Jurupa Valley.",
+    "Learn who Empire Fence is, why the company was built, how the team works, and what customers can expect from fence, gate, and exterior boundary projects across Jurupa Valley.",
   path: "/about-us",
   image: "/client/about/empire-fence-team.jpg",
 });
@@ -36,7 +107,7 @@ export default function AboutPage() {
   const pageSchema = buildWebPageSchema({
     title: "About us",
     description:
-      "Learn how Empire Fence approaches fence installation, gate planning, and coordinated exterior boundary work across Jurupa Valley and the Inland Empire.",
+      "Learn how Empire Fence approaches fence installation, repairs, gates, and coordinated exterior improvements across Jurupa Valley and the Inland Empire.",
     path: "/about-us",
     image: "/client/about/empire-fence-team.jpg",
     type: "AboutPage",
@@ -49,7 +120,7 @@ export default function AboutPage() {
         variant="about"
         eyebrow="About us"
         title="About Empire Fence"
-        intro="40+ years of combined experience installing quality fences throughout Jurupa Valley and the Inland Empire."
+        intro="Empire Fence serves homeowners, businesses, and property managers with fencing, gates, repairs, and coordinated outdoor improvements built around quality workmanship, honest guidance, and cleaner finished results."
         image="/client/about/empire-fence-team.jpg"
         primaryAction={{ href: "/contact-us", label: "Get free estimate" }}
         secondaryAction={{ href: "/gallery", label: "View gallery" }}
@@ -58,18 +129,19 @@ export default function AboutPage() {
       <section className="section">
         <div className="container splitIntro">
           <div>
-            <span className="eyebrow">What matters</span>
-            <h2>Clear recommendations, strong materials, and better finish quality.</h2>
+            <span className="eyebrow">Company overview</span>
+            <h2>Built to give customers a better experience when they hire a fence contractor.</h2>
           </div>
           <div className="prose">
-            <p>Fence lines, gates, wall transitions, and outdoor work are treated as one coordinated project instead of disconnected trades.</p>
+            <p>Empire Fence is not built around fast generic installs. The company exists to give property owners stronger communication, better scope guidance, dependable workmanship, and finished projects that actually hold up over time.</p>
+            <p>Fence lines, gates, transitions, and supporting outdoor details are treated as one coordinated job instead of getting split into disconnected decisions that leave the property feeling unfinished.</p>
           </div>
         </div>
       </section>
 
       <section className="section section--soft">
         <div className="container aboutEditorial">
-          {aboutHighlights.map((item, index) => (
+          {aboutStorySections.map((item, index) => (
             <article key={item.title} className={`aboutEditorial__row${index % 2 ? " is-reversed" : ""}`}>
               <div className="aboutEditorial__media">
                 <Image
@@ -91,10 +163,46 @@ export default function AboutPage() {
       </section>
 
       <section className="section">
+        <div className="container splitIntro">
+          <div>
+            <span className="eyebrow">Meet the team</span>
+            <h2>The work is only as good as the people planning it, coordinating it, and building it.</h2>
+          </div>
+          <div className="prose">
+            <p>Behind every project is a team that handles estimating, coordination, layout, installation, and the final quality standard. A good fence is not just about panels and posts. It is about the people responsible for getting the details right from the first conversation to the last walkthrough.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--soft">
+        <div className="container miniFeatureGrid">
+          {teamRoles.map((item, index) => (
+            <article key={item.title} className="miniFeatureCard">
+              <span className="eyebrow">0{index + 1}</span>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section">
         <div className="container splitCards">
-          <article className="infoCard">
+          {credibilityPoints.map((item) => (
+            <article key={item.title} className="infoCard">
+              <span className="eyebrow">Awards and credentials</span>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section--soft">
+        <div className="container contactUtility">
+          <article className="panel">
             <span className="eyebrow">Industries served</span>
-            <h3>Residential through industrial.</h3>
+            <h2>Residential through industrial.</h2>
             <div className="chipWrap">
               {industries.map((industry) => (
                 <span key={industry} className="chip chip--static">
@@ -103,36 +211,49 @@ export default function AboutPage() {
               ))}
             </div>
           </article>
-          <article className="infoCard">
-            <span className="eyebrow">Next step</span>
-            <h3>Start with a free estimate.</h3>
+          <article className="panel">
+            <span className="eyebrow">Why people trust us</span>
+            <h2>Clear communication, dependable craftsmanship, and honest recommendations.</h2>
             <p>
-              Share the scope, get a practical recommendation, and move into the right service path.
+              Customers trust Empire Fence because the process stays direct, the site gets treated with care, and the team stands behind the quality of the work.
             </p>
-            <Link href="/contact-us" className="button button--primary">
-              Contact the team
-            </Link>
+            <p>
+              The job is not finished when the fence is standing. It is finished when the scope feels right, the details hold together, and the customer feels confident in the value they received.
+            </p>
           </article>
         </div>
       </section>
 
-      <section className="section section--soft">
-        <div className="container miniFeatureGrid">
-          <article className="miniFeatureCard">
-            <span className="eyebrow">01</span>
-            <h3>Site conditions first</h3>
-            <p>Grade, access, gate swing, existing posts, and the way the property actually gets used all shape the recommendation before material gets locked in.</p>
-          </article>
-          <article className="miniFeatureCard">
-            <span className="eyebrow">02</span>
-            <h3>Better transitions</h3>
-            <p>The cleanest projects are the ones where fence panels, gates, walls, railings, and visible transitions are treated as one composition instead of separate leftovers.</p>
-          </article>
-          <article className="miniFeatureCard">
-            <span className="eyebrow">03</span>
-            <h3>Honest scope guidance</h3>
-            <p>Empire Fence is most useful when the owner needs the straight answer on material fit, repair versus replacement, and what belongs in the first phase.</p>
-          </article>
+      <section className="section">
+        <div className="container splitCards">
+          {trustReasons.map((item) => (
+            <article key={item.title} className="infoCard">
+              <span className="eyebrow">What makes us different</span>
+              <h3>{item.title}</h3>
+              <p>{item.copy}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section section--contrast">
+        <div className="container splitIntro">
+          <div>
+            <span className="eyebrow">How we help</span>
+            <h2>Helping customers move from uncertainty to the right fence decision.</h2>
+          </div>
+          <div className="prose">
+            <p>Empire Fence helps customers through the whole process: consultation, estimate, material selection, design recommendations, scheduling, and installation. The goal is to make the project easier to understand, not harder.</p>
+            <p>Whether the need is wood privacy fencing, vinyl, chain link, wrought iron, gates, repairs, or a custom installation path, the work should end in a durable result that fits the property and makes sense for the budget.</p>
+            <div className="buttonRow">
+              <Link href="/contact-us" className="button button--primary">
+                Get a free quote
+              </Link>
+              <a href={business.phoneHref} className="button button--ghost">
+                {business.phoneDisplay}
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
