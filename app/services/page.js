@@ -105,7 +105,7 @@ export default async function ServicesPage() {
         image="/client/gbp/vinyl-slope-boundary.jpg"
         chips={["Free estimates", "Residential and commercial"]}
         primaryAction={{ href: "/contact-us", label: "Get free quote" }}
-        secondaryAction={{ href: "/gallery", label: "See projects" }}
+        secondaryAction={{ href: "/gallery", label: "Browse fence project gallery" }}
       />
 
       <section className="section">
@@ -167,13 +167,13 @@ export default async function ServicesPage() {
             <p>Use the directory to narrow the closest service path first, then move into the exact service page, city page, gallery, or contact page with the real site details.</p>
             <div className="chipWrap">
               <Link href={areasIndexPath} className="chip">
-                Service areas
+                Browse fence service areas
               </Link>
               <Link href="/gallery" className="chip">
-                Project gallery
+                Open fence project gallery
               </Link>
               <Link href="/contact-us" className="chip">
-                Contact page
+                Open fence estimate contact page
               </Link>
             </div>
           </div>

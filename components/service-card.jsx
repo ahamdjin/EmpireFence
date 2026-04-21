@@ -68,7 +68,7 @@ export function ServiceCard({ service, variant = "default", index = 0 }) {
             </div>
           ) : null}
           <Link href={servicePath(service.slug)} className="textLink">
-            View service page
+            Explore {service.data.title}
           </Link>
         </div>
       </article>
@@ -99,7 +99,7 @@ export function ServiceCard({ service, variant = "default", index = 0 }) {
             </ul>
           ) : null}
           <Link href={servicePath(service.slug)} className="button button--primary">
-            View service
+            Explore {service.data.title}
           </Link>
         </div>
       </article>
@@ -122,7 +122,7 @@ export function ServiceCard({ service, variant = "default", index = 0 }) {
           <span className="eyebrow">{service.data.eyebrow}</span>
           <h3>{service.data.title}</h3>
           <Link href={servicePath(service.slug)} className="textLink">
-            Explore
+            See {service.data.title}
           </Link>
         </div>
       </article>
@@ -145,7 +145,7 @@ export function ServiceCard({ service, variant = "default", index = 0 }) {
         <h3>{service.data.title}</h3>
         <p>{service.data.summary}</p>
         <Link href={servicePath(service.slug)} className="textLink">
-          View service
+          Explore {service.data.title}
         </Link>
       </div>
     </article>

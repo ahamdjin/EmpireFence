@@ -265,10 +265,10 @@ export function LocationPage({ area, services }) {
             <SectionHeading
               eyebrow="Popular scope"
               title={`The service mix Empire Fence most often handles in ${area.title}.`}
-              copy="Use the city page to start local, then move into the exact service page if the material direction is already clear."
+              copy={`Compare the fence installation, repair, gate, and material pages most often quoted in ${area.title}, then move into the exact service once the site conditions are clear.`}
             />
             <Link href={servicesIndexPath} className="textLink">
-              Browse all services
+              Browse fence installation and gate services
             </Link>
           </Reveal>
 
@@ -315,10 +315,10 @@ export function LocationPage({ area, services }) {
             </div>
             <div className="buttonRow">
               <Link href="/contact-us" className="button button--primary">
-                Open contact page
+                Open fence estimate contact page
               </Link>
               <a href={business.phoneHref} className="button button--ghost">
-                Call the team
+                Call Empire Fence for {area.title} work
               </a>
             </div>
           </Reveal>
@@ -330,7 +330,7 @@ export function LocationPage({ area, services }) {
             <Reveal className="locationStage serviceFaqStage" initiallyVisible variant="left">
               <span className="eyebrow">Local FAQ</span>
               <h2>Questions that usually come up in {area.title} before the project gets priced.</h2>
-              <p>These are the issues that tend to shape the estimate early: material direction, gate layout, and whether the site needs repair, replacement, or a more complete upgrade.</p>
+              <p>These local questions usually decide the estimate direction early: which fence type fits the property, whether the job is repair or replacement, and how gates or access points should be handled.</p>
             </Reveal>
 
             <div className="faqCluster">
@@ -396,11 +396,11 @@ export function ServicePage({ service, services }) {
         <div className="container serviceProofBand">
           <Reveal className="serviceProofBand__intro" initiallyVisible variant="left">
             <span className="eyebrow">Service overview</span>
-            <h2>This scope gets planned around the property edge, not dropped in as a stock install.</h2>
+            <h2>{service.data.title} should be priced around the real property edge, not dropped in like a stock install.</h2>
             <p>{service.data.summary}</p>
             <div className="buttonRow">
               <Link href="/contact-us" className="button button--primary">
-                Request estimate
+                Request {service.data.title.toLowerCase()} estimate
               </Link>
               <a href={business.phoneHref} className="textLink">
                 {business.phoneDisplay}
@@ -419,13 +419,13 @@ export function ServicePage({ service, services }) {
 
             <Reveal className="serviceProofSpotlight" delay={200} variant="soft">
               <span className="eyebrow">Project fit</span>
-              <h3>Plan the fence line, gates, transitions, and finish details in the same conversation.</h3>
+              <h3>Plan {service.data.title.toLowerCase()}, gates, transitions, and finish details in one scope.</h3>
               <p>
-                This is where Empire Fence can keep the install practical, cleaner to look at, and easier to scope
-                before work starts.
+                That keeps the estimate tied to the actual fence line, gate conditions, frontage details, and site
+                constraints before the work gets priced the wrong way.
               </p>
               <Link href="/contact-us" className="textLink">
-                Open contact page
+                Open fence estimate contact page
               </Link>
             </Reveal>
           </div>
@@ -441,7 +441,7 @@ export function ServicePage({ service, services }) {
 
           <Reveal className="serviceStory__aside" delay={90} variant="up">
             <span className="eyebrow">Planning cues</span>
-            <h2>Bring the footage, site photos, and any gate or wall coordination into the estimate early.</h2>
+            <h2>Bring the footage, site photos, and any gate or wall coordination into the {service.data.title.toLowerCase()} estimate early.</h2>
             <ul className="bulletList">
               {highlights.map((item) => (
                 <li key={item}>{item}</li>
@@ -454,10 +454,10 @@ export function ServicePage({ service, services }) {
             </div>
             <div className="buttonRow">
               <Link href="/contact-us" className="button button--primary">
-                Start estimate
+                Start {service.data.title.toLowerCase()} estimate
               </Link>
               <Link href="/gallery" className="textLink">
-                Browse project gallery
+                Browse fence installation project gallery
               </Link>
             </div>
           </Reveal>
@@ -468,8 +468,8 @@ export function ServicePage({ service, services }) {
         <div className="container locationFaq">
           <Reveal className="locationStage serviceFaqStage" initiallyVisible variant="left">
             <span className="eyebrow">Service FAQ</span>
-            <h2>Questions that usually come up before this scope gets priced.</h2>
-            <p>Start with the material direction, frontage conditions, and whether gates or adjacent wall work are part of the plan.</p>
+            <h2>Questions clients ask before pricing {service.data.title.toLowerCase()}.</h2>
+            <p>Start with the material direction, site conditions, frontage details, and whether gates or adjacent wall work need to be priced in the same scope.</p>
             <div className="chipWrap">
               {highlights.map((item) => (
                 <span key={item} className="chip chip--static">
@@ -498,10 +498,10 @@ export function ServicePage({ service, services }) {
             <SectionHeading
               eyebrow="Related services"
               title="Adjacent scope around the same property edge."
-              copy="If this project needs more than one material or a cleaner transition, compare the nearby service pages next."
+              copy={`If this ${service.data.title.toLowerCase()} project also needs another material, a gate reset, or a cleaner transition, compare the closest related service pages next.`}
             />
             <Link href={servicesIndexPath} className="textLink">
-              Browse all services
+              Browse all fence and gate services
             </Link>
           </Reveal>
 
@@ -529,10 +529,10 @@ export function ServicePage({ service, services }) {
               </div>
               <div className="buttonRow">
                 <Link href="/contact-us" className="button button--primary">
-                  Open contact page
+                  Open fence estimate contact page
                 </Link>
                 <a href={business.phoneHref} className="button button--ghost">
-                  Call the team
+                  Call Empire Fence about {service.data.title.toLowerCase()}
                 </a>
               </div>
             </div>

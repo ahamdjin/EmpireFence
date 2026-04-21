@@ -57,7 +57,7 @@ export default function AreasPage() {
         image="/client/gbp/vinyl-slope-boundary.jpg"
         chips={["Jurupa Valley", "Riverside", "Ontario"]}
         primaryAction={{ href: "/contact-us", label: "Get free quote" }}
-        secondaryAction={{ href: "#locations", label: "View locations" }}
+        secondaryAction={{ href: "#locations", label: "Browse Inland Empire fence areas" }}
       />
 
       <section className="coverageAtlas" id="map">
@@ -115,7 +115,7 @@ export default function AreasPage() {
                 <h2>{area.title}</h2>
                 <p>{area.summary || area.intro}</p>
                 <Link href={areaPath(area.slug)} className="textLink">
-                  Open area page
+                  Explore fence work in {area.title}
                 </Link>
               </div>
             </article>
@@ -128,7 +128,7 @@ export default function AreasPage() {
           <div className="locationStage serviceFaqStage">
             <span className="eyebrow">Area FAQ</span>
             <h2>Questions people usually ask before they choose an area page.</h2>
-            <p>Start with the city, then move into the exact service page if you already know the material or project type.</p>
+            <p>Start with the city, then move into the exact fence installation, repair, or gate service page once the property and material direction are clear.</p>
             <div className="chipWrap">
               {serviceAreas.slice(0, 4).map((area) => (
                 <Link key={area.slug} href={areaPath(area.slug)} className="chip">
