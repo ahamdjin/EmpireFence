@@ -32,7 +32,7 @@ The better comparison is not wood versus vinyl in the abstract. It is:
 - long-run upkeep versus initial material feel
 - uniform finish versus more traditional appearance
 
-That is why [vinyl fence installation](/vinyl-fence) and [wood fence installation](/wood-fence) can both be right answers depending on the property.
+That is why [vinyl fence installation](/services/vinyl-fence) and [wood fence installation](/services/wood-fence) can both be right answers depending on the property.
 
 ## Choose vinyl when maintenance is the bigger issue
 

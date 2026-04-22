@@ -21,7 +21,7 @@ faqs:
 ---
 Empire Fence offers a **fence supply store and material guidance path** for buyers in Jurupa Valley who need more than a generic product list. Some projects begin with full installation. Others begin with a practical question: *what material should go on this property, and what parts are needed to do the job correctly?*
 
-That is where this page fits. It is built for property owners, managers, and contractors who need clearer direction on fence materials, matching sections, gate components, replacement parts, or custom repair work before the estimate turns into a full labor plan.
+That is where this service fits. It is built for property owners, managers, and contractors who need clearer direction on fence materials, matching sections, gate components, replacement parts, or custom repair work before the estimate turns into a full labor plan.
 
 The value here is not just “selling fence.” The value is helping the buyer narrow the right system, understand what works with the property, and avoid wasting time on the wrong product direction.
 
@@ -47,25 +47,25 @@ The supply side of the business supports the same core service mix that appears 
 
 Vinyl is a strong fit when the owner wants a clean look, stronger privacy, and lower maintenance over time. It is especially common on residential properties where curb appeal and long-run consistency matter.
 
-Supply questions around vinyl usually involve privacy panel styles, replacement sections, gate matching, and whether vinyl is the better long-term move compared with wood. If that is your direction, the best next page after this one is [vinyl fence installation](/vinyl-fence).
+Supply questions around vinyl usually involve privacy panel styles, replacement sections, gate matching, and whether vinyl is the better long-term move compared with wood. If that is your direction, the best next step after this one is [vinyl fence installation](/services/vinyl-fence).
 
 ### Wood fencing
 
 Wood remains a popular option for backyard privacy, property separation, and projects where a more natural look matters. On the supply side, wood questions often center on replacement boards, partial matching, and whether an older run is worth repairing or fully rebuilding.
 
-If your main concern is keeping the project visually warm and more traditional, [wood fence installation](/wood-fence) is usually the next place to continue.
+If your main concern is keeping the project visually warm and more traditional, [wood fence installation](/services/wood-fence) is usually the next place to continue.
 
 ### Chain link fencing
 
 Chain link is practical, durable, and cost-conscious when the job calls for enclosure, security, or coverage across a larger run. Supply-related chain link requests usually come from side-yard projects, commercial sites, storage areas, or repair work where function matters more than decorative finish.
 
-If the project is clearly heading in that direction, move from this page into [chain link fence installation](/chain-link-fence).
+If the project is clearly heading in that direction, move from here into [chain link fence installation](/services/chain-link-fence).
 
 ### Wrought iron and metal fencing
 
 Wrought iron and metal fencing are common when the property needs more visible strength, a decorative frontage, or a cleaner security-oriented edge. Supply guidance is especially useful here when the owner needs a custom section, a replacement panel, or a matching gate that should not look patched in.
 
-If the material direction is already clear, [wrought iron fence installation](/wrought-iron-fence) or [metal fence installation](/metal-fence) will usually carry the job further.
+If the material direction is already clear, [wrought iron fence installation](/services/wrought-iron-fence) or [metal fence installation](/services/metal-fence) will usually carry the job further.
 
 ## Residential and commercial fence supply support
 
@@ -89,7 +89,7 @@ Commercial or property-management supply requests often involve:
 
 The benefit of working with one company is that the supply conversation can move directly into the field reality of the job when it is time to quote labor.
 
-## Why this page matters before a full estimate
+## Why this matters before a full estimate
 
 Many weak estimates start because the product path is still vague.
 
@@ -107,7 +107,7 @@ That makes the final quote more accurate and makes the whole project easier to u
 
 ## Good fit for repairs, replacements, and matching work
 
-This page is especially useful when the property is in the gray zone between a simple repair and a bigger project.
+This service is especially useful when the property is in the gray zone between a simple repair and a bigger project.
 
 Typical examples include:
 
@@ -129,10 +129,10 @@ The best supply recommendation usually depends on a few practical things:
 - whether the priority is privacy, security, durability, or appearance
 - whether the project includes gates, repair work, or adjacent exterior upgrades
 
-Photos, a short description of the issue, and an address are usually enough to move the conversation forward. If the material direction is already clear, the project can quickly move into the right installation page. If it is not, this page is the right starting point.
+Photos, a short description of the issue, and an address are usually enough to move the conversation forward. If the material direction is already clear, the project can quickly move into the right installation service. If it is not, this is the right starting point.
 
-## When to start with the fence supply page
+## When to start with fence supply
 
 Start here when the main need is **material direction**, **matching guidance**, or **custom repair planning** rather than fully finished scope.
 
-If you already know the exact system you want, it is usually faster to go straight to the matching service page. But if the project is still being narrowed and the real blocker is product clarity, fence supply is a practical first step that makes the quote stronger.
+If you already know the exact system you want, it is usually faster to go straight to the matching service. But if the project is still being narrowed and the real blocker is product clarity, fence supply is a practical first step that makes the quote stronger.

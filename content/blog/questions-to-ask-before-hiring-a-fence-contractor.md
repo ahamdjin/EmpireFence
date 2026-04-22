@@ -74,7 +74,7 @@ A useful contractor should be able to explain why one material may fit your prop
 
 That may mean helping you compare:
 
-- [vinyl fence installation](/vinyl-fence) versus [wood fence installation](/wood-fence)
+- [vinyl fence installation](/services/vinyl-fence) versus [wood fence installation](/services/wood-fence)
 - chain link versus metal
 - decorative frontage versus full privacy
 - low maintenance versus stronger natural character

@@ -128,10 +128,10 @@ That is enough to get the project moving in the right direction. The estimate sh
 
 ## A practical next step
 
-If you already know the project is privacy-first, start with the [vinyl fence installation](/vinyl-fence) or [wood fence installation](/wood-fence) service page.
+If you already know the project is privacy-first, start with [vinyl fence installation](/services/vinyl-fence) or [wood fence installation](/services/wood-fence).
 
-If the frontage is the priority, move into [wrought iron fence installation](/wrought-iron-fence) or [metal fence installation](/metal-fence).
+If the frontage is the priority, move into [wrought iron fence installation](/services/wrought-iron-fence) or [metal fence installation](/services/metal-fence).
 
-If the property mainly needs enclosure and access control, the [chain link fence installation](/chain-link-fence) page is usually the cleanest place to start.
+If the property mainly needs enclosure and access control, [chain link fence installation](/services/chain-link-fence) is usually the cleanest place to start.
 
-And if you still are not sure which path fits the property best, use the [contact page](/contact-us) and send the frontage photos, site notes, and the part of the decision that still feels unclear. That usually leads to a much better recommendation than guessing from material names alone.
+And if you still are not sure which path fits the property best, [contact Empire Fence](/contact-us) and send the frontage photos, site notes, and the part of the decision that still feels unclear. That usually leads to a much better recommendation than guessing from material names alone.

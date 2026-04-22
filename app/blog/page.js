@@ -56,7 +56,7 @@ export default async function BlogPage() {
         title="Fence Tips & Advice for Jurupa Valley Homeowners"
         intro="Expert guidance on fence materials, installation planning, repair decisions, and project budgeting for Jurupa Valley and the Inland Empire."
         image="/client/home/hero-fence-project-2.jpg"
-        primaryAction={{ href: "/contact-us", label: "Get free quote" }}
+        primaryAction={{ href: "/contact-us", label: "Get a free estimate" }}
         secondaryAction={{ href: servicesIndexPath, label: "Services" }}
         cards={featuredCards}
       />

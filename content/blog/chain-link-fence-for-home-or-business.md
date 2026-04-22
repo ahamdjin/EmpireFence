@@ -33,7 +33,7 @@ Chain link continues to work because it solves several practical problems at onc
 - it supports gates well
 - it is usually more cost-conscious than heavier decorative systems
 
-Those are useful advantages on both a backyard and a business perimeter. That is why [chain link fence installation](/chain-link-fence) remains one of the most versatile service paths on the site.
+Those are useful advantages on both a backyard and a business perimeter. That is why [chain link fence installation](/services/chain-link-fence) remains one of the most versatile service paths on the site.
 
 ## On homes, chain link is usually about practical enclosure
 
@@ -109,7 +109,7 @@ Chain link can be the wrong fit when the owner actually wants:
 - decorative curb appeal
 - a more formal front-facing edge
 
-In those cases, a [vinyl fence installation](/vinyl-fence), [wood fence installation](/wood-fence), or [metal fence installation](/metal-fence) path may be more appropriate depending on the property.
+In those cases, [vinyl fence installation](/services/vinyl-fence), [wood fence installation](/services/wood-fence), or [metal fence installation](/services/metal-fence) may be more appropriate depending on the property.
 
 ## Gates matter on chain link projects too
 

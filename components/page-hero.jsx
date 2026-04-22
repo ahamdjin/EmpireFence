@@ -56,7 +56,7 @@ export function PageHero({
   const showVisualCards = cards.length && variant !== "blog";
   const resolvedPrimaryAction = primaryAction ?? {
     href: "/contact-us",
-    label: "Start estimate",
+    label: "Get a free estimate",
   };
   const resolvedSecondaryAction = secondaryAction ?? {
     href: business.phoneHref,

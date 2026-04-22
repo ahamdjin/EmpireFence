@@ -126,8 +126,8 @@ Gazebo pricing is usually driven by:
 
 Photos and a short description of how the space should be used are especially helpful on gazebo projects because function matters as much as size.
 
-## When to start with the gazebo page
+## When to start with gazebo work
 
 Start here when the project is about **making the outdoor area itself more usable** instead of only improving the perimeter.
 
-If the main need is still privacy or boundary control, another service page may be the better entry point. But if the yard already needs structure, shade, or a stronger destination area, gazebo work deserves to be part of the conversation early.
+If the main need is still privacy or boundary control, another service may be the better entry point. But if the yard already needs structure, shade, or a stronger destination area, gazebo work deserves to be part of the conversation early.

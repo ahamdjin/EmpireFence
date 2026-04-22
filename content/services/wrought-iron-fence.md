@@ -107,6 +107,6 @@ That is why frontage photos are so helpful. Seeing the site makes it much easier
 
 ## When to choose wrought iron
 
-Wrought iron is the right service page to start from when the property needs stronger security and a stronger visual finish at the same time.
+Wrought iron is the right service to start from when the property needs stronger security and a stronger visual finish at the same time.
 
 If the project is mainly about backyard privacy, a solid material may make more sense. But if the owner wants a front-facing fence, gate, or visible perimeter line that improves the look of the exterior instead of hiding it, wrought iron is one of the strongest choices available.

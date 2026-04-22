@@ -136,8 +136,8 @@ That is usually enough to move the quote from vague to practical and from generi
 
 ## Where to go next
 
-If the project is mostly about replacing an older privacy fence, it helps to compare the [vinyl fence installation](/vinyl-fence) and [wood fence installation](/wood-fence) pages before the estimate.
+If the project is mostly about replacing an older privacy fence, it helps to compare [vinyl fence installation](/services/vinyl-fence) and [wood fence installation](/services/wood-fence) before the estimate.
 
-If the site is damaged and you are not sure whether the next move is repair or replacement, start with the [fence repairs](/fence-repairs) page and include photos of the surrounding run, not just the broken section.
+If the site is damaged and you are not sure whether the next move is repair or replacement, start with [fence repairs](/services/fence-repairs) and include photos of the surrounding run, not just the broken section.
 
-Then use the [contact page](/contact-us) to send the address, photos, and any rough footage. That is still the fastest way to turn a generic quote request into a much more useful project conversation.
+Then [contact Empire Fence](/contact-us) to send the address, photos, and any rough footage. That is still the fastest way to turn a generic quote request into a much more useful project conversation.

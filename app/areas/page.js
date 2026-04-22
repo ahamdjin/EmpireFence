@@ -17,7 +17,7 @@ const serviceAreaFaqs = [
   {
     question: "Can I request a fence estimate even if I already know the city and service type?",
     answer:
-      "Yes. Use the area page to start local, then move into the exact service page or contact page with photos, rough footage, and any gate or wall notes.",
+      "Yes. Start with the city that matches the property, then move into the exact service or estimate request with photos, rough footage, and any gate or wall notes.",
   },
   {
     question: "Does Empire Fence handle both residential and commercial work in these cities?",
@@ -56,7 +56,7 @@ export default function AreasPage() {
         intro="Professional fence installation throughout Jurupa Valley, Riverside, Ontario, Chino, and surrounding areas."
         image="/client/gbp/vinyl-slope-boundary.jpg"
         chips={["Jurupa Valley", "Riverside", "Ontario"]}
-        primaryAction={{ href: "/contact-us", label: "Get free quote" }}
+        primaryAction={{ href: "/contact-us", label: "Get a free estimate" }}
         secondaryAction={{ href: "#locations", label: "Browse Inland Empire fence areas" }}
       />
 
@@ -127,8 +127,8 @@ export default function AreasPage() {
         <div className="container locationFaq">
           <div className="locationStage serviceFaqStage">
             <span className="eyebrow">Area FAQ</span>
-            <h2>Questions people usually ask before they choose an area page.</h2>
-            <p>Start with the city, then move into the exact fence installation, repair, or gate service page once the property and material direction are clear.</p>
+            <h2>Questions people usually ask before they choose the right city.</h2>
+            <p>Start with the city, then move into the exact fence installation, repair, or gate service once the property and material direction are clear.</p>
             <div className="chipWrap">
               {serviceAreas.slice(0, 4).map((area) => (
                 <Link key={area.slug} href={areaPath(area.slug)} className="chip">
@@ -159,7 +159,7 @@ export default function AreasPage() {
           </div>
           <div className="prose">
             <p>Coverage stays focused around Inland Empire cities where Empire Fence can actually support the estimate, field planning, and install timeline without stretching into weak service territory.</p>
-            <p>That matters because a strong city page should explain the type of properties and project decisions that tend to show up there, not just repeat the same copy under a different city name.</p>
+            <p>That matters because strong local coverage should explain the type of properties and project decisions that tend to show up there, not just repeat the same copy under a different city name.</p>
           </div>
         </div>
       </section>

@@ -92,7 +92,7 @@ That means the estimate should look at:
 - hinge and post requirements
 - transition points where the gate meets walls, columns, or corners
 
-This is especially important on [vinyl fence installation](/vinyl-fence), [wrought iron fence installation](/wrought-iron-fence), and [chain link fence installation](/chain-link-fence), where the gate can either complete the system or make it feel pieced together.
+This is especially important on [vinyl fence installation](/services/vinyl-fence), [wrought iron fence installation](/services/wrought-iron-fence), and [chain link fence installation](/services/chain-link-fence), where the gate can either complete the system or make it feel pieced together.
 
 ## Small mistakes at the gate create daily frustration
 

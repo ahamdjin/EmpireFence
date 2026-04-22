@@ -21,8 +21,8 @@ export function findAreaBySlug(slug) {
 
 export function buildServiceSlugMetadata(service) {
   return buildPageMetadata({
-    title: service.data.title,
-    description: service.data.summary,
+    title: service.data.seoTitle || `${service.data.title} in Jurupa Valley, CA`,
+    description: service.data.metaDescription || service.data.summary,
     path: `/services/${service.slug}`,
     image: service.data.heroImage,
     keywords: [
@@ -35,8 +35,8 @@ export function buildServiceSlugMetadata(service) {
 
 export function buildAreaSlugMetadata(area) {
   return buildPageMetadata({
-    title: area.title,
-    description: area.summary || area.intro,
+    title: area.seoTitle || `Fence and Gate Services in ${area.title}`,
+    description: area.metaDescription || area.summary || area.intro,
     path: `/areas/${area.slug}`,
     image: area.image,
     keywords: [
@@ -77,7 +77,7 @@ export function LocationPage({ area, services }) {
         intro={area.summary || `Privacy fencing, frontage work, entry gates, and supporting outdoor scope in ${area.title}.`}
         image={area.image}
         chips={["Residential frontage", "Commercial perimeter"]}
-        primaryAction={{ href: "/contact-us", label: "Start estimate" }}
+        primaryAction={{ href: "/contact-us", label: "Get a free estimate" }}
         secondaryAction={{ href: business.phoneHref, label: business.phoneDisplay }}
       />
 
@@ -98,7 +98,7 @@ export function LocationPage({ area, services }) {
             </div>
             <div className="buttonRow">
               <Link href="/contact-us" className="button button--primary">
-                Start estimate
+                Get a free estimate
               </Link>
               <a href={business.phoneHref} className="textLink">
                 {business.phoneDisplay}
@@ -119,7 +119,7 @@ export function LocationPage({ area, services }) {
           <SectionHeading
             eyebrow="Work profile"
             title={`What typically comes up in ${area.title}.`}
-            copy="The best city pages explain the actual property mix, the common fence problems, and the service choices that tend to make sense locally."
+            copy="The strongest local coverage explains the actual property mix, the common fence problems, and the service choices that tend to make sense nearby."
           />
           <div className="miniFeatureGrid">
             {area.propertyFocus.map((item, index) => (
@@ -176,7 +176,7 @@ export function LocationPage({ area, services }) {
           </div>
           <div className="prose">
             <p>{area.estimateLead}</p>
-            <p>This matters because city pages should narrow the conversation. They should help the owner understand the property conditions, common material fit, and the kinds of photos or notes that make the estimate more useful from the first review.</p>
+            <p>This matters because local coverage should narrow the conversation. It should help the owner understand the property conditions, common material fit, and the kinds of photos or notes that make the estimate more useful from the first review.</p>
           </div>
         </div>
       </section>
@@ -187,7 +187,7 @@ export function LocationPage({ area, services }) {
             <SectionHeading
               eyebrow="Service breakdown"
               title={`What Empire Fence usually ends up solving in ${area.title}.`}
-              copy="The stronger city pages make the scope clearer before the quote. They should show the kinds of installs, repairs, and access issues that actually come up on local properties."
+              copy="The stronger local sections make the scope clearer before the quote. They should show the kinds of installs, repairs, and access issues that actually come up on nearby properties."
             />
             <div className="serviceGrid">
               {area.serviceBreakdown.map((item, index) => (
@@ -208,7 +208,7 @@ export function LocationPage({ area, services }) {
             <SectionHeading
               eyebrow="Our services"
               title={`The full service mix Empire Fence can handle in ${area.title}.`}
-              copy="These are the fence and outdoor-improvement paths most often discussed when the city page turns into a real estimate."
+              copy="These are the fence and outdoor-improvement services most often discussed once a city estimate turns into a real scope."
             />
             <div className="serviceGrid">
               {area.fullServiceSections.map((item, index) => (
@@ -265,7 +265,7 @@ export function LocationPage({ area, services }) {
             <SectionHeading
               eyebrow="Popular scope"
               title={`The service mix Empire Fence most often handles in ${area.title}.`}
-              copy={`Compare the fence installation, repair, gate, and material pages most often quoted in ${area.title}, then move into the exact service once the site conditions are clear.`}
+              copy={`Compare the fence installation, repair, gate, and material options most often quoted in ${area.title}, then move into the exact service once the site conditions are clear.`}
             />
             <Link href={servicesIndexPath} className="textLink">
               Browse fence installation and gate services
@@ -307,7 +307,7 @@ export function LocationPage({ area, services }) {
           <Reveal className="contactUtility__booking locationBookingPanel" delay={90} variant="soft">
             <span className="eyebrow">Direct estimate path</span>
             <h2>Call or send the request for {area.title}.</h2>
-            <p>Use the contact page, call the team, or email the address, photos, and rough footage instead of going through a booking widget.</p>
+            <p>Call the team or email the address, photos, and rough footage so the estimate starts with the real property details.</p>
             <div className="contactStack">
               <a href={business.phoneHref}>{business.phoneDisplay}</a>
               <a href={business.emailHref}>{business.email}</a>
@@ -315,7 +315,7 @@ export function LocationPage({ area, services }) {
             </div>
             <div className="buttonRow">
               <Link href="/contact-us" className="button button--primary">
-                Open fence estimate contact page
+                Get a free estimate
               </Link>
               <a href={business.phoneHref} className="button button--ghost">
                 Call Empire Fence for {area.title} work
@@ -400,7 +400,7 @@ export function ServicePage({ service, services }) {
             <p>{service.data.summary}</p>
             <div className="buttonRow">
               <Link href="/contact-us" className="button button--primary">
-                Request {service.data.title.toLowerCase()} estimate
+                Get a free estimate
               </Link>
               <a href={business.phoneHref} className="textLink">
                 {business.phoneDisplay}
@@ -425,7 +425,7 @@ export function ServicePage({ service, services }) {
                 constraints before the work gets priced the wrong way.
               </p>
               <Link href="/contact-us" className="textLink">
-                Open fence estimate contact page
+                Get a free estimate
               </Link>
             </Reveal>
           </div>
@@ -454,7 +454,7 @@ export function ServicePage({ service, services }) {
             </div>
             <div className="buttonRow">
               <Link href="/contact-us" className="button button--primary">
-                Start {service.data.title.toLowerCase()} estimate
+                Get a free estimate
               </Link>
               <Link href="/gallery" className="textLink">
                 Browse fence installation project gallery
@@ -498,7 +498,7 @@ export function ServicePage({ service, services }) {
             <SectionHeading
               eyebrow="Related services"
               title="Adjacent scope around the same property edge."
-              copy={`If this ${service.data.title.toLowerCase()} project also needs another material, a gate reset, or a cleaner transition, compare the closest related service pages next.`}
+              copy={`If this ${service.data.title.toLowerCase()} project also needs another material, a gate reset, or a cleaner transition, compare the closest related services next.`}
             />
             <Link href={servicesIndexPath} className="textLink">
               Browse all fence and gate services
@@ -529,7 +529,7 @@ export function ServicePage({ service, services }) {
               </div>
               <div className="buttonRow">
                 <Link href="/contact-us" className="button button--primary">
-                  Open fence estimate contact page
+                  Get a free estimate
                 </Link>
                 <a href={business.phoneHref} className="button button--ghost">
                   Call Empire Fence about {service.data.title.toLowerCase()}

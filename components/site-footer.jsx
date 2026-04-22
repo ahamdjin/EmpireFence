@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { areaPath, privacyPolicyPath, termsPath } from "@/lib/paths";
-import { business, navLinks, serviceAreas, socialLinks } from "@/lib/site";
+import { business, coverageZipCodes, navLinks, serviceAreas, socialLinks } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -19,7 +19,7 @@ export function SiteFooter() {
                   {business.phoneDisplay}
                 </a>
                 <Link href="/contact-us" className="button button--primary">
-                  Start estimate
+                  Get a free estimate
                 </Link>
               </div>
             </div>
@@ -63,6 +63,12 @@ export function SiteFooter() {
               <a href={business.phoneHref}>{business.phoneDisplay}</a>
             </div>
           </div>
+        </div>
+        <div className="siteFooter__coverage">
+          <span className="footerLabel">Coverage ZIP Codes</span>
+          <p>
+            {coverageZipCodes.map((item) => `${item.city} ${item.zip}`).join(" · ")}
+          </p>
         </div>
         <div className="siteFooter__bottom">
           <span>

@@ -47,7 +47,7 @@ It is a strong fit when the owner wants:
 - a gate sequence that feels deliberate
 - something that works with columns, hardscape, or a more formal entry
 
-This is one reason [wrought iron fence installation](/wrought-iron-fence) stays such a strong fit for front-yard projects. It usually reads better from the street than a fully closed panel system.
+This is one reason [wrought iron fence installation](/services/wrought-iron-fence) stays such a strong fit for front-yard projects. It usually reads better from the street than a fully closed panel system.
 
 ## Metal fencing is strong when the owner wants a sharper edge
 
@@ -71,7 +71,7 @@ But it is also not always the best answer when the owner wants:
 - stronger architectural detail
 - a lighter visual presence from the road
 
-On some homes, vinyl looks too closed or too uniform for the front edge even if it works well on the side and rear. That is why owners comparing [vinyl fence installation](/vinyl-fence) to a more open frontage system should think beyond maintenance alone.
+On some homes, vinyl looks too closed or too uniform for the front edge even if it works well on the side and rear. That is why owners comparing [vinyl fence installation](/services/vinyl-fence) to a more open frontage system should think beyond maintenance alone.
 
 ## Height and openness matter as much as material
 

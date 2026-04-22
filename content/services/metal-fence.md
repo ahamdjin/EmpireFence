@@ -107,6 +107,6 @@ Those details matter because metal fencing can move from straightforward to high
 
 ## When to choose metal fencing
 
-Metal fencing is the right page to start from when the project needs more strength and sharper presence than a light privacy fence, but does not necessarily need the more decorative character of wrought iron.
+Metal fencing is the right service to start from when the project needs more strength and sharper presence than a light privacy fence, but does not necessarily need the more decorative character of wrought iron.
 
 It is a good option for owners who want a boundary that looks controlled, durable, and well resolved without defaulting to either a purely utility fence or a highly ornamental frontage system.

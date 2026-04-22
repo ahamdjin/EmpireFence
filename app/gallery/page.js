@@ -33,7 +33,7 @@ export default function GalleryPage() {
         title="Our Fence Installation Gallery"
         intro="Browse our portfolio of completed fence installations throughout Jurupa Valley and the Inland Empire."
         image={galleryHeroImage}
-        primaryAction={{ href: "/contact-us", label: "Get free quote" }}
+        primaryAction={{ href: "/contact-us", label: "Get a free estimate" }}
         secondaryAction={{ href: "/services", label: "Services" }}
       />
 
@@ -105,7 +105,7 @@ export default function GalleryPage() {
         </div>
         <div className="container sectionCtaRow">
           <Link href="/contact-us" className="button button--primary">
-            Start an estimate
+            Get a free estimate
           </Link>
         </div>
       </section>

@@ -21,7 +21,7 @@ faqs:
 ---
 Empire Fence provides **fence repair services** in Jurupa Valley for homeowners and businesses that need a damaged, unstable, or worn fence brought back into usable condition.
 
-Repair work is one of the most important service pages on a local fence site because many buyers are not starting from a blank slate. They already have a fence. The question is whether it can be saved, stabilized, or improved without wasting money on a temporary fix that will fail again.
+Repair work is one of the most important services on a local fence site because many buyers are not starting from a blank slate. They already have a fence. The question is whether it can be saved, stabilized, or improved without wasting money on a temporary fix that will fail again.
 
 That is why this service matters. A good repair visit should not just patch the obvious damage. It should clarify whether the fence should actually be repaired, partially rebuilt, or replaced before more money gets sunk into the wrong direction.
 
@@ -91,8 +91,8 @@ Fence repair pricing usually depends on:
 
 Photos help a lot here. A repair estimate becomes much more useful when the site review starts with the visible damage and the surrounding run, not just a close-up of one broken piece.
 
-## When to start with the repair page
+## When to start with repairs
 
-This is the right page when the owner already has a fence and the question is what to do with the condition that exists today.
+This is the right service when the owner already has a fence and the question is what to do with the condition that exists today.
 
 Sometimes the answer will be a straightforward repair. Sometimes it will be partial replacement. Sometimes the most honest next step is to stop patching and rebuild the run correctly. That is what makes this service valuable: it helps narrow the real decision before more time or money gets wasted.

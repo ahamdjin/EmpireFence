@@ -21,7 +21,7 @@ faqs:
 ---
 Empire Fence builds **patio enclosures** in Jurupa Valley for property owners who want the outdoor space to work better, not just exist beside the home. A patio can have enough square footage and still feel too exposed, too hot, too open, or too undefined to use regularly. An enclosure solves that by adding structure, coverage, and a more intentional sense of space.
 
-This page is for clients who want to transform an outdoor area into something more comfortable and more practical. It is also for people who know the patio matters to daily life, but need help choosing the right enclosure path without overcomplicating the project.
+This service is for clients who want to transform an outdoor area into something more comfortable and more practical. It is also for people who know the patio matters to daily life, but need help choosing the right enclosure path without overcomplicating the project.
 
 ## Custom patio enclosures built for homes and businesses
 
@@ -104,6 +104,6 @@ Patio enclosure pricing usually depends on:
 
 Photos and a short note about how the patio is used now are often more helpful than rough measurements alone. The more clearly the use case is understood, the more useful the estimate becomes.
 
-## When to start with the patio enclosure page
+## When to start with patio enclosures
 
-Start here when the project is really about **making the patio itself more usable**. If the main issue is still boundary control or a failing fence line, another service page may be the better first step. But if the patio needs coverage, comfort, and a more defined role on the property, this is the right place to begin.
+Start here when the project is really about **making the patio itself more usable**. If the main issue is still boundary control or a failing fence line, another service may be the better first step. But if the patio needs coverage, comfort, and a more defined role on the property, this is the right place to begin.

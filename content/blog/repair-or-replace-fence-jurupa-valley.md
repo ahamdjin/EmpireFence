@@ -68,7 +68,7 @@ The estimate should answer:
 - will the repaired section stand out?
 - is the owner fixing the problem or just delaying a better replacement path?
 
-That is often the real decision point on [fence repairs](/fence-repairs).
+That is often the real decision point on [fence repairs](/services/fence-repairs).
 
 ## Gates can make a “small repair” bigger
 
@@ -120,4 +120,4 @@ Replacement is usually cleaner when the owner already wants:
 - less future upkeep
 - a finished result instead of another temporary fix
 
-In those cases, shifting into a stronger system like [vinyl fence installation](/vinyl-fence) or a cleaner [wood fence installation](/wood-fence) path may solve more than the immediate damage.
+In those cases, shifting into a stronger system like [vinyl fence installation](/services/vinyl-fence) or a cleaner [wood fence installation](/services/wood-fence) path may solve more than the immediate damage.

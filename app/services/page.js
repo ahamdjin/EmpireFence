@@ -15,9 +15,9 @@ import {
 
 const servicesFaqs = [
   {
-    question: "Which service page should I start with if I only know the problem, not the exact material?",
+    question: "Which service should I start with if I only know the problem, not the exact material?",
     answer:
-      "Start with the closest scope. If the main issue is privacy, compare vinyl and wood first. If the frontage, gate, or visible entry matters most, move into wrought iron or metal. If the fence is failing, the repair page is usually the best first step.",
+      "Start with the closest scope. If the main issue is privacy, compare vinyl and wood first. If the frontage, gate, or visible entry matters most, move into wrought iron or metal. If the fence is failing, the repair service is usually the best first step.",
   },
   {
     question: "Can Empire Fence handle more than one service in the same estimate?",
@@ -25,9 +25,9 @@ const servicesFaqs = [
       "Yes. Real projects often combine fencing, gates, railings, repairs, patio enclosure work, or other exterior scope. The estimate can stage those pieces together so the final layout feels cleaner and more coordinated.",
   },
   {
-    question: "Are these service pages only for Jurupa Valley?",
+    question: "Are these services only for Jurupa Valley?",
     answer:
-      "No. Empire Fence is based in Jurupa Valley, but the same service pages support estimates across nearby Inland Empire cities. The service page narrows the scope first, and the city page narrows the location context second.",
+      "No. Empire Fence is based in Jurupa Valley, but the same service lineup supports estimates across nearby Inland Empire cities. Start with the service that matches the scope first, then add the city context once the location details are clear.",
   },
   {
     question: "What should I send before requesting a fence or gate estimate?",
@@ -59,7 +59,7 @@ const serviceDecisionCards = [
     eyebrow: "04",
     title: "Repairs and bundled exterior scope",
     copy:
-      "Some properties need repairs, railings, patio work, or multiple service lines handled together. The service pages should help the buyer see that the estimate can cover more than one piece.",
+      "Some properties need repairs, railings, patio work, or multiple service lines handled together. The service lineup should make it clear that one estimate can cover more than one piece.",
   },
 ];
 
@@ -83,7 +83,7 @@ export default async function ServicesPage() {
   const pageSchema = buildWebPageSchema({
     title: "Fence and Gate Services in Jurupa Valley",
     description:
-      "Compare Empire Fence service pages for vinyl, wood, wrought iron, chain link, metal fencing, repairs, railings, patio enclosures, gazebo structures, and fence supply support.",
+      "Compare Empire Fence services for vinyl, wood, wrought iron, chain link, metal fencing, repairs, railings, patio enclosures, gazebo structures, and fence supply support.",
     path: "/services",
     image: "/client/gbp/vinyl-slope-boundary.jpg",
     type: "CollectionPage",
@@ -104,19 +104,19 @@ export default async function ServicesPage() {
         intro="Compare privacy fencing, frontage upgrades, gate work, repairs, and supporting exterior services from Empire Fence across Jurupa Valley and nearby Inland Empire cities."
         image="/client/gbp/vinyl-slope-boundary.jpg"
         chips={["Free estimates", "Residential and commercial"]}
-        primaryAction={{ href: "/contact-us", label: "Get free quote" }}
+        primaryAction={{ href: "/contact-us", label: "Get a free estimate" }}
         secondaryAction={{ href: "/gallery", label: "Browse fence project gallery" }}
       />
 
       <section className="section">
         <div className="container splitIntro">
           <div>
-            <span className="eyebrow">How to use this page</span>
+            <span className="eyebrow">Start here</span>
             <h2>Start with the closest material or project type, then narrow the final scope during the estimate.</h2>
           </div>
           <div className="prose">
             <p>Some buyers arrive knowing they want vinyl privacy fencing. Others only know the fence is leaning, the gate is awkward, the frontage looks dated, or the property needs a stronger perimeter. This service directory is built to help either type of buyer move into the right conversation without guessing too early.</p>
-            <p>The reason this matters is simple: most real projects are not perfect single-service jobs. One property may need a new fence line plus a gate reset. Another may need privacy fencing in the backyard and a more open-looking front entry. The service pages should make those combinations easier to understand before the estimate starts.</p>
+            <p>The reason this matters is simple: most real projects are not perfect single-service jobs. One property may need a new fence line plus a gate reset. Another may need privacy fencing in the backyard and a more open-looking front entry. The service lineup should make those combinations easier to understand before the estimate starts.</p>
             <p>If the job also touches railings, patio enclosure work, repairs, or a visible entry sequence, the estimate can stage those pieces together and keep the final result more consistent than treating each piece like a separate afterthought.</p>
           </div>
         </div>
@@ -144,7 +144,7 @@ export default async function ServicesPage() {
         <div className="container">
           <SectionHeading
             eyebrow="How buyers usually narrow the scope"
-            title="The fastest way to choose the right service page."
+            title="The fastest way to choose the right service."
             copy="The goal is not to guess the exact product first. It is to move into the closest service path so the estimate starts with the right material, frontage condition, gate needs, and property priorities."
           />
           <div className="miniFeatureGrid">
@@ -163,8 +163,8 @@ export default async function ServicesPage() {
         <div className="container locationFaq">
           <div className="locationStage serviceFaqStage">
             <span className="eyebrow">Service FAQ</span>
-            <h2>Questions buyers usually ask before they choose the right service page.</h2>
-            <p>Use the directory to narrow the closest service path first, then move into the exact service page, city page, gallery, or contact page with the real site details.</p>
+            <h2>Questions buyers usually ask before they choose the right service.</h2>
+            <p>Use the directory to narrow the closest service path first, then move into the exact service, local coverage, gallery, or estimate request with the real site details.</p>
             <div className="chipWrap">
               <Link href={areasIndexPath} className="chip">
                 Browse fence service areas
@@ -173,7 +173,7 @@ export default async function ServicesPage() {
                 Open fence project gallery
               </Link>
               <Link href="/contact-us" className="chip">
-                Open fence estimate contact page
+                Get a free estimate
               </Link>
             </div>
           </div>

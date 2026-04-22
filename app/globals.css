@@ -2871,6 +2871,19 @@ a.pageHero__miniCard:hover {
   align-items: center;
 }
 
+.siteFooter__coverage {
+  display: grid;
+  gap: 10px;
+  padding-top: 22px;
+  color: rgba(247, 242, 234, 0.72);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.siteFooter__coverage p {
+  margin: 0;
+}
+
 .footerLabel {
   display: block;
   margin-bottom: 14px;

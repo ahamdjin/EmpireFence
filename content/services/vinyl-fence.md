@@ -101,7 +101,7 @@ That is why the estimate works best when the owner sends photos and a rough idea
 
 ## When to choose vinyl
 
-Vinyl is usually the right service page to start with when the owner wants privacy first, low maintenance second, and a cleaner finished boundary overall.
+Vinyl is usually the right service to start with when the owner wants privacy first, low maintenance second, and a cleaner finished boundary overall.
 
 If the property needs warmth, stain flexibility, or a more natural material character, wood may still be the better fit. But if the priority is durable privacy with less upkeep and a more uniform finish, vinyl is often the stronger long-term decision.
 

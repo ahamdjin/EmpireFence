@@ -43,7 +43,7 @@ export default function TermsPage() {
           <p>Visitors are responsible for providing accurate information about the property, requested service, and visible site conditions. Incomplete or inaccurate details may affect the quality, timing, or applicability of any estimate or recommendation.</p>
 
           <h2>No professional guarantee from website content</h2>
-          <p>Articles, service descriptions, FAQs, and city pages are intended for general guidance. Final recommendations depend on the actual property, field conditions, measurements, grade, access, transitions, and job scope reviewed during the estimate process.</p>
+          <p>Articles, service descriptions, FAQs, and local coverage sections are intended for general guidance. Final recommendations depend on the actual property, field conditions, measurements, grade, access, transitions, and job scope reviewed during the estimate process.</p>
 
           <h2>Third-party tools</h2>
           <p>The site may include maps, chat, embedded forms, and other third-party services. Empire Fence is not responsible for downtime, errors, or policy changes originating from those outside platforms.</p>

@@ -116,8 +116,8 @@ The biggest factors typically include:
 
 That is why site photos help. They make it easier to understand whether the job is a simple privacy run, a more custom layout, or a fence that needs to work harder visually from the street.
 
-## When wood is the right service page to start with
+## When wood is the right place to start
 
-Wood is the right page to start from when the owner wants privacy, security, and a material with more warmth and design flexibility than a stock-feeling fence system.
+Wood is the right service to start from when the owner wants privacy, security, and a material with more warmth and design flexibility than a stock-feeling fence system.
 
 If the project needs the lowest-maintenance privacy route, vinyl may still end up being the better call. But if the property would benefit from a more natural finish and a fence that can be shaped around the home more intentionally, wood is one of the strongest paths in the whole lineup.

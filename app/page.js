@@ -70,7 +70,7 @@ export default async function HomePage() {
 
                 <div className="buttonRow">
                   <Link href="/contact-us" className="button button--primary">
-                    Start a free estimate
+                    Get a free estimate
                   </Link>
                   <Link href="/gallery" className="textLink">
                     View project gallery
@@ -166,7 +166,7 @@ export default async function HomePage() {
             <SectionHeading
               eyebrow="Services"
               title="Fence, gate, wall, and outdoor scope."
-              copy="Each service keeps its own page while the brand stays visual and consistent."
+              copy="Each service keeps its own focus while the brand stays visual and consistent."
               tone="contrast"
             />
 
@@ -363,7 +363,7 @@ export default async function HomePage() {
               <h2>
                 Start with the <em>scope</em>.
               </h2>
-              <p>Use the form for project details, or open the contact page for the phone, email, and estimate request.</p>
+              <p>Use the form for project details, or reach out directly for the phone, email, and estimate request.</p>
 
               <div className="contactStack">
                 <a href={business.phoneHref}>{business.phoneDisplay}</a>
@@ -373,7 +373,7 @@ export default async function HomePage() {
 
               <div className="buttonRow">
                 <Link href="/contact-us" className="button button--primary">
-                  Open contact page
+                  Get a free estimate
                 </Link>
                 <a href={business.phoneHref} className="button button--ghost">
                   Call the team

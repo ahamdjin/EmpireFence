@@ -23,7 +23,7 @@ Empire Fence works as a **railing contractor** in Jurupa Valley for exterior pro
 
 Railing work is often smaller than a full fence install, but it is rarely minor. Railings affect how the property is used every day, and they are often placed in the exact areas people notice first. That means they need to work structurally and visually at the same time.
 
-This page is for clients who need a railing system that feels solid, fits the property, and supports the larger look of the entry or outdoor area rather than feeling like an afterthought.
+This service is for clients who need a railing system that feels solid, fits the property, and supports the larger look of the entry or outdoor area rather than feeling like an afterthought.
 
 ## Custom railing services for homes and businesses in Jurupa Valley
 
@@ -133,8 +133,8 @@ Railing pricing is usually shaped by:
 
 Because railing jobs often sit in visible and highly used areas, photos and context are especially important. The goal is not just to count footage. It is to understand how the railing should perform and how it should finish the space.
 
-## When to start with the railing page
+## When to start with railing work
 
 Start here when the weak point of the project is the **transition itself**: the entry, steps, patio edge, balcony, or walkway where people move every day.
 
-If the bigger need is still a failing fence line or new perimeter work, another page may be the better first step. But when support, safer access, and a stronger finished edge are the real priorities, railing work deserves direct attention early.
+If the bigger need is still a failing fence line or new perimeter work, another service may be the better first step. But when support, safer access, and a stronger finished edge are the real priorities, railing work deserves direct attention early.
