@@ -4,6 +4,8 @@ order: 3
 title: Wrought Iron Fence Installation
 eyebrow: Decorative security with curb appeal
 summary: Custom wrought iron fence installation for homes and businesses that want stronger security, visual presence, and a refined frontage finish.
+seoTitle: Wrought Iron Fence Installation in Jurupa Valley, CA
+metaDescription: Custom wrought iron fence installation for homes and businesses that want stronger security, visual presence, and a refined frontage finish.
 heroImage: /client/services/wrought-iron-fence/wrought-iron-decorative-fence.jpg
 highlights:
   - Strong fit for front fences, gates, and visible perimeter sections

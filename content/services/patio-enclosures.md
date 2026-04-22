@@ -4,6 +4,8 @@ order: 10
 title: Patio Enclosures
 eyebrow: Custom patio coverage, shade, and outdoor enclosure planning
 summary: Custom patio enclosure solutions for residential and commercial properties that need more shade, weather protection, privacy, and a more usable outdoor area through more of the year.
+seoTitle: Patio Enclosures in Jurupa Valley, CA
+metaDescription: Custom patio enclosure solutions for residential and commercial properties that need more shade, weather protection, privacy, and a more usable outdoor area through more of the year.
 heroImage: /client/services/patio-enclosures/driveway-patio-cover-2.jpg
 highlights:
   - Custom patio enclosures built around the property layout

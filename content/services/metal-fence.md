@@ -4,6 +4,8 @@ order: 6
 title: Metal Fence Installation
 eyebrow: Durable metal fencing for stronger boundaries
 summary: Custom metal fence installation for homes and businesses that need strength, security, and a finished look tailored to the property.
+seoTitle: Metal Fence Installation in Jurupa Valley, CA
+metaDescription: Custom metal fence installation for homes and businesses that need strength, security, and a finished look tailored to the property.
 heroImage: /client/gbp/security-walk-gate.jpg
 highlights:
   - Strong fit for residential and commercial boundaries

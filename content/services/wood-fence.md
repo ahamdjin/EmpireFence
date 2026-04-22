@@ -4,6 +4,8 @@ order: 2
 title: Wood Fence Installation
 eyebrow: Privacy, warmth, and custom character
 summary: Custom wood fence installation for residential and commercial properties that want privacy, security, and a classic material with design flexibility.
+seoTitle: Wood Fence Installation in Jurupa Valley, CA
+metaDescription: Custom wood fence installation for residential and commercial properties that want privacy, security, and a classic material with design flexibility.
 heroImage: /client/services/wood-fence/wood-fence-property-line.jpg
 highlights:
   - Strong choice for privacy fences and perimeter definition

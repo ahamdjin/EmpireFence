@@ -4,6 +4,8 @@ order: 5
 title: Fence Repairs
 eyebrow: Repair work with a clear next-step recommendation
 summary: Fence repair service for damaged, unstable, or worn fence sections, with honest guidance on whether repair or replacement makes more sense.
+seoTitle: Fence Repairs in Jurupa Valley, CA
+metaDescription: Fence repair service for damaged, unstable, or worn fence sections, with honest guidance on whether repair or replacement makes more sense.
 heroImage: /client/projects/fence-transformation-complete.jpg
 highlights:
   - Repair path for residential and commercial fencing

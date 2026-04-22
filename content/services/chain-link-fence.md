@@ -4,6 +4,8 @@ order: 4
 title: Chain Link Fence Installation
 eyebrow: Practical security and perimeter coverage
 summary: Custom chain link fence installation for residential and commercial properties that need durable boundary control, visibility, and long-term value.
+seoTitle: Chain Link Fence Installation in Jurupa Valley, CA
+metaDescription: Custom chain link fence installation for residential and commercial properties that need durable boundary control, visibility, and long-term value.
 heroImage: /client/services/chain-link-fence/chain-link-backyard-enclosure.jpg
 highlights:
   - Good fit for backyards, lot lines, and commercial perimeter work
