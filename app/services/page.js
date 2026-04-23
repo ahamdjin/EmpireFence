@@ -167,9 +167,9 @@ export default async function ServicesPage() {
       <section className="section section--soft">
         <div className="container">
           <SectionHeading
-            eyebrow="How buyers usually narrow the scope"
-            title="The fastest way to choose the right service."
-            copy="The goal is not to guess the exact product first. It is to move into the closest service path so the estimate starts with the right material, frontage condition, gate needs, and property priorities."
+            eyebrow="Choose the right service"
+            title="Start with the closest project fit."
+            copy="Begin with the service that best matches the property, material direction, gate needs, and frontage conditions."
           />
           <div className="miniFeatureGrid">
             {serviceDecisionCards.map((item) => (
@@ -187,8 +187,8 @@ export default async function ServicesPage() {
         <div className="container locationFaq">
           <div className="locationStage serviceFaqStage">
             <span className="eyebrow">Service FAQ</span>
-            <h2>Questions buyers usually ask before they choose the right service.</h2>
-            <p>Use the directory to narrow the closest service path first, then move into the exact service, local coverage, gallery, or estimate request with the real site details.</p>
+            <h2>Questions buyers ask before choosing a service.</h2>
+            <p>Use the directory to narrow the closest service path, then move into the exact service, local coverage, gallery, or estimate request.</p>
             <div className="chipWrap">
               <Link href={areasIndexPath} className="chip">
                 Browse fence service areas

@@ -7,7 +7,7 @@ seoTitle: "About Empire Fence Inc | Jurupa Valley Fence Contractor"
 metaDescription: "Learn who Empire Fence Inc is, why the company was built, how the team works, and what customers can expect from fence, gate, and exterior boundary projects across Jurupa Valley and nearby Inland Empire cities."
 heroImage: "/client/about/empire-fence-team.jpg"
 primaryActionLabel: "Get a free estimate"
-secondaryActionLabel: "View gallery"
+secondaryActionLabel: "Visit our gallery"
 faqs:
   - question: "What kind of projects does Empire Fence usually take on?"
     answer: "Empire Fence handles fence installation, gates, repairs, perimeter upgrades, railings, patio enclosures, and selected outdoor improvements for residential and commercial properties."

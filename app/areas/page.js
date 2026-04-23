@@ -208,7 +208,7 @@ export default async function AreasPage() {
         <div className="container locationFaq">
           <div className="locationStage serviceFaqStage">
             <span className="eyebrow">Area FAQ</span>
-            <h2>Questions people usually ask before they choose the right city.</h2>
+            <h2>Questions people ask before choosing a city page.</h2>
             <p>Start with the city, then move into the exact fence installation, repair, or gate service once the property and material direction are clear.</p>
             <div className="chipWrap">
               {areasWithLinks.slice(0, 6).map((area) => (

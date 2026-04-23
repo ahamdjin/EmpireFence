@@ -59,7 +59,7 @@ export default async function AboutPage() {
         intro={page.data.summary}
         image={page.data.heroImage}
         primaryAction={{ href: "/contact-us", label: page.data.primaryActionLabel || "Get a free estimate" }}
-        secondaryAction={{ href: "/gallery", label: page.data.secondaryActionLabel || "View gallery" }}
+        secondaryAction={{ href: "/gallery", label: page.data.secondaryActionLabel || "Visit our gallery" }}
       />
 
       <section className="section">
@@ -156,7 +156,7 @@ export default async function AboutPage() {
           <div className="splitIntro">
             <div>
               <span className="eyebrow">Service links</span>
-              <h2>Fence, gate, and city paths connected across the site.</h2>
+              <h2>Explore services and service areas.</h2>
             </div>
             <div className="prose">
               <p>
@@ -199,8 +199,8 @@ export default async function AboutPage() {
           <div className="container locationFaq">
             <div className="locationStage serviceFaqStage">
               <span className="eyebrow">{page.data.title}</span>
-              <h2>What people usually want to know before they reach out.</h2>
-              <p>The fastest way to get a useful estimate is to share the property address, photos, and the part of the project that still feels unclear.</p>
+              <h2>Questions people ask before reaching out.</h2>
+              <p>Share the property address, photos, and the part of the project that still feels unclear to get a more useful estimate.</p>
             </div>
 
             <div className="faqCluster">

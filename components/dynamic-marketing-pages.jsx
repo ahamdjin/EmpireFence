@@ -223,7 +223,7 @@ export function LocationPage({ area, services }) {
         <div className="container splitIntro">
           <div>
             <span className="eyebrow">Estimate strategy</span>
-            <h2>{processSection?.title || `What helps a ${area.title} estimate move faster and come back more accurately.`}</h2>
+            <h2>{processSection?.title || `What helps a ${area.title} estimate come back more accurately.`}</h2>
           </div>
           <div
             className="prose"
@@ -289,7 +289,7 @@ export function LocationPage({ area, services }) {
           <div className="container splitIntro">
             <div>
               <span className="eyebrow">Recent local work</span>
-              <h2>{coverageSection?.title || `What nearby jobs usually look like in ${area.title}.`}</h2>
+              <h2>{coverageSection?.title || `Recent fence and gate work around ${area.title}.`}</h2>
             </div>
             <div
               className="prose"
@@ -309,7 +309,7 @@ export function LocationPage({ area, services }) {
             <SectionHeading
               eyebrow="Service links"
               title={`The service mix Empire Fence most often handles in ${area.title}.`}
-              copy={`Move from ${area.title} into the closest fence, gate, repair, or outdoor scope without losing the local context.`}
+              copy={`Move from ${area.title} into the closest fence, gate, repair, or outdoor scope.`}
             />
             <Link href={servicesIndexPath} className="textLink">
               Browse fence installation and gate services
