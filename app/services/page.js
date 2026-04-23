@@ -3,8 +3,8 @@ import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { SectionHeading } from "@/components/section-heading";
 import { ServiceCard } from "@/components/service-card";
-import { getAllServices } from "@/lib/content";
-import { areasIndexPath } from "@/lib/paths";
+import { getAllAreas, getAllServices } from "@/lib/content";
+import { areaPath, areasIndexPath } from "@/lib/paths";
 import {
   buildBreadcrumbSchema,
   buildFaqSchema,
@@ -79,7 +79,7 @@ export const metadata = buildPageMetadata({
 });
 
 export default async function ServicesPage() {
-  const services = await getAllServices();
+  const [services, areas] = await Promise.all([getAllServices(), getAllAreas()]);
   const pageSchema = buildWebPageSchema({
     title: "Fence and Gate Services in Jurupa Valley",
     description:
@@ -94,6 +94,7 @@ export default async function ServicesPage() {
     { name: "Services" },
   ]);
   const faqSchema = buildFaqSchema(servicesFaqs);
+  const featuredAreas = areas.slice(0, 8);
 
   return (
     <>
@@ -137,6 +138,29 @@ export default async function ServicesPage() {
               variant={index < 6 ? "feature" : "tile"}
             />
           ))}
+        </div>
+      </section>
+
+      <section className="section section--soft">
+        <div className="container splitIntro">
+          <div>
+            <span className="eyebrow">Service and city links</span>
+            <h2>Every service should connect cleanly back to the right local coverage.</h2>
+          </div>
+          <div className="prose">
+            <p>
+              If you already know the service, move directly into that material or repair path. If you also need the
+              city context, use the local coverage links below so the estimate stays tied to the real property and not
+              just the generic service description.
+            </p>
+            <div className="chipWrap">
+              {featuredAreas.map((area) => (
+                <Link key={area.slug} href={areaPath(area.slug)} className="chip">
+                  {area.data.title}
+                </Link>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -188,6 +212,21 @@ export default async function ServicesPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container miniFeatureGrid">
+          {featuredAreas.slice(0, 6).map((area, index) => (
+            <article key={area.slug} className="miniFeatureCard">
+              <span className="eyebrow">0{index + 1}</span>
+              <h3>{area.data.title}</h3>
+              <p>{area.data.summary}</p>
+              <Link href={areaPath(area.slug)} className="textLink">
+                Explore fence work in {area.data.title}
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
 

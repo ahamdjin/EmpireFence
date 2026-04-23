@@ -1,10 +1,9 @@
-import { getAllPosts, getAllServices } from "@/lib/content";
-import { business, contentDates, serviceAreas } from "@/lib/site";
+import { getAllAreas, getAllPosts, getAllServices } from "@/lib/content";
+import { business, contentDates } from "@/lib/site";
 import { areaPath, areasIndexPath, privacyPolicyPath, servicePath, servicesIndexPath, termsPath } from "@/lib/paths";
 
 export default async function sitemap() {
-  const services = await getAllServices();
-  const posts = await getAllPosts();
+  const [services, areas, posts] = await Promise.all([getAllServices(), getAllAreas(), getAllPosts()]);
   const staticRoutes = [
     { path: "", lastModified: contentDates.site },
     { path: "/about-us", lastModified: contentDates.site },
@@ -26,9 +25,9 @@ export default async function sitemap() {
       url: `${business.website.replace(/\/$/, "")}${servicePath(service.slug)}`,
       lastModified: new Date(service.data.modifiedDate || contentDates.services),
     })),
-    ...serviceAreas.map((area) => ({
+    ...areas.map((area) => ({
       url: `${business.website.replace(/\/$/, "")}${areaPath(area.slug)}`,
-      lastModified: new Date(area.modifiedDate || contentDates.areas),
+      lastModified: new Date(area.data.modifiedDate || contentDates.areas),
     })),
     ...posts.map((post) => ({
       url: `${business.website.replace(/\/$/, "")}/blog/${post.slug}`,

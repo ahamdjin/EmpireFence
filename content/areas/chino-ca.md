@@ -7,7 +7,7 @@ summary: "Empire Fence Inc provides dependable, professional fencing services fo
 heroCopy:
   - "Empire Fence Inc provides dependable, professional fencing services for property owners looking for a fence contractor in Chino, CA. We work with residential and commercial customers who need practical solutions for privacy, security, curb appeal, and better use of outdoor space. With 40 years of experience, we understand that Chino properties are not all the same. Some need durable boundary fencing for larger lots, some need repair work that restores a fence without replacing it, and others need a new installation that makes the property look cleaner, safer, and more complete. Our team focuses on direct communication, quality workmanship, and solutions that fit the site."
 seoTitle: "Fence Contractor Chino, CA | Empire Fence Inc"
-metaDescription: "Need a trusted fence contractor in Chino, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call (951) 398- 2016 for a free quote."
+metaDescription: "Need a trusted fence contractor in Chino, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
 heroImage: "/client/services/patio-enclosures/driveway-patio-cover-2.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

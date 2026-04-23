@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { getAllAreas } from "@/lib/content";
 import { areaPath, privacyPolicyPath, termsPath } from "@/lib/paths";
-import { business, navLinks, serviceAreas, socialLinks } from "@/lib/site";
+import { business, navLinks, socialLinks } from "@/lib/site";
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  const areas = await getAllAreas();
+
   return (
     <footer className="siteFooter">
       <div className="container">
@@ -37,9 +40,9 @@ export function SiteFooter() {
           <div>
             <span className="footerLabel">Areas</span>
             <div className="footerLinks">
-              {serviceAreas.map((area) => (
+              {areas.map((area) => (
                 <Link key={area.slug} href={areaPath(area.slug)}>
-                  {area.title}
+                  {area.data.title}
                 </Link>
               ))}
             </div>
