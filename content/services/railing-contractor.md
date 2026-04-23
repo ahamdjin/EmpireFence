@@ -4,8 +4,8 @@ order: 9
 title: Railing Contractor
 eyebrow: Custom railings, repairs, and finished entry detailing
 summary: Custom railing installation and repair for residential and commercial properties that need better safety, cleaner edge definition, and a more finished look around stairs, entries, patios, and elevated sections.
-seoTitle: Railing Contractor in Jurupa Valley, CA
-metaDescription: Custom railing installation and repair for residential and commercial properties that need better safety, cleaner edge definition, and a more finished look around stairs, entries, patios, and elevated sections.
+seoTitle: Railing Contractor Jurupa Valley, CA | Custom Railings & Repair
+metaDescription: Need a railing contractor in Jurupa Valley, CA? Empire Fence Inc provides custom railings, railing installation, and railing repair for residential and commercial properties. Call +1 951-783-2965 for a free quote.
 heroImage: /client/gbp/screen-side-gate.jpg
 highlights:
   - New railing installation for stairs, entries, balconies, and exterior transitions
