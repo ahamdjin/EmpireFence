@@ -58,7 +58,7 @@ export default function PrivacyPolicyPage() {
           <p>You may request updates to inaccurate contact details or ask questions about information previously submitted through the site. If you would like Empire Fence to review or remove submitted data where reasonably possible, contact the business directly.</p>
 
           <h2>Contact</h2>
-          <p>Privacy questions can be sent to <a href="mailto:empirefenceinc@gmail.com">empirefenceinc@gmail.com</a> or raised by phone at <a href="tel:9513982016">(951) 398-2016</a>.</p>
+          <p>Privacy questions can be sent to <a href="mailto:george@empirefenceca.com">george@empirefenceca.com</a> or raised by phone at <a href="tel:+19517832965">+1 951-783-2965</a>.</p>
 
           <h2>Policy updates</h2>
           <p>This policy may be updated from time to time as the website, software stack, or business operations change. The latest version published on this page controls.</p>

@@ -58,7 +58,7 @@ export default function TermsPage() {
           <p>Empire Fence may update these terms, service descriptions, service areas, or contact workflows at any time. Continued use of the site after updates means the revised terms apply.</p>
 
           <h2>Contact</h2>
-          <p>Questions about these terms can be sent to <a href="mailto:empirefenceinc@gmail.com">empirefenceinc@gmail.com</a> or raised by phone at <a href="tel:9513982016">(951) 398-2016</a>.</p>
+          <p>Questions about these terms can be sent to <a href="mailto:george@empirefenceca.com">george@empirefenceca.com</a> or raised by phone at <a href="tel:+19517832965">+1 951-783-2965</a>.</p>
         </div>
       </article>
 

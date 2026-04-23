@@ -58,7 +58,6 @@ export function SiteFooter() {
             <span className="footerLabel">Contact</span>
             <div className="footerLinks">
               <address className="footerAddress">{business.address}</address>
-              <span>Jurupa Valley ZIP: {business.zipCode}</span>
               <span>{business.hours}</span>
               <a href={business.emailHref}>{business.email}</a>
               <a href={business.phoneHref}>{business.phoneDisplay}</a>

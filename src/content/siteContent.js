@@ -1,9 +1,9 @@
 export const business = {
   name: "Empire Fence Inc",
-  phoneDisplay: "(951) 398-2016",
-  phoneHref: "tel:9513982016",
-  email: "solution.gf@gmail.com",
-  emailHref: "mailto:solution.gf@gmail.com",
+  phoneDisplay: "+1 951-783-2965",
+  phoneHref: "tel:+19517832965",
+  email: "george@empirefenceca.com",
+  emailHref: "mailto:george@empirefenceca.com",
   location: "Jurupa Valley, CA",
   hours: "Mon-Sat / 7 AM-7 PM",
   mapHref: "https://maps.app.goo.gl/xRa6wkZfcRGdspvU6",
