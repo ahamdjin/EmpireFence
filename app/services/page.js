@@ -150,8 +150,8 @@ export default async function ServicesPage() {
           <div className="prose">
             <p>
               If you already know the service, move directly into that material or repair path. If you also need the
-              city context, use the local coverage links below so the estimate stays tied to the real property and not
-              just the generic service description.
+              city context, use the local coverage links below so the estimate stays tied to the actual property, not
+              just the service category on its own.
             </p>
             <div className="chipWrap">
               {featuredAreas.map((area) => (

@@ -162,13 +162,12 @@ export default async function AreasPage() {
               <span className="eyebrow">Area directory</span>
               <h2>Choose the city first, then move into the closest service path.</h2>
             </div>
-            <div className="prose">
-              <p>
-                These city pages now hold the real local content, exact metadata, and service interlinks. That means
-                the directory can do more than list locations. It can help the buyer move from city context into the
-                right fence, gate, repair, or outdoor-improvement conversation.
-              </p>
-            </div>
+          <div className="prose">
+            <p>
+              Each city page is built to help the buyer move from local property context into the right fence,
+              gate, repair, or outdoor-improvement scope without losing sight of how the site is actually used.
+            </p>
+          </div>
           </div>
 
           <div className="locationGrid">
@@ -240,10 +239,10 @@ export default async function AreasPage() {
               <span className="eyebrow">Popular service paths</span>
               <h2>Common service routes across the same coverage map.</h2>
             </div>
-            <div className="prose">
-              <p>
+          <div className="prose">
+            <p>
                 If you already know the material or repair direction, use these service paths directly. If not, start
-                with the city page and move into the closest service from there.
+                with the city and move into the closest service once the local property conditions are clear.
               </p>
             </div>
           </div>

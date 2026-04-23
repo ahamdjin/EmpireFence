@@ -56,6 +56,15 @@ function titleMatches(needle) {
   return (title = "") => title.toLowerCase().includes(needle.toLowerCase());
 }
 
+function firstParagraphHtml(section) {
+  if (!section?.html) {
+    return "";
+  }
+
+  const match = section.html.match(/<p>[\s\S]*?<\/p>/i);
+  return match ? match[0] : section.html;
+}
+
 export function LocationPage({ area, services }) {
   const areaHeroTitle = area.h1 || `Fence and gate work in ${area.title}`;
   const areaHeroCopy = Array.isArray(area.heroCopy) ? area.heroCopy.join(" ") : area.summary || area.intro;
@@ -72,6 +81,11 @@ export function LocationPage({ area, services }) {
     findSection(areaSections, titleMatches("Installation and Repair Process"));
   const coverageSection =
     findSection(areaSections, titleMatches("Serving")) || findSection(areaSections, titleMatches("Nearby Communities"));
+  const faqSection = findSection(areaSections, titleMatches("Frequently Asked Questions")) || findSection(areaSections, titleMatches("FAQs"));
+  const quoteSection =
+    findSection(areaSections, titleMatches("Get a Free")) ||
+    findSection(areaSections, titleMatches("Free Fence Estimate")) ||
+    areaSections.at(-1);
   const serviceCards = servicesSection?.subsections?.length ? servicesSection.subsections : area.fullServiceSections ?? [];
   const fenceTypeCards = fenceTypesSection?.subsections?.length ? fenceTypesSection.subsections : area.fenceTypeSections ?? [];
   const trustItems = area.trustBullets ?? [];
@@ -147,7 +161,7 @@ export function LocationPage({ area, services }) {
           <SectionHeading
             eyebrow="Work profile"
             title={whyChooseSection?.title || `Why ${area.title} property owners choose Empire Fence.`}
-            copy="These are the local signals and practical reasons that usually shape the project before the estimate is priced."
+            copy={null}
           />
           <div className="miniFeatureGrid">
             {(trustItems.length
@@ -228,7 +242,7 @@ export function LocationPage({ area, services }) {
             <SectionHeading
               eyebrow="Service breakdown"
               title={servicesSection?.title || `What Empire Fence usually ends up solving in ${area.title}.`}
-              copy="These are the main fence and outdoor scope categories described in the source city content."
+              copy={null}
             />
             <div className="serviceGrid">
               {serviceCards.map((item, index) => (
@@ -252,7 +266,7 @@ export function LocationPage({ area, services }) {
             <SectionHeading
               eyebrow="Fence types"
               title={fenceTypesSection?.title || `Fence types Empire Fence installs in ${area.title}.`}
-              copy="The exact source content usually explains these material choices in terms of privacy, security, upkeep, and overall fit for the property."
+              copy={null}
             />
             <div className="serviceGrid">
               {fenceTypeCards.map((item, index) => (
@@ -293,9 +307,9 @@ export function LocationPage({ area, services }) {
         <div className="container locationServiceDeck">
           <Reveal className="locationServiceDeck__lead" initiallyVisible variant="left">
             <SectionHeading
-              eyebrow="Popular scope"
+              eyebrow="Service links"
               title={`The service mix Empire Fence most often handles in ${area.title}.`}
-              copy={`Compare the fence installation, repair, gate, and material options most often quoted in ${area.title}, then move into the exact service once the site conditions are clear.`}
+              copy={`Move from ${area.title} into the closest fence, gate, repair, or outdoor scope without losing the local context.`}
             />
             <Link href={servicesIndexPath} className="textLink">
               Browse fence installation and gate services
@@ -321,9 +335,14 @@ export function LocationPage({ area, services }) {
       <section className="section section--contrast">
         <div className="container contactUtility locationUtility">
           <Reveal className="locationQuotePanel" variant="soft">
-            <span className="eyebrow">Request a quote</span>
-            <h2>Start the estimate for {area.title}.</h2>
-            <p>Share the property address, photos, and whether this is privacy fencing, frontage work, gate scope, or a broader exterior upgrade.</p>
+            <span className="eyebrow">Free estimate</span>
+            <h2>{quoteSection?.title || `Get a free fence estimate in ${area.title}`}</h2>
+            <div
+              className="prose"
+              dangerouslySetInnerHTML={{
+                __html: firstParagraphHtml(quoteSection) || `<p>Share the property address, photos, and scope details so the estimate starts with the real site conditions.</p>`,
+              }}
+            />
             {area.quoteChecklist?.length ? (
               <ul className="bulletList">
                 {area.quoteChecklist.map((item) => (
@@ -337,7 +356,6 @@ export function LocationPage({ area, services }) {
           <Reveal className="contactUtility__booking locationBookingPanel" delay={90} variant="soft">
             <span className="eyebrow">Direct estimate path</span>
             <h2>Call or send the request for {area.title}.</h2>
-            <p>Call the team or email the address, photos, and rough footage so the estimate starts with the real property details.</p>
             <div className="contactStack">
               <a href={business.phoneHref}>{business.phoneDisplay}</a>
               <a href={business.emailHref}>{business.email}</a>
@@ -359,8 +377,8 @@ export function LocationPage({ area, services }) {
           <div className="container locationFaq">
             <Reveal className="locationStage serviceFaqStage" initiallyVisible variant="left">
               <span className="eyebrow">Local FAQ</span>
-              <h2>{`Questions that usually come up in ${area.title} before the project gets priced.`}</h2>
-              <p>These are the exact city-level questions included in the source content, kept visible so the estimate direction stays tied to the real property conditions.</p>
+              <h2>{faqSection?.title || `Fence contractor FAQs for ${area.title}, CA`}</h2>
+              <p>{`These questions stay visible so the estimate direction stays tied to ${area.title} property conditions, material fit, and scope details.`}</p>
             </Reveal>
 
             <div className="faqCluster">
@@ -402,15 +420,29 @@ export function ServicePage({ service, services }) {
   const serviceHeroCopy = Array.isArray(service.data.heroCopy)
     ? service.data.heroCopy.join(" ")
     : service.data.summary;
+  const serviceSections = service.sections ?? [];
   const primaryActionLabel = service.data.primaryActionLabel || "Get a free estimate";
   const secondaryActionLabel = service.data.secondaryActionLabel || business.phoneDisplay;
-  const introSection = service.sections?.[0];
-  const quoteSection = findSection(service.sections, titleMatches("Get a Free Quote"));
-  const proofNotes = [
-    "Used to set direction before material, transitions, and field details get locked in.",
-    "Keeps the finished work feeling cleaner from the street and more resolved on the property.",
-    "Useful when this install needs stronger fit, better coordination, or a more durable outcome.",
-  ];
+  const introSection = serviceSections[0];
+  const whyChooseSection = findSection(serviceSections, titleMatches("Why "));
+  const processSection =
+    findSection(serviceSections, titleMatches("Our Process")) ||
+    findSection(serviceSections, titleMatches("How Empire Fence")) ||
+    findSection(serviceSections, titleMatches("What to Expect"));
+  const estimateSection = findSection(serviceSections, titleMatches("What affects the estimate"));
+  const relatedSection =
+    findSection(serviceSections, titleMatches("Related Services")) ||
+    findSection(serviceSections, titleMatches("Service Areas")) ||
+    findSection(serviceSections, titleMatches("Project Gallery"));
+  const faqSection =
+    findSection(serviceSections, titleMatches("Frequently Asked Questions")) ||
+    findSection(serviceSections, titleMatches("When to choose")) ||
+    findSection(serviceSections, titleMatches("FAQs"));
+  const quoteSection =
+    findSection(serviceSections, titleMatches("Get a Free Quote")) ||
+    findSection(serviceSections, titleMatches("Get a Free")) ||
+    estimateSection ||
+    processSection;
   const breadcrumbSchema = buildBreadcrumbSchema([
     { name: "Home", href: "/" },
     { name: "Services", href: servicesIndexPath },
@@ -435,7 +467,7 @@ export function ServicePage({ service, services }) {
       <section className="section section--soft">
         <div className="container serviceProofBand">
           <Reveal className="serviceProofBand__intro" initiallyVisible variant="left">
-            <span className="eyebrow">Service overview</span>
+            <span className="eyebrow">{service.data.eyebrow}</span>
             <h2>{introSection?.title || `${serviceTitle} should be priced around the real property edge, not dropped in like a stock install.`}</h2>
             <div
               className="prose"
@@ -456,12 +488,11 @@ export function ServicePage({ service, services }) {
               <Reveal key={item} className="processCard serviceProofCard" delay={index * 60} variant="up">
                 <span className="eyebrow">0{index + 1}</span>
                 <h3>{item}</h3>
-                <p>{proofNotes[index] ?? proofNotes[proofNotes.length - 1]}</p>
               </Reveal>
             ))}
 
             <Reveal className="serviceProofSpotlight" delay={200} variant="soft">
-              <span className="eyebrow">Project fit</span>
+              <span className="eyebrow">Estimate fit</span>
               <h3>{quoteSection?.title || `Plan ${serviceTitle.toLowerCase()}, gates, transitions, and finish details in one scope.`}</h3>
               <div
                 className="prose"
@@ -482,18 +513,22 @@ export function ServicePage({ service, services }) {
       <section className="section">
         <div className="container serviceStory">
           <Reveal className="serviceStory__article" initiallyVisible variant="soft">
-            <span className="eyebrow">Scope notes</span>
+            <span className="eyebrow">{service.data.eyebrow}</span>
             <div className="articleBody" dangerouslySetInnerHTML={{ __html: service.html }} />
           </Reveal>
 
           <Reveal className="serviceStory__aside" delay={90} variant="up">
-            <span className="eyebrow">Planning cues</span>
-            <h2>{quoteSection?.title || `Bring the footage, site photos, and any gate or wall coordination into the ${serviceTitle.toLowerCase()} estimate early.`}</h2>
-            <ul className="bulletList">
-              {highlights.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
+            <span className="eyebrow">Project planning</span>
+            <h2>{processSection?.title || quoteSection?.title || `Bring the footage, site photos, and any gate or wall coordination into the ${serviceTitle.toLowerCase()} estimate early.`}</h2>
+            <div
+              className="prose"
+              dangerouslySetInnerHTML={{
+                __html:
+                  processSection?.html ||
+                  whyChooseSection?.html ||
+                  `<p>${serviceHeroCopy}</p>`,
+              }}
+            />
             <div className="contactStack">
               <a href={business.phoneHref}>{business.phoneDisplay}</a>
               <a href={business.emailHref}>{business.email}</a>
@@ -515,8 +550,8 @@ export function ServicePage({ service, services }) {
         <div className="container locationFaq">
           <Reveal className="locationStage serviceFaqStage" initiallyVisible variant="left">
             <span className="eyebrow">Service FAQ</span>
-            <h2>Questions clients ask before pricing {serviceTitle.toLowerCase()}.</h2>
-            <p>Start with the material direction, site conditions, frontage details, and whether gates or adjacent wall work need to be priced in the same scope.</p>
+            <h2>{faqSection?.title || `Questions clients ask before pricing ${serviceTitle.toLowerCase()}.`}</h2>
+            <p>{estimateSection?.text || "Start with the material direction, site conditions, frontage details, and whether gates or adjacent wall work need to be priced in the same scope."}</p>
             <div className="chipWrap">
               {highlights.map((item) => (
                 <span key={item} className="chip chip--static">
@@ -544,8 +579,8 @@ export function ServicePage({ service, services }) {
           <Reveal className="servicesRail__intro" initiallyVisible variant="left">
             <SectionHeading
               eyebrow="Related services"
-              title="Adjacent scope around the same property edge."
-              copy={`If this ${serviceTitle.toLowerCase()} project also needs another material, a gate reset, or a cleaner transition, compare the closest related services next.`}
+              title={relatedSection?.title || "Adjacent scope around the same property edge."}
+              copy={relatedSection?.text || `If this ${serviceTitle.toLowerCase()} project also needs another material, a gate reset, or a cleaner transition, compare the closest related services next.`}
             />
             <Link href={servicesIndexPath} className="textLink">
               Browse all fence and gate services
@@ -567,8 +602,15 @@ export function ServicePage({ service, services }) {
           <Reveal className="ctaShell serviceCtaShell" variant="soft">
             <div className="ctaShell__copy">
               <span className="eyebrow">Free estimate</span>
-              <h2>Start this {service.data.title.toLowerCase()} project with the real site details.</h2>
-              <p>Share photos, approximate footage, and any gate or wall coordination so the estimate starts from the actual scope.</p>
+              <h2>{quoteSection?.title || `Start this ${service.data.title.toLowerCase()} project with the real site details.`}</h2>
+              <div
+                className="prose"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    firstParagraphHtml(quoteSection) ||
+                    "<p>Share photos, approximate footage, and any gate or wall coordination so the estimate starts from the actual scope.</p>",
+                }}
+              />
               <div className="contactStack">
                 <a href={business.phoneHref}>{business.phoneDisplay}</a>
                 <a href={business.emailHref}>{business.email}</a>
