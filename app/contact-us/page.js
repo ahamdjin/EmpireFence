@@ -58,8 +58,7 @@ export default function ContactPage() {
             <span className="eyebrow">Quick Request</span>
             <h2>Send us your project details</h2>
             <p>
-              Fill out the form below and we'll get back to you within 24 hours
-              with a free estimate for your fencing project.
+              Fill out the form with the property address, photos, and the basic scope. Empire Fence will review the request and follow up with the next step.
             </p>
             <div className="contactHub__socials">
               {socialLinks.map((link) => (
@@ -89,7 +88,7 @@ export default function ContactPage() {
           </article>
           <article className="contactChecklist__card">
             <span className="eyebrow">Service footprint</span>
-            <h3>Jurupa Valley first, with nearby Inland Empire coverage.</h3>
+            <h3>Jurupa Valley and nearby Inland Empire cities.</h3>
             <div className="chipWrap">
               {serviceAreas.map((area) => (
                 <span key={area.slug} className="chip chip--static">
@@ -106,17 +105,17 @@ export default function ContactPage() {
           <article className="miniFeatureCard">
             <span className="eyebrow">01</span>
             <h3>Send the real site context</h3>
-            <p>Photos, frontage views, side-yard shots, and gate locations make the estimate better because the conversation starts from the actual site conditions.</p>
+            <p>Photos, frontage views, side-yard shots, and gate locations help the estimate start from the actual site conditions.</p>
           </article>
           <article className="miniFeatureCard">
             <span className="eyebrow">02</span>
             <h3>Get the right scope first</h3>
-            <p>The goal is not just a number. It is the right material, the right gate approach, and the right call on repair versus replacement before crews are scheduled.</p>
+            <p>The estimate should confirm the material, gate approach, and whether repair or replacement makes more sense.</p>
           </article>
           <article className="miniFeatureCard">
             <span className="eyebrow">03</span>
             <h3>Move into install cleanly</h3>
-            <p>Once the site conditions and priorities are clear, Empire Fence can move from estimate into install with fewer surprises and less backtracking.</p>
+            <p>Once the site conditions and priorities are clear, Empire Fence can move from estimate into install with fewer surprises.</p>
           </article>
         </div>
       </section>
@@ -133,7 +132,7 @@ export default function ContactPage() {
           <div className="contactUtilityPanel__booking">
             <span className="eyebrow">Direct contact</span>
             <h2>Call, email, or send the estimate request.</h2>
-            <p>Skip the calendar. Use the contact form, call the team directly, or send the project photos and address by email.</p>
+            <p>Use the contact form, call the team directly, or send the project photos and address by email.</p>
             <div className="contactStack">
               <a href={business.phoneHref}>{business.phoneDisplay}</a>
               <a href={business.emailHref}>{business.email}</a>
@@ -155,8 +154,8 @@ export default function ContactPage() {
         <div className="container locationFaq">
           <div className="locationStage serviceFaqStage">
             <span className="eyebrow">Estimate FAQ</span>
-            <h2>Questions that usually come up before the first quote.</h2>
-            <p>Most projects move faster when the client shares what is already known and leaves the material or scope questions open for the estimate conversation.</p>
+            <h2>Questions that come up before the first quote.</h2>
+            <p>Most projects move faster when the client shares what is already known before the estimate.</p>
           </div>
 
           <div className="faqCluster">

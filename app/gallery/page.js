@@ -61,8 +61,8 @@ export default function GalleryPage() {
         <div className="container galleryRail">
           <div className="galleryRail__lead">
             <span className="eyebrow">Project mix</span>
-            <h2>Fence installs, gate details, and supporting exterior work that read better once the whole edge is finished.</h2>
-            <p>The strongest jobs here are not just one material. They are the ones where the frontage, transitions, and entry moments are handled as one visual scope.</p>
+            <h2>Fence installs, gate details, and related exterior work.</h2>
+            <p>The gallery shows privacy fencing, frontage work, gates, patio covers, repairs, and commercial perimeter projects.</p>
           </div>
           <div className="galleryRail__list">
             {galleryCollections.map((item) => (
@@ -80,11 +80,11 @@ export default function GalleryPage() {
         <div className="container splitIntro">
           <div>
             <span className="eyebrow">What to look for</span>
-            <h2>The useful project proof is usually in the line, the gate fit, and the transition detail.</h2>
+            <h2>Look at the line, the gate fit, and the finish.</h2>
           </div>
           <div className="prose">
-            <p>A strong fence gallery should show more than a finished panel. It should show alignment, how the material sits against grade, whether the gates feel integrated, and whether the visible parts of the property edge look resolved from the street.</p>
-            <p>That is why Empire Fence treats the gallery as proof of planning as much as proof of installation. The best projects are the ones where the edge reads cleanly from multiple angles.</p>
+            <p>Good project photos should show alignment, grade changes, gate placement, and how the finished work looks from the street or yard.</p>
+            <p>That is the difference between a fence that was installed and a project that was planned properly.</p>
           </div>
         </div>
       </section>

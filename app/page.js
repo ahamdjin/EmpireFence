@@ -124,8 +124,8 @@ export default async function HomePage() {
           <Reveal className="storyCluster__lead" initiallyVisible variant="left">
             <SectionHeading
               eyebrow="Why Empire Fence"
-              title="Built for a cleaner property edge."
-              copy="One contractor can carry the fence line, the gate, and the wall transition."
+              title="Fence, gate, and wall work planned together."
+              copy="One contractor can carry the fence line, the gate, and the transition details."
             />
             <div className="storyCluster__summary">
               <Link href="/about-us" className="textLink">
@@ -153,7 +153,7 @@ export default async function HomePage() {
 
             <Reveal className="storyPanel storyPanel--tone" delay={160} variant="right">
               <span className="eyebrow">Approach</span>
-              <h3>Straight estimate path. Cleaner finish.</h3>
+              <h3>Straight estimate path.</h3>
               <p>Clear recommendations and detail-focused field work.</p>
             </Reveal>
           </div>
@@ -166,7 +166,7 @@ export default async function HomePage() {
             <SectionHeading
               eyebrow="Services"
               title="Fence, gate, wall, and outdoor scope."
-              copy="Each service keeps its own focus while the brand stays visual and consistent."
+              copy="Compare the main service paths before the estimate."
               tone="contrast"
             />
 
@@ -210,7 +210,7 @@ export default async function HomePage() {
             <SectionHeading
               eyebrow="Selected work"
               title="Selected projects."
-              copy="Privacy runs, decorative iron, gate detail, and hardscape that support the property edge."
+              copy="Privacy runs, decorative iron, gates, and related exterior work."
             />
             <Link href="/gallery" className="textLink">
               Open the gallery
@@ -276,8 +276,8 @@ export default async function HomePage() {
               </div>
               <div className="projectSpotlight__body">
                 <span className="eyebrow">Complete frontage</span>
-                <h3>Fence frontage, gates, walls, and hardscape can stay under one cleaner scope.</h3>
-                <p>That is the difference between a one-material installer and a stronger exterior contractor.</p>
+                <h3>Fence frontage, gates, walls, and hardscape can stay under one scope.</h3>
+                <p>That keeps the project more consistent from the street to the entry.</p>
               </div>
             </Reveal>
           </div>
@@ -363,7 +363,7 @@ export default async function HomePage() {
               <h2>
                 Start with the <em>scope</em>.
               </h2>
-              <p>Use the form for project details, or reach out directly for the phone, email, and estimate request.</p>
+              <p>Use the form for project details, or contact the team directly.</p>
 
               <div className="contactStack">
                 <a href={business.phoneHref}>{business.phoneDisplay}</a>

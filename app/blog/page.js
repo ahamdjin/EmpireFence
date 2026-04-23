@@ -117,7 +117,7 @@ export default async function BlogPage() {
         <div className="container editorialLead">
           <div className="editorialLead__body editorialLead__body--intro">
             <span className="eyebrow">Article list</span>
-            <h2>Planning notes that help clients choose material, prepare estimates, and bundle scope more cleanly.</h2>
+            <h2>Articles on materials, estimates, repairs, and project planning.</h2>
           </div>
         </div>
       </section>
@@ -127,17 +127,17 @@ export default async function BlogPage() {
           <article className="miniFeatureCard">
             <span className="eyebrow">Buying topic</span>
             <h3>Material decisions</h3>
-            <p>The strongest fence articles help a buyer decide between privacy, durability, curb appeal, and long-term maintenance instead of just listing material names.</p>
+            <p>Use these articles to compare privacy, durability, appearance, and maintenance before choosing a fence material.</p>
           </article>
           <article className="miniFeatureCard">
             <span className="eyebrow">Buying topic</span>
             <h3>Estimate prep</h3>
-            <p>Good estimate guidance reduces wasted time by helping the client gather photos, footage, gate notes, and site context before the first call.</p>
+            <p>Estimate prep articles help you gather photos, footage, gate notes, and site details before the first call.</p>
           </article>
           <article className="miniFeatureCard">
             <span className="eyebrow">Buying topic</span>
             <h3>Repair versus replacement</h3>
-            <p>This is one of the most commercial questions in local fence SEO because the buyer is already close to acting and just needs the right next step.</p>
+            <p>Repair-versus-replacement articles help you decide whether the fence still has useful life or needs to be replaced.</p>
           </article>
         </div>
       </section>
