@@ -394,6 +394,45 @@ export function LocationPage({ area, services }) {
           </div>
         </section>
       ) : null}
+
+      <section className="section section--contrast">
+        <div className="container">
+          <Reveal className="ctaShell serviceCtaShell" variant="soft">
+            <div className="ctaShell__copy">
+              <span className="eyebrow">Free estimate</span>
+              <h2>{quoteSection?.title || `Get a free fence estimate in ${area.title}`}</h2>
+              <div
+                className="prose"
+                dangerouslySetInnerHTML={{
+                  __html:
+                    firstParagraphHtml(quoteSection) ||
+                    `<p>Share the property address, photos, and the part of the project that still feels unclear so the estimate starts from the real site conditions in ${area.title}.</p>`,
+                }}
+              />
+              <div className="chipWrap">
+                {localServices.slice(0, 3).map((service) => (
+                  <Link key={service.slug} href={`/services/${service.slug}`} className="chip">
+                    {service.data.title}
+                  </Link>
+                ))}
+                {nearbyAreas.slice(0, 3).map((item) => (
+                  <Link key={item.slug} href={areaPath(item.slug)} className="chip">
+                    {item.title}
+                  </Link>
+                ))}
+              </div>
+              <div className="buttonRow">
+                <Link href="/contact-us" className="button button--primary">
+                  {area.primaryActionLabel || "Get a free estimate"}
+                </Link>
+                <a href={business.phoneHref} className="button button--ghost">
+                  {area.secondaryActionLabel || business.phoneDisplay}
+                </a>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}

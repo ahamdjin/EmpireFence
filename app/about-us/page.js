@@ -3,8 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PageHero } from "@/components/page-hero";
-import { getPageBySlug } from "@/lib/content";
+import { getAllAreas, getAllServices, getPageBySlug } from "@/lib/content";
 import { getImagePresentation } from "@/lib/image-presentation";
+import { areaPath, servicePath } from "@/lib/paths";
 import { buildFaqSchema, buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 import { business } from "@/lib/site";
 
@@ -29,7 +30,11 @@ export async function generateMetadata() {
 }
 
 export default async function AboutPage() {
-  const page = await getPageBySlug("about-us");
+  const [page, services, areas] = await Promise.all([
+    getPageBySlug("about-us"),
+    getAllServices(),
+    getAllAreas(),
+  ]);
 
   if (!page) {
     notFound();
@@ -60,7 +65,7 @@ export default async function AboutPage() {
       <section className="section">
         <div className="container splitIntro">
           <div>
-            <span className="eyebrow">Company overview</span>
+            <span className="eyebrow">{page.data.title}</span>
             <h2>{whoWeAre?.title || "Who We Are"}</h2>
           </div>
           <div
@@ -84,7 +89,7 @@ export default async function AboutPage() {
                 />
               </div>
               <div className="aboutEditorial__body">
-                <span className="eyebrow">{section.title}</span>
+                <span className="eyebrow">{page.data.title}</span>
                 <h3>{section.title}</h3>
                 <div className="prose" dangerouslySetInnerHTML={{ __html: section.html }} />
               </div>
@@ -97,7 +102,7 @@ export default async function AboutPage() {
         <section className="section">
           <div className="container splitIntro">
             <div>
-              <span className="eyebrow">Awards and credentials</span>
+              <span className="eyebrow">{page.data.title}</span>
               <h2>{awards.title}</h2>
             </div>
             <div className="prose" dangerouslySetInnerHTML={{ __html: awards.html }} />
@@ -109,14 +114,14 @@ export default async function AboutPage() {
         <div className="container contactUtility">
           {trust ? (
             <article className="panel">
-              <span className="eyebrow">Why people trust us</span>
+              <span className="eyebrow">{page.data.title}</span>
               <h2>{trust.title}</h2>
               <div className="prose" dangerouslySetInnerHTML={{ __html: trust.html }} />
             </article>
           ) : null}
           {difference ? (
             <article className="panel">
-              <span className="eyebrow">What makes us different</span>
+              <span className="eyebrow">{page.data.title}</span>
               <h2>{difference.title}</h2>
               <div className="prose" dangerouslySetInnerHTML={{ __html: difference.html }} />
             </article>
@@ -128,7 +133,7 @@ export default async function AboutPage() {
         <section className="section section--contrast">
           <div className="container splitIntro">
             <div>
-              <span className="eyebrow">How we help</span>
+              <span className="eyebrow">{page.data.title}</span>
               <h2>{help.title}</h2>
             </div>
             <div className="prose">
@@ -146,11 +151,54 @@ export default async function AboutPage() {
         </section>
       ) : null}
 
+      <section className="section">
+        <div className="container">
+          <div className="splitIntro">
+            <div>
+              <span className="eyebrow">Service links</span>
+              <h2>Fence, gate, and city paths connected across the site.</h2>
+            </div>
+            <div className="prose">
+              <p>
+                If you already know the material or project type, move into the closest service. If the property
+                location matters first, move into the nearest city page and keep the estimate tied to the real site.
+              </p>
+            </div>
+          </div>
+
+          <div className="contactUtility">
+            <article className="panel">
+              <span className="eyebrow">Services</span>
+              <h2>Popular fence and gate services.</h2>
+              <div className="chipWrap">
+                {services.slice(0, 8).map((service) => (
+                  <Link key={service.slug} href={servicePath(service.slug)} className="chip">
+                    {service.data.title}
+                  </Link>
+                ))}
+              </div>
+            </article>
+
+            <article className="panel">
+              <span className="eyebrow">Cities</span>
+              <h2>Coverage across the Inland Empire.</h2>
+              <div className="chipWrap">
+                {areas.slice(0, 8).map((area) => (
+                  <Link key={area.slug} href={areaPath(area.slug)} className="chip">
+                    {area.data.title}
+                  </Link>
+                ))}
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
       {(page.data.faqs || []).length ? (
         <section className="section">
           <div className="container locationFaq">
             <div className="locationStage serviceFaqStage">
-              <span className="eyebrow">Company FAQ</span>
+              <span className="eyebrow">{page.data.title}</span>
               <h2>What people usually want to know before they reach out.</h2>
               <p>The fastest way to get a useful estimate is to share the property address, photos, and the part of the project that still feels unclear.</p>
             </div>
@@ -168,6 +216,34 @@ export default async function AboutPage() {
           </div>
         </section>
       ) : null}
+
+      <section className="section section--contrast">
+        <div className="container">
+          <div className="ctaShell serviceCtaShell">
+            <div className="ctaShell__copy">
+              <span className="eyebrow">Free estimate</span>
+              <h2>{page.data.primaryActionLabel === "Get a free estimate" ? "Start with a free estimate from Empire Fence." : page.data.primaryActionLabel}</h2>
+              <p>
+                Share the property address, photos, and the part of the project that still feels unclear so the team
+                can point you toward the right service and city path from the start.
+              </p>
+              <div className="contactStack">
+                <a href={business.phoneHref}>{business.phoneDisplay}</a>
+                <a href={business.emailHref}>{business.email}</a>
+                <p>{business.city}</p>
+              </div>
+              <div className="buttonRow">
+                <Link href="/contact-us" className="button button--primary">
+                  {page.data.primaryActionLabel || "Get a free estimate"}
+                </Link>
+                <Link href="/services" className="button button--ghost">
+                  Browse fence and gate services
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <script
         type="application/ld+json"
