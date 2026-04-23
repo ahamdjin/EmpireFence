@@ -22,18 +22,18 @@ const contactFaqs = [
 ];
 
 export const metadata = buildPageMetadata({
-  title: "Contact us",
+  title: "Get a Free Fence Estimate | Empire Fence Inc",
   description:
-    "Request a free estimate or contact Empire Fence directly for fence, gate, and wall work in Jurupa Valley.",
+    "Request a free fence estimate from Empire Fence Inc for fence installation, gate work, repairs, railings, and outdoor boundary projects in Jurupa Valley and nearby Inland Empire cities.",
   path: "/contact-us",
   image: "/client/gbp/crew-on-site.jpg",
 });
 
 export default function ContactPage() {
   const pageSchema = buildWebPageSchema({
-    title: "Contact us",
+    title: "Get a Free Fence Estimate",
     description:
-      "Request a free fence estimate, call Empire Fence directly, or send project photos for fence, gate, railing, and boundary work in Jurupa Valley and nearby Inland Empire cities.",
+      "Request a free fence estimate, call Empire Fence Inc directly, or send project photos for fence, gate, railing, and boundary work in Jurupa Valley and nearby Inland Empire cities.",
     path: "/contact-us",
     image: "/client/gbp/crew-on-site.jpg",
     type: "ContactPage",

@@ -65,10 +65,23 @@ function firstParagraphHtml(section) {
   return match ? match[0] : section.html;
 }
 
+function sectionSubsectionsToFaqs(section) {
+  if (!section?.subsections?.length) {
+    return [];
+  }
+
+  return section.subsections
+    .map((item) => ({
+      question: item.title,
+      answer: item.text,
+      html: item.html,
+    }))
+    .filter((item) => item.question && item.answer);
+}
+
 export function LocationPage({ area, services }) {
   const areaHeroTitle = area.h1 || `Fence and gate work in ${area.title}`;
   const areaHeroCopy = Array.isArray(area.heroCopy) ? area.heroCopy.join(" ") : area.summary || area.intro;
-  const areaFaqs = area.localFaqs?.length ? area.localFaqs : area.faqs ?? [];
   const areaSections = area.sections ?? [];
   const introSection = areaSections[0];
   const servicesSection =
@@ -88,6 +101,8 @@ export function LocationPage({ area, services }) {
     areaSections.at(-1);
   const serviceCards = servicesSection?.subsections?.length ? servicesSection.subsections : area.fullServiceSections ?? [];
   const fenceTypeCards = fenceTypesSection?.subsections?.length ? fenceTypesSection.subsections : area.fenceTypeSections ?? [];
+  const exactFaqs = sectionSubsectionsToFaqs(faqSection);
+  const areaFaqs = exactFaqs.length ? exactFaqs : area.localFaqs?.length ? area.localFaqs : area.faqs ?? [];
   const trustItems = area.trustBullets ?? [];
   const nearbyAreas = serviceAreas.filter((item) => item.slug !== area.slug).slice(0, 4);
   const localServices = (area.featuredServiceSlugs?.length
@@ -337,12 +352,21 @@ export function LocationPage({ area, services }) {
           <Reveal className="locationQuotePanel" variant="soft">
             <span className="eyebrow">Free estimate</span>
             <h2>{quoteSection?.title || `Get a free fence estimate in ${area.title}`}</h2>
-            <div
-              className="prose"
-              dangerouslySetInnerHTML={{
-                __html: firstParagraphHtml(quoteSection) || `<p>Share the property address, photos, and scope details so the estimate starts with the real site conditions.</p>`,
-              }}
-            />
+              {quoteSection?.html ? (
+                <div
+                  className="prose"
+                  dangerouslySetInnerHTML={{
+                    __html: quoteSection.html,
+                  }}
+                />
+              ) : (
+                <div
+                  className="prose"
+                  dangerouslySetInnerHTML={{
+                    __html: `<p>Share the property address, photos, and scope details so the estimate starts with the real site conditions.</p>`,
+                  }}
+                />
+              )}
             {area.quoteChecklist?.length ? (
               <ul className="bulletList">
                 {area.quoteChecklist.map((item) => (
@@ -378,7 +402,9 @@ export function LocationPage({ area, services }) {
             <Reveal className="locationStage serviceFaqStage" initiallyVisible variant="left">
               <span className="eyebrow">Local FAQ</span>
               <h2>{faqSection?.title || `Fence contractor FAQs for ${area.title}, CA`}</h2>
-              <p>{`These questions stay visible so the estimate direction stays tied to ${area.title} property conditions, material fit, and scope details.`}</p>
+              {faqSection?.html ? (
+                <div className="prose" dangerouslySetInnerHTML={{ __html: faqSection.html }} />
+              ) : null}
             </Reveal>
 
             <div className="faqCluster">
@@ -386,7 +412,11 @@ export function LocationPage({ area, services }) {
                 {areaFaqs.map((item) => (
                   <article key={item.question} className="faqItem">
                     <h3>{item.question}</h3>
-                    <p>{item.answer}</p>
+                    {"html" in item && item.html ? (
+                      <div className="prose" dangerouslySetInnerHTML={{ __html: item.html }} />
+                    ) : (
+                      <p>{item.answer}</p>
+                    )}
                   </article>
                 ))}
               </div>
@@ -401,14 +431,14 @@ export function LocationPage({ area, services }) {
             <div className="ctaShell__copy">
               <span className="eyebrow">Free estimate</span>
               <h2>{quoteSection?.title || `Get a free fence estimate in ${area.title}`}</h2>
-              <div
-                className="prose"
-                dangerouslySetInnerHTML={{
-                  __html:
-                    firstParagraphHtml(quoteSection) ||
-                    `<p>Share the property address, photos, and the part of the project that still feels unclear so the estimate starts from the real site conditions in ${area.title}.</p>`,
-                }}
-              />
+              {!quoteSection?.html ? (
+                <div
+                  className="prose"
+                  dangerouslySetInnerHTML={{
+                    __html: `<p>Share the property address, photos, and the part of the project that still feels unclear so the estimate starts from the real site conditions in ${area.title}.</p>`,
+                  }}
+                />
+              ) : null}
               <div className="chipWrap">
                 {localServices.slice(0, 3).map((service) => (
                   <Link key={service.slug} href={`/services/${service.slug}`} className="chip">

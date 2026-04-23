@@ -23,8 +23,8 @@ export async function generateMetadata({ params }) {
   }
 
   return buildPageMetadata({
-    title: post.data.title,
-    description: post.data.excerpt,
+    title: post.data.seoTitle || post.data.title,
+    description: post.data.metaDescription || post.data.excerpt,
     path: `/blog/${post.slug}`,
     image: post.data.heroImage,
     keywords: post.data.keywords || [],
@@ -51,8 +51,8 @@ export default async function BlogPostPage({ params }) {
     year: "numeric",
   }).format(new Date(post.data.date));
   const pageSchema = buildWebPageSchema({
-    title: post.data.title,
-    description: post.data.excerpt,
+    title: post.data.seoTitle || post.data.title,
+    description: post.data.metaDescription || post.data.excerpt,
     path: `/blog/${post.slug}`,
     image: post.data.heroImage,
     type: "Article",

@@ -8,9 +8,9 @@ import { getImagePresentation } from "@/lib/image-presentation";
 import { buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Fence Project Gallery in Jurupa Valley, CA",
+  title: "Fence Installation Gallery in Jurupa Valley, CA | Empire Fence Inc",
   description:
-    "Browse completed fence installations by Empire Fence: vinyl privacy fences, wrought iron gates, wood enclosures, chain link, and patio covers across Jurupa Valley and the Inland Empire.",
+    "Browse completed fence installations by Empire Fence Inc including vinyl privacy fences, wrought iron gates, wood enclosures, chain link, patio covers, and related boundary work across Jurupa Valley and the Inland Empire.",
   path: "/gallery",
   image: galleryHeroImage,
 });

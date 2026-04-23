@@ -24,9 +24,9 @@ import {
 } from "@/lib/site";
 
 export const metadata = buildPageMetadata({
-  title: "Fence company in Jurupa Valley, CA",
+  title: "Jurupa Valley Fence Contractor | Empire Fence Inc",
   description:
-    "Empire Fence handles vinyl, wood, wrought iron, chain link, metal fencing, fence repairs, railings, patio enclosures, gazebo builds, and related exterior fence work across Jurupa Valley and nearby Inland Empire cities.",
+    "Empire Fence Inc provides vinyl fence, wood fence, wrought iron, chain link, metal fencing, fence repairs, railings, patio enclosures, gazebo builds, and gate work in Jurupa Valley and nearby Inland Empire cities.",
   path: "/",
   keywords: [
     "vinyl fence Jurupa Valley",
@@ -43,9 +43,9 @@ export default async function HomePage() {
   const faqSchema = buildFaqSchema(faqs);
   const servicesSchema = buildServiceListSchema(services);
   const pageSchema = buildWebPageSchema({
-    title: "Fence company in Jurupa Valley, CA",
+    title: "Jurupa Valley Fence Contractor",
     description:
-      "Empire Fence installs vinyl, wood, wrought iron, chain link, metal fencing, repairs, railings, patio enclosures, and related exterior boundary work in Jurupa Valley and nearby Inland Empire cities.",
+      "Empire Fence Inc installs vinyl, wood, wrought iron, chain link, metal fencing, repairs, railings, patio enclosures, and related exterior boundary work in Jurupa Valley and nearby Inland Empire cities.",
     path: "/",
     image: "/client/home/hero-fence-project-1.jpg",
   });

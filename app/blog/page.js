@@ -8,9 +8,9 @@ import { servicesIndexPath } from "@/lib/paths";
 import { buildBlogCollectionSchema, buildPageMetadata, buildWebPageSchema } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Fence Tips & Advice Blog for Jurupa Valley Homeowners",
+  title: "Fence Planning Blog for Jurupa Valley Homeowners | Empire Fence Inc",
   description:
-    "Expert fence articles from Empire Fence covering vinyl vs wood, wrought iron gates, chain link enclosures, cost estimates, repair decisions, and project planning for Jurupa Valley and the Inland Empire.",
+    "Read Empire Fence Inc articles covering vinyl vs wood, wrought iron gates, chain link enclosures, cost estimates, repair decisions, and project planning for Jurupa Valley and the Inland Empire.",
   path: "/blog",
   image: "/client/home/hero-fence-project-2.jpg",
   keywords: [
@@ -40,7 +40,7 @@ export default async function BlogPage() {
   }));
   const blogSchema = buildBlogCollectionSchema(posts);
   const pageSchema = buildWebPageSchema({
-    title: "Fence Tips & Advice Blog for Jurupa Valley Homeowners",
+    title: "Fence Planning Blog for Jurupa Valley Homeowners",
     description:
       "Read Empire Fence articles on fence materials, estimate prep, repair decisions, gates, and project planning for Jurupa Valley and the Inland Empire.",
     path: "/blog",

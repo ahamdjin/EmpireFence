@@ -44,7 +44,7 @@ export async function generateMetadata() {
   const areaTitles = areas.map((area) => area.data.title);
 
   return buildPageMetadata({
-    title: "Fence service areas across the Inland Empire",
+    title: "Fence Service Areas Across the Inland Empire | Empire Fence Inc",
     description: `Empire Fence serves ${areaTitles.join(", ")} with fence installation, repairs, gate work, and outdoor boundary upgrades.`,
     path: areasIndexPath,
     image: "/client/gbp/vinyl-slope-boundary.jpg",
@@ -74,7 +74,7 @@ export default async function AreasPage() {
   ];
 
   const pageSchema = buildWebPageSchema({
-    title: "Fence service areas across the Inland Empire",
+    title: "Fence Service Areas Across the Inland Empire",
     description: `Empire Fence serves ${areaTitles.join(", ")} with fence installation, repairs, gate work, and outdoor boundary upgrades.`,
     path: areasIndexPath,
     image: "/client/gbp/vinyl-slope-boundary.jpg",

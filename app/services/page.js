@@ -64,9 +64,9 @@ const serviceDecisionCards = [
 ];
 
 export const metadata = buildPageMetadata({
-  title: "Fence and Gate Services in Jurupa Valley",
+  title: "Fence and Gate Services in Jurupa Valley, CA | Empire Fence Inc",
   description:
-    "Compare fence installation, gate work, repairs, railings, patio enclosures, gazebo builds, and fence supply support from Empire Fence in Jurupa Valley and nearby Inland Empire cities.",
+    "Compare vinyl, wood, wrought iron, chain link, metal fencing, repairs, railings, patio enclosures, gazebos, and fence supply support from Empire Fence Inc in Jurupa Valley and nearby Inland Empire cities.",
   path: "/services",
   image: "/client/gbp/vinyl-slope-boundary.jpg",
   keywords: [
@@ -81,9 +81,9 @@ export const metadata = buildPageMetadata({
 export default async function ServicesPage() {
   const [services, areas] = await Promise.all([getAllServices(), getAllAreas()]);
   const pageSchema = buildWebPageSchema({
-    title: "Fence and Gate Services in Jurupa Valley",
+    title: "Fence and Gate Services in Jurupa Valley, CA",
     description:
-      "Compare Empire Fence services for vinyl, wood, wrought iron, chain link, metal fencing, repairs, railings, patio enclosures, gazebo structures, and fence supply support.",
+      "Compare Empire Fence Inc services for vinyl, wood, wrought iron, chain link, metal fencing, repairs, railings, patio enclosures, gazebo structures, and fence supply support.",
     path: "/services",
     image: "/client/gbp/vinyl-slope-boundary.jpg",
     type: "CollectionPage",
