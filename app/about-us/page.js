@@ -159,10 +159,7 @@ export default async function AboutPage() {
               <h2>Explore services and service areas.</h2>
             </div>
             <div className="prose">
-              <p>
-                If you already know the material or project type, move into the closest service. If the property
-                location matters first, move into the nearest city page and keep the estimate tied to the real site.
-              </p>
+              <p>If you already know the material or project type, go straight to the service page. If location matters first, start with the city page.</p>
             </div>
           </div>
 
@@ -200,7 +197,7 @@ export default async function AboutPage() {
             <div className="locationStage serviceFaqStage">
               <span className="eyebrow">{page.data.title}</span>
               <h2>Questions people ask before reaching out.</h2>
-              <p>Share the property address, photos, and the part of the project that still feels unclear to get a more useful estimate.</p>
+              <p>Share the property address, photos, and the basic scope for a better estimate.</p>
             </div>
 
             <div className="faqCluster">

@@ -119,7 +119,7 @@ export default async function AreasPage() {
 
           <div className="coverageAtlas__copy">
             <span className="eyebrow">Coverage directory</span>
-            <h2>Every city now links directly into the matching fence and gate scope.</h2>
+            <h2>Choose the city, then move into the right service.</h2>
             <p>
               Based at {business.address}, Empire Fence provides fence installation, gate work, repairs,
               and exterior boundary upgrades across the Inland Empire cities listed below.
@@ -162,12 +162,9 @@ export default async function AreasPage() {
               <span className="eyebrow">Area directory</span>
               <h2>Choose the city first, then move into the closest service path.</h2>
             </div>
-          <div className="prose">
-            <p>
-              Each city page is built to help the buyer move from local property context into the right fence,
-              gate, repair, or outdoor-improvement scope without losing sight of how the site is actually used.
-            </p>
-          </div>
+            <div className="prose">
+              <p>Each city page connects the property location to the services that usually fit that kind of project.</p>
+            </div>
           </div>
 
           <div className="locationGrid">
@@ -209,7 +206,7 @@ export default async function AreasPage() {
           <div className="locationStage serviceFaqStage">
             <span className="eyebrow">Area FAQ</span>
             <h2>Questions people ask before choosing a city page.</h2>
-            <p>Start with the city, then move into the exact fence installation, repair, or gate service once the property and material direction are clear.</p>
+            <p>Start with the city, then move into the service that matches the fence, gate, or repair scope.</p>
             <div className="chipWrap">
               {areasWithLinks.slice(0, 6).map((area) => (
                 <Link key={area.slug} href={areaPath(area.slug)} className="chip">
@@ -237,13 +234,10 @@ export default async function AreasPage() {
           <div className="splitIntro">
             <div>
               <span className="eyebrow">Popular service paths</span>
-              <h2>Common service routes across the same coverage map.</h2>
+              <h2>Common service paths across these cities.</h2>
             </div>
-          <div className="prose">
-            <p>
-                If you already know the material or repair direction, use these service paths directly. If not, start
-                with the city and move into the closest service once the local property conditions are clear.
-              </p>
+            <div className="prose">
+              <p>If you already know the material or repair direction, use these service links directly. Otherwise, start with the city page first.</p>
             </div>
           </div>
 

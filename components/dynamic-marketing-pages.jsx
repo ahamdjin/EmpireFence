@@ -198,7 +198,7 @@ export function LocationPage({ area, services }) {
           <div className="container contactUtility">
             <Reveal className="locationQuotePanel" initiallyVisible variant="left">
               <span className="eyebrow">Local service context</span>
-              <h2>{servicesSection?.title || `How fence, gate, and outdoor projects usually take shape in ${area.title}.`}</h2>
+              <h2>{servicesSection?.title || `Fence and gate work in ${area.title}.`}</h2>
               <div
                 className="prose"
                 dangerouslySetInnerHTML={{
@@ -212,14 +212,14 @@ export function LocationPage({ area, services }) {
 
             <Reveal className="panel locationBookingPanel" delay={90} variant="soft">
               <span className="eyebrow">Why owners call Empire Fence</span>
-              <h2>{whyChooseSection?.title || `What usually needs to be right before the work starts in ${area.title}.`}</h2>
+              <h2>{whyChooseSection?.title || `Why property owners call Empire Fence in ${area.title}.`}</h2>
               <div
                 className="prose"
                 dangerouslySetInnerHTML={{
                   __html:
                     whyChooseSection?.html ||
                     area.whyChooseNarrative?.map((paragraph) => `<p>${paragraph}</p>`).join("") ||
-                    "<p>These are the details that usually separate a clean estimate and finished install from a vague quote that misses how the property actually works.</p>",
+                    `<p>${area.summary || areaHeroCopy}</p>`,
                 }}
               />
               {trustItems.length ? (
@@ -245,7 +245,7 @@ export function LocationPage({ area, services }) {
             dangerouslySetInnerHTML={{
               __html:
                 processSection?.html ||
-                `<p>${area.estimateLead}</p><p>This matters because local coverage should narrow the conversation. It should help the owner understand the property conditions, common material fit, and the kinds of photos or notes that make the estimate more useful from the first review.</p>`,
+                `<p>${area.estimateLead}</p>`,
             }}
           />
         </div>
@@ -256,7 +256,7 @@ export function LocationPage({ area, services }) {
           <div className="container">
             <SectionHeading
               eyebrow="Service breakdown"
-              title={servicesSection?.title || `What Empire Fence usually ends up solving in ${area.title}.`}
+              title={servicesSection?.title || `Services Empire Fence offers in ${area.title}.`}
               copy={null}
             />
             <div className="serviceGrid">
@@ -311,7 +311,7 @@ export function LocationPage({ area, services }) {
               dangerouslySetInnerHTML={{
                 __html:
                   coverageSection?.html ||
-                  `<p>${area.recentProjectNote}</p><p>That local context matters because the right estimate usually comes from the kinds of jobs that are already common in the area, not from forcing every property into the same fence recommendation.</p>`,
+                  `<p>${area.recentProjectNote}</p>`,
               }}
             />
           </div>
@@ -323,8 +323,8 @@ export function LocationPage({ area, services }) {
           <Reveal className="locationServiceDeck__lead" initiallyVisible variant="left">
             <SectionHeading
               eyebrow="Service links"
-              title={`The service mix Empire Fence most often handles in ${area.title}.`}
-              copy={`Move from ${area.title} into the closest fence, gate, repair, or outdoor scope.`}
+              title={`Fence and gate services for ${area.title}.`}
+              copy={`Compare the closest service pages for this city.`}
             />
             <Link href={servicesIndexPath} className="textLink">
               Browse fence installation and gate services
@@ -363,7 +363,7 @@ export function LocationPage({ area, services }) {
                 <div
                   className="prose"
                   dangerouslySetInnerHTML={{
-                    __html: `<p>Share the property address, photos, and scope details so the estimate starts with the real site conditions.</p>`,
+                    __html: `<p>Share the property address, photos, and scope details.</p>`,
                   }}
                 />
               )}
@@ -435,7 +435,7 @@ export function LocationPage({ area, services }) {
                 <div
                   className="prose"
                   dangerouslySetInnerHTML={{
-                    __html: `<p>Share the property address, photos, and the part of the project that still feels unclear so the estimate starts from the real site conditions in ${area.title}.</p>`,
+                    __html: `<p>Share the property address, photos, and scope details for the estimate.</p>`,
                   }}
                 />
               ) : null}
@@ -537,7 +537,7 @@ export function ServicePage({ service, services }) {
         <div className="container serviceProofBand">
           <Reveal className="serviceProofBand__intro" initiallyVisible variant="left">
             <span className="eyebrow">{service.data.eyebrow}</span>
-            <h2>{introSection?.title || `${serviceTitle} should be priced around the real property edge, not dropped in like a stock install.`}</h2>
+            <h2>{introSection?.title || `${serviceTitle} project details and estimate planning.`}</h2>
             <div
               className="prose"
               dangerouslySetInnerHTML={{ __html: introSection?.html || `<p>${serviceHeroCopy}</p>` }}
@@ -568,7 +568,7 @@ export function ServicePage({ service, services }) {
                 dangerouslySetInnerHTML={{
                   __html:
                     quoteSection?.html ||
-                    "<p>That keeps the estimate tied to the actual fence line, gate conditions, frontage details, and site constraints before the work gets priced the wrong way.</p>",
+                    "<p>Include the fence line, gates, transitions, and site details in the estimate request.</p>",
                 }}
               />
               <Link href="/contact-us" className="textLink">
@@ -620,7 +620,7 @@ export function ServicePage({ service, services }) {
           <Reveal className="locationStage serviceFaqStage" initiallyVisible variant="left">
             <span className="eyebrow">Service FAQ</span>
             <h2>{faqSection?.title || `Questions clients ask before pricing ${serviceTitle.toLowerCase()}.`}</h2>
-            <p>{estimateSection?.text || "Start with the material direction, site conditions, frontage details, and whether gates or adjacent wall work need to be priced in the same scope."}</p>
+            <p>{estimateSection?.text || "Use the estimate to confirm the material, site conditions, and any related gate or repair scope."}</p>
             <div className="chipWrap">
               {highlights.map((item) => (
                 <span key={item} className="chip chip--static">
@@ -648,8 +648,8 @@ export function ServicePage({ service, services }) {
           <Reveal className="servicesRail__intro" initiallyVisible variant="left">
             <SectionHeading
               eyebrow="Related services"
-              title={relatedSection?.title || "Adjacent scope around the same property edge."}
-              copy={relatedSection?.text || `If this ${serviceTitle.toLowerCase()} project also needs another material, a gate reset, or a cleaner transition, compare the closest related services next.`}
+              title={relatedSection?.title || "Related fence and gate services."}
+              copy={relatedSection?.text || `Compare related services if this ${serviceTitle.toLowerCase()} project also includes another material, gate work, or repairs.`}
             />
             <Link href={servicesIndexPath} className="textLink">
               Browse all fence and gate services

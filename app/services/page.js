@@ -113,12 +113,11 @@ export default async function ServicesPage() {
         <div className="container splitIntro">
           <div>
             <span className="eyebrow">Start here</span>
-            <h2>Start with the closest material or project type, then narrow the final scope during the estimate.</h2>
+            <h2>Choose the closest service, then confirm the scope during the estimate.</h2>
           </div>
           <div className="prose">
-            <p>Some buyers arrive knowing they want vinyl privacy fencing. Others only know the fence is leaning, the gate is awkward, the frontage looks dated, or the property needs a stronger perimeter. This service directory is built to help either type of buyer move into the right conversation without guessing too early.</p>
-            <p>The reason this matters is simple: most real projects are not perfect single-service jobs. One property may need a new fence line plus a gate reset. Another may need privacy fencing in the backyard and a more open-looking front entry. The service lineup should make those combinations easier to understand before the estimate starts.</p>
-            <p>If the job also touches railings, patio enclosure work, repairs, or a visible entry sequence, the estimate can stage those pieces together and keep the final result more consistent than treating each piece like a separate afterthought.</p>
+            <p>Some projects start with a clear material choice. Others start with a problem: a leaning fence, a worn gate, a frontage that needs to look better, or a perimeter that no longer works. This directory is here to get you to the right service faster.</p>
+            <p>Many jobs also combine more than one scope. A property may need a new fence line and a gate reset, or backyard privacy plus a front-facing material that stays more open. The estimate can cover those pieces together.</p>
           </div>
         </div>
       </section>
@@ -145,13 +144,11 @@ export default async function ServicesPage() {
         <div className="container splitIntro">
           <div>
             <span className="eyebrow">Service and city links</span>
-            <h2>Every service should connect cleanly back to the right local coverage.</h2>
+            <h2>Match the service to the city.</h2>
           </div>
           <div className="prose">
             <p>
-              If you already know the service, move directly into that material or repair path. If you also need the
-              city context, use the local coverage links below so the estimate stays tied to the actual property, not
-              just the service category on its own.
+              If you already know the service, use it directly. If the city matters too, use the links below to keep the estimate tied to the property location.
             </p>
             <div className="chipWrap">
               {featuredAreas.map((area) => (
@@ -169,7 +166,7 @@ export default async function ServicesPage() {
           <SectionHeading
             eyebrow="Choose the right service"
             title="Start with the closest project fit."
-            copy="Begin with the service that best matches the property, material direction, gate needs, and frontage conditions."
+            copy="Choose the service that matches the material, repair need, gate work, or outdoor scope."
           />
           <div className="miniFeatureGrid">
             {serviceDecisionCards.map((item) => (
@@ -188,7 +185,7 @@ export default async function ServicesPage() {
           <div className="locationStage serviceFaqStage">
             <span className="eyebrow">Service FAQ</span>
             <h2>Questions buyers ask before choosing a service.</h2>
-            <p>Use the directory to narrow the closest service path, then move into the exact service, local coverage, gallery, or estimate request.</p>
+            <p>Use the directory to choose the right service, then move into the service page, local coverage, or estimate request.</p>
             <div className="chipWrap">
               <Link href={areasIndexPath} className="chip">
                 Browse fence service areas
