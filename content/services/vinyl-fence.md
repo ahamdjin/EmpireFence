@@ -2,12 +2,21 @@
 slug: vinyl-fence
 order: 1
 title: Vinyl Fence Installation
+h1: Vinyl Fence Installation in Jurupa Valley, CA
 eyebrow: Clean privacy with low maintenance
 summary: Custom vinyl fence installation for privacy, curb appeal, and long-term durability without the maintenance load of traditional fence materials.
+heroCopy:
+  - Empire Fence installs vinyl fence systems in Jurupa Valley for property owners who want privacy, a cleaner finished perimeter, and a material that stays easier to manage over time.
 seoTitle: Vinyl Fence Installation in Jurupa Valley, CA
 metaDescription: Custom vinyl fence installation for privacy, curb appeal, and long-term durability without the maintenance load of traditional fence materials.
 heroImage: /client/services/vinyl-fence/vinyl-privacy-fence-pool.jpg
+primaryActionLabel: Get a Free Quote
+secondaryActionLabel: "Call +1 951-783-2965"
 highlights:
+  - Strong privacy fencing for homes and larger property edges
+  - Clean look with low upkeep over time
+  - Vinyl gates and layout options tailored to the site
+trustBullets:
   - Strong privacy fencing for homes and larger property edges
   - Clean look with low upkeep over time
   - Vinyl gates and layout options tailored to the site

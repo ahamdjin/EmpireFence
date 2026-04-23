@@ -2,12 +2,21 @@
 slug: fence-repairs
 order: 5
 title: Fence Repairs
+h1: Fence Repairs in Jurupa Valley, CA
 eyebrow: Repair work with a clear next-step recommendation
 summary: Fence repair service for damaged, unstable, or worn fence sections, with honest guidance on whether repair or replacement makes more sense.
+heroCopy:
+  - Empire Fence provides fence repair services in Jurupa Valley for homeowners and businesses that need a damaged, unstable, or worn fence brought back into usable condition.
 seoTitle: Fence Repairs in Jurupa Valley, CA
 metaDescription: Fence repair service for damaged, unstable, or worn fence sections, with honest guidance on whether repair or replacement makes more sense.
 heroImage: /client/projects/fence-transformation-complete.jpg
+primaryActionLabel: Get a Free Quote
+secondaryActionLabel: "Call +1 951-783-2965"
 highlights:
+  - Repair path for residential and commercial fencing
+  - Direct guidance on repair versus replacement
+  - Good fit for storm, wear, and impact-related damage
+trustBullets:
   - Repair path for residential and commercial fencing
   - Direct guidance on repair versus replacement
   - Good fit for storm, wear, and impact-related damage

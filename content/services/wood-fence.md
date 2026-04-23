@@ -2,12 +2,21 @@
 slug: wood-fence
 order: 2
 title: Wood Fence Installation
+h1: Wood Fence Installation in Jurupa Valley, CA
 eyebrow: Privacy, warmth, and custom character
 summary: Custom wood fence installation for residential and commercial properties that want privacy, security, and a classic material with design flexibility.
+heroCopy:
+  - Empire Fence builds wood fences in Jurupa Valley for clients who want privacy, flexibility, and a material that can be tailored more closely to the character of the property.
 seoTitle: Wood Fence Installation in Jurupa Valley, CA
 metaDescription: Custom wood fence installation for residential and commercial properties that want privacy, security, and a classic material with design flexibility.
 heroImage: /client/services/wood-fence/wood-fence-property-line.jpg
+primaryActionLabel: Get a Free Quote
+secondaryActionLabel: "Call +1 951-783-2965"
 highlights:
+  - Strong choice for privacy fences and perimeter definition
+  - Flexible enough for traditional, decorative, and modern layouts
+  - Built around the home, lot, and finish goals of the property
+trustBullets:
   - Strong choice for privacy fences and perimeter definition
   - Flexible enough for traditional, decorative, and modern layouts
   - Built around the home, lot, and finish goals of the property

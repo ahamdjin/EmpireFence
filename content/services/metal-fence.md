@@ -2,12 +2,21 @@
 slug: metal-fence
 order: 6
 title: Metal Fence Installation
+h1: Metal Fence Installation in Jurupa Valley, CA
 eyebrow: Durable metal fencing for stronger boundaries
 summary: Custom metal fence installation for homes and businesses that need strength, security, and a finished look tailored to the property.
+heroCopy:
+  - Empire Fence installs metal fencing in Jurupa Valley for properties that need a stronger boundary system with a clean finished look and a more durable presence than lighter fence options.
 seoTitle: Metal Fence Installation in Jurupa Valley, CA
 metaDescription: Custom metal fence installation for homes and businesses that need strength, security, and a finished look tailored to the property.
 heroImage: /client/gbp/security-walk-gate.jpg
+primaryActionLabel: Get a Free Quote
+secondaryActionLabel: "Call +1 951-783-2965"
 highlights:
+  - Strong fit for residential and commercial boundaries
+  - Good balance of security and finished appearance
+  - Custom layouts planned around the site
+trustBullets:
   - Strong fit for residential and commercial boundaries
   - Good balance of security and finished appearance
   - Custom layouts planned around the site
