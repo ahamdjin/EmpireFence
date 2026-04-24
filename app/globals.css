@@ -1029,6 +1029,8 @@ iframe:focus-visible {
 .section--contrast .serviceFeature p,
 .section--contrast .serviceEditorial__body p,
 .section--contrast .trustCard p,
+.section--contrast .contactStack p,
+.section--contrast .contactStack a,
 .panel--dark p,
 .panel--dark .contactStack p,
 .panel--dark .contactStack a,
