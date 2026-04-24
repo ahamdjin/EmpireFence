@@ -1278,6 +1278,17 @@ iframe:focus-visible {
   text-decoration-color: rgba(247, 242, 234, 0.28);
 }
 
+.ctaShell .chip,
+.section--contrast .ctaShell .chip {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--white-soft);
+}
+
+.section--contrast .splitIntro .prose p {
+  color: var(--white-soft);
+}
+
 .serviceEditorial__meta {
   display: flex;
   flex-wrap: wrap;
