@@ -1643,6 +1643,15 @@ iframe:focus-visible {
   line-height: 1.68;
 }
 
+.locationQuotePanel h2,
+.locationQuotePanel h3,
+.locationQuotePanel h4,
+.locationQuotePanel .prose h2,
+.locationQuotePanel .prose h3,
+.locationQuotePanel .prose h4 {
+  color: var(--ink);
+}
+
 .locationUtility {
   align-items: start;
 }
