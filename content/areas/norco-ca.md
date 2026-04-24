@@ -7,7 +7,7 @@ summary: "Empire Fence Inc is the trusted choice for property owners looking for
 heroCopy:
   - "Empire Fence Inc is the trusted choice for property owners looking for a dependable fence contractor in Norco, CA. We provide fence installation, fence repair, patio enclosures, railing work, and outdoor improvement services for both residential and commercial properties. With 40 years of experience, we understand that fencing in Norco often has to work harder and cover more ground than in many nearby cities. Property owners here frequently need stronger perimeter definition, dependable containment, better privacy around larger outdoor areas, and repairs that restore function without overcomplicating the property. Whether you need a new fence, a practical repair, or a custom outdoor upgrade, our team delivers direct service, clear recommendations, and workmanship backed by a 1-year warranty."
 seoTitle: "Fence Contractor Norco, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence contractor in Norco, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Empire Fence Inc serves Norco, CA with fence installation and repair for horse properties, residential homes, and businesses. Free estimate."
 heroImage: "/client/services/chain-link-fence/chain-link-security-fence.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

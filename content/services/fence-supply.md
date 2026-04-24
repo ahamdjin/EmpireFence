@@ -8,7 +8,7 @@ summary: "If you are looking for a dependable fence supply store in Jurupa Valle
 heroCopy:
   - "If you are looking for a dependable fence supply store in Jurupa Valley, CA, Empire Fence Inc is here to help. We provide quality fence materials, custom fence repairs, and residential and commercial fencing solutions backed by 40 years of experience. Whether you need materials for a new project, help choosing the right fence, or a team that can handle custom repair work, we make the process straightforward. Call +1 951-783-2965 today or request your Free Quote to get started."
 seoTitle: "Fence Supply Store Jurupa Valley, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence supply store in Jurupa Valley, CA? Empire Fence Inc offers fence materials, custom fence repairs, residential and commercial service, and free quotes. Call +1 951-783-2965."
+metaDescription: "Fence supply store in Jurupa Valley, CA. Empire Fence Inc provides fence materials, panels, posts, rails, and gates for residential and commercial projects."
 heroImage: "/client/locations/ontario/ontario-ca-fence-installation.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

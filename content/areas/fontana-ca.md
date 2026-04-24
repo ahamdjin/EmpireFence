@@ -7,7 +7,7 @@ summary: "Empire Fence Inc provides dependable fencing and outdoor improvement s
 heroCopy:
   - "Empire Fence Inc provides dependable fencing and outdoor improvement services for property owners looking for a trusted fence contractor in Fontana, CA. We work with both residential and commercial customers who need privacy, security, cleaner property boundaries, and finished outdoor spaces that function better. With 40 years of experience, we understand the range of property types found across Fontana. Some sites need strong perimeter fencing and low-maintenance materials. Others need targeted repair work, upgraded curb appeal, or outdoor improvements that make the property feel more complete. Our team brings direct service, practical recommendations, and workmanship backed by a 1-year warranty."
 seoTitle: "Fence Contractor Fontana, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence contractor in Fontana, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Fence contractor in Fontana, CA serving established neighborhoods, newer developments, and commercial sites with installation and repair. Free estimate."
 heroImage: "/client/gallery/warehouse-chain-link-enclosure-overview.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

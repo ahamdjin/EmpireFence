@@ -7,7 +7,7 @@ summary: "Empire Fence Inc is the trusted choice for property owners looking for
 heroCopy:
   - "Empire Fence Inc is the trusted choice for property owners looking for a dependable fence contractor in Claremont, CA. We provide fence installation, fence repair, patio enclosures, railing work, and outdoor improvement services for both residential and commercial properties. With 40 years of experience, we understand that fencing in Claremont often has to balance privacy, security, and appearance more carefully than in many other cities. Property owners here want improvements that feel appropriate for the setting, work well in daily life, and add value without looking heavy-handed. Whether you need a new fence, a smart repair, or a custom outdoor upgrade, our team provides direct service, practical guidance, and workmanship backed by a 1-year warranty."
 seoTitle: "Fence Contractor Claremont, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence contractor in Claremont, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Empire Fence Inc installs and repairs fences in Claremont, CA — vinyl, wrought iron, wood, and chain link for homes and businesses. Free estimate."
 heroImage: "/client/gallery/wrought-iron-fence-gallery-2.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

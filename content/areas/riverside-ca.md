@@ -7,7 +7,7 @@ summary: "Empire Fence Inc is the trusted choice for property owners who need a 
 heroCopy:
   - "Empire Fence Inc is the trusted choice for property owners who need a dependable fence contractor in Riverside, CA. We provide professional fence installation, fence repair, patio enclosures, railing work, and related outdoor services for both residential and commercial properties. With 40 years of experience, we understand what Riverside property owners want from a fencing company: strong workmanship, straightforward service, practical recommendations, and finished results that improve privacy, security, appearance, and long-term value. Whether you need to replace an aging fence, repair storm or impact damage, or plan a new installation from the ground up, our team is here to help with solutions built around your property and your goals."
 seoTitle: "Fence Contractor Riverside, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence contractor in Riverside, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Fence contractor in Riverside, CA. Empire Fence Inc installs vinyl, wood, wrought iron, and chain link fencing for homes and businesses. Free estimate."
 heroImage: "/client/services/wood-fence/wood-fence-property-line.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

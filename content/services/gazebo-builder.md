@@ -7,8 +7,8 @@ eyebrow: Gazebo Builder
 summary: "If you are looking for a trusted Gazebo Builder in Jurupa Valley, Empire Fence Inc delivers custom gazebo solutions built for the way you want to use your outdoor space. We work with residential and commercial customers across Jurupa Valley and surrounding areas to design, build, and install gazebos that add shade, function, and long-term value. Whether you want to improve a backyard, create a more usable gathering area, or add a custom outdoor structure to a commercial property, our team brings 40 years of experience, direct service, and practical project guidance from start to finish. Call +1 951-783-2965 or request your Free Quote today."
 heroCopy:
   - "If you are looking for a trusted Gazebo Builder in Jurupa Valley, Empire Fence Inc delivers custom gazebo solutions built for the way you want to use your outdoor space. We work with residential and commercial customers across Jurupa Valley and surrounding areas to design, build, and install gazebos that add shade, function, and long-term value. Whether you want to improve a backyard, create a more usable gathering area, or add a custom outdoor structure to a commercial property, our team brings 40 years of experience, direct service, and practical project guidance from start to finish. Call +1 951-783-2965 or request your Free Quote today."
-seoTitle: "Gazebo Builder Jurupa Valley, CA | Custom Gazebos & Free Quotes"
-metaDescription: "Need a trusted gazebo builder in Jurupa Valley, CA? Empire Fence Inc designs and installs custom gazebos for residential and commercial properties. Call +1 951-783-2965 for a free quote."
+seoTitle: "Gazebo Builder in Jurupa Valley, CA | Empire Fence Inc"
+metaDescription: "Custom gazebo installation in Jurupa Valley, CA. Empire Fence Inc designs and builds gazebos for residential and commercial outdoor spaces. Free quote."
 heroImage: "/client/gbp/outdoor-deck-space.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

@@ -7,7 +7,7 @@ summary: "Empire Fence Inc provides professional fencing and outdoor improvement
 heroCopy:
   - "Empire Fence Inc provides professional fencing and outdoor improvement services for property owners looking for a dependable fence contractor in San Bernardino, CA. We work with both residential and commercial customers who need stronger privacy, better security, cleaner property boundaries, and outdoor spaces that function more effectively. With 40 years of experience, we understand that San Bernardino properties often demand practical, durable solutions. Some customers need repairs on older fencing that has seen years of wear. Others need new installations that improve curb appeal, support business operations, or create a stronger sense of privacy and control around the property. Our team brings direct service, custom repair solutions, and workmanship backed by a 1-year warranty."
 seoTitle: "Fence Contractor San Bernardino, CA | Empire Fence Inc"
-metaDescription: "Need a trusted fence contractor in San Bernardino, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Empire Fence Inc installs and repairs fences in San Bernardino, CA. Vinyl, wood, wrought iron, chain link, and metal for homes and businesses. Free estimate."
 heroImage: "/client/gallery/white-commercial-sliding-gate-open.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

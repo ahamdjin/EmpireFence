@@ -7,7 +7,7 @@ summary: "Empire Fence Inc is the trusted choice for property owners looking for
 heroCopy:
   - "Empire Fence Inc is the trusted choice for property owners looking for a dependable fence contractor in Redlands, CA. We provide fence installation, fence repair, patio enclosures, railing work, and outdoor improvement services for both residential and commercial properties. With 40 years of experience, we understand that fencing in Redlands often needs to respect the look and feel of the property as much as it improves privacy and security. Many homes here benefit from fencing that feels clean, established, and appropriate to the setting rather than overly heavy or out of place. Whether you need a new fence, a practical repair, or a custom outdoor upgrade, our team delivers direct service, clear recommendations, and workmanship backed by a 1-year warranty."
 seoTitle: "Fence Contractor Redlands, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence contractor in Redlands, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Empire Fence Inc installs and repairs fences in Redlands, CA — vinyl, wood, wrought iron, and chain link for homes and businesses. Free estimate."
 heroImage: "/client/services/wood-fence/wood-fence-natural-finish.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

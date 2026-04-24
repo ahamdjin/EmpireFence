@@ -7,7 +7,7 @@ summary: "Empire Fence Inc is the trusted choice for property owners looking for
 heroCopy:
   - "Empire Fence Inc is the trusted choice for property owners looking for a dependable fence contractor in Pomona, CA. We provide fence installation, fence repair, patio enclosures, railing work, and outdoor improvement services for both residential and commercial properties. With 40 years of experience, we understand that fencing in Pomona often has to solve more than one problem at the same time. A property may need better privacy, stronger security, a cleaner street-facing appearance, and a layout that works more efficiently around gates, access points, or shared boundaries. Whether you need a new fence, a practical repair, or a custom outdoor upgrade, our team delivers direct service, clear recommendations, and workmanship backed by a 1-year warranty."
 seoTitle: "Fence Contractor Pomona, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence contractor in Pomona, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Empire Fence Inc installs and repairs fences in Pomona, CA — vinyl, wood, wrought iron, and chain link for residential and commercial properties. Free quote."
 heroImage: "/client/services/custom-fence/custom-fence-design-1.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

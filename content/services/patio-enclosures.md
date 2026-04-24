@@ -8,7 +8,7 @@ summary: "Transform your outdoor space with custom patio enclosures built for co
 heroCopy:
   - "Transform your outdoor space with custom patio enclosures built for comfort, shade, and long-term use. Empire Fence Inc provides patio enclosure solutions in Jurupa Valley for residential and commercial properties, backed by 40 years of experience and a 1-year warranty."
 seoTitle: "Patio Enclosure Supplier Jurupa Valley, CA | Empire Fence Inc"
-metaDescription: "Need a trusted patio enclosure supplier in Jurupa Valley, CA? Empire Fence Inc builds custom patio enclosures for residential and commercial properties with 40 years of experience and a 1-year warranty. Call +1 951-783-2965 for a free quote."
+metaDescription: "Patio enclosure supplier in Jurupa Valley, CA. Empire Fence Inc builds custom enclosures for homes and businesses. 40 years of experience, 1-year warranty."
 heroImage: "/client/services/patio-enclosures/driveway-patio-cover-2.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

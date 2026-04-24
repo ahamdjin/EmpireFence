@@ -7,7 +7,7 @@ summary: "Empire Fence Inc is the trusted choice for property owners looking for
 heroCopy:
   - "Empire Fence Inc is the trusted choice for property owners looking for a dependable fence contractor in Corona, CA. We provide fence installation, fence repair, patio enclosures, railing work, and outdoor improvement services for both residential and commercial properties. With 40 years of experience, we understand that fencing in Corona often needs to balance appearance, privacy, durability, and long-term function all at once. Some properties need stronger backyard privacy. Some need a cleaner front-facing presentation. Others need durable perimeter control, better gate access, or repairs that restore security without forcing a full replacement. Whether you need a new fence, a practical repair, or a custom outdoor upgrade, our team delivers direct service, clear recommendations, and workmanship backed by a 1-year warranty."
 seoTitle: "Fence Contractor Corona, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence contractor in Corona, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Empire Fence Inc installs and repairs fences in Corona, CA — vinyl, wood, wrought iron, and chain link for homes and businesses. Free quote."
 heroImage: "/client/gallery/chain-link-perimeter-fence-hillside.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

@@ -7,7 +7,7 @@ summary: "Empire Fence Inc is the trusted choice for property owners looking for
 heroCopy:
   - "Empire Fence Inc is the trusted choice for property owners looking for a dependable fence contractor in Upland, CA. We provide fence installation, fence repair, patio enclosures, railing work, and outdoor improvement services for both residential and commercial properties. With 40 years of experience, we understand that fencing in Upland is often about more than simple boundary lines. Property owners here want privacy without making a yard feel closed in, security without sacrificing curb appeal, and outdoor improvements that fit the character of the home or business. Whether you need a new fence, a practical repair, or a custom outdoor upgrade, our team delivers straightforward service, experienced guidance, and workmanship backed by a 1-year warranty."
 seoTitle: "Fence Contractor Upland, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence contractor in Upland, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Empire Fence Inc installs and repairs fences in Upland, CA — vinyl, wood, wrought iron, and chain link for residential and commercial properties. Free quote."
 heroImage: "/client/services/vinyl-fence/vinyl-fence-installation.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

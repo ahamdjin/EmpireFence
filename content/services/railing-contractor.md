@@ -7,8 +7,8 @@ eyebrow: Railing Contractor
 summary: "If you need a reliable railing contractor in Jurupa Valley, CA, Empire Fence Inc delivers custom railing solutions for homes and businesses throughout the area. We handle railing installation, railing repair, and custom projects designed for safety, function, and a clean finished look. With 40 years of experience, our team provides direct service, practical recommendations, and quality workmanship backed by a 1-year warranty. Whether you need new stair railings, handrails, balcony railings, or help repairing existing metal railings, we are ready to help."
 heroCopy:
   - "If you need a reliable railing contractor in Jurupa Valley, CA, Empire Fence Inc delivers custom railing solutions for homes and businesses throughout the area. We handle railing installation, railing repair, and custom projects designed for safety, function, and a clean finished look. With 40 years of experience, our team provides direct service, practical recommendations, and quality workmanship backed by a 1-year warranty. Whether you need new stair railings, handrails, balcony railings, or help repairing existing metal railings, we are ready to help."
-seoTitle: "Railing Contractor Jurupa Valley, CA | Custom Railings & Repair"
-metaDescription: "Need a railing contractor in Jurupa Valley, CA? Empire Fence Inc provides custom railings, railing installation, and railing repair for residential and commercial properties. Call +1 951-783-2965 for a free quote."
+seoTitle: "Railing Contractor in Jurupa Valley, CA | Empire Fence Inc"
+metaDescription: "Railing contractor in Jurupa Valley, CA. Empire Fence Inc installs custom railings for stairs, patios, and walkways for homes and businesses. Free quote."
 heroImage: "/client/gbp/screen-side-gate.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

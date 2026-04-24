@@ -7,7 +7,7 @@ summary: "Empire Fence Inc is the trusted choice for property owners who need a 
 heroCopy:
   - "Empire Fence Inc is the trusted choice for property owners who need a reliable fence contractor in Rancho Cucamonga, CA. We provide fence installation, fence repair, patio enclosures, railing work, and outdoor improvement services for homes and businesses across the area. With 40 years of experience, we understand the expectations of Rancho Cucamonga property owners. The work needs to look right, hold up well, and add value to the property. Whether you need more privacy around a backyard, stronger security around a commercial site, or a repair that restores a fence without unnecessary replacement, we provide solutions built around your property and your priorities."
 seoTitle: "Fence Contractor Rancho Cucamonga, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence contractor in Rancho Cucamonga, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Empire Fence Inc installs and repairs fences in Rancho Cucamonga, CA. Vinyl, wood, wrought iron, and chain link for homes and businesses. Free estimate."
 heroImage: "/client/services/wrought-iron-fence/wrought-iron-decorative-fence.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

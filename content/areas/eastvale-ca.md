@@ -7,7 +7,7 @@ summary: "Empire Fence Inc is the trusted choice for property owners looking for
 heroCopy:
   - "Empire Fence Inc is the trusted choice for property owners looking for a dependable fence contractor in Eastvale, CA. We provide fence installation, fence repair, patio enclosures, railing work, and outdoor improvement services for both residential and commercial properties. With 40 years of experience, we understand that fencing in Eastvale is often about creating a cleaner, more finished, more usable property. Many homes here need privacy without losing visual appeal, durable materials that stay presentable, and outdoor improvements that match a newer, well-kept community feel. Whether you need a new fence, a practical repair, or a custom outdoor upgrade, our team delivers direct service, clear recommendations, and workmanship backed by a 1-year warranty."
 seoTitle: "Fence Contractor Eastvale, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence contractor in Eastvale, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Empire Fence Inc serves Eastvale, CA with fence installation, repair, and outdoor improvements for residential communities and businesses. Free quote."
 heroImage: "/client/services/custom-fence/custom-fence-design-2.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"

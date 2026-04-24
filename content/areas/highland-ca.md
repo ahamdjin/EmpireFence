@@ -7,7 +7,7 @@ summary: "Empire Fence Inc is the trusted choice for property owners looking for
 heroCopy:
   - "Empire Fence Inc is the trusted choice for property owners looking for a dependable fence contractor in Highland, CA. We provide fence installation, fence repair, patio enclosures, railing work, and outdoor improvement services for both residential and commercial properties. With 40 years of experience, we understand that fencing in Highland often has to balance privacy, durability, and the realities of foothill-area properties. Some homes need cleaner backyard separation and stronger side-yard boundaries. Others need fencing that works better on varied layouts, helps secure outdoor space, and gives the property a more finished look without feeling overly rigid. Whether you need a new fence, a practical repair, or a custom outdoor upgrade, our team delivers direct service, clear recommendations, and workmanship backed by a 1-year warranty."
 seoTitle: "Fence Contractor Highland, CA | Empire Fence Inc"
-metaDescription: "Looking for a trusted fence contractor in Highland, CA? Empire Fence Inc provides fence installation, fence repair, patio enclosures, railings, and more for homes and businesses. Call +1 951-783-2965 for a free quote."
+metaDescription: "Empire Fence Inc installs and repairs fences in Highland, CA — vinyl, wood, wrought iron, and chain link for residential and commercial properties. Free quote."
 heroImage: "/client/gallery/white-commercial-sliding-gate-entry.jpg"
 primaryActionLabel: Get a Free Quote
 secondaryActionLabel: "Call +1 951-783-2965"
